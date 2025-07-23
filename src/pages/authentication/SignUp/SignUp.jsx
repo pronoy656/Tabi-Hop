@@ -1,8 +1,12 @@
 const SignUp = () => {
   return (
-    <div>
-      signup page
-      <h1>This is pronoy pal</h1>
+    <div
+      className=" h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('public/pronoy/signupbackground.png')" }}
+    >
+      <div>
+        <h1>Children layout</h1>
+      </div>
     </div>
   );
 };
