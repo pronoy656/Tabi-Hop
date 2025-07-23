@@ -3,6 +3,7 @@ import MainLayout from "../layouts/mainLayout/MainLayOut";
 import Overview from "../pages/user/overview/Overview";
 import SignInLayout from "../layouts/authentication/SignInLayout";
 import SignUp from "../pages/authentication/SignUp/SignUp";
+import MyWorkplace from "../pages/user/myWorkplace/MyWorkplace";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Overview></Overview>,
+      },
+      {
+        path: "/my-workplace",
+        element:<MyWorkplace/>,
       },
     ],
   },
