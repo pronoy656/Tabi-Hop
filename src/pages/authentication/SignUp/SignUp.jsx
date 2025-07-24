@@ -23,7 +23,7 @@ const SignUp = () => {
       <div className="flex items-center justify-center p-48">
         <div className="border-1 border-white rounded-2xl w-[778px] backdrop-blur-2xl bg-white/40">
           <div className="flex justify-center mt-20">
-            <div className="border border-red-600 w-[540px] mb-[102.5px]  px-6 pt-6">
+            <div className="w-[540px] mb-[102.5px]  px-6 pt-6">
               <div className="text-center mb-6">
                 <p className="text-[44px] font-semibold">Creating Account</p>
                 <p className="text-base font-medium">
