@@ -1,27 +1,23 @@
 import { useState } from "react";
 
-const TravelSelector = () => {
+const FlowSelector = () => {
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const options = [
-    "Take it easy, be in the moment.",
-    "Take it easy, be in the moment.",
-    "Take it easy, be in the moment.",
-  ];
+  const options = ["I like structure", "Go with the flow ", "Both"];
 
   return (
     <div>
       <div
         className="h-[130vh] bg-cover bg-center"
-        style={{ backgroundImage: "url('/travel-selector.jpg')" }}
+        style={{ backgroundImage: "url('/flow-selector.jpg')" }}
       >
         <div className="flex justify-center p-48">
-          <div className=" w-[846px] rounded-2xl flex flex-col justify-center items-center backdrop-blur-2xl bg-white/40">
-            <h2 className="text-[28px] md:text-3xl font-semibold text-center mt-[135.52px] mb-6 text-black ">
-              HOW DO YOU LIKE THE TRAVEL?
+          <div className=" w-[920px] rounded-2xl flex flex-col justify-center items-center backdrop-blur-2xl bg-white/40">
+            <h2 className="text-[28px] md:text-3xl font-semibold text-center mt-[135.52px] mb-6 text-black uppercase">
+              Structured itinerary vs. do you go <br /> with the flow?{" "}
             </h2>
 
-            <div className="space-y-4 w-[574.69px] px-[17.35px]">
+            <div className="space-y-3 w-[762px] px-[111.35px] mt-6">
               {options.map((option, index) => (
                 <label
                   key={index}
@@ -54,4 +50,4 @@ const TravelSelector = () => {
   );
 };
 
-export default TravelSelector;
+export default FlowSelector;
