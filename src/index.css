@@ -4,3 +4,37 @@
 button{
     cursor: pointer;
 }
+/* calendar-custom.css */
+.react-calendar {
+  width: 400px;
+  border: none !important;
+  font-family: 'Inter', sans-serif;
+  background-color: transparent;
+}
+
+.react-calendar__tile {
+  border-radius: 8px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 2px;
+  transition: 0.2s all;
+}
+
+.react-calendar__tile--active {
+  background-color: #e66ce5 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.react-calendar__navigation button {
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  background: none;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  font-weight: 600;
+  color: #888;
+}
