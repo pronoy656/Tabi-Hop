@@ -27,7 +27,7 @@ const Sidebar = ({ closeSidebar }) => {
   const pathname = location.pathname;
 
   return (
-    <div className="h-full px-3 pt-12 border-r border-r-[#ACE0E5]" style={{ fontFamily: "Poppins" }}>
+    <div className="h-full px-3 pt-10 border-r border-r-[#ACE0E5]" style={{ fontFamily: "Poppins" }}>
    
 
 
