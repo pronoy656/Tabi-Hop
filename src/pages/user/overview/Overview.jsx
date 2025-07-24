@@ -5,6 +5,9 @@ import ReminderCard from "../../../components/ReminderCard";
 import SectionHeader from "../../../components/shared/SectionHeader";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import TodoCard from "../../../components/TodoCard";
+import BucketCard from "../../../components/BucketCard";
+import { ItineraryCard } from "../../../components/ItineraryCard";
+import BookingGallery from "../../../components/BookingGallary";
 
 const todoGroups = [
   {
@@ -41,6 +44,36 @@ const todoGroups = [
     ],
   },
 ];
+const itineraryData = [
+  {
+    day: 1,
+    date: 'August 1st, 2025',
+    title: 'The Great Osaka Tower - Suzuki Maruti of Heights',
+    description: "Explore Paris' most iconic landmark and enjoy panoramic views of the city.",
+    image: '/iterenary.jpg',
+  },
+  {
+    day: 2,
+    date: 'August 2nd, 2025',
+    title: 'Tokyo Skytree Exploration',
+    description: 'Enjoy the tallest tower in Japan with a glass-floor skywalk experience.',
+    image: '/iterenary.jpg',
+  },
+  {
+    day: 3,
+    date: 'August 3rd, 2025',
+    title: 'Kyoto Cultural Walk',
+    description: 'Experience shrines, temples, and geisha traditions in Gion district.',
+    image: '/iterenary.jpg',
+  },
+  {
+    day: 4,
+    date: 'August 3rd, 2025',
+    title: 'Kyoto Cultural Walk',
+    description: 'Experience shrines, temples, and geisha traditions in Gion district.',
+    image: '/iterenary.jpg',
+  },
+];
 
 
 
@@ -73,13 +106,62 @@ const Overview = () => {
         
           <PrimaryButton text={"Add more"} bgColor={'#e65ceb'} />
         </div>
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
   {todoGroups.map((group, idx) => (
     <TodoCard key={idx} title={group.title} todos={group.todos} />
   ))}
 </div>
 
       </section>
+      {/* Bucket List Section */}
+
+      <section>
+        <div  className="flex justify-between items-center mb-2">
+
+<SectionHeader
+        title="Bucket List"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      />
+       <PrimaryButton text={"Add more"} bgColor={'#6E67D5'} textColor="white" />
+        </div>
+         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+  {todoGroups.map((group, idx) => (
+    <BucketCard key={idx} title={group.title} todos={group.todos} />
+  ))}
+</div>
+      </section>
+
+      {/* Trending Itinerary Section */}
+      <section>
+        <div className="flex justify-between items-center mb-2">
+          <SectionHeader
+        title="Trending Itinerary"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      /> 
+       <PrimaryButton text={"Add more"} bgColor={'#4796B5'} textColor="white" />
+
+ 
+        </div>
+         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {itineraryData.map((item, idx) => (
+        <ItineraryCard key={idx} {...item} />
+      ))}</div>
+      </section>
+
+      {/* Booking  Gallery Section*/}
+   <section>
+        <div className="flex justify-between items-center mb-2">
+          <SectionHeader
+        title="Bookings"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      />
+      <PrimaryButton text={"Add more"} bgColor={'#FCB0BA'}  />
+
+ 
+        </div>
+        <BookingGallery/>
+      </section>
+
     </div>
   );
 };
