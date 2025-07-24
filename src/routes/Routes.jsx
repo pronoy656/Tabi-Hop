@@ -9,6 +9,7 @@ import FlowSelector from "../pages/authentication/FlowSelector/FlowSelector";
 import ActivitySelector from "../pages/authentication/ActivitySelector/ActivitySelector";
 import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSelector";
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
+import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/stress-selector",
         element: <StressSelector></StressSelector>,
+      },
+      {
+        path: "/signin/email-verification",
+        element: <EmailVerefication></EmailVerefication>,
       },
     ],
   },
