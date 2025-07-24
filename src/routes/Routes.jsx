@@ -7,6 +7,7 @@ import MyWorkplace from "../pages/user/myWorkplace/MyWorkplace";
 import TravelSelector from "../pages/authentication/TravelSelector/TravelSelector";
 import FlowSelector from "../pages/authentication/FlowSelector/FlowSelector";
 import ActivitySelector from "../pages/authentication/ActivitySelector/ActivitySelector";
+import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSelector";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/activity-selector",
         element: <ActivitySelector></ActivitySelector>,
+      },
+      {
+        path: "/signin/dislike-selector",
+        element: <DislikeSelector></DislikeSelector>,
       },
     ],
   },
