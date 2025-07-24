@@ -6,15 +6,12 @@ import SignUp from "../pages/authentication/SignUp/SignUp";
 import MyWorkplace from "../pages/user/myWorkplace/MyWorkplace";
 import TravelSelector from "../pages/authentication/TravelSelector/TravelSelector";
 import FlowSelector from "../pages/authentication/FlowSelector/FlowSelector";
-<<<<<<< HEAD
 import Accommodations from "../pages/user/accommodations/Accommodations";
-=======
 import ActivitySelector from "../pages/authentication/ActivitySelector/ActivitySelector";
 import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSelector";
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
->>>>>>> 44ad727495da62ebf1b9b184a722615ab2963073
 
 const router = createBrowserRouter([
   {
