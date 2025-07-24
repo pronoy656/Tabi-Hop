@@ -3,17 +3,19 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-
+import { FaChevronDown } from "react-icons/fa6"; 
+import { useState } from "react";
 const { Search } = Input;
 
 const Header = ({ toggleSidebar, isSidebarOpen }) => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
   return (
     <header className="w-full relative bg-[#EDF8F9] px-4 lg:px-8 py-4 shadow-sm">
       {/* Custom bottom border starting from 300px */}
       <div className="absolute bottom-0 left-0 h-px bg-[#ACE0E5]  w-full
-
+     
        "></div>
-      {/* md:left-[299px] md:w-[calc(100%-301px)]  */}
+ {/* md:left-[299px] md:w-[calc(100%-301px)]  */}
       <div className="grid grid-cols-3 items-center">
         {/* Left Section: Sidebar toggle & logo */}
         <div className="flex items-center gap-2">
@@ -85,7 +87,9 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
             </span>
           </Link>
         </div>
+        
       </div>
+
     </header>
   );
 };
