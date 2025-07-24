@@ -27,11 +27,9 @@ const Sidebar = ({ closeSidebar }) => {
   const pathname = location.pathname;
 
   return (
-    <div className="h-full px-3 pt-2" style={{ fontFamily: "Poppins" }}>
-      {/* Logo */}
-      <div className="flex items-center justify-center pb-6 cursor-pointer">
-       <h1>logo</h1>
-      </div>
+    <div className="h-full px-3 pt-12 border-r border-r-[#ACE0E5]" style={{ fontFamily: "Poppins" }}>
+   
+
 
       {/* Menu Items */}
       <div style={{ backgroundColor: "#EDF8F9", color: "#0B3666" }}>

@@ -19,7 +19,7 @@ const MainLayout = () => {
 
       {/* Sidebar - Starts After Header */}
       <div
-        className={`fixed top-[80px] left-0 z-40 h-[calc(100vh-80px)] w-[300px] bg-[#EDF8F9] transform transition-transform duration-300
+        className={`fixed top-[80px] left-0 z-40 h-[calc(100vh-100px)] w-[300px] bg-[#EDF8F9] transform transition-transform duration-300
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
           lg:translate-x-0`}
       >
@@ -35,7 +35,7 @@ const MainLayout = () => {
       )}
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col w-full lg:ml-[300px] pt-[80px]">
+      <div className="flex-1 flex flex-col w-full lg:ml-[300px] pt-[100px]">
         <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 md:px-8 bg-[#FFFFFF]">
           <Outlet />
         </div>
