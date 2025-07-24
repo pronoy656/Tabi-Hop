@@ -8,6 +8,7 @@ import TravelSelector from "../pages/authentication/TravelSelector/TravelSelecto
 import FlowSelector from "../pages/authentication/FlowSelector/FlowSelector";
 import ActivitySelector from "../pages/authentication/ActivitySelector/ActivitySelector";
 import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSelector";
+import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/dislike-selector",
         element: <DislikeSelector></DislikeSelector>,
+      },
+      {
+        path: "/signin/stress-selector",
+        element: <StressSelector></StressSelector>,
       },
     ],
   },
