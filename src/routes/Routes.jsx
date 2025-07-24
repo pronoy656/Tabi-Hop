@@ -6,6 +6,7 @@ import SignUp from "../pages/authentication/SignUp/SignUp";
 import MyWorkplace from "../pages/user/myWorkplace/MyWorkplace";
 import TravelSelector from "../pages/authentication/TravelSelector/TravelSelector";
 import FlowSelector from "../pages/authentication/FlowSelector/FlowSelector";
+import ActivitySelector from "../pages/authentication/ActivitySelector/ActivitySelector";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/flow-selector",
         element: <FlowSelector></FlowSelector>,
+      },
+      {
+        path: "/signin/activity-selector",
+        element: <ActivitySelector></ActivitySelector>,
       },
     ],
   },
