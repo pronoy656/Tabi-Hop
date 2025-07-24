@@ -1,8 +1,11 @@
-const PrimaryButton = ({ text, bgColor }) => {
+const PrimaryButton = ({ text, bgColor, textColor = "black" }) => {
   return (
     <button
-      className={`text-black font-semibold rounded-full px-4 py-2 shadow-md text-sm hover:opacity-90 transition duration-300`}
-      style={{ backgroundColor: bgColor }}
+      className={`font-semibold text-center rounded-full px-4 py-2 shadow-md text-md hover:opacity-90 transition duration-300`}
+      style={{
+        backgroundColor: bgColor,
+        color: textColor,
+      }}
     >
       + {text}
     </button>
@@ -10,3 +13,4 @@ const PrimaryButton = ({ text, bgColor }) => {
 };
 
 export default PrimaryButton;
+
