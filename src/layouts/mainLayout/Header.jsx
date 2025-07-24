@@ -87,9 +87,33 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
             </span>
           </Link>
         </div>
-        
-      </div>
 
+      </div>
+   {dropdownOpen && (
+              <div className="absolute top-full right-4 mt-2 w-48 bg-white border border-[#E66CE5] rounded-md shadow-md z-50">
+                <Link
+                  to="/admin-profile"
+                  className="block px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"
+                >
+                  My Profile
+                </Link>
+                <Link
+                  to="/settings"
+                  className="block px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"
+                >
+                  Settings
+                </Link>
+                <button
+                  className="w-full text-left px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"
+                  onClick={() => {
+                    // TODO: Logout action
+                    console.log("Logout clicked");
+                  }}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
     </header>
   );
 };
