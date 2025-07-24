@@ -8,6 +8,10 @@ import TodoCard from "../../../components/TodoCard";
 import BucketCard from "../../../components/BucketCard";
 import { ItineraryCard } from "../../../components/ItineraryCard";
 import BookingGallery from "../../../components/BookingGallary";
+import BookingsTodoCard from "../../../components/BookingsTodoCard";
+import BookingsTodoCardTwo from "../../../components/BookingsTodoCardTwo";
+import BookingsTodoCardThree from "../../../components/BookingsTodoCardThree";
+import { BookingCard } from "../../../components/BookingCard";
 
 const todoGroups = [
   {
@@ -147,6 +151,104 @@ const Overview = () => {
         <ItineraryCard key={idx} {...item} />
       ))}</div>
       </section>
+
+      {/* BookingsTodo Section*/}
+   <section>
+        <div className="flex justify-between items-center mb-2">
+          <SectionHeader
+        title="Bookings"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      />
+      <PrimaryButton text={"Add more"} textColor="white" bgColor={'#EE443F'}  />
+
+ 
+        </div>
+         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+  {todoGroups.map((group, idx) => (
+    <BookingsTodoCard key={idx} title={group.title} todos={group.todos} />
+  ))}
+</div>
+      </section>
+
+
+      {/* BookingsTodo Two Section*/}
+   <section>
+        <div className="flex justify-between items-center mb-2">
+          <SectionHeader
+        title="Bookings"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      />
+      <PrimaryButton text={"Add more"}  bgColor={'#FFAA00'}  />
+
+ 
+        </div>
+         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+  {todoGroups.map((group, idx) => (
+    <BookingsTodoCardTwo key={idx} title={group.title} todos={group.todos} />
+  ))}
+</div>
+      </section>
+
+ {/* Booking Itinerary Section */}
+      <section>
+        <div className="flex justify-between items-center mb-2">
+          <SectionHeader
+        title="Bookings"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      /> 
+       <PrimaryButton text={"Add more"} bgColor={'#FCB0BA'}  />
+
+ 
+        </div>
+         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+       <BookingCard
+  title="Mercure Tokyo Haneda Airport"
+  location="Ota Ward, Tokyo"
+  image="https://i.ibb.co/Pvs6yxF6/Frame.png"
+  rating={3}
+  description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
+/>
+       <BookingCard
+  title="Mercure Tokyo Haneda Airport"
+  location="Ota Ward, Tokyo"
+  image="https://i.ibb.co/Pvs6yxF6/Frame.png"
+  rating={3}
+  description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
+/>
+       <BookingCard
+  title="Mercure Tokyo Haneda Airport"
+  location="Ota Ward, Tokyo"
+  image="https://i.ibb.co/Pvs6yxF6/Frame.png"
+  rating={3}
+  description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
+/>
+       <BookingCard
+  title="Mercure Tokyo Haneda Airport"
+  location="Ota Ward, Tokyo"
+  image="https://i.ibb.co/Pvs6yxF6/Frame.png"
+  rating={3}
+  description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
+/>
+</div>
+      </section>
+      {/* BookingsTodo Three Section*/}
+   <section>
+        <div className="flex justify-between items-center mb-2">
+          <SectionHeader
+        title="Bookings"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      />
+      <PrimaryButton text={"Add more"}  bgColor={'#E66CE5'}  />
+
+ 
+        </div>
+         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+  {todoGroups.map((group, idx) => (
+    <BookingsTodoCardThree key={idx} title={group.title} todos={group.todos} />
+  ))}
+</div>
+      </section>
+
 
       {/* Booking  Gallery Section*/}
    <section>
