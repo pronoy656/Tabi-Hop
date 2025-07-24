@@ -6,6 +6,7 @@ import SignUp from "../pages/authentication/SignUp/SignUp";
 import MyWorkplace from "../pages/user/myWorkplace/MyWorkplace";
 import TravelSelector from "../pages/authentication/TravelSelector/TravelSelector";
 import FlowSelector from "../pages/authentication/FlowSelector/FlowSelector";
+import Accommodations from "../pages/user/accommodations/Accommodations";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path: "/my-workplace",
         element: <MyWorkplace />,
       },
+      {
+        path:"/accommodations",
+        element:<Accommodations/>
+      }
     ],
   },
   {
