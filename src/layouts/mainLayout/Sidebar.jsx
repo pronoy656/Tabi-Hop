@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import OverviewSVG from "../../../public/ruhulo-images/overviewSVG";
 import WorkplaceSVG from "../../../public/ruhulo-images/WorkplaceSVG";
 import AccommodationSVG from "../../../public/ruhulo-images/AccommodationSVG";
+import IterenearySVG from "../../../public/ruhulo-images/IterenearySVG";
 
 
 const menuItems = [
@@ -18,6 +19,13 @@ const menuItems = [
     path: "/my-workplace",
     renderIcon: (isActive) => (
       <WorkplaceSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Itinerary",
+    path: "/itinerary",
+    renderIcon: (isActive) => (
+      <IterenearySVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
   {

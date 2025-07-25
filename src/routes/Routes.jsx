@@ -14,6 +14,8 @@ import EmailVerefication from "../pages/authentication/Emailverefication/EmailVe
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
 import IterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
 import WorkplaceIterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
+import Itinerary from "../pages/user/Itinerary/Itinerary";
+import CreateItinerary from "../components/Itinerary/CreateItinerary";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
         path:"/accommodations",
         element:<Accommodations/>
       },
+      {
+        path:"/itinerary",
+        element:<Itinerary/>
+      },
+      {
+        path:"/itinerary/create-itinerary",
+        element:<CreateItinerary/>
+      }
     
     ],
   },

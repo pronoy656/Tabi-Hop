@@ -54,7 +54,7 @@ const MyWorkplace = () => {
     },
   ];
   return (
-    <section className="p-6 bg-[#e6f7fa] rounded-md border border-[#ACE0E5]">
+    <section className="page">
       {/* reminders */}
 
       <div
