@@ -11,6 +11,7 @@ import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSele
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
+import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/birthday-selection",
         element: <BirthdaySelection></BirthdaySelection>,
+      },
+      {
+        path: "/signin/date-location-selection",
+        element: <DateLocationSelect></DateLocationSelect>,
       },
     ],
   },

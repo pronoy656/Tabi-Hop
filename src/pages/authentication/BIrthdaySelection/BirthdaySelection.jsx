@@ -6,7 +6,20 @@ const onChange = (date, dateString) => {
   console.log(date, dateString);
 };
 
+// Demo
+import { useState } from "react";
+
+import { EnvironmentOutlined, CalendarOutlined } from "@ant-design/icons";
+// import dayjs from "dayjs";
+
+const { RangePicker } = DatePicker;
+
 const BirthdaySelection = () => {
+  const [value, setValue] = useState("");
+  const [location, setLocation] = useState("");
+
+  const dateFormat = "h:mm A DD MMMM, YYYY";
+
   //   const {
   //     handleSubmit,
   //     control,
@@ -58,37 +71,6 @@ const BirthdaySelection = () => {
                 </div>
 
                 <form noValidate>
-                  {/* <div className="mb-4">
-                    <label className="font-bold block mb-2">
-                      Confirmation Code
-                    </label>
-                    <Controller
-                      name="code"
-                      control={control}
-                      rules={{
-                        required: "Code is required",
-                        pattern: {
-                          value: /^[0-9]{4,6}$/, // Optional: 4-6 digit code
-                          message: "Enter a valid code (4 to 6 digits)",
-                        },
-                      }}
-                      render={({ field }) => (
-                        <Input
-                          {...field}
-                          placeholder="698 651 65"
-                          className="h-12"
-                          type="number"
-                          inputMode="numeric"
-                        />
-                      )}
-                    />
-                    {errors.code && (
-                      <p className="text-red-500 text-sm">
-                        {errors.code.message}
-                      </p>
-                    )}
-                  </div> */}
-
                   {/* Submit Button */}
                   <Button
                     type="primary"
@@ -107,6 +89,71 @@ const BirthdaySelection = () => {
                     Continue
                   </Button>
                 </form>
+                {/* Demo Code */}
+                <div className="flex items-center gap-4">
+                  <label className="w-48 font-semibold text-right">
+                    Departure Time & Date
+                  </label>
+                  <DatePicker
+                    showTime
+                    format={dateFormat}
+                    placeholder="Select departure date & time"
+                    className={`h-12 w-full ${
+                      value ? "font-semibold" : "font-normal"
+                    }`}
+                    // className="w-full"
+                    suffixIcon={<CalendarOutlined />}
+                  />
+                </div>
+
+                {/* Arrival Time & Date */}
+                <div className="flex items-center gap-4">
+                  <label className="w-48 font-semibold text-right">
+                    Arrival Time & Date
+                  </label>
+                  <DatePicker
+                    showTime
+                    format={dateFormat}
+                    value={value}
+                    onChange={(val) => setValue(val)}
+                    // value={dayjs("2025-08-22T10:00:00")}
+                    placeholder="Select arrival date & time"
+                    className={`h-12 w-full ${
+                      value ? "font-semibold" : "font-normal"
+                    }`}
+                    // className="w-full"
+                    suffixIcon={<CalendarOutlined />}
+                  />
+                </div>
+
+                {/* Starting Location */}
+                <div className="flex items-center gap-4">
+                  <label className="w-48 font-semibold text-right">
+                    Starting Location
+                  </label>
+                  <Input
+                    placeholder="Enter starting location"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    className={`w-full h-12 ${
+                      location ? "font-semibold" : "font-normal"
+                    }`}
+                    prefix={<EnvironmentOutlined />}
+                  />
+                </div>
+
+                {/* Ending Location */}
+                <div className="flex items-center gap-4">
+                  <label className="w-48 font-semibold text-right">
+                    Ending Location
+                  </label>
+                  <Input
+                    placeholder="Enter ending location"
+                    className="w-full"
+                    prefix={<EnvironmentOutlined />}
+                  />
+                </div>
+
                 <div className="flex justify-center mt-9">
                   <button className="bg-white w-[209px] h-10 rounded-lg">
                     <p className="text-lg font-semibold">Resend Code - 01:56</p>
