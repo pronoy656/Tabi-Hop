@@ -1,3 +1,6 @@
+import PrimaryButton from "../../../components/shared/PrimaryButton";
+import WorkplaceTab from "../../../components/Workplace/WorkplaceTab";
+
 const MyWorkplace = () => {
   const reminders = [
     {
@@ -76,6 +79,17 @@ const MyWorkplace = () => {
           ))}
         </div>
       </div>
+{/* 
+      Tab Section */}
+  <div className="flex justify-between mt-10">
+    <div>
+      <WorkplaceTab></WorkplaceTab> 
+    </div>
+    <div>
+      <PrimaryButton bgColor={'#4ABBC6'} text={'Add Workplace'} textColor="white"/>
+    </div>
+  </div>
+    
     </section>
   );
 };
