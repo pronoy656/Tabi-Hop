@@ -12,6 +12,8 @@ import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSele
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
+import IterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
+import WorkplaceIterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,9 +30,14 @@ const router = createBrowserRouter([
         element: <MyWorkplace />,
       },
       {
+        path:"/my-workplace/details/:id",
+        element:<WorkplaceIterinaryDetails />
+      },
+      {
         path:"/accommodations",
         element:<Accommodations/>
-      }
+      },
+    
     ],
   },
   {

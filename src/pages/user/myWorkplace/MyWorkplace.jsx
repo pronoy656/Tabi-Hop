@@ -63,11 +63,11 @@ const MyWorkplace = () => {
       >
         <h1 className="text-3xl font-bold">Upcoming Reminders</h1>
 
-        <div className="flex flex-1 gap-4 mt-4">
+        <div className="flex flex-wrap gap-4 mt-4">
           {reminders?.map((reminder, index) => (
             <div
               key={index}
-              className="bg-[#D8FFE3] border rounded-xl border-gray-300  p-4 space-y-2"
+              className="bg-[#D8FFE3] border rounded-xl border-gray-300  p-4 space-y-2 w-full mx-auto sm:w-[180px] "
             >
               <h1 className="uppercase text-xl font-semibold text-[#000000]">
                 {reminder.month} - {reminder.time}
@@ -81,11 +81,11 @@ const MyWorkplace = () => {
       </div>
 {/* 
       Tab Section */}
-  <div className="flex justify-between mt-10">
+  <div className="flex flex-col-reverse sm:flex-row justify-between  mt-10">
     <div>
       <WorkplaceTab></WorkplaceTab> 
     </div>
-    <div>
+    <div className="mb-6 sm:mb-0 sm:mt-2 mt-0">
       <PrimaryButton bgColor={'#4ABBC6'} text={'Add Workplace'} textColor="white"/>
     </div>
   </div>
