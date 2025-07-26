@@ -16,6 +16,7 @@ import EmailVerefication from "../pages/authentication/Emailverefication/EmailVe
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
 
 import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
+import SignIn from "../pages/authentication/SignIn/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/date-location-selection",
         element: <DateLocationSelect></DateLocationSelect>,
+      },
+      {
+        path: "/signin/log-in",
+        element: <SignIn></SignIn>,
       },
     ],
   },
