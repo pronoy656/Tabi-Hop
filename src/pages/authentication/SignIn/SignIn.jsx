@@ -35,50 +35,6 @@ const SignIn = () => {
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                  {/* Name */}
-                  {/* <div className="mb-4">
-                    <label className="font-bold block">Name</label>
-                    <Controller
-                      name="name"
-                      control={control}
-                      rules={{ required: "Name is required" }}
-                      render={({ field }) => (
-                        <Input
-                          {...field}
-                          placeholder="Enter your name"
-                          className="h-12"
-                        />
-                      )}
-                    />
-                    {errors.name && (
-                      <p className="text-red-500 text-sm">
-                        {errors.name.message}
-                      </p>
-                    )}
-                  </div> */}
-
-                  {/* Username */}
-                  {/* <div className="mb-4">
-                    <label className="font-bold block">Username</label>
-                    <Controller
-                      name="username"
-                      control={control}
-                      rules={{ required: "Username is required" }}
-                      render={({ field }) => (
-                        <Input
-                          {...field}
-                          placeholder="Enter your username"
-                          className="h-12"
-                        />
-                      )}
-                    />
-                    {errors.username && (
-                      <p className="text-red-500 text-sm">
-                        {errors.username.message}
-                      </p>
-                    )}
-                  </div> */}
-
                   {/* Email */}
                   <div className="mb-4">
                     <label className="font-bold block">Email</label>

@@ -17,6 +17,9 @@ import BirthdaySelection from "../pages/authentication/BIrthdaySelection/Birthda
 
 import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
 import SignIn from "../pages/authentication/SignIn/SignIn";
+import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPassword";
+import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
+import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +85,18 @@ const router = createBrowserRouter([
       {
         path: "/signin/log-in",
         element: <SignIn></SignIn>,
+      },
+      {
+        path: "/signin/forget-password",
+        element: <ForgetPassword></ForgetPassword>,
+      },
+      {
+        path: "/signin/password-code-verification",
+        element: <PasswordCode></PasswordCode>,
+      },
+      {
+        path: "/signin/reset-password",
+        element: <ResetPassword></ResetPassword>,
       },
     ],
   },
