@@ -6,7 +6,7 @@ import { CiStar } from "react-icons/ci";
 
 const Accommodations = () => {
   return (
-  <div className="p-6 bg-[#e6f7fa] rounded-md border border-[#ACE0E5]">
+  <div className="page">
 <div className="flex justify-between items-center">
 
  <SectionHeader
