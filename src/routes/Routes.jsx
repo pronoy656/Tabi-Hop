@@ -6,16 +6,27 @@ import SignUp from "../pages/authentication/SignUp/SignUp";
 import MyWorkplace from "../pages/user/myWorkplace/MyWorkplace";
 import TravelSelector from "../pages/authentication/TravelSelector/TravelSelector";
 import FlowSelector from "../pages/authentication/FlowSelector/FlowSelector";
+<<<<<<< HEAD
 import Accommodations from "../pages/user/accommodations/Accommodations";
+=======
+
+import Accommodations from "../pages/user/accommodations/Accommodations";
+
+>>>>>>> 42bfa09ef13fe1b41b88dbdf77bdd8d9f5aab3df
 import ActivitySelector from "../pages/authentication/ActivitySelector/ActivitySelector";
 import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSelector";
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
+<<<<<<< HEAD
 import IterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
 import WorkplaceIterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
 import Itinerary from "../pages/user/Itinerary/Itinerary";
 import CreateItinerary from "../components/Itinerary/CreateItinerary";
+=======
+
+import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
+>>>>>>> 42bfa09ef13fe1b41b88dbdf77bdd8d9f5aab3df
 
 const router = createBrowserRouter([
   {
@@ -32,6 +43,7 @@ const router = createBrowserRouter([
         element: <MyWorkplace />,
       },
       {
+<<<<<<< HEAD
         path:"/my-workplace/details/:id",
         element:<WorkplaceIterinaryDetails />
       },
@@ -48,6 +60,11 @@ const router = createBrowserRouter([
         element:<CreateItinerary/>
       }
     
+=======
+        path: "/accommodations",
+        element: <Accommodations />,
+      },
+>>>>>>> 42bfa09ef13fe1b41b88dbdf77bdd8d9f5aab3df
     ],
   },
   {
@@ -86,6 +103,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/birthday-selection",
         element: <BirthdaySelection></BirthdaySelection>,
+      },
+      {
+        path: "/signin/date-location-selection",
+        element: <DateLocationSelect></DateLocationSelect>,
       },
     ],
   },
