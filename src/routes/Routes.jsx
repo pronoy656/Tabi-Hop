@@ -23,6 +23,7 @@ import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPasswor
 import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
 import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
 import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
+import Allergies from "../pages/authentication/Allergies/Allergies";
 
 const router = createBrowserRouter([
   {
@@ -39,22 +40,21 @@ const router = createBrowserRouter([
         element: <MyWorkplace />,
       },
       {
-        path:"/my-workplace/details/:id",
-        element:<WorkplaceIterinaryDetails />
+        path: "/my-workplace/details/:id",
+        element: <WorkplaceIterinaryDetails />,
       },
       {
-        path:"/accommodations",
-        element:<Accommodations/>
+        path: "/accommodations",
+        element: <Accommodations />,
       },
       {
-        path:"/itinerary",
-        element:<Itinerary/>
+        path: "/itinerary",
+        element: <Itinerary />,
       },
       {
-        path:"/itinerary/create-itinerary",
-        element:<CreateItinerary/>
-      }
-   
+        path: "/itinerary/create-itinerary",
+        element: <CreateItinerary />,
+      },
     ],
   },
   {
@@ -117,6 +117,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/subscription-plan",
         element: <SubscriptionPlan></SubscriptionPlan>,
+      },
+      {
+        path: "/signin/allergies",
+        element: <Allergies></Allergies>,
       },
     ],
   },
