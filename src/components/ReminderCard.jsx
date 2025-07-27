@@ -1,4 +1,3 @@
-import React from "react";
 
 const reminders = [
   { time: "6:00", task: "Drink 8 glasses of water", bg: "bg-blue-100" },
@@ -13,6 +12,7 @@ const ReminderCard = () => {
   return (
     <div className="bg-white col-span-4 rounded-lg shadow-md p-8">
       <h3 className="text-xl font-semibold mb-4">Upcoming Reminders</h3>
+      
       <div className="space-y-2 text-sm">
         {reminders.map((reminder, idx) => (
           <div key={idx} className="flex items-center gap-4">

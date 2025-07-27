@@ -7,6 +7,7 @@ import IterenearySVG from "../../../public/ruhulo-images/IterenearySVG";
 import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
 import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
 import PackingListSVG from "../../../public/ruhulo-images/PackingListSVG";
+import BookingSVG from "../../../public/ruhulo-images/BookingSVG";
 
 
 
@@ -58,6 +59,13 @@ const menuItems = [
     path: "/accommodations",
     renderIcon: (isActive) => (
       <AccommodationSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Bookings",
+    path: "/bookings",
+    renderIcon: (isActive) => (
+      <BookingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
 ];

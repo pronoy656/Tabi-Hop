@@ -1,6 +1,6 @@
 import { FaMapMarkerAlt, FaStar, FaRegStar } from "react-icons/fa";
 
-export const BookingCard = ({ title, location, image, rating = 3, description }) => {
+export const BookingOverviewCard = ({ title, location, image, rating = 3, description }) => {
   const totalStars = 5;
 
   return (

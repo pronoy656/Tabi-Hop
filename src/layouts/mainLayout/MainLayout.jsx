@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
-
 const MainLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -11,7 +10,7 @@ const MainLayout = () => {
     <div className="flex min-h-screen overflow-hidden relative">
       {/* Header  */}
       <div className="fixed top-0 left-0 w-full z-50">
-        <Header 
+        <Header
           toggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
           isSidebarOpen={isSidebarOpen}
         />
@@ -19,7 +18,7 @@ const MainLayout = () => {
 
       {/* Sidebar - Starts After Header */}
       <div
-        className={`fixed top-[80px] left-0 z-40 h-[calc(100vh-100px)] w-[300px] bg-[#EDF8F9] transform transition-transform duration-300
+        className={`fixed top-[80px] left-0 z-40 h-full w-[300px] bg-[#EDF8F9] transform transition-transform duration-300
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
           lg:translate-x-0`}
       >
