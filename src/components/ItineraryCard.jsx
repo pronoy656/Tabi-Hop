@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const ItineraryCard = ({ day, date, title, description, image }) => {
   return (
     <div className="border-2 border-gray-300 rounded-xl overflow-hidden shadow-sm w-full bg-white border-b-3 border-b-[#76ADCA] border-r-3 border-r-[#76ADCA] flex flex-col">
@@ -18,9 +20,10 @@ export const ItineraryCard = ({ day, date, title, description, image }) => {
       </div>
 
       <div className="px-4 pb-4">
-        <button className="w-full bg-[#1dbfcc] hover:bg-[#17aab4] font-semibold py-2 rounded-full transition duration-300">
+        <Link to={`/my-workplace/details/${day}`}>
+        <button className="w-full text-black font-semibold bg-[#1dbfcc] hover:bg-[#17aab4]  py-2 rounded-full transition duration-300">
           View
-        </button>
+        </button></Link>
       </div>
     </div>
   );
