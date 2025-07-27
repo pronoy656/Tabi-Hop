@@ -21,6 +21,11 @@ import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateL
 import AddDestination from "../components/Itinerary/AddDestination";
 import MoodBoard from "../pages/user/moodboard/MoodBoard";
 import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
+import SignIn from "../pages/authentication/SignIn/SignIn";
+import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPassword";
+import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
+import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
+import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
 
 const router = createBrowserRouter([
   {
@@ -107,6 +112,26 @@ const router = createBrowserRouter([
       {
         path: "/signin/date-location-selection",
         element: <DateLocationSelect></DateLocationSelect>,
+      },
+      {
+        path: "/signin/log-in",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "/signin/forget-password",
+        element: <ForgetPassword></ForgetPassword>,
+      },
+      {
+        path: "/signin/password-code-verification",
+        element: <PasswordCode></PasswordCode>,
+      },
+      {
+        path: "/signin/reset-password",
+        element: <ResetPassword></ResetPassword>,
+      },
+      {
+        path: "/signin/subscription-plan",
+        element: <SubscriptionPlan></SubscriptionPlan>,
       },
     ],
   },
