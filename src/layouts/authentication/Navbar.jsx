@@ -3,9 +3,9 @@ import { IoIosCall } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <div className="absolute w-full">
-      <div className="h-[84px] flex items-center justify-between py-5 px-16 backdrop-blur-2xl bg-white/40">
-        <div className="flex items-center space-x-1.5">
+    <div className="absolute w-full backdrop-blur-2xl bg-white/40">
+      <div className="h-[84px] flex items-center justify-between py-5 px-4 md:px-0 max-w-[1240px] mx-auto w-full">
+        <div className="flex items-center space-x-1.5 ">
           <div className="w-[16.67px] h-4">
             <FaArrowLeftLong />
           </div>

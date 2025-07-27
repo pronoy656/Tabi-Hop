@@ -24,6 +24,7 @@ import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
 import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
 import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
 import Allergies from "../pages/authentication/Allergies/Allergies";
+import SelectionPreferences from "../pages/authentication/SelectionPreferences/SelectionPreferences";
 
 const router = createBrowserRouter([
   {
@@ -121,6 +122,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/allergies",
         element: <Allergies></Allergies>,
+      },
+      {
+        path: "/signin/selection-preferences",
+        element: <SelectionPreferences></SelectionPreferences>,
       },
     ],
   },
