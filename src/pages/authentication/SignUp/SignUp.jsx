@@ -1,5 +1,6 @@
 import { Button, Input, Checkbox } from "antd";
 import { useForm, Controller } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -204,7 +205,9 @@ const SignUp = () => {
               </form>
               <p className="mt-6 text-center">
                 Already have an account?{" "}
-                <span className="font-medium">Login</span>
+                <Link to="/signin/log-in">
+                  <span className="font-bold">Create Account </span>
+                </Link>
               </p>
             </div>
           </div>
