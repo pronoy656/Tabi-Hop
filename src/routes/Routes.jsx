@@ -20,6 +20,7 @@ import SignIn from "../pages/authentication/SignIn/SignIn";
 import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPassword";
 import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
 import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
+import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/reset-password",
         element: <ResetPassword></ResetPassword>,
+      },
+      {
+        path: "/signin/subscription-plan",
+        element: <SubscriptionPlan></SubscriptionPlan>,
       },
     ],
   },
