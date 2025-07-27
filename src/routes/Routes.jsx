@@ -24,6 +24,9 @@ import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPasswor
 import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
 import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
 import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
+import TodoList from "../pages/user/todoList/TodoList";
+import PackingList from "../pages/user/packingList/PackingList";
+import Bookings from "../pages/user/bookings/Bookings";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +69,19 @@ const router = createBrowserRouter([
       {
         path:"/moodboard/details/:id",
         element:<MoodBoardDetails/>
+      },
+      {
+        path:"/todolist",
+        element:<TodoList/>
+      },
+   
+      {
+        path:"/packing-list",
+        element:<PackingList />
+      },
+      {
+        path:"/bookings",
+        element:<Bookings/>
       }
    
     ],
