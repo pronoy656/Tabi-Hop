@@ -12,13 +12,12 @@ import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSele
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
+
 import WorkplaceIterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
 import Itinerary from "../pages/user/Itinerary/Itinerary";
 import CreateItinerary from "../components/Itinerary/CreateItinerary";
+
 import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
-import AddDestination from "../components/Itinerary/AddDestination";
-import MoodBoard from "../pages/user/moodboard/MoodBoard";
-import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import SignIn from "../pages/authentication/SignIn/SignIn";
 import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPassword";
 import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
@@ -54,28 +53,9 @@ const router = createBrowserRouter([
         element: <Itinerary />,
       },
       {
-<<<<<<< HEAD
         path: "/itinerary/create-itinerary",
         element: <CreateItinerary />,
       },
-=======
-        path:"/itinerary/create-itinerary",
-        element:<CreateItinerary/>
-      },
-      {
-        path:"/itinerary/add-destination",
-        element:<AddDestination />
-      },
-      {
-        path:"/moodboard",
-        element:<MoodBoard/>
-      },
-      {
-        path:"/moodboard/details/:id",
-        element:<MoodBoardDetails/>
-      }
-   
->>>>>>> 19fbe9cf283cce422b2216bb86c7d1afedab9db9
     ],
   },
   {
