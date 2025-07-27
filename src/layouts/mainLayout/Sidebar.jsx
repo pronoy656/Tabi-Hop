@@ -5,6 +5,7 @@ import WorkplaceSVG from "../../../public/ruhulo-images/WorkplaceSVG";
 import AccommodationSVG from "../../../public/ruhulo-images/AccommodationSVG";
 import IterenearySVG from "../../../public/ruhulo-images/IterenearySVG";
 import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
+import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
 
 
 const menuItems = [
@@ -34,6 +35,13 @@ const menuItems = [
     path: "/moodboard",
     renderIcon: (isActive) => (
       <MoodBoardSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "To-Do List",
+    path: "/todolist",
+    renderIcon: (isActive) => (
+      <TodoListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
   {
