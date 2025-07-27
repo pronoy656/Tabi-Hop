@@ -1,56 +1,112 @@
-
 import { BiPencil } from "react-icons/bi";
 import PrimaryButton from "../shared/PrimaryButton";
-import { ConfigProvider, Timeline } from 'antd';
+import { ConfigProvider, Timeline } from "antd";
 import TimelineLabel from "./TimelineLabel";
 import TimelineChildren from "./TimelineChildren";
+import { Link } from "react-router-dom";
 const CreateItinerary = () => {
-      const locations = [
+  const locations = [
     {
-      label: 'Starting Location',
-      title: 'New York Public Library – Stephen A. Schwarzman Building',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Starting Location",
+      title: "New York Public Library – Stephen A. Schwarzman Building",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
     {
-      label: 'Destination - 01',
-      title: 'Head southwest on 5th Ave toward E 41st St',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Destination - 01",
+      title: "Head southwest on 5th Ave toward E 41st St",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
     {
-      label: 'Destination - 02',
-      title: 'Turn left onto E 36th St',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Destination - 02",
+      title: "Turn left onto E 36th St",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
     {
-      label: 'Destination - 03',
-      title: 'Turn left onto E 36th St',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Destination - 03",
+      title: "Turn left onto E 36th St",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
     {
-      label: 'Destination - 04',
-      title: 'Continue onto Union Square E',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Destination - 04",
+      title: "Continue onto Union Square E",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
     {
-      label: 'Destination - 05',
-      title: 'Continue straight to stay on Broadway',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Destination - 05",
+      title: "Continue straight to stay on Broadway",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
     {
-      label: 'Destination - 06',
-      title: 'Turn right onto Thomas St',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Destination - 06",
+      title: "Turn right onto Thomas St",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
     {
-      label: 'Ending Location',
-      title: 'Turn right onto Thomas St',
-      address: '476 5th Ave, New York, NY 10018, USA',
+      label: "Ending Location",
+      title: "Turn right onto Thomas St",
+      address: "476 5th Ave, New York, NY 10018, USA",
     },
   ];
+  const foodList = [
+    {
+      title: "Food items",
+      items: [
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+      ],
+    },
+    {
+      title: "Food items",
+      items: [
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+      ],
+    },
+    {
+      title: "Food items",
+      items: [
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+      ],
+    },
+    {
+      title: "Food items",
+      items: [
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+      ],
+    },
+    {
+      title: "Food items",
+      items: [
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+      ],
+    },
+    {
+      title: "Food items",
+      items: [
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+        "Classy Beef Hamburger",
+      ],
+    },
+  ];
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 space-y-8 page">
-
-        {/* step-1 */}
+      {/* step-1 */}
       <section>
         <h2 className="font-semibold text-xl mb-4 text-[#1F4F53]">
           Step - 01 : Basic Information
@@ -68,7 +124,6 @@ const CreateItinerary = () => {
           </div>
 
           <div className="space-y-4 my-4">
-
             <div className="text-[#1F4F53] flex  gap-x-8 items-center">
               <label className="block font-semibold ">Kids</label>
               <input
@@ -95,65 +150,60 @@ const CreateItinerary = () => {
         </div>
       </section>
 
-    
       {/* Step 02 */}
       <section className="">
         <div className="flex justify-between items-center mb-4">
           <h1 className="font-semibold text-xl text-[#1F4F53]">
             Step - 02 : Add your location anchor points
-          </h1>
-              <PrimaryButton bgColor={'#E84C4F'} text={'Add destination'}  textColor="white"/>
+          </h1>{" "}
+          <Link to={"/itinerary/add-destination"}>
+            <button className="bg-[#EE443F] text-white px-4 py-2 rounded-md text-sm">
+              + Add Destination
+            </button>{" "}
+          </Link>
         </div>
 
-
-      <div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md border border-amber-500 ">
-
-        <div className="flex   border border-amber-500">
-
-       
-
-        <ConfigProvider 
-          theme={{
-    token: {
-     
-      colorPrimary:"#ff4d4f",
-      controlHeightLG:60,
-      fontSize:14,
-      fontSizeSM:20
-    },
-     components: {
-      Timeline: {
-       
-        tailColor:"#ff4d4f",
-        dotBg:"#ff4d4f",
-        
-      },
-    },
-  }}
-        >
-      <Timeline
-        mode={'left'}
-        items={[
-          {
-            label: <TimelineLabel text={'Starting Location'} />,
-            children: <TimelineChildren/>,
-          },
-          {
-            label: '2015-09-01 09:12:11',
-            children: 'Solve initial network problems',
-          },
-          {
-            children: 'Technical testing',
-          },
-          {
-            label: '2015-09-01 09:12:11',
-            children: 'Network problems being solved',
-          },
-        ]}
-      />
-      </ConfigProvider>  </div>
-    </div>
-        
+        <div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md border border-amber-500 ">
+          <div className="flex   border border-amber-500">
+            <ConfigProvider
+              theme={{
+                token: {
+                  colorPrimary: "#ff4d4f",
+                  controlHeightLG: 60,
+                  fontSize: 14,
+                  fontSizeSM: 20,
+                },
+                components: {
+                  Timeline: {
+                    tailColor: "#ff4d4f",
+                    dotBg: "#ff4d4f",
+                  },
+                },
+              }}
+            >
+              <Timeline
+                mode={"left"}
+                items={[
+                  {
+                    label: <TimelineLabel text={"Starting Location"} />,
+                    children: <TimelineChildren />,
+                  },
+                  {
+                    label: "2015-09-01 09:12:11",
+                    children: "Solve initial network problems",
+                  },
+                  {
+                    children: "Technical testing",
+                  },
+                  {
+                    label: "2015-09-01 09:12:11",
+                    children: "Network problems being solved",
+                  },
+                ]}
+              />
+            </ConfigProvider>{" "}
+          </div>
+        </div>
       </section>
 
       {/* Step 03 */}
@@ -167,34 +217,40 @@ const CreateItinerary = () => {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {Array(6)
-            .fill(0)
-            .map((_, i) => (
-              <div
-                key={i}
-                className="bg-white border border-gray-300 shadow-xl rounded-md p-4 space-y-2"
-              >
-                <div className="flex justify-between">
-                  <span className="font-medium text-xl text-[#131927]">Food items</span>
-                  <span className="text-red-500 cursor-pointer flex items-center gap-2"> 
-                    <img src="/edit-pencil.png" className="h-5" alt="" />
-                    <img src="/delete.png" className="h-5" alt="" />
-                  
-                   </span>
-                </div>
-                <ul className="text-sm text-gray-600">
-                  <li>Classy Beef Hamburger</li>
-                   <div className="border-b border-gray-300 my-2" />
-                  <li>Classy Beef Hamburger</li>
-                  <div className="border-b border-gray-300 my-2" />
-                  <li>Classy Beef Hamburger</li>
-                  <div className="border-b border-gray-300 my-2" />
-                </ul>
-                <button className="bg-[#F7D1F7]  w-full py-1 rounded-full  font-medium text-sm mt-2">
-                  + Add new item
-                </button>
+          {foodList.map((food, i) => (
+            <div
+              key={i}
+              className="bg-white border border-gray-300 shadow-xl rounded-md p-4 space-y-2"
+            >
+              <div className="flex justify-between">
+                <span className="font-medium text-xl text-[#131927]">
+                  {food.title}
+                </span>
+                <span className="text-red-500 cursor-pointer flex items-center gap-2">
+                  <img src="/edit-pencil.png" className="h-5" alt="Edit" />
+                  <img src="/delete.png" className="h-5" alt="Delete" />
+                </span>
               </div>
-            ))}
+              <ul className="text-sm text-gray-600">
+                {food.items.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className={`py-1 ${
+                      idx !== food.items.length - 1
+                        ? "border-b border-gray-300 mb-2"
+                        : ""
+                    }`}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <button className="bg-[#F7D1F7] w-full py-1 rounded-full font-medium text-sm mt-2">
+                + Add new item
+              </button>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -203,66 +259,79 @@ const CreateItinerary = () => {
         <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
           Step - 04 : Please write your preferred budget allocation
         </h2>
-<div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md"> 
-  {Array(5)
-    .fill(0)
-    .map((_, i) => (
-      <div
-        key={i}
-        className="flex flex-col md:flex-row md:items-center gap-4 mb-4"
-      >
-        <label className="w-full md:w-40 font-semibold">Lunch Budget</label>
-        
-        <div className="flex items-center gap-2 flex-grow">
-          <h3 className="text-[#4ABBC6]">0$</h3>
+        <div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md">
+          {Array(5)
+            .fill(0)
+            .map((_, i) => (
+              <div
+                key={i}
+                className="flex flex-col md:flex-row md:items-center gap-4 mb-4"
+              >
+                <label className="w-full md:w-40 font-semibold">
+                  Lunch Budget
+                </label>
 
-          {/* This wrapper grows, and the input inside takes 100% */}
-          <div className="flex-grow">
-            <input
-              type="range"
-              className="w-full accent-[#4ABBC6] custom-range"
-            />
-            
-          </div>
+                <div className="flex items-center gap-2 flex-grow">
+                  <h3 className="text-[#4ABBC6]">0$</h3>
 
-          <h3 className="text-[#4ABBC6]">5000$</h3>
+                  {/* This wrapper grows, and the input inside takes 100% */}
+                  <div className="flex-grow">
+                    <input
+                      type="range"
+                      className="w-full accent-[#4ABBC6] custom-range"
+                    />
+                  </div>
+
+                  <h3 className="text-[#4ABBC6]">5000$</h3>
+                </div>
+
+                <span className="w-full md:w-40 p-2 font-semibold rounded-xl text-center text-sm bg-[#C7EAED]">
+                  Estimate: $12 - $32
+                </span>
+              </div>
+            ))}
         </div>
-
-        <span className="w-full md:w-40 p-2 font-semibold rounded-xl text-center text-sm bg-[#C7EAED]">
-          Estimate: $12 - $32
-        </span>
-      </div>
-    ))}
-</div>
-
       </section>
 
       {/* step-05 */}
 
       <section>
-         <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
+        <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
           Step - 05 : Write a prompt sharing how you want to spend you day
         </h2>
 
-        <div className="bg-white border border-gray-300 shadow-xl rounded-md p-6">
-
+        <div className="bg-white border border-gray-300 shadow-xl rounded-md p-6 space-y-2">
           <div className="pb-4 flex gap-2">
-    <div className="">
-            <img src="/profile1.png" className="h-8" alt="" />
+            <div className="flex  items-end ">
+              <img src="/profile1.png" className="h-8 " alt="" />
+            </div>
+            <div className="bg-[#F2F3F5] w-full  shadow-xl rounded-md p-4 font-medium">
+              <h3>Hi there 👋</h3>
+              <h3>
+                Please share information about your journey briefly. So we can
+                assist you to create the perfect plan for you!
+              </h3>
+            </div>
           </div>
-          <div className="bg-[#F2F3F5]">
-            <h3>Hi there 👋</h3>
-            <h3>Please share information about your journey briefly. So we can assist you to create the perfect plan for you!</h3>
 
+          <div className="bg-white   shadow-xl shadow-gray-300 rounded-md p-6 md:flex justify-between items-center gap-2">
+            <h3>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries,Lorem Ipsum is simply dummy text
+              of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an
+              unknown printer took a galley of type and scrambled it to make a
+              type specimen book. It has survived not only five centuries,Lorem
+              Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy{" "}
+            </h3>
+            <button className="bg-black text-white p-2 rounded-2xl md:w-30 h-10 mt-2 md:mt-0">
+              <img src="/up-arrow.png" className="h-4 w-8" alt="" />
+            </button>
           </div>
-          </div>
-
-      <div  className="bg-white   shadow-xl rounded-md ">
-
-        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </h3> <button className="bg-black text-white p-2 rounded-2xl"><img src="/up-arrow.png" className="h-4" alt="" /></button>
-
-      </div>
-
         </div>
       </section>
     </div>

@@ -4,6 +4,7 @@ import OverviewSVG from "../../../public/ruhulo-images/overviewSVG";
 import WorkplaceSVG from "../../../public/ruhulo-images/WorkplaceSVG";
 import AccommodationSVG from "../../../public/ruhulo-images/AccommodationSVG";
 import IterenearySVG from "../../../public/ruhulo-images/IterenearySVG";
+import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
 
 
 const menuItems = [
@@ -26,6 +27,13 @@ const menuItems = [
     path: "/itinerary",
     renderIcon: (isActive) => (
       <IterenearySVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "MoodBoard",
+    path: "/moodboard",
+    renderIcon: (isActive) => (
+      <MoodBoardSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
   {
@@ -56,7 +64,7 @@ const Sidebar = ({ closeSidebar }) => {
               key={item.path}
               className={
                 isActive
-                    ? "bg-[#4796B5] text-[#EDF8F9] font-semibold text-xl rounded-sm transition-transform"
+                    ? "bg-[#4796B5] text-[#EDF8F9] font-medium text-xl rounded-sm transition-transform"
   : "text-[#212936] text-xl"
               }
             >
