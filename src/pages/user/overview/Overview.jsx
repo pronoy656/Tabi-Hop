@@ -10,7 +10,7 @@ import BookingGallery from "../../../components/BookingGallary";
 import BookingsTodoCard from "../../../components/BookingsTodoCard";
 import BookingsTodoCardTwo from "../../../components/BookingsTodoCardTwo";
 import BookingsTodoCardThree from "../../../components/BookingsTodoCardThree";
-import { BookingCard } from "../../../components/BookingCard";
+import { BookingOverviewCard } from "../../../components/BookingOverviewCard";
 
 const todoGroups = [
   {
@@ -174,7 +174,7 @@ const itineraryData = [
 
 const Overview = () => {
   return (
-    <div className="page">
+    <div className="page ">
       {/* Overview Section */}
       <section className="mb-8">
         <SectionHeader
@@ -267,6 +267,8 @@ const Overview = () => {
               todos={group.todos}
             />
           ))}
+
+      
         </div>
       </section>
 
@@ -300,28 +302,28 @@ const Overview = () => {
           <PrimaryButton text={"Add more"} bgColor={"#FCB0BA"} />
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          <BookingCard
+          <BookingOverviewCard
             title="Mercure Tokyo Haneda Airport"
             location="Ota Ward, Tokyo"
             image="https://i.ibb.co/Pvs6yxF6/Frame.png"
             rating={3}
             description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
           />
-          <BookingCard
+          <BookingOverviewCard
             title="Mercure Tokyo Haneda Airport"
             location="Ota Ward, Tokyo"
             image="https://i.ibb.co/Pvs6yxF6/Frame.png"
             rating={3}
             description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
           />
-          <BookingCard
+          <BookingOverviewCard
             title="Mercure Tokyo Haneda Airport"
             location="Ota Ward, Tokyo"
             image="https://i.ibb.co/Pvs6yxF6/Frame.png"
             rating={3}
             description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
           />
-          <BookingCard
+          <BookingOverviewCard
             title="Mercure Tokyo Haneda Airport"
             location="Ota Ward, Tokyo"
             image="https://i.ibb.co/Pvs6yxF6/Frame.png"

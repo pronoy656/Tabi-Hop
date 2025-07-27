@@ -5,6 +5,10 @@ import WorkplaceSVG from "../../../public/ruhulo-images/WorkplaceSVG";
 import AccommodationSVG from "../../../public/ruhulo-images/AccommodationSVG";
 import IterenearySVG from "../../../public/ruhulo-images/IterenearySVG";
 import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
+import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
+import PackingListSVG from "../../../public/ruhulo-images/PackingListSVG";
+import BookingSVG from "../../../public/ruhulo-images/BookingSVG";
+
 
 
 const menuItems = [
@@ -37,10 +41,31 @@ const menuItems = [
     ),
   },
   {
+    label: "To-Do List",
+    path: "/todolist",
+    renderIcon: (isActive) => (
+      <TodoListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Packing List",
+    path: "/packing-list",
+    renderIcon: (isActive) => (
+      <PackingListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
     label: "Accommodations",
     path: "/accommodations",
     renderIcon: (isActive) => (
       <AccommodationSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Bookings",
+    path: "/bookings",
+    renderIcon: (isActive) => (
+      <BookingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
 ];

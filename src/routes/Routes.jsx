@@ -25,6 +25,12 @@ import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
 import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
 import Allergies from "../pages/authentication/Allergies/Allergies";
 import SelectionPreferences from "../pages/authentication/SelectionPreferences/SelectionPreferences";
+import TodoList from "../pages/user/todoList/TodoList";
+import PackingList from "../pages/user/packingList/PackingList";
+import Bookings from "../pages/user/bookings/Bookings";
+import AddDestination from "../components/Itinerary/AddDestination";
+import MoodBoard from "../pages/user/moodboard/MoodBoard";
+import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +61,31 @@ const router = createBrowserRouter([
       {
         path: "/itinerary/create-itinerary",
         element: <CreateItinerary />,
+      },
+      {
+        path: "/itinerary/add-destination",
+        element: <AddDestination />,
+      },
+      {
+        path: "/moodboard",
+        element: <MoodBoard />,
+      },
+      {
+        path: "/moodboard/details/:id",
+        element: <MoodBoardDetails />,
+      },
+      {
+        path: "/todolist",
+        element: <TodoList />,
+      },
+
+      {
+        path: "/packing-list",
+        element: <PackingList />,
+      },
+      {
+        path: "/bookings",
+        element: <Bookings />,
       },
     ],
   },
