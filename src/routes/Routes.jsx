@@ -25,6 +25,7 @@ import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
 import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
 import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
 import TodoList from "../pages/user/todoList/TodoList";
+import PackingList from "../pages/user/packingList/PackingList";
 
 const router = createBrowserRouter([
   {
@@ -71,7 +72,12 @@ const router = createBrowserRouter([
       {
         path:"/todolist",
         element:<TodoList/>
-      }
+      },
+   
+      {
+        path:"/packing-list",
+        element:<PackingList />
+      },
    
     ],
   },

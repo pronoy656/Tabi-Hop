@@ -3,7 +3,7 @@ import { ListCard } from "../../../components/shared/ListCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
 
-const TodoList = () => {
+const PackingList = () => {
   const todoGroups = [
     {
       title: "Sky Diving",
@@ -104,7 +104,7 @@ const TodoList = () => {
     <div className="page">
       <div className="md:flex justify-between items-center">
         <SectionHeader
-          title="To-Do List"
+          title="Packing List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
         <Link to={""}>
@@ -135,4 +135,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export default PackingList;

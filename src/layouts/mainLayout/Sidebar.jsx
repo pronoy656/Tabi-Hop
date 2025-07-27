@@ -6,6 +6,8 @@ import AccommodationSVG from "../../../public/ruhulo-images/AccommodationSVG";
 import IterenearySVG from "../../../public/ruhulo-images/IterenearySVG";
 import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
 import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
+import PackingListSVG from "../../../public/ruhulo-images/PackingListSVG";
+
 
 
 const menuItems = [
@@ -42,6 +44,13 @@ const menuItems = [
     path: "/todolist",
     renderIcon: (isActive) => (
       <TodoListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Packing List",
+    path: "/packing-list",
+    renderIcon: (isActive) => (
+      <PackingListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
   {
