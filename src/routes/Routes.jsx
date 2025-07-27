@@ -20,6 +20,7 @@ import CreateItinerary from "../components/Itinerary/CreateItinerary";
 import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
 import AddDestination from "../components/Itinerary/AddDestination";
 import MoodBoard from "../pages/user/moodboard/MoodBoard";
+import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path:"/moodboard",
         element:<MoodBoard/>
+      },
+      {
+        path:"/moodboard/details/:id",
+        element:<MoodBoardDetails/>
       }
    
     ],
