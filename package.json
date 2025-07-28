@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^3.8.0",
+    "@stripe/stripe-js": "^7.6.1",
     "@tailwindcss/vite": "^4.1.11",
     "antd": "^5.26.6",
     "google-map-react": "^2.2.5",

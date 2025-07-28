@@ -31,6 +31,7 @@ import Bookings from "../pages/user/bookings/Bookings";
 import AddDestination from "../components/Itinerary/AddDestination";
 import MoodBoard from "../pages/user/moodboard/MoodBoard";
 import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
+import Payment from "../pages/authentication/SubscriptionPlan/Payment";
 
 const router = createBrowserRouter([
   {
@@ -157,6 +158,10 @@ const router = createBrowserRouter([
       {
         path: "/signin/selection-preferences",
         element: <SelectionPreferences></SelectionPreferences>,
+      },
+      {
+        path: "/signin/details/:id",
+        element: <Payment></Payment>,
       },
     ],
   },
