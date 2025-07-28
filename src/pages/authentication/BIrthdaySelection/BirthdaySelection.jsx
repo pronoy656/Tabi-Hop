@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { DatePicker } from "antd";
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import { Controller, useForm } from "react-hook-form";
 
 const onChange = (date, dateString) => {
@@ -14,12 +14,18 @@ const BirthdaySelection = () => {
     formState: { errors },
   } = useForm();
 
+  //navigate to next step after form submission
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     console.log("Success:", {
       month: data.month?.format("MMMM YYYY"),
       date: data.date?.format("YYYY-MM-DD"),
       year: data.year?.format("YYYY"),
     });
+
+    // Navigate to the next step after successful submission
+    navigate("/signin/travel-selector");
   };
 
   return (
