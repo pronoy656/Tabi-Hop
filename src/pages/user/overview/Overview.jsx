@@ -176,12 +176,12 @@ const Overview = () => {
   return (
     <div className="page ">
       {/* Overview Section */}
-      <section className="mb-8">
+      <section className="mb-8 mx-auto">
         <SectionHeader
           title="Overview"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <div className="grid md:grid-cols-6 gap-4">
+        <div className="grid md:grid-cols-6 gap-4 mx-auto border">
           <CalendarCard />
           <ReminderCard />
         </div>
