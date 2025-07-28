@@ -25,7 +25,7 @@ const Footer = () => {
     //   </div>
     // </div>
     <div className="bg-[#6E67D5] text-white px-10 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-10 px-20">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-10 max-w-7xl mx-auto">
         {/* Logo & Socials */}
         <div className="md:col-span-1 flex flex-col items-start">
           <img
