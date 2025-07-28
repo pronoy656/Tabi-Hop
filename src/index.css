@@ -64,7 +64,8 @@ body{
    padding: 1.5rem ;              
   background-color: #e6f7fa;      
   border-radius: 0.375rem;        
-  border: 1px solid #ACE0E5;  
+  border: 1px solid #ACE0E5; 
+  min-height: 86vh; 
  
     margin-bottom: 30px;
 }

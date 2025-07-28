@@ -27,6 +27,7 @@ import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/Subscript
 import TodoList from "../pages/user/todoList/TodoList";
 import PackingList from "../pages/user/packingList/PackingList";
 import Bookings from "../pages/user/bookings/Bookings";
+import BucketList from "../pages/user/bucketList/BucketList";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path:"/bookings",
         element:<Bookings/>
+      },
+      {
+        path:"/bucket-list",
+        element:<BucketList/>
       }
    
     ],

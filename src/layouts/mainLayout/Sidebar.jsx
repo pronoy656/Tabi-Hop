@@ -8,6 +8,7 @@ import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
 import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
 import PackingListSVG from "../../../public/ruhulo-images/PackingListSVG";
 import BookingSVG from "../../../public/ruhulo-images/BookingSVG";
+import BucketListSVG from "../../../public/ruhulo-images/BucketListSVG";
 
 
 
@@ -66,6 +67,13 @@ const menuItems = [
     path: "/bookings",
     renderIcon: (isActive) => (
       <BookingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Bucket List",
+    path: "/bucket-list",
+    renderIcon: (isActive) => (
+      <BucketListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
 ];
