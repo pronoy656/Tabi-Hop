@@ -13,7 +13,14 @@ const SignUp = () => {
   const password = watch("password");
 
   const onSubmit = (data) => {
-    console.log("Success:", data);
+    console.log("Success:", {
+      name: data.name,
+      username: data.username,
+      email: data.email,
+      password: data.password,
+      confirmPassword: data.confirmPassword,
+      terms: data.terms,
+    });
   };
 
   return (
@@ -206,7 +213,7 @@ const SignUp = () => {
               <p className="mt-6 text-center">
                 Already have an account?{" "}
                 <Link to="/signin/log-in">
-                  <span className="font-bold">Create Account </span>
+                  <span className="font-bold">Login</span>
                 </Link>
               </p>
             </div>

@@ -10,7 +10,7 @@ const EmailVerefication = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Success:", data);
+    console.log("Success:", { name: data.code });
   };
 
   return (
