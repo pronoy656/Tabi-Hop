@@ -12,21 +12,26 @@ import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSele
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
+
 import WorkplaceIterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
 import Itinerary from "../pages/user/Itinerary/Itinerary";
 import CreateItinerary from "../components/Itinerary/CreateItinerary";
+
 import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
-import AddDestination from "../components/Itinerary/AddDestination";
-import MoodBoard from "../pages/user/moodboard/MoodBoard";
-import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import SignIn from "../pages/authentication/SignIn/SignIn";
 import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPassword";
 import PasswordCode from "../pages/authentication/PasswordCode/PasswordCode";
 import ResetPassword from "../pages/authentication/ResetPassword/ResetPassword";
 import SubscriptionPlan from "../pages/authentication/SubscriptionPlan/SubscriptionPlan";
+import Allergies from "../pages/authentication/Allergies/Allergies";
+import SelectionPreferences from "../pages/authentication/SelectionPreferences/SelectionPreferences";
 import TodoList from "../pages/user/todoList/TodoList";
 import PackingList from "../pages/user/packingList/PackingList";
 import Bookings from "../pages/user/bookings/Bookings";
+import AddDestination from "../components/Itinerary/AddDestination";
+import MoodBoard from "../pages/user/moodboard/MoodBoard";
+import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
+import Payment from "../pages/authentication/SubscriptionPlan/Payment";
 
 const router = createBrowserRouter([
   {
@@ -43,47 +48,46 @@ const router = createBrowserRouter([
         element: <MyWorkplace />,
       },
       {
-        path:"/my-workplace/details/:id",
-        element:<WorkplaceIterinaryDetails />
+        path: "/my-workplace/details/:id",
+        element: <WorkplaceIterinaryDetails />,
       },
       {
-        path:"/accommodations",
-        element:<Accommodations/>
+        path: "/accommodations",
+        element: <Accommodations />,
       },
       {
-        path:"/itinerary",
-        element:<Itinerary/>
+        path: "/itinerary",
+        element: <Itinerary />,
       },
       {
-        path:"/itinerary/create-itinerary",
-        element:<CreateItinerary/>
+        path: "/itinerary/create-itinerary",
+        element: <CreateItinerary />,
       },
       {
-        path:"/itinerary/add-destination",
-        element:<AddDestination />
+        path: "/itinerary/add-destination",
+        element: <AddDestination />,
       },
       {
-        path:"/moodboard",
-        element:<MoodBoard/>
+        path: "/moodboard",
+        element: <MoodBoard />,
       },
       {
-        path:"/moodboard/details/:id",
-        element:<MoodBoardDetails/>
+        path: "/moodboard/details/:id",
+        element: <MoodBoardDetails />,
       },
       {
-        path:"/todolist",
-        element:<TodoList/>
+        path: "/todolist",
+        element: <TodoList />,
       },
-   
+
       {
-        path:"/packing-list",
-        element:<PackingList />
+        path: "/packing-list",
+        element: <PackingList />,
       },
       {
-        path:"/bookings",
-        element:<Bookings/>
-      }
-   
+        path: "/bookings",
+        element: <Bookings />,
+      },
     ],
   },
   {
@@ -146,6 +150,18 @@ const router = createBrowserRouter([
       {
         path: "/signin/subscription-plan",
         element: <SubscriptionPlan></SubscriptionPlan>,
+      },
+      {
+        path: "/signin/allergies",
+        element: <Allergies></Allergies>,
+      },
+      {
+        path: "/signin/selection-preferences",
+        element: <SelectionPreferences></SelectionPreferences>,
+      },
+      {
+        path: "/signin/details/:id",
+        element: <Payment></Payment>,
       },
     ],
   },
