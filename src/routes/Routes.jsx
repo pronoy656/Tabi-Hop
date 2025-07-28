@@ -28,14 +28,11 @@ import SelectionPreferences from "../pages/authentication/SelectionPreferences/S
 import TodoList from "../pages/user/todoList/TodoList";
 import PackingList from "../pages/user/packingList/PackingList";
 import Bookings from "../pages/user/bookings/Bookings";
-<<<<<<< HEAD
 import BucketList from "../pages/user/bucketList/BucketList";
-=======
 import AddDestination from "../components/Itinerary/AddDestination";
 import MoodBoard from "../pages/user/moodboard/MoodBoard";
 import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import Payment from "../pages/authentication/SubscriptionPlan/Payment";
->>>>>>> d6618c6bfd8651ee6907806182966fcf01c95de4
 
 const router = createBrowserRouter([
   {
