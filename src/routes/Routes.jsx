@@ -35,6 +35,8 @@ import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import Payment from "../pages/authentication/SubscriptionPlan/Payment";
 import Calender from "../pages/user/calender/Calender";
 import AccountSetting from "../pages/user/accountSetting/AccountSetting";
+import AdminMainLayout from "../layouts/adminDashboard/AdminMainLayout";
+import AdminOverview from "../pages/admin/adminOverview/AdminOverview";
 
 const router = createBrowserRouter([
   {
@@ -88,22 +90,21 @@ const router = createBrowserRouter([
         element: <PackingList />,
       },
       {
-        path:"/bookings",
-        element:<Bookings/>
+        path: "/bookings",
+        element: <Bookings />,
       },
       {
-        path:"/bucket-list",
-        element:<BucketList/>
+        path: "/bucket-list",
+        element: <BucketList />,
       },
       {
-        path:"/calender",
-        element:<Calender/>
+        path: "/calender",
+        element: <Calender />,
       },
       {
-        path:"/account-setting",
-        element:<AccountSetting />
-      }
-   
+        path: "/account-setting",
+        element: <AccountSetting />,
+      },
     ],
   },
   {
@@ -178,6 +179,17 @@ const router = createBrowserRouter([
       {
         path: "/signin/details/:id",
         element: <Payment></Payment>,
+      },
+    ],
+  },
+  {
+    path: "/admin-dashboard",
+    element: <AdminMainLayout />,
+    errorElement: <div>Error page</div>,
+    children: [
+      {
+        path: "",
+        element: <AdminOverview />,
       },
     ],
   },
