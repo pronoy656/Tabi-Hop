@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import ModalHeader from "../ModalHeader";
 
 const AddBookingModal = ({ isOpen, onClose }) => {
   useEffect(() => {
@@ -10,8 +11,8 @@ const AddBookingModal = ({ isOpen, onClose }) => {
 
   const onSubmit = (data) => {
     console.log("Submitted Data:", data);
-    reset(); // optional: reset form after submit
-    onClose(); // optional: close modal after submit
+    reset(); 
+    onClose(); 
   };
 
   if (!isOpen) return null;
@@ -25,77 +26,74 @@ const AddBookingModal = ({ isOpen, onClose }) => {
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30"
+      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6"
     >
-      <div className="bg-white rounded-2xl p-6 w-[90%] max-w-xl shadow-xl">
+      
+      <div className="bg-white rounded-2xl p-12 w-[90%] max-w-3xl shadow-xl">
         {/* Header */}
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-[#111]">Bookings</h2>
-          <p className="text-gray-500 text-sm mt-1">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-        </div>
+     
+        <ModalHeader title={"Bookings"} subTitle={"  Lorem Ipsum is simply dummy text of the printing and typesetting industry."}/>
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-[#111] mb-1">Name</label>
+            <label >Name</label>
             <input
               {...register("name")}
               type="text"
               required
               placeholder="Write here"
-              className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6E67D5] bg-gray-50 placeholder-gray-400"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#111] mb-1">Locations</label>
+            <label >Locations</label>
             <input
               {...register("location")}
               type="location"
               required
               placeholder="Write here"
-              className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6E67D5] bg-gray-50 placeholder-gray-400"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#111] mb-1">Scheduled Time</label>
+            <label >Scheduled Time</label>
             <input
               {...register("scheduledTime")}
               type="time"
               required
               placeholder="Write here"
-              className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6E67D5] bg-gray-50 placeholder-gray-400"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#111] mb-1">Event Type</label>
+            <label >Event Type</label>
             <input
               {...register("eventType")}
               type="text"
               required
               placeholder="Write here"
-              className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6E67D5] bg-gray-50 placeholder-gray-400"
+              className="form-input"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#111] mb-1">Note</label>
+            <label >Note</label>
             <textarea
               {...register("note")}
               rows={4}
               placeholder="Write here"
               required
-              className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#6E67D5] bg-gray-50 placeholder-gray-400"
+              className="form-input"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-[#6E67D5] hover:bg-[#5a53c4] text-white font-semibold py-2 rounded-lg transition"
+            className="self-stretch h-14 px-6 py-4 bg-indigo-500 rounded-xl inline-flex justify-center items-center overflow-hidden w-full transition text-lg font-semibold text-white"
           >
             Create Event
           </button>

@@ -104,7 +104,7 @@ const Sidebar = ({ closeSidebar }) => {
               <Link
                 to={item.path}
                 onClick={closeSidebar}
-                className="flex items-center gap-4 px-4 py-3"
+                className="flex items-center gap-3 px-4 py-3"
               >
                 <span>{item.renderIcon(isActive)}</span>
                 {item.label}

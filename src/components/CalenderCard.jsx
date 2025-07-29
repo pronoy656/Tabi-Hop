@@ -7,7 +7,7 @@ const CalendarCard = () => {
   const [value, setValue] = useState(new Date());
 
   return (
-    <div className="bg-white p-6  rounded-lg shadow-md  col-span-2 px-14">
+    <div className="bg-white  sm:p-6 min-w-[260px] sm:w-full  rounded-lg shadow-md  col-span-2 ">
       <Calendar
         onChange={setValue}
         value={value}

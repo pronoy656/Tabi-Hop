@@ -1,6 +1,8 @@
+import { useState } from "react";
 import AccommondationCard from "../../../components/accommodation/AccommondationCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
+import AccommodationModal from "../../../components/modals/accommodation/AccommodationModal";
 
 const accommodations = [
   {
@@ -31,6 +33,7 @@ const accommodations = [
 ];
 
 const Accommodations = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
       <div className="flex justify-between items-center">
@@ -38,16 +41,21 @@ const Accommodations = () => {
           title="Accommodations"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
+        <button  onClick={() => setIsModalOpen(true)}>
         <PrimaryButton
+       
           text={"Add more"}
           bgColor={"#FCB0BA"}
           textColor="white"
-        />
+        /></button>
       </div>
 
       {accommodations.map((acc) => {
         return <AccommondationCard key={acc.id} acc={acc} />;
       })}
+
+
+      <AccommodationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

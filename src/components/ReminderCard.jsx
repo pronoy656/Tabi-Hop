@@ -10,7 +10,7 @@ const reminders = [
 
 const ReminderCard = () => {
   return (
-    <div className="bg-white col-span-4 rounded-lg shadow-md p-8">
+    <div className="bg-white col-span-4 rounded-lg min-w-[260px] sm:min-w-[390px]   w-full shadow-md p-8 ">
       <h3 className="text-xl font-semibold mb-4">Upcoming Reminders</h3>
       
       <div className="space-y-2 text-sm">
