@@ -12,11 +12,9 @@ import DislikeSelector from "../pages/authentication/DislikeSelector/DislikeSele
 import StressSelector from "../pages/authentication/StressSelector/StressSelector";
 import EmailVerefication from "../pages/authentication/Emailverefication/EmailVerefication";
 import BirthdaySelection from "../pages/authentication/BIrthdaySelection/BirthdaySelection";
-
 import WorkplaceIterinaryDetails from "../components/Workplace/WorkplaceIterinaryDetails";
 import Itinerary from "../pages/user/Itinerary/Itinerary";
 import CreateItinerary from "../components/Itinerary/CreateItinerary";
-
 import DateLocationSelect from "../pages/authentication/DateLocationSelect/DateLocationSelect";
 import SignIn from "../pages/authentication/SignIn/SignIn";
 import ForgetPassword from "../pages/authentication/ForgetPassword/ForgetPassword";
@@ -35,6 +33,7 @@ import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import Payment from "../pages/authentication/SubscriptionPlan/Payment";
 import Calender from "../pages/user/calender/Calender";
 import AccountSetting from "../pages/user/accountSetting/AccountSetting";
+import EditProfile from "../pages/user/accountSetting/edit-profiles/EditProfile";
 
 const router = createBrowserRouter([
   {
@@ -102,6 +101,10 @@ const router = createBrowserRouter([
       {
         path:"/account-setting",
         element:<AccountSetting />
+      },
+      {
+        path:"/account-setting/edit-details",
+        element:<EditProfile />
       }
    
     ],

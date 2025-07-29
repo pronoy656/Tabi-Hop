@@ -88,6 +88,7 @@ const menuItems = [
   {
     label: "Account Setting",
     path: "/account-setting",
+    or: "/account-setting/edit-details",
     renderIcon: (isActive) => (
       <SettingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
@@ -107,7 +108,7 @@ const Sidebar = ({ closeSidebar }) => {
       {/* Menu Items */}
       <div style={{ backgroundColor: "#EDF8F9", color: "#0B3666" }}>
         {menuItems.map((item) => {
-          const isActive = pathname === item.path;
+          const isActive = pathname === item.path || pathname === item?.or;
           return (
             <div
               key={item.path}
