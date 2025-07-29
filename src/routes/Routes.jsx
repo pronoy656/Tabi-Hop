@@ -33,6 +33,8 @@ import AddDestination from "../components/Itinerary/AddDestination";
 import MoodBoard from "../pages/user/moodboard/MoodBoard";
 import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import Payment from "../pages/authentication/SubscriptionPlan/Payment";
+import Calender from "../pages/user/calender/Calender";
+import AccountSetting from "../pages/user/accountSetting/AccountSetting";
 
 const router = createBrowserRouter([
   {
@@ -92,6 +94,14 @@ const router = createBrowserRouter([
       {
         path:"/bucket-list",
         element:<BucketList/>
+      },
+      {
+        path:"/calender",
+        element:<Calender/>
+      },
+      {
+        path:"/account-setting",
+        element:<AccountSetting />
       }
    
     ],

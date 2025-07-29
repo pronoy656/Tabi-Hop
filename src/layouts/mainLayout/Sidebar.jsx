@@ -9,6 +9,8 @@ import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
 import PackingListSVG from "../../../public/ruhulo-images/PackingListSVG";
 import BookingSVG from "../../../public/ruhulo-images/BookingSVG";
 import BucketListSVG from "../../../public/ruhulo-images/BucketListSVG";
+import CalenderSVG from "../../../public/ruhulo-images/CalenderSVG";
+import SettingSVG from "../../../public/ruhulo-images/SettingSVG";
 
 
 
@@ -74,6 +76,20 @@ const menuItems = [
     path: "/bucket-list",
     renderIcon: (isActive) => (
       <BucketListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Calender",
+    path: "/calender",
+    renderIcon: (isActive) => (
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Account Setting",
+    path: "/account-setting",
+    renderIcon: (isActive) => (
+      <SettingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
 ];
