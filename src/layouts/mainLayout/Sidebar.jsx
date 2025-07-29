@@ -12,8 +12,6 @@ import BucketListSVG from "../../../public/ruhulo-images/BucketListSVG";
 import CalenderSVG from "../../../public/ruhulo-images/CalenderSVG";
 import SettingSVG from "../../../public/ruhulo-images/SettingSVG";
 
-
-
 const menuItems = [
   {
     label: "Overview",
@@ -88,33 +86,40 @@ const menuItems = [
   {
     label: "Account Setting",
     path: "/account-setting",
+    activePaths: [
+      "/account-setting",
+      "/account-setting/edit-details",
+      "/account-setting/change-password",
+      "/account-setting/terms",
+      "/account-setting/privacy",
+      "/account-setting/faq",
+      "/account-setting/support",
+    ],
     renderIcon: (isActive) => (
       <SettingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
 ];
 
-
 const Sidebar = ({ closeSidebar }) => {
   const location = useLocation();
   const pathname = location.pathname;
 
   return (
-    <div className="h-full px-3 pt-10 border-r border-r-[#ACE0E5]" >
-   
-
-
+    <div className="h-full px-3 pt-10 border-r border-r-[#ACE0E5]">
       {/* Menu Items */}
       <div style={{ backgroundColor: "#EDF8F9", color: "#0B3666" }}>
         {menuItems.map((item) => {
-          const isActive = pathname === item.path;
+          const isActive =
+            pathname === item.path ||
+            (item.activePaths && item.activePaths.includes(pathname));
           return (
             <div
               key={item.path}
               className={
                 isActive
-                    ? "bg-[#4796B5] text-[#EDF8F9] font-medium text-xl rounded-sm transition-transform"
-  : "text-[#212936] text-xl"
+                  ? "bg-[#4796B5] text-[#EDF8F9] font-medium text-xl rounded-sm transition-transform"
+                  : "text-[#212936] text-xl"
               }
             >
               <Link
