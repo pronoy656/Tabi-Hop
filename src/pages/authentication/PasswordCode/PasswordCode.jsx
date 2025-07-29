@@ -2,6 +2,7 @@ import { Button, Input } from "antd";
 import { useForm, Controller } from "react-hook-form";
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PasswordCode = () => {
   const {
@@ -12,6 +13,7 @@ const PasswordCode = () => {
 
   const [secondsLeft, setSecondsLeft] = useState(60); // Initial 1 minute
   const [isCounting, setIsCounting] = useState(true);
+  const navigate = useNavigate();
 
   // Timer logic
   useEffect(() => {
@@ -40,7 +42,8 @@ const PasswordCode = () => {
   };
 
   const onSubmit = (data) => {
-    console.log("Code submitted:", data);
+    console.log("Code submitted:", { code: data.code });
+    navigate("/signin/reset-password"); // Navigate to next page on successful submission
   };
 
   return (

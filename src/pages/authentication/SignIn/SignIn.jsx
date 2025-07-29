@@ -6,14 +6,12 @@ const SignIn = () => {
   const {
     handleSubmit,
     control,
-    // watch,
+
     formState: { errors },
   } = useForm();
 
-  //   const password = watch("password");
-
   const onSubmit = (data) => {
-    console.log("Success:", data);
+    console.log("Success:", { email: data.email, password: data.password });
   };
 
   return (
@@ -141,9 +139,11 @@ const SignIn = () => {
                         </p>
                       )}
                     </div>
-                    <div>
-                      <p className="font-semibold">Forgot Password?</p>
-                    </div>
+                    <Link to="/signin/forget-password">
+                      <div>
+                        <p className="font-semibold">Forgot Password?</p>
+                      </div>
+                    </Link>
                   </div>
                   {/* Submit Button */}
                   <Button
@@ -160,7 +160,7 @@ const SignIn = () => {
                       fontWeight: 600,
                     }}
                   >
-                    Create Account
+                    log in
                   </Button>
                 </form>
                 <p className="mt-6 text-center">

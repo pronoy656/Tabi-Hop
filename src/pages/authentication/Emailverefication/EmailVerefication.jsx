@@ -1,7 +1,37 @@
 import { Button, Input, Checkbox } from "antd";
+import { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 
 const EmailVerefication = () => {
+  const [secondsLeft, setSecondsLeft] = useState(60); // Initial 1 minute
+  const [isCounting, setIsCounting] = useState(true);
+
+  // Timer logic
+  useEffect(() => {
+    let timer;
+    if (isCounting && secondsLeft > 0) {
+      timer = setInterval(() => {
+        setSecondsLeft((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [isCounting, secondsLeft]);
+
+  // Time formatting (MM:SS)
+  const formatTime = (sec) => {
+    const min = Math.floor(sec / 60)
+      .toString()
+      .padStart(2, "0");
+    const secStr = (sec % 60).toString().padStart(2, "0");
+    return `${min}:${secStr} sec`;
+  };
+
+  // Resend handler — now sets 2 minutes (120 seconds)
+  const handleResend = () => {
+    // Optional: You can trigger resend code API here
+    setSecondsLeft(120); // Reset countdown to 2 minutes
+    setIsCounting(true);
+  };
   const {
     handleSubmit,
     control,
@@ -34,27 +64,6 @@ const EmailVerefication = () => {
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                  {/* Name */}
-                  {/* <div className="mb-4">
-                    <label className="font-bold block">Name</label>
-                    <Controller
-                      name="name"
-                      control={control}
-                      rules={{ required: "Name is required" }}
-                      render={({ field }) => (
-                        <Input
-                          {...field}
-                          placeholder="Enter your name"
-                          className="h-12"
-                        />
-                      )}
-                    />
-                    {errors.name && (
-                      <p className="text-red-500 text-sm">
-                        {errors.name.message}
-                      </p>
-                    )}
-                  </div> */}
                   <div className="mb-4">
                     <label className="font-bold block mb-2">
                       Confirmation Code
@@ -105,8 +114,13 @@ const EmailVerefication = () => {
                   </Button>
                 </form>
                 <div className="flex justify-center mt-12">
-                  <button className="bg-white w-[209px] h-10 rounded-lg">
-                    <p className="text-lg font-semibold">Resend Code - 01:56</p>
+                  <button
+                    onClick={handleResend}
+                    className="bg-white w-[250px] p-1.5 h-10 rounded-lg"
+                  >
+                    <p className="text-lg font-semibold">
+                      Resend Code - ({formatTime(secondsLeft)})
+                    </p>
                   </button>
                 </div>
               </div>
