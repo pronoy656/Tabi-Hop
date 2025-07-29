@@ -37,7 +37,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label >Name</label>
+            <label className="label-class" >Name</label>
             <input
               {...register("name")}
               type="text"
@@ -48,7 +48,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label >Locations</label>
+            <label className="label-class" >Locations</label>
             <input
               {...register("location")}
               type="location"
@@ -59,7 +59,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label >Scheduled Time</label>
+            <label className="label-class">Scheduled Time</label>
             <input
               {...register("scheduledTime")}
               type="time"
@@ -70,7 +70,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label >Event Type</label>
+            <label className="label-class" >Event Type</label>
             <input
               {...register("eventType")}
               type="text"
@@ -81,7 +81,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label >Note</label>
+            <label className="label-class">Note</label>
             <textarea
               {...register("note")}
               rows={4}

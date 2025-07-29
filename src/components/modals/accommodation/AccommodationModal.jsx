@@ -19,7 +19,7 @@ const AccommodationModal = ({ isOpen, onClose }) => {
 
    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
   <div>
-    <label >
+    <label className="label-class">
       Enter Location
     </label>
     <input
@@ -34,7 +34,7 @@ const AccommodationModal = ({ isOpen, onClose }) => {
 
 
   <div>
-    <label >
+    <label className="label-class">
       Check-In Time
     </label>
     <input
@@ -47,7 +47,7 @@ const AccommodationModal = ({ isOpen, onClose }) => {
   </div>
 
   <div>
-    <label >
+    <label className="label-class">
       Check-Out Time
     </label>
     <input
@@ -60,7 +60,7 @@ const AccommodationModal = ({ isOpen, onClose }) => {
   </div>
 
   <div>
-    <label >Note</label>
+    <label className="label-class">Note</label>
     <textarea
       {...register("note")}
       rows={4}
