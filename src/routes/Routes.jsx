@@ -35,6 +35,8 @@ import Calender from "../pages/user/calender/Calender";
 import AccountSetting from "../pages/user/accountSetting/AccountSetting";
 import EditProfile from "../pages/user/accountSetting/edit-profiles/EditProfile";
 import ChangePassword from "../pages/user/accountSetting/changePassword/ChangePassword";
+import AdminMainLayout from "../layouts/adminDashboard/AdminMainLayout";
+import AdminOverview from "../pages/admin/adminOverview/AdminOverview";
 
 const router = createBrowserRouter([
   {
