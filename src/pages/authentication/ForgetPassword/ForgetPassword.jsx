@@ -13,7 +13,7 @@ const ForgetPassword = () => {
 
   const navigate = useNavigate(); // use useNavigate hook for navigation for /signin/password-code-verification page
   const onSubmit = (data) => {
-    console.log("Success:", data);
+    console.log("Success:", { email: data.email });
     navigate("/signin/password-code-verification"); // Navigate to PasswordCode page on successful submission
   };
 

@@ -26,7 +26,10 @@ const ResetPassword = () => {
   const password = watch("password");
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    console.log("Success:", data);
+    console.log("Success:", {
+      password: data.password,
+      confirmPassword: data.confirmPassword,
+    });
     navigate("/signin/log-in"); //direct Navigate to login page after change password
   };
 
@@ -97,7 +100,7 @@ const ResetPassword = () => {
                       )}
                     />
                     {errors.confirmPassword && (
-                      <p className="text-red-500 text-sm">
+                      <p className="text-red-600 text-lg mt-2">
                         {errors.confirmPassword.message}
                       </p>
                     )}

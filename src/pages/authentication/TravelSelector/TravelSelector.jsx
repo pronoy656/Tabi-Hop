@@ -1,13 +1,27 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const TravelSelector = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [showError, setShowError] = useState(false);
+  const navigate = useNavigate();
 
   const options = [
     "Take it easy, be in the moment.",
     "Take it easy, be in the moment.",
     "Take it easy, be in the moment.",
   ];
+
+  // Function to handle the next button click
+  const handleNextClick = () => {
+    if (selectedOption === null) {
+      setShowError(true);
+    } else {
+      setShowError(false);
+      console.log("✅ Selected option:", options[selectedOption]);
+      navigate("/signin/flow-selector"); // navigate to next page
+    }
+  };
 
   return (
     <div>
@@ -40,10 +54,15 @@ const TravelSelector = () => {
                 </label>
               ))}
             </div>
-
+            {/* Conditional Error Message */}
+            {showError && (
+              <p className="text-red-600 text-lg mt-3.5">
+                Please select a travel option before continuing.
+              </p>
+            )}
             <button
+              onClick={handleNextClick}
               className="mt-7 mb-[118px] px-8 py-3 w-[540px] h-14 bg-[#FFAA00] text-black font-semibold rounded-md hover:bg-yellow-500 transition"
-              disabled={selectedOption === null}
             >
               Next
             </button>
