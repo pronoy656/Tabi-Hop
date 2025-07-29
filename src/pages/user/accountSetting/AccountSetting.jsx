@@ -3,11 +3,11 @@ import SectionHeader from "../../../components/shared/SectionHeader";
 
 const AccountSetting = () => {
   const settingsItems = [
-    { label: "Change Password", to: "/account/change-password" },
-    { label: "Terms and Conditions", to: "/account/terms" },
-    { label: "Privacy Policy", to: "/account/privacy" },
-    { label: "Frequently Asked Questions", to: "/account/faq" },
-    { label: "Contact Support", to: "/account/support" },
+    { label: "Change Password", to: "/account-setting/change-password" },
+    { label: "Terms and Conditions", to: "/account-setting/terms" },
+    { label: "Privacy Policy", to: "/account-setting/privacy" },
+    { label: "Frequently Asked Questions", to: "/account-setting/faq" },
+    { label: "Contact Support", to: "/account-setting/support" },
   ];
 
   return (

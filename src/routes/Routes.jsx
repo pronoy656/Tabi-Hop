@@ -34,6 +34,7 @@ import Payment from "../pages/authentication/SubscriptionPlan/Payment";
 import Calender from "../pages/user/calender/Calender";
 import AccountSetting from "../pages/user/accountSetting/AccountSetting";
 import EditProfile from "../pages/user/accountSetting/edit-profiles/EditProfile";
+import ChangePassword from "../pages/user/accountSetting/changePassword/ChangePassword";
 
 const router = createBrowserRouter([
   {
@@ -105,7 +106,11 @@ const router = createBrowserRouter([
       {
         path:"/account-setting/edit-details",
         element:<EditProfile />
-      }
+      },
+      {
+        path:"/account-setting/change-password",
+        element:<ChangePassword />
+      },
    
     ],
   },
