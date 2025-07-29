@@ -25,15 +25,17 @@ const SignUp = () => {
 
   return (
     <div
-      className="h-[130vh] bg-cover bg-center"
+      className=" bg-cover bg-center"
       style={{ backgroundImage: "url('public/pronoy/signupbackground.png')" }}
     >
-      <div className="flex items-center justify-center p-48">
-        <div className="border-1 border-white rounded-2xl w-[778px] backdrop-blur-2xl bg-white/40">
-          <div className="flex justify-center mt-20">
-            <div className="w-[540px] mb-[102.5px]  px-6 pt-6">
+      <div className="flex items-center justify-center py-36 md:p-48">
+        <div className="border-1 border-white rounded-2xl max-w-[778px] w-full backdrop-blur-2xl bg-white/40">
+          <div className="flex justify-center mt-11 md:mt-20">
+            <div className="max-w-[540px] mb-[90px]  px-6 pt-6">
               <div className="text-center mb-6">
-                <p className="text-[44px] font-semibold">Creating Account</p>
+                <p className="text-3xl md:text-[44px] font-semibold">
+                  Creating Account
+                </p>
                 <p className="text-base font-medium">
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting
