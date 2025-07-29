@@ -28,10 +28,13 @@ import SelectionPreferences from "../pages/authentication/SelectionPreferences/S
 import TodoList from "../pages/user/todoList/TodoList";
 import PackingList from "../pages/user/packingList/PackingList";
 import Bookings from "../pages/user/bookings/Bookings";
+import BucketList from "../pages/user/bucketList/BucketList";
 import AddDestination from "../components/Itinerary/AddDestination";
 import MoodBoard from "../pages/user/moodboard/MoodBoard";
 import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import Payment from "../pages/authentication/SubscriptionPlan/Payment";
+import Calender from "../pages/user/calender/Calender";
+import AccountSetting from "../pages/user/accountSetting/AccountSetting";
 
 const router = createBrowserRouter([
   {
@@ -85,9 +88,22 @@ const router = createBrowserRouter([
         element: <PackingList />,
       },
       {
-        path: "/bookings",
-        element: <Bookings />,
+        path:"/bookings",
+        element:<Bookings/>
       },
+      {
+        path:"/bucket-list",
+        element:<BucketList/>
+      },
+      {
+        path:"/calender",
+        element:<Calender/>
+      },
+      {
+        path:"/account-setting",
+        element:<AccountSetting />
+      }
+   
     ],
   },
   {

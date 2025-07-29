@@ -1,27 +1,7 @@
 import TimelineSection from "./TimelineSection";
 
 const AddDestination = () => {
-    const timelineSteps = [
-  {
-    title: "Starting Location",
-    images: ["/bookingCard.png", "/itirenary2.png", "/itirenary.png"],
-    moreImages: ["/bookingCard.png", "/bookingCard.png", "/iterenary.jpg"],
-    locationImage: "/location.png",
-    mediaImages: ["/media.png", "/media.png"],
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    title: "Destination 01",
-    images: ["/bookingCard.png", "/itirenary2.png", "/itirenary.png"],
-    moreImages: ["/bookingCard.png", "/bookingCard.png", "/iterenary.jpg"],
-    locationImage: "/location.png",
-    mediaImages: ["/media.png", "/media.png"],
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
- 
-];
+
 
   return (
     <div className="page">

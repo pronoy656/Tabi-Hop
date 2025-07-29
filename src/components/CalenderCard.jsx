@@ -7,7 +7,7 @@ const CalendarCard = () => {
   const [value, setValue] = useState(new Date());
 
   return (
-    <div className="bg-white p-6 mx-auto rounded-lg shadow-md  col-span-2 ">
+    <div className="bg-white  sm:p-6 min-w-[260px] sm:w-full  rounded-lg shadow-md  col-span-2 ">
       <Calendar
         onChange={setValue}
         value={value}
@@ -16,7 +16,7 @@ const CalendarCard = () => {
           if (
             date.toDateString() === new Date().toDateString()
           ) {
-            return "bg-purple-100 text-purple-800 font-bold rounded";
+            return "bg-purple-100 text-purple-800 font-bold rounded ";
           }
         }}
         next2Label={null}

@@ -8,6 +8,9 @@ import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
 import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
 import PackingListSVG from "../../../public/ruhulo-images/PackingListSVG";
 import BookingSVG from "../../../public/ruhulo-images/BookingSVG";
+import BucketListSVG from "../../../public/ruhulo-images/BucketListSVG";
+import CalenderSVG from "../../../public/ruhulo-images/CalenderSVG";
+import SettingSVG from "../../../public/ruhulo-images/SettingSVG";
 
 
 
@@ -68,6 +71,27 @@ const menuItems = [
       <BookingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
+  {
+    label: "Bucket List",
+    path: "/bucket-list",
+    renderIcon: (isActive) => (
+      <BucketListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Calender",
+    path: "/calender",
+    renderIcon: (isActive) => (
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Account Setting",
+    path: "/account-setting",
+    renderIcon: (isActive) => (
+      <SettingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
 ];
 
 
@@ -96,7 +120,7 @@ const Sidebar = ({ closeSidebar }) => {
               <Link
                 to={item.path}
                 onClick={closeSidebar}
-                className="flex items-center gap-4 px-4 py-3"
+                className="flex items-center gap-3 px-4 py-3"
               >
                 <span>{item.renderIcon(isActive)}</span>
                 {item.label}
