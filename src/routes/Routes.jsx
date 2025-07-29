@@ -88,16 +88,16 @@ const router = createBrowserRouter([
         element: <PackingList />,
       },
       {
-        path:"/bookings",
-        element:<Bookings/>
+        path: "/bookings",
+        element: <Bookings />,
       },
       {
-        path:"/bucket-list",
-        element:<BucketList/>
+        path: "/bucket-list",
+        element: <BucketList />,
       },
       {
-        path:"/calender",
-        element:<Calender/>
+        path: "/calender",
+        element: <Calender />,
       },
       {
         path:"/account-setting",
@@ -186,6 +186,17 @@ const router = createBrowserRouter([
       {
         path: "/signin/details/:id",
         element: <Payment></Payment>,
+      },
+    ],
+  },
+  {
+    path: "/admin-dashboard",
+    element: <AdminMainLayout />,
+    errorElement: <div>Error page</div>,
+    children: [
+      {
+        path: "",
+        element: <AdminOverview />,
       },
     ],
   },
