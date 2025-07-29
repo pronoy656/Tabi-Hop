@@ -12,7 +12,6 @@ const TravelSelector = () => {
     "Take it easy, be in the moment.",
   ];
 
-  // Function to handle the next button click
   const handleNextClick = () => {
     if (selectedOption === null) {
       setShowError(true);
