@@ -1,35 +1,33 @@
-import { Button, Input, Checkbox } from "antd";
-// import { useForm, Controller } from "react-hook-form";
+import { Button } from "antd";
+import { DatePicker } from "antd";
+import { Form, useNavigate } from "react-router-dom";
+import { Controller, useForm } from "react-hook-form";
 
-import { DatePicker, Space } from "antd";
 const onChange = (date, dateString) => {
   console.log(date, dateString);
 };
 
-// Demo
-import { useState } from "react";
-
-import { EnvironmentOutlined, CalendarOutlined } from "@ant-design/icons";
-// import dayjs from "dayjs";
-
-const { RangePicker } = DatePicker;
-
 const BirthdaySelection = () => {
-  const [value, setValue] = useState("");
-  const [location, setLocation] = useState("");
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
 
-  const dateFormat = "h:mm A DD MMMM, YYYY";
+  //navigate to next step after form submission
+  const navigate = useNavigate();
 
-  //   const {
-  //     handleSubmit,
-  //     control,
+  const onSubmit = (data) => {
+    console.log("Success:", {
+      month: data.month?.format("MMMM YYYY"),
+      date: data.date?.format("YYYY-MM-DD"),
+      year: data.year?.format("YYYY"),
+    });
 
-  //     formState: { errors },
-  //   } = useForm();
+    // Navigate to the next step after successful submission
+    navigate("/signin/travel-selector");
+  };
 
-  //   const onSubmit = (data) => {
-  //     console.log("Success:", data);
-  //   };
   return (
     <div>
       <div
@@ -47,117 +45,108 @@ const BirthdaySelection = () => {
                     see while keeping the TabiHop community safe. You can find
                     your birthday in your personal information account settings.
                   </p>
-                  <div className="flex space-x-4 mt-6">
-                    <div>
-                      <label className="text-left font-bold block mb-1">
-                        Month
-                      </label>
-                      <DatePicker onChange={onChange} picker="month" />
+                  <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+                    <div className="flex space-x-4 mt-6">
+                      {/* Month picker */}
+                      <div>
+                        <label className="text-left font-bold block mb-1">
+                          Month
+                        </label>
+                        <div className="h-12">
+                          <Controller
+                            name="month"
+                            control={control}
+                            rules={{ required: "Month is required" }}
+                            render={({ field }) => (
+                              <DatePicker
+                                picker="month"
+                                value={field.value}
+                                onChange={(date, dateString) => {
+                                  field.onChange(date);
+                                  onChange(date, dateString);
+                                }}
+                                className="h-full w-full custom-datepicker"
+                              />
+                            )}
+                          />
+                          {errors.month && (
+                            <p className="text-red-500 text-sm">
+                              {errors.month.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      {/* Date picker */}
+                      <div>
+                        <label className="text-left font-bold block mb-1">
+                          {" "}
+                          Date
+                        </label>
+                        <div className="h-12">
+                          <Controller
+                            name="date"
+                            control={control}
+                            rules={{ required: "date is required" }}
+                            render={({ field }) => (
+                              <DatePicker
+                                onChange={field.onChange}
+                                picker="date"
+                                value={field.value}
+                                className="h-full w-full custom-datepicker"
+                              />
+                            )}
+                          />
+                          {errors.date && (
+                            <p className="text-red-500 text-sm">
+                              {errors.date.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div>
+                        <label className="text-left font-bold block mb-1">
+                          year
+                        </label>
+                        <div className="h-12">
+                          <Controller
+                            name="year"
+                            control={control}
+                            rules={{ required: "Year is required" }}
+                            render={({ field }) => (
+                              <DatePicker
+                                onChange={field.onChange}
+                                picker="year"
+                                value={field.value}
+                                className="h-full w-full custom-datepicker"
+                              />
+                            )}
+                          />
+                          {errors.year && (
+                            <p className="text-red-500 text-sm">
+                              {errors.year.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <label className="text-left font-bold block mb-1">
-                        {" "}
-                        Date
-                      </label>
-                      <DatePicker onChange={onChange} picker="date" />
-                    </div>
-                    <div>
-                      <label className="text-left font-bold block mb-1">
-                        year
-                      </label>
-                      <DatePicker onChange={onChange} picker="year" />
-                    </div>
-                  </div>
-                </div>
-
-                <form noValidate>
-                  {/* Submit Button */}
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    block
-                    style={{
-                      marginTop: "22px",
-                      height: "56px",
-                      backgroundColor: "#FFAA00",
-                      borderColor: "#FFAA00",
-                      color: "#000",
-                      fontSize: "18px",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Continue
-                  </Button>
-                </form>
-                {/* Demo Code */}
-                <div className="flex items-center gap-4">
-                  <label className="w-48 font-semibold text-right">
-                    Departure Time & Date
-                  </label>
-                  <DatePicker
-                    showTime
-                    format={dateFormat}
-                    placeholder="Select departure date & time"
-                    className={`h-12 w-full ${
-                      value ? "font-semibold" : "font-normal"
-                    }`}
-                    // className="w-full"
-                    suffixIcon={<CalendarOutlined />}
-                  />
-                </div>
-
-                {/* Arrival Time & Date */}
-                <div className="flex items-center gap-4">
-                  <label className="w-48 font-semibold text-right">
-                    Arrival Time & Date
-                  </label>
-                  <DatePicker
-                    showTime
-                    format={dateFormat}
-                    value={value}
-                    onChange={(val) => setValue(val)}
-                    // value={dayjs("2025-08-22T10:00:00")}
-                    placeholder="Select arrival date & time"
-                    className={`h-12 w-full ${
-                      value ? "font-semibold" : "font-normal"
-                    }`}
-                    // className="w-full"
-                    suffixIcon={<CalendarOutlined />}
-                  />
-                </div>
-
-                {/* Starting Location */}
-                <div className="flex items-center gap-4">
-                  <label className="w-48 font-semibold text-right">
-                    Starting Location
-                  </label>
-                  <Input
-                    placeholder="Enter starting location"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className={`w-full h-12 ${
-                      location ? "font-semibold" : "font-normal"
-                    }`}
-                    prefix={<EnvironmentOutlined />}
-                  />
-                </div>
-
-                {/* Ending Location */}
-                <div className="flex items-center gap-4">
-                  <label className="w-48 font-semibold text-right">
-                    Ending Location
-                  </label>
-                  <Input
-                    placeholder="Enter ending location"
-                    className="w-full"
-                    prefix={<EnvironmentOutlined />}
-                  />
-                </div>
-
-                <div className="flex justify-center mt-9">
-                  <button className="bg-white w-[209px] h-10 rounded-lg">
-                    <p className="text-lg font-semibold">Resend Code - 01:56</p>
-                  </button>
+                    {/* Submit Button */}
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      block
+                      style={{
+                        marginTop: "37px",
+                        height: "56px",
+                        backgroundColor: "#FFAA00",
+                        borderColor: "#FFAA00",
+                        color: "#000",
+                        fontSize: "18px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Continue
+                    </Button>
+                  </Form>
                 </div>
               </div>
             </div>

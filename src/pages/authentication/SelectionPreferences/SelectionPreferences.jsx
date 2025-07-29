@@ -18,7 +18,7 @@ const SelectionPreferences = () => {
     <div>
       <div
         className="min-h-screen bg-cover bg-center "
-        style={{ backgroundImage: "url('/dislike-selector.jpg')" }}
+        style={{ backgroundImage: "url('/preference-selection.jpg')" }}
       >
         <div className="flex items-center justify-center py-40">
           <div className=" max-w-7xl w-full rounded-2xl backdrop-blur-2xl bg-white/40 py-8 px-[60px]">

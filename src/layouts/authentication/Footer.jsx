@@ -7,23 +7,6 @@ import {
 
 const Footer = () => {
   return (
-    // <div className="bg-[#6E67D5]">
-    //   <img className="w-[140px] h-[109px]" src="/logo_image.png" alt="" />
-    //   <img className="w-[140px] h-[34px] mt-2" src="/logo_name.png" alt="" />
-    //   <div>
-    //     <p className="text-2xl font-bold text-white">Company</p>
-    //     <div className="space-y-3.5">
-    //       <p className="text-[18px] font-medium text-white">About us</p>
-    //       <p className="text-[18px] font-medium text-white">Careers</p>
-    //       <p className="text-[18px] font-medium text-white">Security</p>
-    //       <p className="text-[18px] font-medium text-white">Status</p>
-    //       <p className="text-[18px] font-medium text-white">
-    //         Terms & Condition
-    //       </p>
-    //       <p className="text-[18px] font-medium text-white">Privacy Policy</p>
-    //     </div>
-    //   </div>
-    // </div>
     <div className="bg-[#6E67D5] text-white px-10 py-12">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-10 max-w-7xl mx-auto">
         {/* Logo & Socials */}

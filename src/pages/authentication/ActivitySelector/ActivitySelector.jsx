@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ActivitySelector = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [showError, setShowError] = useState(false);
+  const navigate = useNavigate();
 
   const options = [
     "Sightseeing",
@@ -9,6 +12,17 @@ const ActivitySelector = () => {
     "Relaxation",
     "Relaxation",
   ];
+
+  // Function to handle the next button click
+  const handleNextClick = () => {
+    if (selectedOption === null) {
+      setShowError(true);
+    } else {
+      setShowError(false);
+      console.log("✅ Selected option:", options[selectedOption]);
+      navigate("/signin/dislike-selector"); // navigate to next page
+    }
+  };
 
   return (
     <div>
@@ -39,9 +53,16 @@ const ActivitySelector = () => {
                   />
                 </label>
               ))}
+
+              {/* 🚫 Conditional Error Message */}
+              {showError && (
+                <p className="text-red-600 text-lg mt-3.5">
+                  Please select a travel option before continuing.
+                </p>
+              )}
               <button
+                onClick={handleNextClick}
                 className="mt-7 mb-16   bg-[#FFAA00] text-black font-semibold rounded-md hover:bg-yellow-500 transition w-full py-4"
-                disabled={selectedOption === null}
               >
                 Next
               </button>
