@@ -75,7 +75,7 @@ const AdminSubscriptionsPlan = () => {
   ];
 
   return (
-    <div>
+    <div className="admin-page">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-5 gap-4">
         <div>
           <p className="text-xl sm:text-2xl font-semibold">
