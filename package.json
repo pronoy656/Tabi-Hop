@@ -17,6 +17,7 @@
     "google-map-react": "^2.2.5",
     "localforage": "^1.10.0",
     "lucide": "^0.525.0",
+    "lucide-react": "^0.534.0",
     "match-sorter": "^8.0.3",
     "react": "^19.1.0",
     "react-calendar": "^6.0.0",
