@@ -1,93 +1,87 @@
 import { Link, useLocation } from "react-router-dom";
-
 import OverviewSVG from "../../../public/ruhulo-images/overviewSVG";
-import WorkplaceSVG from "../../../public/ruhulo-images/WorkplaceSVG";
-import AccommodationSVG from "../../../public/ruhulo-images/AccommodationSVG";
 import IterenearySVG from "../../../public/ruhulo-images/IterenearySVG";
 import MoodBoardSVG from "../../../public/ruhulo-images/moodboardSVG";
 import { TodoListSVG } from "../../../public/ruhulo-images/TodoListSVG";
-import PackingListSVG from "../../../public/ruhulo-images/PackingListSVG";
-import BookingSVG from "../../../public/ruhulo-images/BookingSVG";
-import BucketListSVG from "../../../public/ruhulo-images/BucketListSVG";
 import CalenderSVG from "../../../public/ruhulo-images/CalenderSVG";
 import SettingSVG from "../../../public/ruhulo-images/SettingSVG";
 
 const menuItems = [
   {
     label: "Overview",
-    path: "/",
+    path: "/admin-dashboard",
     renderIcon: (isActive) => (
-      <OverviewSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+      <OverviewSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
     ),
   },
   {
-    label: "My Workplace",
-    path: "/my-workplace",
+    label: "User Management",
+    path: "/admin-dashboard/user-management",
     renderIcon: (isActive) => (
-      <WorkplaceSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+      <OverviewSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
     ),
   },
   {
     label: "Itinerary",
-    path: "/itinerary",
+    path: "/admin-dashboard/admin-itinerary",
     renderIcon: (isActive) => (
-      <IterenearySVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+      <IterenearySVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
     ),
   },
   {
-    label: "MoodBoard",
-    path: "/moodboard",
+    label: "Mood-board",
+    path: "/admin-dashboard/admin-mood-board",
     renderIcon: (isActive) => (
-      <MoodBoardSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+      <MoodBoardSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
     ),
   },
   {
     label: "To-Do List",
-    path: "/todolist",
+    path: "/admin-dashboard/admin-todo-list",
     renderIcon: (isActive) => (
-      <TodoListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
-    ),
-  },
-  {
-    label: "Packing List",
-    path: "/packing-list",
-    renderIcon: (isActive) => (
-      <PackingListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
-    ),
-  },
-  {
-    label: "Accommodations",
-    path: "/accommodations",
-    renderIcon: (isActive) => (
-      <AccommodationSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
-    ),
-  },
-  {
-    label: "Bookings",
-    path: "/bookings",
-    renderIcon: (isActive) => (
-      <BookingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
-    ),
-  },
-  {
-    label: "Bucket List",
-    path: "/bucket-list",
-    renderIcon: (isActive) => (
-      <BucketListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+      <TodoListSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
     ),
   },
   {
     label: "Calender",
-    path: "/calender",
+    path: "/admin-dashboard/admin-calender",
     renderIcon: (isActive) => (
-      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
+    ),
+  },
+  {
+    label: "Subscriptions Plan",
+    path: "/admin-dashboard/admin-subscription-plan",
+    renderIcon: (isActive) => (
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
+    ),
+  },
+  {
+    label: "Reports",
+    path: "/admin-dashboard/admin-reports",
+    renderIcon: (isActive) => (
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
+    ),
+  },
+  {
+    label: "Privacy Policy",
+    path: "/admin-dashboard/admin-privacy-policy",
+    renderIcon: (isActive) => (
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
+    ),
+  },
+  {
+    label: "Terms and Conditions",
+    path: "/admin-dashboard/admin-terms-conditions",
+    renderIcon: (isActive) => (
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
     ),
   },
   {
     label: "Account Setting",
-    path: "/account-setting",
+    path: "/admin-dashboard/admin-account-setting",
     renderIcon: (isActive) => (
-      <SettingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+      <SettingSVG strokeColor={isActive ? "#EDF8F9" : "#ffffff"} />
     ),
   },
 ];
@@ -99,7 +93,10 @@ const AdminSidebar = ({ closeSidebar }) => {
   return (
     <div className="h-full px-3 pt-10 border-r border-r-[#ACE0E5]">
       {/* Menu Items */}
-      <div style={{ backgroundColor: "#EDF8F9", color: "#0B3666" }}>
+      <div
+        className="space-y-5"
+        style={{ backgroundColor: "#131927", color: "#0B3666" }}
+      >
         {menuItems.map((item) => {
           const isActive = pathname === item.path;
           return (
@@ -107,8 +104,8 @@ const AdminSidebar = ({ closeSidebar }) => {
               key={item.path}
               className={
                 isActive
-                  ? "bg-[#4796B5] text-[#EDF8F9] font-medium text-xl rounded-sm transition-transform"
-                  : "text-[#212936] text-xl"
+                  ? "bg-[#6E67D5] text-white font-medium text-xl rounded-sm transition-transform"
+                  : "text-white text-xl"
               }
             >
               <Link
