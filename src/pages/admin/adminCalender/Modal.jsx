@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ImCross } from "react-icons/im";
 
 const Modal = ({ onClose, date, onSave }) => {
   const [inputGroups, setInputGroups] = useState([
@@ -38,14 +39,22 @@ const Modal = ({ onClose, date, onSave }) => {
   if (!date) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-      <div className="bg-white p-6 rounded-lg w-[450px] max-h-[90vh] overflow-y-auto">
-        <h3 className="text-xl font-bold mb-4">
-          Task on {date.toDateString()}
-        </h3>
-
+    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6">
+      <div className="bg-white p-6 rounded-lg max-w-[773px] w-full max-h-[90vh] overflow-y-auto">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <h3 className="text-xl font-bold">Task on {date.toDateString()}</h3>
+            <h3>View anf add your bookings, plans and events in one place</h3>
+          </div>
+          <button
+            onClick={onClose}
+            className="px-2 py-2 bg-red-500 text-white rounded mr-2"
+          >
+            <ImCross />
+          </button>
+        </div>
         {inputGroups.map((group, index) => (
-          <div key={index} className="mb-4 border p-3 rounded bg-gray-50">
+          <div key={index} className="mb-4 p-3 rounded bg-[#ECF8EF]">
             <div className="mb-2">
               <label className="block font-medium mb-1">Title</label>
               <input
@@ -53,7 +62,7 @@ const Modal = ({ onClose, date, onSave }) => {
                 placeholder="Enter Title"
                 value={group.title}
                 onChange={(e) => handleChange(index, "title", e.target.value)}
-                className="border w-full p-2 rounded"
+                className="bg-white w-full p-2 rounded"
               />
             </div>
 
@@ -63,7 +72,7 @@ const Modal = ({ onClose, date, onSave }) => {
                 type="time"
                 value={group.time}
                 onChange={(e) => handleChange(index, "time", e.target.value)}
-                className="border w-full p-2 rounded"
+                className="bg-white w-full p-2 rounded"
               />
             </div>
 
@@ -73,29 +82,22 @@ const Modal = ({ onClose, date, onSave }) => {
                 placeholder="Enter Note"
                 value={group.note}
                 onChange={(e) => handleChange(index, "note", e.target.value)}
-                className="border w-full p-2 rounded"
+                className="bg-white w-full p-2 rounded"
               />
             </div>
           </div>
         ))}
 
-        <button
-          onClick={handleAddMore}
-          className="mb-4 px-4 py-2 bg-green-500 text-white rounded"
-        >
-          + Add More
-        </button>
-
-        <div className="flex justify-end">
+        <div className="flex flex-col sm:flex-row justify-between gap-3 mt-2.5">
           <button
-            onClick={onClose}
-            className="px-4 py-2 bg-gray-200 rounded mr-2"
+            onClick={handleAddMore}
+            className="w-full sm:max-w-[330px] px-6 py-3 sm:px-[30px] sm:py-4 bg-[#6E67D5] rounded-2xl text-white text-sm sm:text-base"
           >
-            Cancel
+            + Add More
           </button>
           <button
             onClick={handleSubmit}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="w-full sm:max-w-[330px] px-6 py-3 sm:px-[30px] sm:py-4 bg-[#6E67D5] rounded-2xl text-white text-sm sm:text-base"
           >
             Save
           </button>

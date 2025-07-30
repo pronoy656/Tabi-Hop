@@ -259,27 +259,40 @@ const UserManagement = () => {
   // Drop Down items
   const items = [
     {
-      label: "1st menu item",
-      key: "1",
-      icon: <UserOutlined />,
-    },
-    {
-      label: "2nd menu item",
-      key: "2",
-      icon: <UserOutlined />,
-    },
-    {
-      label: "3rd menu item",
+      label: (
+        <span className="text-black font-medium hover:bg-blue-100 block px-3 py-1 rounded">
+          Free subscription User
+        </span>
+      ),
       key: "3",
       icon: <UserOutlined />,
-      danger: true,
     },
     {
-      label: "4rd menu item",
-      key: "4",
+      label: (
+        <span className="text-black font-medium hover:bg-green-100 block px-3 py-1 rounded">
+          Basic subscription User
+        </span>
+      ),
+      key: "3",
       icon: <UserOutlined />,
-      danger: true,
-      disabled: true,
+    },
+    {
+      label: (
+        <span className="text-black font-medium hover:bg-yellow-100 block px-3 py-1 rounded">
+          Premium subscription User
+        </span>
+      ),
+      key: "3",
+      icon: <UserOutlined />,
+    },
+    {
+      label: (
+        <span className="text-black font-medium hover:bg-yellow-100 block px-3 py-1 rounded">
+          Gold subscription User
+        </span>
+      ),
+      key: "3",
+      icon: <UserOutlined />,
     },
   ];
 
