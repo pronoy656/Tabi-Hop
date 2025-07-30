@@ -10,7 +10,7 @@ const OverviewSection = () => {
           title="Overview"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <div className="grid md:grid-cols-6 gap-0 md:gap-4 gap-y-4 md:gap-y-0 mx-auto ">
+        <div className="grid lg:grid-cols-6 gap-0 lg:gap-8 gap-y-4 md:gap-y-0 mx-auto ">
           <CalendarCard />
           <ReminderCard />
         </div>

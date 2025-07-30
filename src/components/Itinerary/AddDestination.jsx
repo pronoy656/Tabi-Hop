@@ -62,48 +62,65 @@ const AddDestination = () => {
 
 
          
-            <div className="relative pl-6">
-          
-            {[
-  {
-    destination: "Starting Location",
-    title: "New York Public Library - Stephen A. Schwarzman Building",
-    desc: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    destination: "Destination - 01",
-    title: "Head southwest on 5th Ave toward E 41st St",
-    desc: "0.2 mi",
-  },
-].map((step, index) => (
-  <div key={index} className="relative flex z-10">
-    
-    {/* Left: Destination label */}
-    <div className="w-40 text-right pr-4">
-      <p className="text-lg font-medium text-[#1F4F53]">{step.destination}</p>
-    </div>
-
-    {/* Center: Timeline connector + dot */}
-    <div className="relative flex flex-col gap-y-4 items-center mx-4 pb-10">
-      {/* Line */}
-      <div className="w-[2px]  bg-[#FF6A00] h-full absolute top-0 left-1/2 transform  z-0"></div>
-
-      {/* Dot */}
-      <div className="w-4 h-4 pt-10 bg-[#FF6A00] rounded-full z-10" />
-    </div>
-
-    {/* Right: Content */}
-    <div className="flex-1 pt-10">
-      <div className="flex items-center gap-2">
-        <p className="text-lg font-semibold text-[#1F4F53]">{step.title}</p>
-        <Pencil size={14} className="text-[#EE443F] cursor-pointer" />
+   <div className="relative pl-6">
+  {[
+    {
+      destination: "Starting Location",
+      title: "New York Public Library - Stephen A. Schwarzman Building",
+      desc: "476 5th Ave, New York, NY 10018, USA",
+    },
+    {
+      destination: "Destination - 01",
+      title: "Head southwest on 5th Ave toward E 41st St",
+      desc: "476 5th Ave, New York, NY 10018, USA",
+    },
+    {
+      destination: "Destination - 01",
+      title: "Head southwest on 5th Ave toward E 41st St",
+      desc: "476 5th Ave, New York, NY 10018, USA",
+    },
+    {
+      destination: "Ending Location",
+      title: "Head southwest on 5th Ave toward E 41st St",
+      desc: "476 5th Ave, New York, NY 10018, USA",
+    },
+  ].map((step, index, array) => (
+    <div key={index} className="relative flex z-10">
+      {/* Left: Destination label */}
+      <div className="w-40 text-right pr-4 mb-2">
+        <p className="text-lg font-medium text-[#1F4F53]">{step.destination}</p>
       </div>
-      <p className="text-sm text-gray-500">{step.desc}</p>
-    </div>
-  </div>
-))}
 
-            </div>
+      {/* Center: Timeline connector + dot */}
+      <div className="relative flex flex-col items-center mx-4 pb-16 pt-[12px]">
+        {/* Line: Only render if not the last item */}
+        {index !== array.length - 1 && (
+          <div className="w-[2px] bg-[#EE443F] h-full absolute top-4 left-1/2 transform z-0"></div>
+        )}
+
+        {/* Dot: Increase size for the first and last dot */}
+        <div 
+          className={`rounded-full z-10 ${index === 0 || index === array.length - 1 ? 'w-5 h-5' : 'w-4 h-4'} bg-[#EE443F] absolute`} 
+          style={{
+            top: index === 0 || index === array.length - 1 ? '0' : 'auto', // Adjust position for bigger dots
+          }}
+        />
+      </div>
+
+      {/* Right: Content */}
+      <div className="flex-1 ">
+        <div className="flex items-center gap-2">
+          <p className="text-lg font-semibold text-[#1F4F53]">{step.title}</p>
+          <img src="/edit-3.png"  className="text-[#EE443F] cursor-pointer h-6 w-6" />
+        </div>
+        <p className="text-sm text-gray-500">{step.desc}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+
+
           </div>
 
     </div>
