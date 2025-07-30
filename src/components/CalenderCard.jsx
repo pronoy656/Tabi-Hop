@@ -7,7 +7,7 @@ const CalendarCard = () => {
   const [value, setValue] = useState(new Date());
 
   return (
-    <div className="bg-white border border-r-4 border-b-4 sm:p-6 min-w-[260px] sm:w-full  rounded-lg shadow-md  col-span-2 "
+    <div className="bg-white border border-r-4 border-b-4 p-3 sm:p-6 min-w-[260px] sm:w-full  rounded-lg shadow-md  col-span-2 "
        style={{
       
         borderTopColor:" #3DA755",

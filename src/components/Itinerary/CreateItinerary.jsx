@@ -1,11 +1,7 @@
-import { BiPencil } from "react-icons/bi";
-import PrimaryButton from "../shared/PrimaryButton";
-import { ConfigProvider, Timeline } from "antd";
-import TimelineLabel from "./TimelineLabel";
-import TimelineChildren from "./TimelineChildren";
-import { Link } from "react-router-dom";
+
+import SeconderyButton from "../shared/SeconderyButton";
 import AddDestination from "./AddDestination";
-import ModalLayout from "../modals/ModalLayout";
+
 const CreateItinerary = () => {
   const locations = [
     {
@@ -157,11 +153,6 @@ const CreateItinerary = () => {
     <AddDestination/>
  
 
- <ModalLayout>
-  
-  
-  
-  hello </ModalLayout>
       {/* Step 03 */}
       <section className="my-8">
         <div className="flex justify-between items-center mb-4">
@@ -291,6 +282,8 @@ const CreateItinerary = () => {
           </div>
         </div>
       </section>
+
+      <div className="flex justify-center"><SeconderyButton text={'Generate'} shadow={'#2DAD9D'}></SeconderyButton></div>
     </div>
   );
 };

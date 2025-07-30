@@ -1,19 +1,14 @@
 
-import CalendarCard from "../../../components/CalenderCard";
-import ReminderCard from "../../../components/ReminderCard";
 import SectionHeader from "../../../components/shared/SectionHeader";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
-import TodoCard from "../../../components/TodoCard";
-import BucketCard from "../../../components/BucketCard";
-import { ItineraryCard } from "../../../components/ItineraryCard";
 import BookingGallery from "../../../components/BookingGallary";
 import BookingsTodoCard from "../../../components/BookingsTodoCard";
 import BookingsTodoCardTwo from "../../../components/BookingsTodoCardTwo";
-import BookingsTodoCardThree from "../../../components/BookingsTodoCardThree";
 import { BookingOverviewCard } from "../../../components/BookingOverviewCard";
 import OverviewSection from "./OverviewSection";
 import TodoListSection from "./TodoListSection";
 import BucketListSection from "./BucketListSection";
+import TrendingItinerarySection from "./TrendingItinerarySection";
 
 const todoGroups = [
   {
@@ -188,25 +183,8 @@ const Overview = () => {
      <BucketListSection/>
 
       {/* Trending Itinerary Section */}
-      <section>
-        <div className="flex justify-between items-center mb-2">
-          <SectionHeader
-            title="Trending Itinerary"
-            subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
-          />
-          <PrimaryButton
-            text={"Add more"}
-            bgColor={"#4796B5"}
-            textColor="white"
-          />
-        </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
-          {itineraryData.map((item, idx) => (
-            <ItineraryCard key={idx} {...item} />
-          ))}
-        </div>
-      </section>
-
+     
+        <TrendingItinerarySection/>
       {/* BookingsTodo Section*/}
       <section>
         <div className="flex justify-between items-center mb-2">

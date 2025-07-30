@@ -30,6 +30,10 @@ const menuItems = [
   {
     label: "Itinerary",
     path: "/itinerary",
+    activePaths:[
+      "/my-workplace/details/:id",
+      "/itinerary/create-itinerary"
+    ],
     renderIcon: (isActive) => (
       <IterenearySVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
