@@ -42,6 +42,16 @@ import Faq from "../pages/user/accountSetting/faq/Faq";
 import PrivacyPolicy from "../pages/user/accountSetting/privacyPolicy/privacyPolicy";
 import Terms from "../pages/user/accountSetting/terms/Terms";
 import DetailsDestination from "../components/Itinerary/DetailsDestination";
+import UserManagement from "../pages/admin/usermanagement/UserManagement";
+import AdminItinerary from "../pages/admin/adminItinerary/AdminItinerary";
+import AdminMoodboard from "../pages/admin/adminMoodboard/AdminMoodboard";
+import AdminToDoList from "../pages/admin/adminToDoList/AdminToDoList";
+import AdminCalender from "../pages/admin/adminCalender/AdminCalender";
+import AdminSubscriptionsPlan from "../pages/admin/subscriptionsPlan/AdminSubscriptionsPlan";
+import AdminReports from "../pages/admin/reports/AdminReports";
+import AdminPrivacyPolicy from "../pages/admin/privacyPolicy/AdminPrivacyPolicy";
+import AdminTermsAndConditions from "../pages/admin/termsandConditions/AdminTermsandConditions";
+import AdminAccountSettings from "../pages/admin/adminAccountSettings/AdminAccountSettings";
 
 const router = createBrowserRouter([
   {
@@ -107,16 +117,16 @@ const router = createBrowserRouter([
         element: <Calender />,
       },
       {
-        path:"/account-setting",
-        element:<AccountSetting />
+        path: "/account-setting",
+        element: <AccountSetting />,
       },
       {
-        path:"/account-setting/edit-details",
-        element:<EditProfile />
+        path: "/account-setting/edit-details",
+        element: <EditProfile />,
       },
       {
-        path:"/account-setting/change-password",
-        element:<ChangePassword />
+        path: "/account-setting/change-password",
+        element: <ChangePassword />,
       },
       {
         path:"/account-setting/faq",
@@ -216,6 +226,46 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <AdminOverview />,
+      },
+      {
+        path: "/admin-dashboard/user-management",
+        element: <UserManagement />,
+      },
+      {
+        path: "/admin-dashboard/admin-itinerary",
+        element: <AdminItinerary />,
+      },
+      {
+        path: "/admin-dashboard/admin-mood-board",
+        element: <AdminMoodboard />,
+      },
+      {
+        path: "/admin-dashboard/admin-todo-list",
+        element: <AdminToDoList />,
+      },
+      {
+        path: "/admin-dashboard/admin-calender",
+        element: <AdminCalender />,
+      },
+      {
+        path: "/admin-dashboard/admin-subscription-plan",
+        element: <AdminSubscriptionsPlan />,
+      },
+      {
+        path: "/admin-dashboard/admin-reports",
+        element: <AdminReports />,
+      },
+      {
+        path: "/admin-dashboard/admin-privacy-policy",
+        element: <AdminPrivacyPolicy />,
+      },
+      {
+        path: "/admin-dashboard/admin-terms-conditions",
+        element: <AdminTermsAndConditions />,
+      },
+      {
+        path: "/admin-dashboard/admin-account-setting",
+        element: <AdminAccountSettings />,
       },
     ],
   },
