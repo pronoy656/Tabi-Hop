@@ -93,11 +93,11 @@ const AdminSubscriptionsPlan = () => {
       </div>
       {/* Subscription Plan Card */}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 mt-11 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-6 mt-11 mb-6">
         {pricingPlans.map((plan, index) => (
           <div
             key={index}
-            className="bg-[#6E67D5] text-white p-6 rounded-3xl w-[310px] flex flex-col"
+            className="bg-[#6E67D5] text-white p-6 rounded-3xl w-[90%] max-w-[310px]  mx-auto flex flex-col"
           >
             <h2 className="text-xl font-bold mb-2">{plan.title}</h2>
             <p className="text-sm mb-4">{plan.description}</p>
