@@ -27,7 +27,7 @@ import TodoList from "../pages/user/todoList/TodoList";
 import PackingList from "../pages/user/packingList/PackingList";
 import Bookings from "../pages/user/bookings/Bookings";
 import BucketList from "../pages/user/bucketList/BucketList";
-import AddDestination from "../components/Itinerary/AddDestination";
+
 import MoodBoard from "../pages/user/moodboard/MoodBoard";
 import MoodBoardDetails from "../pages/user/moodboard/MoodBoardDetails";
 import Payment from "../pages/authentication/SubscriptionPlan/Payment";
@@ -37,6 +37,11 @@ import EditProfile from "../pages/user/accountSetting/edit-profiles/EditProfile"
 import ChangePassword from "../pages/user/accountSetting/changePassword/ChangePassword";
 import AdminMainLayout from "../layouts/adminDashboard/AdminMainLayout";
 import AdminOverview from "../pages/admin/adminOverview/AdminOverview";
+import FrequentlyAskedQuestion from "../pages/user/accountSetting/faq/Faq";
+import Faq from "../pages/user/accountSetting/faq/Faq";
+import PrivacyPolicy from "../pages/user/accountSetting/privacyPolicy/privacyPolicy";
+import Terms from "../pages/user/accountSetting/terms/Terms";
+import DetailsDestination from "../components/Itinerary/DetailsDestination";
 import UserManagement from "../pages/admin/usermanagement/UserManagement";
 import AdminItinerary from "../pages/admin/adminItinerary/AdminItinerary";
 import AdminMoodboard from "../pages/admin/adminMoodboard/AdminMoodboard";
@@ -79,8 +84,8 @@ const router = createBrowserRouter([
         element: <CreateItinerary />,
       },
       {
-        path: "/itinerary/add-destination",
-        element: <AddDestination />,
+        path: "/itinerary/details-destination",
+        element: <DetailsDestination/>,
       },
       {
         path: "/moodboard",
@@ -123,6 +128,19 @@ const router = createBrowserRouter([
         path: "/account-setting/change-password",
         element: <ChangePassword />,
       },
+      {
+        path:"/account-setting/faq",
+        element:<Faq />
+      },
+      {
+        path:"/account-setting/privacy",
+        element:<PrivacyPolicy />
+      },
+      {
+        path:"/account-setting/terms" ,
+        element:<Terms />
+      },
+   
     ],
   },
   {

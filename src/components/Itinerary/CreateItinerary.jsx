@@ -4,6 +4,8 @@ import { ConfigProvider, Timeline } from "antd";
 import TimelineLabel from "./TimelineLabel";
 import TimelineChildren from "./TimelineChildren";
 import { Link } from "react-router-dom";
+import AddDestination from "./AddDestination";
+import ModalLayout from "../modals/ModalLayout";
 const CreateItinerary = () => {
   const locations = [
     {
@@ -150,62 +152,16 @@ const CreateItinerary = () => {
         </div>
       </section>
 
-      {/* Step 02 */}
-      <section className="">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="font-semibold text-xl text-[#1F4F53]">
-            Step - 02 : Add your location anchor points
-          </h1>{" "}
-          <Link to={"/itinerary/add-destination"}>
-            <button className="bg-[#EE443F] text-white px-4 py-2 rounded-md text-sm">
-              + Add Destination
-            </button>{" "}
-          </Link>
-        </div>
+    {/* step-02 */}
 
-        <div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md border border-amber-500 ">
-          <div className="flex   border border-amber-500">
-            <ConfigProvider
-              theme={{
-                token: {
-                  colorPrimary: "#ff4d4f",
-                  controlHeightLG: 60,
-                  fontSize: 14,
-                  fontSizeSM: 20,
-                },
-                components: {
-                  Timeline: {
-                    tailColor: "#ff4d4f",
-                    dotBg: "#ff4d4f",
-                  },
-                },
-              }}
-            >
-              <Timeline
-                mode={"left"}
-                items={[
-                  {
-                    label: <TimelineLabel text={"Starting Location"} />,
-                    children: <TimelineChildren />,
-                  },
-                  {
-                    label: "2015-09-01 09:12:11",
-                    children: "Solve initial network problems",
-                  },
-                  {
-                    children: "Technical testing",
-                  },
-                  {
-                    label: "2015-09-01 09:12:11",
-                    children: "Network problems being solved",
-                  },
-                ]}
-              />
-            </ConfigProvider>{" "}
-          </div>
-        </div>
-      </section>
+    <AddDestination/>
+ 
 
+ <ModalLayout>
+  
+  
+  
+  hello </ModalLayout>
       {/* Step 03 */}
       <section className="my-8">
         <div className="flex justify-between items-center mb-4">
@@ -255,6 +211,7 @@ const CreateItinerary = () => {
       </section>
 
       {/* Step 04 */}
+      
       <section className="my-8">
         <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
           Step - 04 : Please write your preferred budget allocation

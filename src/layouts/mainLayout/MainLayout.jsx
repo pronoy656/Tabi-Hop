@@ -34,8 +34,8 @@ const MainLayout = () => {
       )}
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col w-full lg:ml-[300px] pt-[100px]">
-        <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 sm:px-6 md:px-8 bg-[#FFFFFF]">
+      <div className="flex-1 flex flex-col w-full ml-0 lg:ml-[300px] pt-[100px]">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden px-2 sm:px-6 md:px-8 bg-[#FFFFFF]">
           <Outlet />
         </div>
       </div>
