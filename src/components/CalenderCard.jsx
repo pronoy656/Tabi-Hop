@@ -7,8 +7,16 @@ const CalendarCard = () => {
   const [value, setValue] = useState(new Date());
 
   return (
-    <div className="bg-white  sm:p-6 min-w-[260px] sm:w-full  rounded-lg shadow-md  col-span-2 ">
-      <Calendar
+    <div className="bg-white border border-r-4 border-b-4 sm:p-6 min-w-[260px] sm:w-full  rounded-lg shadow-md  col-span-2 "
+       style={{
+      
+        borderTopColor:" #3DA755",
+        borderLeftColor: "#3DA755",
+        borderBottomColor: "#3DA755",
+        borderRightColor: "#3DA755",
+        borderStyle: "solid",
+      }}>
+  <div className="  flex justify-center pt-8">    <Calendar
         onChange={setValue}
         value={value}
         tileClassName={({ date, view }) => {
@@ -16,12 +24,12 @@ const CalendarCard = () => {
           if (
             date.toDateString() === new Date().toDateString()
           ) {
-            return "bg-purple-100 text-purple-800 font-bold rounded ";
+            return "text-purple-800 font-bold rounded bg-red-400";
           }
         }}
         next2Label={null}
         prev2Label={null}
-      />
+      /></div>
     </div>
   );
 };
