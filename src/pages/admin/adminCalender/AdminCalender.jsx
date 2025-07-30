@@ -19,19 +19,13 @@ const AdminCalender = () => {
       end: new Date(2025, 3, 1),
       priority: "low",
     },
-    {
-      id: 2,
-      title: "Kristin Watson - Task",
-      start: new Date(2025, 3, 14),
-      end: new Date(2025, 3, 14),
-      priority: "high",
-    },
   ]);
 
   // button for add event
   const handleAddEvent = (newEventOrEvents) => {
     setEvents((prev) => [
       ...prev,
+
       ...(Array.isArray(newEventOrEvents)
         ? newEventOrEvents
         : [newEventOrEvents]),
@@ -42,6 +36,20 @@ const AdminCalender = () => {
   const handleSlotSelect = (slotInfo) => {
     setSelectedDate(slotInfo.start);
     setModalOpen(true);
+  };
+
+  console.log("hit");
+  console.log("events", events);
+
+  // Custom event component to display title, time, and note
+  const CustomEvent = ({ event }) => {
+    return (
+      <div className="">
+        <h3 className="text-2xl font-bold">{event.title}</h3>
+        <h5 className="text-lg font-medium">{event.time}</h5>
+        <p>{event.note}</p>
+      </div>
+    );
   };
 
   return (
@@ -61,28 +69,47 @@ const AdminCalender = () => {
           onSelectSlot={handleSlotSelect}
           style={{ height: 700 }}
           views={["month"]}
-          eventPropGetter={(event) => {
-            let backgroundColor = "";
+          components={{
+            event: CustomEvent,
+          }}
+          dayPropGetter={(date) => {
+            const eventOfDay = events.find((event) =>
+              moment(event.start).isSame(moment(date), "day")
+            );
 
-            switch (event.priority) {
-              case "high":
-                backgroundColor = "#EF4444"; // red
-                break;
-              case "medium":
-                backgroundColor = "#F59E0B"; // yellow
-                break;
-              case "low":
-                backgroundColor = "#10B981"; // green
-                break;
-              default:
-                backgroundColor = "#3B82F6"; // blue fallback
+            if (eventOfDay) {
+              let bg = "";
+              switch (eventOfDay.priority) {
+                case "high":
+                  bg = "#fee2e2"; // light red
+                  break;
+                case "medium":
+                  bg = "#fef3c7"; // light yellow
+                  break;
+                case "low":
+                  bg = "#d1fae5"; // light green
+                  break;
+                default:
+                  bg = "#ffffff";
+              }
+
+              return {
+                className: "custom-bg",
+                style: {
+                  backgroundColor: bg,
+                },
+              };
             }
+
+            return {}; // default cell style
+          }}
+          eventPropGetter={() => {
             return {
               style: {
-                backgroundColor,
-                color: "black",
-                // borderRadius: "5px",
-                padding: "2px 5px",
+                backgroundColor: "transparent", // remove blue
+                color: "black", // set text color if needed
+                border: "none",
+                padding: 0,
               },
             };
           }}
