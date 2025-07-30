@@ -259,27 +259,40 @@ const UserManagement = () => {
   // Drop Down items
   const items = [
     {
-      label: "1st menu item",
-      key: "1",
-      icon: <UserOutlined />,
-    },
-    {
-      label: "2nd menu item",
-      key: "2",
-      icon: <UserOutlined />,
-    },
-    {
-      label: "3rd menu item",
+      label: (
+        <span className="text-black font-medium hover:bg-blue-100 block px-3 py-1 rounded">
+          Free subscription User
+        </span>
+      ),
       key: "3",
       icon: <UserOutlined />,
-      danger: true,
     },
     {
-      label: "4rd menu item",
-      key: "4",
+      label: (
+        <span className="text-black font-medium hover:bg-green-100 block px-3 py-1 rounded">
+          Basic subscription User
+        </span>
+      ),
+      key: "3",
       icon: <UserOutlined />,
-      danger: true,
-      disabled: true,
+    },
+    {
+      label: (
+        <span className="text-black font-medium hover:bg-yellow-100 block px-3 py-1 rounded">
+          Premium subscription User
+        </span>
+      ),
+      key: "3",
+      icon: <UserOutlined />,
+    },
+    {
+      label: (
+        <span className="text-black font-medium hover:bg-yellow-100 block px-3 py-1 rounded">
+          Gold subscription User
+        </span>
+      ),
+      key: "3",
+      icon: <UserOutlined />,
     },
   ];
 
@@ -289,16 +302,17 @@ const UserManagement = () => {
   };
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-5">
+    <div className="admin-page">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-5 gap-4">
         <div>
-          <p className="text-2xl font-semibold">User management</p>
-          <p>
+          <p className="text-xl sm:text-2xl font-semibold">User management</p>
+          <p className="text-sm sm:text-base text-gray-600">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy
           </p>
         </div>
-        <button className="bg-[#131927] text-white px-7 py-2.5 rounded-md text-sm">
+
+        <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
           + Add New User
         </button>
       </div>
@@ -336,11 +350,14 @@ const UserManagement = () => {
           </Button>
         </Dropdown>
       </div>
-      <Table
-        className="border border-[#F0F0F0]"
-        dataSource={userdata}
-        columns={columns}
-      ></Table>
+      <div className="scrollbar-hide">
+        <Table
+          className="border border-[#F0F0F0] overflow-y-auto"
+          dataSource={userdata}
+          columns={columns}
+          scroll={{ x: "max-content" }}
+        ></Table>
+      </div>
     </div>
   );
 };

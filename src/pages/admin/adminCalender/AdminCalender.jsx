@@ -54,66 +54,77 @@ const AdminCalender = () => {
 
   return (
     <div>
-      <div className="p-4">
-        <h2 className="text-2xl font-bold mb-4">Itinerary Management</h2>
-        <p className="font-semibold mb-2.5">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy
-        </p>
-        <Calendar
-          localizer={localizer}
-          events={events}
-          startAccessor="start"
-          endAccessor="end"
-          selectable
-          onSelectSlot={handleSlotSelect}
-          style={{ height: 700 }}
-          views={["month"]}
-          components={{
-            event: CustomEvent,
-          }}
-          dayPropGetter={(date) => {
-            const eventOfDay = events.find((event) =>
-              moment(event.start).isSame(moment(date), "day")
-            );
+      <div className="admin-page">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-5 gap-4">
+          <div>
+            <p className="text-xl sm:text-2xl font-semibold">User management</p>
+            <p className="text-sm sm:text-base text-gray-600">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy
+            </p>
+          </div>
 
-            if (eventOfDay) {
-              let bg = "";
-              switch (eventOfDay.priority) {
-                case "high":
-                  bg = "#fee2e2"; // light red
-                  break;
-                case "medium":
-                  bg = "#fef3c7"; // light yellow
-                  break;
-                case "low":
-                  bg = "#d1fae5"; // light green
-                  break;
-                default:
-                  bg = "#ffffff";
+          <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
+            + Add New User
+          </button>
+        </div>
+        <div className="w-full md:w-full h-[700px] mx-auto">
+          <Calendar
+            localizer={localizer}
+            events={events}
+            startAccessor="start"
+            endAccessor="end"
+            style={{ height: "100%", width: "100%" }}
+            selectable
+            onSelectSlot={handleSlotSelect}
+            // style={{ height: 700 }}
+            views={["month"]}
+            components={{
+              event: CustomEvent,
+            }}
+            dayPropGetter={(date) => {
+              const eventOfDay = events.find((event) =>
+                moment(event.start).isSame(moment(date), "day")
+              );
+
+              if (eventOfDay) {
+                let bg = "";
+                switch (eventOfDay.priority) {
+                  case "high":
+                    bg = "#fee2e2"; // light red
+                    break;
+                  case "medium":
+                    bg = "#fef3c7"; // light yellow
+                    break;
+                  case "low":
+                    bg = "#d1fae5"; // light green
+                    break;
+                  default:
+                    bg = "#ffffff";
+                }
+
+                return {
+                  className: "custom-bg",
+                  style: {
+                    backgroundColor: bg,
+                  },
+                };
               }
 
+              return {}; // default cell style
+            }}
+            eventPropGetter={() => {
               return {
-                className: "custom-bg",
                 style: {
-                  backgroundColor: bg,
+                  backgroundColor: "transparent", // remove blue
+                  color: "black", // set text color if needed
+                  border: "none",
+                  padding: 0,
                 },
               };
-            }
-
-            return {}; // default cell style
-          }}
-          eventPropGetter={() => {
-            return {
-              style: {
-                backgroundColor: "transparent", // remove blue
-                color: "black", // set text color if needed
-                border: "none",
-                padding: 0,
-              },
-            };
-          }}
-        />
+            }}
+          />
+        </div>
         {modalOpen && (
           <Modal
             date={selectedDate}
