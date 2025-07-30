@@ -24,6 +24,7 @@ const Modal = ({ onClose, date, onSave }) => {
         note: group.note,
         start: date,
         end: date,
+        priority: "low",
       }));
 
     if (newEvents.length === 0) {

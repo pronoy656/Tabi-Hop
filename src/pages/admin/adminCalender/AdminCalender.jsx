@@ -19,19 +19,13 @@ const AdminCalender = () => {
       end: new Date(2025, 3, 1),
       priority: "low",
     },
-    {
-      id: 2,
-      title: "Kristin Watson - Task",
-      start: new Date(2025, 3, 14),
-      end: new Date(2025, 3, 14),
-      priority: "high",
-    },
   ]);
 
   // button for add event
   const handleAddEvent = (newEventOrEvents) => {
     setEvents((prev) => [
       ...prev,
+
       ...(Array.isArray(newEventOrEvents)
         ? newEventOrEvents
         : [newEventOrEvents]),
@@ -43,6 +37,9 @@ const AdminCalender = () => {
     setSelectedDate(slotInfo.start);
     setModalOpen(true);
   };
+
+  console.log("hit");
+  console.log("events", events);
 
   // Custom event component to display title, time, and note
   const CustomEvent = ({ event }) => {
