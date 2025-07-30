@@ -3,7 +3,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import AdminProfile from "./AdminProfile";
+import AdminProfile from "../mainLayout/AdminProfile";
 
 const { Search } = Input;
 
