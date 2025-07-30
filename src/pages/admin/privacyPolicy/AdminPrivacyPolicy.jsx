@@ -2,7 +2,7 @@ import React from "react";
 
 const AdminPrivacyPolicy = () => {
   return (
-    <div>
+    <div className="admin-page">
       <p>THis is admin privacy policy page</p>
     </div>
   );
