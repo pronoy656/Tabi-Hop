@@ -52,6 +52,8 @@ import AdminReports from "../pages/admin/reports/AdminReports";
 import AdminPrivacyPolicy from "../pages/admin/privacyPolicy/AdminPrivacyPolicy";
 import AdminTermsAndConditions from "../pages/admin/termsandConditions/AdminTermsandConditions";
 import AdminAccountSettings from "../pages/admin/adminAccountSettings/AdminAccountSettings";
+import EditPrivacyPolicy from "../pages/admin/privacyPolicy/EditPrivacyPolicy";
+import EditTermAndCondition from "../pages/admin/termsandConditions/EditTermsAndCondition";
 
 const router = createBrowserRouter([
   {
@@ -85,7 +87,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/itinerary/details-destination",
-        element: <DetailsDestination/>,
+        element: <DetailsDestination />,
       },
       {
         path: "/moodboard",
@@ -129,18 +131,17 @@ const router = createBrowserRouter([
         element: <ChangePassword />,
       },
       {
-        path:"/account-setting/faq",
-        element:<Faq />
+        path: "/account-setting/faq",
+        element: <Faq />,
       },
       {
-        path:"/account-setting/privacy",
-        element:<PrivacyPolicy />
+        path: "/account-setting/privacy",
+        element: <PrivacyPolicy />,
       },
       {
-        path:"/account-setting/terms" ,
-        element:<Terms />
+        path: "/account-setting/terms",
+        element: <Terms />,
       },
-   
     ],
   },
   {
@@ -260,8 +261,16 @@ const router = createBrowserRouter([
         element: <AdminPrivacyPolicy />,
       },
       {
+        path: "/admin-dashboard/admin-privacy-policy/edit-privacy-policy",
+        element: <EditPrivacyPolicy />,
+      },
+      {
         path: "/admin-dashboard/admin-terms-conditions",
         element: <AdminTermsAndConditions />,
+      },
+      {
+        path: "/admin-dashboard/admin-terms-conditions/edit-terms-conditions",
+        element: <EditTermAndCondition />,
       },
       {
         path: "/admin-dashboard/admin-account-setting",
