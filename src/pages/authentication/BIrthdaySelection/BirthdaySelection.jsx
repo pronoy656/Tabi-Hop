@@ -34,21 +34,25 @@ const BirthdaySelection = () => {
         className="min-h-screen bg-cover bg-center "
         style={{ backgroundImage: "url('/birthday-selection.jpg')" }}
       >
-        <div className="flex items-center justify-center p-48">
-          <div className="border-1 border-white rounded-2xl w-[778px] backdrop-blur-2xl bg-white/40">
-            <div className="flex justify-center mt-20">
-              <div className="w-[560px] mb-[102.5px]  px-6 pt-6">
+        <div className="flex items-center justify-center py-40 sm:py-60 px-4">
+          <div className="border border-white rounded-2xl w-full max-w-3xl backdrop-blur-2xl bg-white/40">
+            <div className="flex justify-center mt-10 md:mt-20">
+              <div className="w-full max-w-lg px-4 sm:px-6 md:px-10 mb-12">
                 <div className="text-center mb-6">
-                  <p className="text-[44px] font-semibold">Add your Birthday</p>
-                  <p className="text-base font-medium ">
+                  <p className="text-3xl md:text-[44px] font-semibold">
+                    Add your Birthday
+                  </p>
+                  <p className="text-sm md:text-base font-medium mt-2">
                     Providing your birthday improves the features and ads you
                     see while keeping the TabiHop community safe. You can find
                     your birthday in your personal information account settings.
                   </p>
+
                   <Form onSubmit={handleSubmit(onSubmit)} noValidate>
-                    <div className="flex space-x-4 mt-6">
+                    {/* Date Picker Fields */}
+                    <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-6">
                       {/* Month picker */}
-                      <div>
+                      <div className="flex-1">
                         <label className="text-left font-bold block mb-1">
                           Month
                         </label>
@@ -76,17 +80,17 @@ const BirthdaySelection = () => {
                           )}
                         </div>
                       </div>
+
                       {/* Date picker */}
-                      <div>
+                      <div className="flex-1">
                         <label className="text-left font-bold block mb-1">
-                          {" "}
                           Date
                         </label>
                         <div className="h-12">
                           <Controller
                             name="date"
                             control={control}
-                            rules={{ required: "date is required" }}
+                            rules={{ required: "Date is required" }}
                             render={({ field }) => (
                               <DatePicker
                                 onChange={field.onChange}
@@ -103,9 +107,11 @@ const BirthdaySelection = () => {
                           )}
                         </div>
                       </div>
-                      <div>
+
+                      {/* Year picker */}
+                      <div className="flex-1">
                         <label className="text-left font-bold block mb-1">
-                          year
+                          Year
                         </label>
                         <div className="h-12">
                           <Controller
@@ -129,6 +135,7 @@ const BirthdaySelection = () => {
                         </div>
                       </div>
                     </div>
+
                     {/* Submit Button */}
                     <Button
                       type="primary"
@@ -136,7 +143,7 @@ const BirthdaySelection = () => {
                       block
                       style={{
                         marginTop: "37px",
-                        height: "56px",
+                        height: "56px", // Your defined height
                         backgroundColor: "#FFAA00",
                         borderColor: "#FFAA00",
                         color: "#000",
