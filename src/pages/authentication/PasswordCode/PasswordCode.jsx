@@ -11,7 +11,7 @@ const PasswordCode = () => {
     formState: { errors },
   } = useForm();
 
-  const [secondsLeft, setSecondsLeft] = useState(60); // Initial 1 minute
+  const [secondsLeft, setSecondsLeft] = useState(180); // Initial 3 minute
   const [isCounting, setIsCounting] = useState(true);
   const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ const PasswordCode = () => {
 
   const handleResend = () => {
     // Optional: You can trigger resend code API here
-    setSecondsLeft(60); // Reset countdown
+    setSecondsLeft(180); // Reset countdown
     setIsCounting(true);
   };
 
@@ -49,20 +49,19 @@ const PasswordCode = () => {
   return (
     <div>
       <div
-        className="min-h-screen bg-cover bg-center "
+        className=" bg-cover bg-center "
         style={{ backgroundImage: "url('/password-Verification.jpg')" }}
       >
-        <div className="flex items-center justify-center p-48">
-          <div className="border-1 border-white rounded-2xl w-[778px] backdrop-blur-2xl bg-white/40">
-            <div className="flex justify-center mt-20">
-              <div className="w-[560px] mb-[102.5px]  px-6 pt-6">
+        <div className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8 min-h-screen">
+          <div className="w-full max-w-3xl border border-white rounded-2xl backdrop-blur-2xl bg-white/40 shadow-md">
+            <div className="flex justify-center py-20 sm:py-30 px-4 sm:px-8">
+              <div className="w-full max-w-xl">
                 <div className="text-center mb-6">
-                  <p className="text-[44px] font-semibold">
+                  <p className="text-3xl sm:text-4xl font-semibold">
                     Verification Process
                   </p>
-                  <p className="text-base font-medium ">
-                    Enter the confirmation code has sent to
-                    mahbub****reem@gmail.com
+                  <p className="text-sm sm:text-base font-medium mt-2">
+                    Enter the confirmation code sent to mahbub****reem@gmail.com
                   </p>
                 </div>
 
@@ -77,14 +76,14 @@ const PasswordCode = () => {
                       rules={{
                         required: "Code is required",
                         pattern: {
-                          value: /^[0-9]{4,6}$/, // Optional: 4-6 digit code
+                          value: /^[0-9]{4,6}$/,
                           message: "Enter a valid code (4 to 6 digits)",
                         },
                       }}
                       render={({ field }) => (
                         <Input
                           {...field}
-                          placeholder="enter your code"
+                          placeholder="Enter your code"
                           className="h-12"
                           type="number"
                           inputMode="numeric"
@@ -92,23 +91,24 @@ const PasswordCode = () => {
                       )}
                     />
                     {errors.code && (
-                      <p className="text-red-500 text-lg font-medium">
+                      <p className="text-red-500 text-sm font-medium mt-1">
                         {errors.code.message}
                       </p>
                     )}
                   </div>
-                  <div className="text-center">
+
+                  <div className="text-center mt-4">
                     <p>
-                      Didn’t get the Code?{" "}
+                      Didn’t get the code?{" "}
                       <span
                         onClick={handleResend}
-                        className="text-sm font-semibold cursor-pointer "
+                        className="text-sm font-semibold cursor-pointer text-black hover:underline"
                       >
                         Resend code again
                       </span>
                     </p>
                   </div>
-                  {/* Submit Button */}
+
                   <Button
                     type="primary"
                     htmlType="submit"
