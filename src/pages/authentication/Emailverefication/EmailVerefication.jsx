@@ -1,10 +1,12 @@
 import { Button, Input, Checkbox } from "antd";
 import { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const EmailVerefication = () => {
   const [secondsLeft, setSecondsLeft] = useState(60); // Initial 1 minute
   const [isCounting, setIsCounting] = useState(true);
+  const navigate = useNavigate();
 
   // Timer logic
   useEffect(() => {
@@ -41,15 +43,16 @@ const EmailVerefication = () => {
 
   const onSubmit = (data) => {
     console.log("Success:", { name: data.code });
+    navigate("/signin/travel-selector");
   };
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div
         className="min-h-screen bg-cover bg-center "
         style={{ backgroundImage: "url('/email-verefication.jpg')" }}
       >
-        <div className="flex items-center justify-center px-4 py-32 sm:py-60 sm:px-8 md:px-16 lg:px-24 xl:px-48">
+        <div className="flex items-center justify-center px-4 h-screen">
           <div className="border border-white rounded-2xl w-full max-w-[778px] backdrop-blur-2xl bg-white/40">
             <div className="flex justify-center mt-10 sm:mt-16">
               <div className="w-full max-w-[560px] mb-12 px-4 sm:px-6 pt-6">
