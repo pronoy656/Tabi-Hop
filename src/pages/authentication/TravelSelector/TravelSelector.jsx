@@ -25,16 +25,16 @@ const TravelSelector = () => {
   return (
     <div>
       <div
-        className="h-[130vh] bg-cover bg-center"
+        className=" bg-cover bg-center h-screen"
         style={{ backgroundImage: "url('/travel-selector.jpg')" }}
       >
-        <div className="flex justify-center p-48">
-          <div className=" w-[846px] rounded-2xl flex flex-col justify-center items-center backdrop-blur-2xl bg-white/40">
-            <h2 className="text-[28px] md:text-3xl font-semibold text-center mt-[135.52px] mb-6 text-black ">
+        <div className="flex justify-center px-4 items-center h-full">
+          <div className="w-full max-w-4xl rounded-2xl flex flex-col justify-center items-center backdrop-blur-2xl bg-white/40 p-6 sm:p-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mt-12 sm:mt-20 mb-6 text-black">
               HOW DO YOU LIKE THE TRAVEL?
             </h2>
 
-            <div className="space-y-4 w-[574.69px] px-[17.35px]">
+            <div className="space-y-5 w-full max-w-xl">
               {options.map((option, index) => (
                 <label
                   key={index}
@@ -53,15 +53,16 @@ const TravelSelector = () => {
                 </label>
               ))}
             </div>
-            {/* Conditional Error Message */}
+
             {showError && (
-              <p className="text-red-600 text-lg mt-3.5">
+              <p className="text-red-600 text-base sm:text-lg mt-4 text-center">
                 Please select a travel option before continuing.
               </p>
             )}
+
             <button
               onClick={handleNextClick}
-              className="mt-7 mb-[118px] px-8 py-3 w-[540px] h-14 bg-[#FFAA00] text-black font-semibold rounded-md hover:bg-yellow-500 transition"
+              className="mt-7 mb-12 w-full max-w-xl h-14 bg-[#FFAA00] text-black font-semibold rounded-md hover:bg-yellow-500 transition"
             >
               Next
             </button>

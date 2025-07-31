@@ -68,62 +68,64 @@ const AdminCalender = () => {
             + Add New User
           </button>
         </div>
-        <div className="w-full md:w-full h-[700px] mx-auto">
-          <Calendar
-            localizer={localizer}
-            events={events}
-            startAccessor="start"
-            endAccessor="end"
-            style={{ height: "100%", width: "100%" }}
-            selectable
-            onSelectSlot={handleSlotSelect}
-            // style={{ height: 700 }}
-            views={["month"]}
-            components={{
-              event: CustomEvent,
-            }}
-            dayPropGetter={(date) => {
-              const eventOfDay = events.find((event) =>
-                moment(event.start).isSame(moment(date), "day")
-              );
+        <div className="w-full overflow-x-auto">
+          <div className="min-w-[700px] h-[700px] mx-auto">
+            <Calendar
+              localizer={localizer}
+              events={events}
+              startAccessor="start"
+              endAccessor="end"
+              style={{ height: "100%", width: "100%" }}
+              selectable
+              onSelectSlot={handleSlotSelect}
+              // style={{ height: 700 }}
+              views={["month"]}
+              components={{
+                event: CustomEvent,
+              }}
+              dayPropGetter={(date) => {
+                const eventOfDay = events.find((event) =>
+                  moment(event.start).isSame(moment(date), "day")
+                );
 
-              if (eventOfDay) {
-                let bg = "";
-                switch (eventOfDay.priority) {
-                  case "high":
-                    bg = "#fee2e2"; // light red
-                    break;
-                  case "medium":
-                    bg = "#fef3c7"; // light yellow
-                    break;
-                  case "low":
-                    bg = "#d1fae5"; // light green
-                    break;
-                  default:
-                    bg = "#ffffff";
+                if (eventOfDay) {
+                  let bg = "";
+                  switch (eventOfDay.priority) {
+                    case "high":
+                      bg = "#fee2e2"; // light red
+                      break;
+                    case "medium":
+                      bg = "#fef3c7"; // light yellow
+                      break;
+                    case "low":
+                      bg = "#d1fae5"; // light green
+                      break;
+                    default:
+                      bg = "#ffffff";
+                  }
+
+                  return {
+                    className: "custom-bg",
+                    style: {
+                      backgroundColor: bg,
+                    },
+                  };
                 }
 
+                return {}; // default cell style
+              }}
+              eventPropGetter={() => {
                 return {
-                  className: "custom-bg",
                   style: {
-                    backgroundColor: bg,
+                    backgroundColor: "transparent", // remove blue
+                    color: "black", // set text color if needed
+                    border: "none",
+                    padding: 0,
                   },
                 };
-              }
-
-              return {}; // default cell style
-            }}
-            eventPropGetter={() => {
-              return {
-                style: {
-                  backgroundColor: "transparent", // remove blue
-                  color: "black", // set text color if needed
-                  border: "none",
-                  padding: 0,
-                },
-              };
-            }}
-          />
+              }}
+            />
+          </div>
         </div>
         {modalOpen && (
           <Modal
