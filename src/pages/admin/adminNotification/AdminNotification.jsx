@@ -34,7 +34,7 @@ const AdminNotification = () => {
       <div className="shadow border border-[#0000001A] p-2 lg:p-4 rounded-lg bg-white space-y-2">
         {notifications.map((data, index) => (
           <div key={index} className="p-4 hover:bg-gray-50 rounded-lg bg-[#F3F4F6] transition duration-200 flex items-center gap-x-4">
-           <div className="bg-[#000000] w-fit p-2">
+           <div className="bg-[#000000] rounded-sm w-fit p-2">
             <img src="/Icon.png" className="h-6 w-6 " alt="" />
            </div>
            <div>
