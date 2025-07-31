@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
+<<<<<<< HEAD
 button {
   cursor: pointer;
+=======
+
+
+
+button{
+    cursor: pointer;
+>>>>>>> f98f9e1a6235f9e608c291cd3ff47e68ef8efbe8
 }
 
 section {
