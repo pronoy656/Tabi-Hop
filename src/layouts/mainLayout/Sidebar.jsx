@@ -21,7 +21,7 @@ const menuItems = [
     ),
   },
   {
-    label: "My Workplace",
+    label: "Workplace",
     path: "/my-workplace",
     renderIcon: (isActive) => (
       <WorkplaceSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
@@ -110,7 +110,7 @@ const Sidebar = ({ closeSidebar }) => {
   const pathname = location.pathname;
 
   return (
-    <div className="h-full px-3 pt-10 border-r border-r-[#ACE0E5]">
+    <div className="h-full px-3 pt-6 border-r border-r-[#ACE0E5]">
       {/* Menu Items */}
       <div style={{ backgroundColor: "#EDF8F9", color: "#0B3666" }}>
         {menuItems.map((item) => {

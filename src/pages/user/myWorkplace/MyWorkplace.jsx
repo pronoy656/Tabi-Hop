@@ -58,16 +58,16 @@ const MyWorkplace = () => {
       {/* reminders */}
 
       <div
-        className="bg-[#ffffff] border rounded-xl border-gray-300  p-10"
+        className="bg-[#ffffff] border rounded-xl border-gray-300 p-4 md:p-10"
         style={{ font: "Inter" }}
       >
         <h1 className="text-3xl font-bold">Upcoming Reminders</h1>
 
-        <div className="flex flex-wrap gap-4 mt-4">
+        <div className="flex flex-wrap gap-2 mt-4">
           {reminders?.map((reminder, index) => (
             <div
               key={index}
-              className="bg-[#D8FFE3] border rounded-xl border-gray-300  p-4 space-y-2 w-full mx-auto sm:w-[180px] "
+              className="bg-[#D8FFE3] border rounded-xl border-gray-300  p-4 space-y-2   mx-auto w-full sm:w-[160px] "
             >
               <h1 className="uppercase text-xl font-semibold text-[#000000]">
                 {reminder.month} - {reminder.time}
@@ -81,8 +81,8 @@ const MyWorkplace = () => {
       </div>
 {/* 
       Tab Section */}
-  <div className="flex flex-col-reverse sm:flex-row justify-between  mt-10">
-    <div>
+  <div className="flex flex-col-reverse md:flex-row justify-between mx-auto  mt-10">
+    <div className="flex flex-col">
       <WorkplaceTab></WorkplaceTab> 
     </div>
     <div className="mb-6 sm:mb-0 sm:mt-2 mt-0">

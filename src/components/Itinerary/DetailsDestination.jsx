@@ -1,12 +1,8 @@
 import TimelineSection from "./TimelineSection";
 
 const DetailsDestination = () => {
-
-
   return (
     <div className="page">
-
-
       <section>
         <div className="flex justify-between items-center ">
           <h2 className="font-semibold text-2xl mb-4 text-[#131927]">
@@ -14,7 +10,7 @@ const DetailsDestination = () => {
           </h2>{" "}
           <img src="/heart.png" className="w-10 object-contain" alt="" />
         </div>
-    
+
         <div className="flex flex-col lg:flex-row gap-4 my-4">
           {/* LEFT SECTION */}
           <div className="bg-white p-6 rounded-xl w-full border border-gray-300 lg:w-2/3 space-y-4">
@@ -67,7 +63,7 @@ const DetailsDestination = () => {
               <br />
               Kichijoji is known for hole-in-the-walls shops.
               <br />
-              -<br  />-<br />-<br />
+              -<br />-<br />-<br />
             </p>
 
             {/* Hashtags */}
@@ -125,11 +121,7 @@ const DetailsDestination = () => {
         </div>
       </section>
 
-
-
-
-<TimelineSection/>
-
+      <TimelineSection />
     </div>
   );
 };

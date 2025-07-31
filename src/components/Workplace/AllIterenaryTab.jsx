@@ -79,7 +79,7 @@ const AllIterenaryTab = () => {
           />
         
         </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-x-46 ">
           {itineraryData.map((item, idx) => (
             <ItineraryCard key={idx} {...item} />
           ))}

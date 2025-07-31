@@ -45,7 +45,7 @@ const destinations = [
 
 const AddDestination = () => {
   return (
-    <div className="p-6 ">
+    <div className=" ">
       <div className="flex justify-between items-center mb-6">
         <h2 className="font-semibold text-xl text-[#1F4F53]">
           Step - 02 : Add your location anchor points
