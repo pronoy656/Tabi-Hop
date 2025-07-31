@@ -1,15 +1,7 @@
 @import "tailwindcss";
 
-<<<<<<< HEAD
 button {
   cursor: pointer;
-=======
-
-
-
-button{
-    cursor: pointer;
->>>>>>> f98f9e1a6235f9e608c291cd3ff47e68ef8efbe8
 }
 
 section {
@@ -23,7 +15,7 @@ section {
   font-family: "Inter", sans-serif;
   background-color: transparent;
 }
-
+/* End POint */
 /* Calender css */
 span.rbc-btn-group {
   display: none;
@@ -34,6 +26,22 @@ span.rbc-btn-group {
 
 .rbc-off-range-bg {
   background: none !important;
+}
+/* End POint */
+
+/* Add to your global CSS or datepicker.css file */
+
+.custom-datepicker-dropdown {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Optional: Control width for responsiveness */
+@media (max-width: 500px) {
+  .custom-datepicker-dropdown {
+    width: 70vw !important;
+    font-size: 14px;
+  }
 }
 
 .react-calendar__tile {
