@@ -20,16 +20,18 @@ const ForgetPassword = () => {
   return (
     <div>
       <div
-        className="min-h-screen bg-cover bg-center "
+        className="bg-cover bg-center "
         style={{ backgroundImage: "url('/forget-password.jpg')" }}
       >
-        <div className="flex items-center justify-center p-48">
-          <div className="border-1 border-white rounded-2xl w-[778px] backdrop-blur-2xl bg-white/40">
-            <div className="flex justify-center mt-20">
-              <div className="w-[560px] mb-[102.5px]  px-6 pt-6">
+        <div className="flex items-center justify-center px-4 sm:px-8 md:px-16 min-h-screen">
+          <div className="w-full max-w-3xl rounded-2xl border-1 border-white backdrop-blur-2xl bg-white/40 shadow-lg">
+            <div className="flex justify-center mt-16 lg:mt-20">
+              <div className="w-full max-w-xl px-4 sm:px-6 pt-2 sm:pt-11 mb-24 sm:mb-32">
                 <div className="text-center mb-6">
-                  <p className="text-[44px] font-semibold">Forgot Password</p>
-                  <p className="text-base font-medium ">
+                  <p className="text-4xl sm:text-5xl font-semibold mb-1.5">
+                    Forgot Password
+                  </p>
+                  <p className="text-base font-medium text-gray-700">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting
                   </p>
@@ -68,7 +70,6 @@ const ForgetPassword = () => {
                   </div>
 
                   {/* Submit Button */}
-
                   <Button
                     type="primary"
                     htmlType="submit"
