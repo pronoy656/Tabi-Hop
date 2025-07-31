@@ -54,6 +54,7 @@ import AdminTermsAndConditions from "../pages/admin/termsandConditions/AdminTerm
 import AdminAccountSettings from "../pages/admin/adminAccountSettings/AdminAccountSettings";
 import EditPrivacyPolicy from "../pages/admin/privacyPolicy/EditPrivacyPolicy";
 import EditTermAndCondition from "../pages/admin/termsandConditions/EditTermsAndCondition";
+import AdminNotification from "../pages/admin/adminNotification/AdminNotification";
 
 const router = createBrowserRouter([
   {
@@ -275,6 +276,10 @@ const router = createBrowserRouter([
       {
         path: "/admin-dashboard/admin-account-setting",
         element: <AdminAccountSettings />,
+      },
+      {
+        path: "/admin-dashboard/admin-notification",
+        element: <AdminNotification />,
       },
     ],
   },

@@ -91,10 +91,26 @@ const AdminSidebar = ({ closeSidebar }) => {
   const pathname = location.pathname;
 
   return (
-    <div className="h-full px-3 pt-10 border-r border-r-[#ACE0E5]">
+    <div className="h-full px-3 pt-24 md:pt-10 ">
+
+      
+            <Link  to={'/admin-dashboard'} className=" hidden md:flex  items-center justify-center gap-1 ">
+            <img
+              src="/logo_image.png"
+              alt="Logo"
+              className="h-12 w-12 object-contain"
+            />
+            <img
+              src="/logo_name.png"
+              alt="Logo Name"
+              className="h-6 sm:h-7 object-contain"
+            />
+          </Link>
       {/* Menu Items */}
+
+
       <div
-        className="space-y-5"
+        className="space-y-5 md:mt-5"
         style={{ backgroundColor: "#131927", color: "#0B3666" }}
       >
         {menuItems.map((item) => {
