@@ -12,14 +12,14 @@ const AccountSetting = () => {
 
   return (
     <div className="page">
-      <div>
+      <div className="px-2 md:px-6">
         <SectionHeader
           title="Account Settings"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
       </div>
 
-      <div className="bg-[#eaf7f9] p-6 rounded-md   space-y-4">
+      <div className="bg-[#eaf7f9] p-2 md:p-6 rounded-md   space-y-4">
         {/* Profile Info Row */}
         <div className="flex items-center justify-between bg-white p-4 rounded-md shadow-sm border border-gray-300">
           <div className="flex items-center gap-4">
@@ -41,7 +41,10 @@ const AccountSetting = () => {
               </p>
             </div>
           </div>
-          <Link to={'/account-setting/edit-details'} className="bg-[#27C4CE] hover:bg-[#20b6c0] text-white px-4 py-2 text-sm font-medium rounded-md">
+          <Link
+            to={"/account-setting/edit-details"}
+            className="bg-[#27C4CE] hover:bg-[#20b6c0] text-white px-4 py-2 text-sm font-medium rounded-md"
+          >
             Edit Details
           </Link>
         </div>

@@ -8,19 +8,19 @@ const AdminProfile = () => {
     <div>
           <div
            
-            className="hidden sm:flex items-center bg-white px-2 py-1 rounded-md gap-2 border-b-2 border-r-2 border-[#E66CE5] min-w-[110px]"
+            className=" flex items-center bg-white px-2 py-1 rounded-md gap-2 border-b-2 border-r-2 border-[#E66CE5] min-w-[50px]"
           >
-            <Link  to="/admin-profile">
+            <button onClick={() => setDropdownOpen(!dropdownOpen)}  >
             <img
               src="/profile.png"
               alt="Admin"
               className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover"
              
-            /></Link>
-            <span className="text-black font-semibold text-[14px] sm:text-base whitespace-nowrap">
+            /></button>
+            <span className="text-black hidden sm:flex font-semibold text-[14px] sm:text-base whitespace-nowrap">
               Cyber Bunny
             </span>
-             <button
+             <button className="hidden sm:flex"
               onClick={() => setDropdownOpen(!dropdownOpen)}
          
             >
@@ -30,10 +30,10 @@ const AdminProfile = () => {
            {dropdownOpen && (
               <div className="absolute top-full right-4 mt-2 w-48 bg-white border border-[#E66CE5] rounded-md shadow-md z-50">
                 <Link
-                  to="/admin-profile"
+                  to="/admin-dashboard"
                   className="block px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"
                 >
-                  My Profile
+                  Dashboard
                 </Link>
                 <Link
                   to="/signin"
@@ -44,7 +44,7 @@ const AdminProfile = () => {
                 <button
                   className="w-full text-left px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"
                   onClick={() => {
-                    // TODO: Logout action
+                  
                     console.log("Logout clicked");
                   }}
                 >

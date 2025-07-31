@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
@@ -18,13 +18,14 @@ const CalendarCard = () => {
       }}>
   <div className="  flex justify-center pt-8">    <Calendar
         onChange={setValue}
+locale="en-US"
         value={value}
         tileClassName={({ date, view }) => {
          
           if (
             date.toDateString() === new Date().toDateString()
           ) {
-            return "text-purple-800 font-bold rounded bg-red-400";
+            return " font-bold rounded bg-[#43AAB4]";
           }
         }}
         next2Label={null}

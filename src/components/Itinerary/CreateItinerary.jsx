@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import SeconderyButton from "../shared/SeconderyButton";
 import AddDestination from "./AddDestination";
 
@@ -103,7 +104,7 @@ const CreateItinerary = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6 space-y-8 page">
+    <div className=" mx-auto px-4 py-6 space-y-8 page">
       {/* step-1 */}
       <section>
         <h2 className="font-semibold text-xl mb-4 text-[#1F4F53]">
@@ -149,9 +150,9 @@ const CreateItinerary = () => {
       </section>
 
     {/* step-02 */}
-
+ <section>
     <AddDestination/>
- 
+ </section>
 
       {/* Step 03 */}
       <section className="my-8">
@@ -283,7 +284,7 @@ const CreateItinerary = () => {
         </div>
       </section>
 
-      <div className="flex justify-center"><SeconderyButton text={'Generate'} shadow={'#2DAD9D'}></SeconderyButton></div>
+      <Link to={'/itinerary/details-destination'} className="flex justify-center"><SeconderyButton text={'Generate'} shadow={'#2DAD9D'}></SeconderyButton></Link>
     </div>
   );
 };

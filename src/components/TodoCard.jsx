@@ -2,7 +2,7 @@ const TodoCard = ({ title, todos, border,
   titleText,
   text,
   bg,
-  border2, }) => {
+  border2,line }) => {
   return (
   <div
       className={`border rounded-xl shadow-sm px-4 sm:px-12 pt-[24px] pb-[20px] border-b-4 border-r-4 `}
@@ -39,7 +39,7 @@ const TodoCard = ({ title, todos, border,
             </div>
 
             {idx !== todos.length - 1 && (
-              <div className="border-b border-b-[#ffffff]" />
+              <div className={`border-b `} style={{ borderBottomColor: line,}} />
             )}
           </li>
         ))}

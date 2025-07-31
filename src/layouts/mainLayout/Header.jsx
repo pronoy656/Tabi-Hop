@@ -9,7 +9,7 @@ const { Search } = Input;
 
 const Header = ({ toggleSidebar, isSidebarOpen }) => {
   return (
-    <header className="w-full relative bg-[#EDF8F9] px-4 lg:px-8 py-4 shadow-sm">
+    <header className="w-full relative bg-[#EDF8F9] px-4 lg:px-8 py-4 shadow-sm ">
       <div className="absolute bottom-0 left-0 h-px bg-[#ACE0E5] w-full md:left-[300px] md:w-[calc(100%-300px)]" />
 
       <div className="grid grid-cols-3 items-center">
@@ -28,7 +28,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
           </button>
 
           {/* Logo larger) */}
-          <div className="hidden md:flex items-center gap-1">
+          <Link to={'/'} className="hidden md:flex items-center gap-1">
             <img
               src="/logo_image.png"
               alt="Logo"
@@ -39,13 +39,13 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
               alt="Logo Name"
               className="h-6 sm:h-7 object-contain"
             />
-          </div>
+          </Link>
         </div>
 
         {/*CENTER SECTION*/}
         <div className="flex justify-center">
           {/* Logo  small screens*/}
-          <div className="flex items-center gap-1 md:hidden">
+          <Link  to={'/'} className="flex items-center gap-1 md:hidden">
             <img
               src="/logo_image.png"
               alt="Logo"
@@ -56,7 +56,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
               alt="Logo Name"
               className="h-6 sm:h-7 object-contain"
             />
-          </div>
+          </Link>
 
           {/* Search bar (visible on lg and larger) */}
           <div className="hidden lg:flex items-center bg-white border-b-4 border-r-4 border-[#E66CE5] rounded-lg px-2 py-1 w-full max-w-[600px] h-11">
@@ -74,7 +74,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
           {/* Gems Link */}
           <Link
             to="/gemss"
-            className="bg-white p-2 h-[40px] w-[40px] sm:h-[44px] sm:w-[44px] rounded-lg border-b-2 border-r-2 border-[#E66CE5] flex items-center justify-center"
+            className="bg-white hidden md:flex p-2 h-[40px] w-[40px] sm:h-[44px] sm:w-[44px] rounded-lg border-b-2 border-r-2 border-[#E66CE5]  items-center justify-center"
           >
             <img
               src="/diamond.png"

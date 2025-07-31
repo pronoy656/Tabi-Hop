@@ -28,7 +28,7 @@ const TodoListSection = () => {
     {
       title: "Sprint Goals",
       todos: [
-            { id: 1, title: "Design login page UI", completed: false, priority: "High" },
+            { id: 1, title: "Design login page UI ruhul", completed: false, priority: "High" },
         { id: 2, title: "Fix cart functionality bug", completed: true, priority: "Medium" },
         { id: 3, title: "Design login page UI", completed: false, priority: "High" },
         { id: 4, title: "Fix cart functionality bug", completed: true, priority: "Medium" },
@@ -75,10 +75,10 @@ const TodoListSection = () => {
             todos={group.todos}
             border="#E66CE5"
             border2="#FDF0FC"
-            bg="#FDF0FC"
+            bg="#FFFFFF"
             titleText="#612D60"
             text="#394050"
-            line="#FFFFFF"
+            line="#E66CE5"
           />
         ))}
       </div>
