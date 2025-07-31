@@ -49,17 +49,18 @@ const EmailVerefication = () => {
         className="min-h-screen bg-cover bg-center "
         style={{ backgroundImage: "url('/email-verefication.jpg')" }}
       >
-        <div className="flex items-center justify-center p-48">
-          <div className="border-1 border-white rounded-2xl w-[778px] backdrop-blur-2xl bg-white/40">
-            <div className="flex justify-center mt-20">
-              <div className="w-[560px] mb-[102.5px]  px-6 pt-6">
+        <div className="flex items-center justify-center px-4 py-32 sm:py-60 sm:px-8 md:px-16 lg:px-24 xl:px-48">
+          <div className="border border-white rounded-2xl w-full max-w-[778px] backdrop-blur-2xl bg-white/40">
+            <div className="flex justify-center mt-10 sm:mt-16">
+              <div className="w-full max-w-[560px] mb-12 px-4 sm:px-6 pt-6">
                 <div className="text-center mb-6">
-                  <p className="text-[44px] font-semibold">
+                  <p className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold">
                     Verification Process
                   </p>
-                  <p className="text-base font-medium ">
-                    Enter the confirmation code has sent to
-                    mahbub****reem@gmail.com
+                  <p className="text-sm sm:text-base font-medium mt-2">
+                    Enter the confirmation code sent to{" "}
+                    <br className="sm:hidden" />
+                    <span className="break-all">mahbub****reem@gmail.com</span>
                   </p>
                 </div>
 
@@ -74,7 +75,7 @@ const EmailVerefication = () => {
                       rules={{
                         required: "Code is required",
                         pattern: {
-                          value: /^[0-9]{4,6}$/, // Optional: 4-6 digit code
+                          value: /^[0-9]{4,6}$/,
                           message: "Enter a valid code (4 to 6 digits)",
                         },
                       }}
@@ -82,20 +83,19 @@ const EmailVerefication = () => {
                         <Input
                           {...field}
                           placeholder="698 651 65"
-                          className="h-12"
+                          className="h-12 w-full"
                           type="number"
                           inputMode="numeric"
                         />
                       )}
                     />
                     {errors.code && (
-                      <p className="text-red-500 text-sm">
+                      <p className="text-red-500 text-sm mt-1">
                         {errors.code.message}
                       </p>
                     )}
                   </div>
 
-                  {/* Submit Button */}
                   <Button
                     type="primary"
                     htmlType="submit"
@@ -113,12 +113,13 @@ const EmailVerefication = () => {
                     Continue
                   </Button>
                 </form>
-                <div className="flex justify-center mt-12">
+
+                <div className="flex justify-center mt-10 sm:mt-12">
                   <button
                     onClick={handleResend}
-                    className="bg-white w-[250px] p-1.5 h-10 rounded-lg"
+                    className="bg-white w-full max-w-[250px] px-4 py-2 rounded-lg shadow-sm"
                   >
-                    <p className="text-lg font-semibold">
+                    <p className="text-base sm:text-lg font-semibold text-center">
                       Resend Code - ({formatTime(secondsLeft)})
                     </p>
                   </button>
