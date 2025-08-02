@@ -122,6 +122,57 @@ const DetailsDestination = () => {
       </section>
 
       <TimelineSection />
+
+      <div className="flex flex-col md:flex-row gap-x-10 justify-center items-center my-6">
+
+      <div className="relative">
+  <button
+    className="
+      flex items-center justify-center gap-2
+      bg-white text-black rounded-full
+      px-6 py-2 border-[3px] border-black font-semibold
+      w-[250px] relative z-20
+    "
+    style={{
+      boxShadow: `0px 6px 0 0 #4ABBC6`,
+    }}
+  >
+    <div className="bg-[#4ABBC6] p-1.5 rounded-full flex items-center justify-center">
+      <img
+        src="/magic2.png"
+        alt="star"
+        className="h-4 w-4 object-contain"
+      />
+    </div>
+    Generate again
+  </button>
+</div>
+      <div className="relative">
+  <button
+    className="
+      flex items-center justify-center gap-2
+      bg-white text-black rounded-full
+      px-6 py-2 border-[3px] border-black font-semibold
+      w-[250px] relative z-20
+    "
+    style={{
+      boxShadow: `0px 6px 0 0 #4ABBC6`,
+    }}
+  >
+    <div className="bg-[#4ABBC6] p-1.5 rounded-full flex items-center justify-center">
+      <img
+        src="/edit2.png"
+        alt="star"
+        className="h-4 w-4 object-contain"
+      />
+    </div>
+Finalize Itinerary
+  </button>
+</div>
+      </div>
+
+
+
     </div>
   );
 };
