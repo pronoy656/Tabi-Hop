@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { ListCard } from "../../../components/shared/ListCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
+import ListCartModal from "../../../components/shared/ListCartModal";
+import { useState } from "react";
 
 const TodoList = () => {
-  const todoGroups = [
+  const [todoGroups,setTodoGroups] = useState([
     {
       title: "Sky Diving",
       todos: [
@@ -99,7 +101,8 @@ const TodoList = () => {
         },
       ],
     },
-  ];
+  ]);
+   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
       <div className="md:flex justify-between items-center">
@@ -107,13 +110,13 @@ const TodoList = () => {
           title="To-Do List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <Link to={""}>
+        <button  onClick={() => setIsModalOpen(true)} >
           <PrimaryButton
             bgColor={"#EE443F"}
             text={"Add more"}
             textColor={"white"}
           />
-        </Link>
+        </button>
       </div>
       <div>
         <div className="grid md:grid-cols-1 gap-4">
@@ -131,6 +134,8 @@ const TodoList = () => {
           ))}
         </div>
       </div>
+
+         <ListCartModal setTodoGroups={setTodoGroups} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

@@ -9,7 +9,7 @@ const MoodBoardGallery = ({moodBoards}) => {
  
   
   return (
-    <div className="p-4">
+    <div className="">
       {/* Desktop Grid Layout */}
       <div className="hidden lg:grid grid-cols-8 grid-rows-12 gap-4 h-[1200px] gap-y-12">
         {moodBoards?.map((item, index) => {

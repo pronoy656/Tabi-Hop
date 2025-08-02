@@ -2,7 +2,6 @@ import { useState } from "react";
 import AddDestinationModal from "./AddDestinationModal";
 
 
-
 const AddDestination = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [destinations ,setDestination]=useState([
