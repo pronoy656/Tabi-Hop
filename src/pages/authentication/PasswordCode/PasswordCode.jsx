@@ -50,7 +50,7 @@ const PasswordCode = () => {
     <div>
       <div
         className=" bg-cover bg-center "
-        style={{ backgroundImage: "url('/password-Verification.jpg')" }}
+        style={{ backgroundImage: "url('/code-verification.jpg')" }}
       >
         <div className="flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8 min-h-screen">
           <div className="w-full max-w-3xl border border-white rounded-2xl backdrop-blur-2xl bg-white/40 shadow-md">

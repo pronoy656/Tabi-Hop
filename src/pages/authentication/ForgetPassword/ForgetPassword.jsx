@@ -21,7 +21,7 @@ const ForgetPassword = () => {
     <div>
       <div
         className="bg-cover bg-center "
-        style={{ backgroundImage: "url('/forget-password.jpg')" }}
+        style={{ backgroundImage: "url('/forget-password (2).jpg')" }}
       >
         <div className="flex items-center justify-center px-4 sm:px-8 md:px-16 min-h-screen">
           <div className="w-full max-w-3xl rounded-2xl border-1 border-white backdrop-blur-2xl bg-white/40 shadow-lg">

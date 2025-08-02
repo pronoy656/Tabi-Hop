@@ -26,7 +26,7 @@ const TravelSelector = () => {
     <div>
       <div
         className=" bg-cover bg-center h-screen"
-        style={{ backgroundImage: "url('/travel-selector.jpg')" }}
+        style={{ backgroundImage: "url('/travel-selector (2).jpg')" }}
       >
         <div className="flex justify-center px-4 items-center h-full">
           <div className="w-full max-w-4xl rounded-2xl flex flex-col justify-center items-center backdrop-blur-2xl bg-white/40 p-6 sm:p-10">

@@ -24,7 +24,7 @@ const ResetPassword = () => {
     <div>
       <div
         className="bg-cover bg-center min-h-screen py-16"
-        style={{ backgroundImage: "url('/reset-Password.jpg')" }}
+        style={{ backgroundImage: "url('/reset-password (2).jpg')" }}
       >
         <div className="flex items-center justify-center h-screen  px-4 sm:px-6 lg:px-6">
           <div className="w-full max-w-4xl border border-white bg-white/40 backdrop-blur-2xl rounded-2xl shadow-lg p-8 sm:p-12">

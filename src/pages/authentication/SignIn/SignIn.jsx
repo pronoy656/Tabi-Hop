@@ -18,7 +18,7 @@ const SignIn = () => {
     <div>
       <div
         className="bg-cover bg-center"
-        style={{ backgroundImage: "url('/log-in.jpg')" }}
+        style={{ backgroundImage: "url('/log-in (2).jpg')" }}
       >
         <div className="flex items-center justify-center min-h-screen py-20 px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-4xl border border-white rounded-2xl backdrop-blur-2xl bg-white/40 shadow-lg mt-24">

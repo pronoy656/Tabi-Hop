@@ -50,7 +50,9 @@ const EmailVerefication = () => {
     <div className="overflow-hidden">
       <div
         className="min-h-screen bg-cover bg-center "
-        style={{ backgroundImage: "url('/email-verefication.jpg')" }}
+        style={{
+          backgroundImage: "url('/email-verification.jpg')",
+        }}
       >
         <div className="flex items-center justify-center px-4 h-screen">
           <div className="border border-white rounded-2xl w-full max-w-[778px] backdrop-blur-2xl bg-white/40">

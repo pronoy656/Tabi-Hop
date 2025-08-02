@@ -32,7 +32,7 @@ const BirthdaySelection = () => {
     <div>
       <div
         className="min-h-screen bg-cover bg-center "
-        style={{ backgroundImage: "url('/birthday-selection.jpg')" }}
+        style={{ backgroundImage: "url('/birthday-selection (2).jpg')" }}
       >
         <div className="flex items-center justify-center py-40 sm:py-60 px-4">
           <div className="border border-white rounded-2xl w-full max-w-3xl backdrop-blur-2xl bg-white/40">
