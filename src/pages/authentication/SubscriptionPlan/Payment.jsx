@@ -86,7 +86,7 @@ const Payment = () => {
 
   return (
     <div className="flex items-center justify-center py-36">
-      <div className="rounded-2xl w-[1280px] backdrop-blur-2xl bg-white/40">
+      {/* <div className="rounded-2xl border w-[1280px] backdrop-blur-2xl bg-white/40">
         <div className="flex justify-center">
           <div className="px-6 pt-6 ">
             <div className="text-center">
@@ -102,6 +102,30 @@ const Payment = () => {
           <div className="w-[744px] rounded-xl bg-[#EDE8FF] py-16">
             <Elements stripe={stripePromise}>
               <PaymentForm></PaymentForm>
+            </Elements>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="rounded-2xl w-full max-w-[1280px] mx-auto backdrop-blur-2xl bg-white/40 px-4 sm:px-6">
+        <div className="flex justify-center">
+          <div className="pt-6">
+            <div className="text-center">
+              <p className="text-2xl sm:text-3xl md:text-[36px] lg:text-[44px] font-semibold leading-snug">
+                Complete the payment.
+              </p>
+              <p className="text-sm sm:text-base font-medium mb-5 px-2 sm:px-6">
+                You suggested the idea of the delivery person collecting parcels
+                along the way
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center mt-8 px-2">
+          <div className="w-full max-w-2xl rounded-xl bg-[#EDE8FF] py-10 px-4 sm:px-8">
+            <Elements stripe={stripePromise}>
+              <PaymentForm />
             </Elements>
           </div>
         </div>
