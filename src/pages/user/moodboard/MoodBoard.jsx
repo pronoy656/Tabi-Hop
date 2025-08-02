@@ -1,3 +1,5 @@
+import { useState } from "react"
+import AddMoodboardModal from "../../../components/modals/moodboard/AddMoodboardModal"
 import MoodBoardGallarey from "../../../components/MoodBoardGallarey"
 import PrimaryButton from "../../../components/shared/PrimaryButton"
 import SeconderyButton from "../../../components/shared/SeconderyButton"
@@ -5,7 +7,12 @@ import SectionHeader from "../../../components/shared/SectionHeader"
 
 
 const MoodBoard = () => {
+ const [isModalOpen, setIsModalOpen] = useState(false);
+  const [moodBoards,setMoodBoards] = useState([
+  { hero: "/moodboard/moodboard1.png", title: "Hello Cyber Bunny" ,media:"/iterenary.jpg,",location:"Head southwest on 5th Ave toward E 41st St",summary:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.",socialLink1:"facebook",socialLink2:"facebook",socialLink3:"facebook"},
 
+ 
+]);
   return (
     <div className="page">
 
@@ -14,11 +21,12 @@ const MoodBoard = () => {
             title="Trending Itinerary"
             subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
           />
+          <button  onClick={() => setIsModalOpen(true)}>
           <PrimaryButton
             text={"Add more"}
             bgColor={"#4796B5"}
             textColor="white"
-          />
+          /></button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4">
@@ -44,10 +52,12 @@ const MoodBoard = () => {
             </div>
               
         </div>
-<MoodBoardGallarey/>
 
 
+<MoodBoardGallarey moodBoards={moodBoards}/>
 
+
+      <AddMoodboardModal setMoodBoards={setMoodBoards} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </div>
   )
