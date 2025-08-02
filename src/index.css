@@ -4,8 +4,7 @@ button {
   cursor: pointer;
 }
 
-
-header{
+header {
   height: 80px !important;
 }
 section {
@@ -57,7 +56,7 @@ span.rbc-btn-group {
 }
 
 .react-calendar__tile--active {
-  background-color: #43AAB4 !important;
+  background-color: #43aab4 !important;
   color: white !important;
   font-weight: bold;
 }
@@ -102,12 +101,12 @@ body {
 
 @media (min-width: 640px) {
   .admin-page {
-    padding: 2.5rem; 
+    padding: 2.5rem;
   }
 }
 @media (min-width: 640px) {
   .page {
-    padding: 2.5rem; 
+    padding: 2.5rem;
   }
 }
 .page {
@@ -133,10 +132,34 @@ body {
   border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   background-color: #f9fafb;
-  color: #9EA2AE;
+  color: #9ea2ae;
   outline: none;
 }
 
+/* Custom css for reports page table design  */
+.ant-table-thead {
+  display: none !important;
+}
+
+/* Align table cell content to top-left and add padding */
+.ant-table-cell {
+  vertical-align: top !important;
+  padding-top: 14px !important;
+  padding-left: 32px !important;
+}
+
+.ant-table-row:last-child {
+  margin-bottom: 4 !important;
+}
+
+.ant-table-tbody > tr.custom-row-gap > td {
+  background: transparent;
+  border-bottom: 16px solid #ffffff;
+}
+
+/* Pagination style */
+
+/* End */
 .form-input:focus {
   border-color: #e2e2e2;
 }
@@ -144,10 +167,10 @@ body {
   display: none;
 }
 .noscrollbar {
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .noscrollbar::-webkit-scrollbar {
-  display: none;               /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
