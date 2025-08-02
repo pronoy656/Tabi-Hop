@@ -31,7 +31,7 @@ const PaymentForm = () => {
 
   return (
     <div>
-      <div className="max-w-md mx-auto bg-[#F3F0FF] p-6 rounded-lg shadow-md">
+      <div className="w-full max-w-md mx-auto bg-[#F3F0FF] p-4 sm:p-6 rounded-lg shadow-md">
         {/* Title */}
         <div className="bg-white flex items-center px-4 py-2 rounded-t-md border-b border-gray-200">
           <input type="checkbox" checked readOnly className="mr-2" />
@@ -62,8 +62,8 @@ const PaymentForm = () => {
             </div>
           </div>
 
-          <div className="flex justify-between space-x-4">
-            <div className="w-1/2">
+          <div className="flex flex-col sm:flex-row justify-between gap-4">
+            <div className="w-full sm:w-1/2">
               <label>Expiration</label>
               <input
                 type="text"
@@ -72,7 +72,7 @@ const PaymentForm = () => {
                 disabled
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-full sm:w-1/2">
               <label>CVC</label>
               <input
                 type="text"
@@ -103,57 +103,56 @@ const PaymentForm = () => {
             Done
           </button>
         </form>
-        {/* Modals */}
-        {/*Success Modal */}
+
+        {/* Success Modal */}
         {status === "success" && (
-          <div className="fixed inset-0 flex items-center justify-center">
-            <div className="bg-white w-[926px] py-28 rounded-2xl shadow-sm shadow-green-400 text-center relative top-[70px]">
+          <div className="fixed inset-0 flex items-center justify-center z-50 px-4">
+            <div className="bg-white w-full max-w-3xl py-12 sm:py-20 rounded-2xl shadow-sm shadow-green-400 text-center">
               <img
                 src="/right.png"
-                alt="Error Icon"
-                className="w-[148px] h-[145px] mx-auto mb-6"
+                alt="Success Icon"
+                className="w-[100px] sm:w-[148px] h-[100px] sm:h-[145px] mx-auto mb-6"
               />
-              <h2 className="text-[32px] font-bold text-[#1A1A1A] mt-8">
-                Congratulation! <br /> You Payment is Successful
+              <h2 className="text-xl sm:text-[32px] font-bold text-[#1A1A1A] mt-4">
+                Congratulations! <br /> Your Payment is Successful
               </h2>
-
-              <p className="mt-6 text-[#5F5F5F] font-semibold">
-                As you have successfully purchased subscription, now you can
-                enjoy all the <br /> functionalities of the respective package.
+              <p className="mt-4 sm:mt-6 text-[#5F5F5F] font-semibold text-sm sm:text-base px-4">
+                As you have successfully purchased a subscription, now you can
+                enjoy all the functionalities of the respective package.
               </p>
-
               <button
                 onClick={() => setStatus(null)}
-                className="mt-12 px-[60px] py-4 bg-black text-white rounded-lg text-2xl font-semibold"
+                className="mt-10 px-6 sm:px-[60px] py-3 sm:py-4 bg-black text-white rounded-lg text-lg sm:text-2xl font-semibold"
               >
                 Go to Home
               </button>
             </div>
           </div>
         )}
-        {/*Error Modal */}
+
+        {/* Error Modal */}
         {status === "error" && (
-          <div className="fixed inset-0 flex items-center justify-center">
-            <div className="bg-white w-[926px] py-28 rounded-2xl shadow-sm shadow-red-400 text-center relative  top-[70px]">
+          <div className="fixed inset-0 flex items-center justify-center z-50 px-4">
+            <div className="bg-white w-full max-w-3xl py-12 sm:py-20 rounded-2xl shadow-sm shadow-red-400 text-center">
               <img
                 src="/cross.png"
                 alt="Error Icon"
-                className="w-[148px] h-[145px] mx-auto mb-6"
+                className="w-[100px] sm:w-[148px] h-[100px] sm:h-[145px] mx-auto mb-6"
               />
-              <h2 className="text-[32px] font-bold text-[#1A1A1A] mt-8">
+              <h2 className="text-xl sm:text-[32px] font-bold text-[#1A1A1A] mt-4">
                 Oops! 😥
               </h2>
-              <p className="text-[32px] font-bold text-[#1A1A1A] mt-2">
+              <p className="text-xl sm:text-[32px] font-bold text-[#1A1A1A] mt-2">
                 Payment Failed
               </p>
-              <p className="mt-6 text-[#5F5F5F] font-semibold">
+              <p className="mt-4 sm:mt-6 text-[#5F5F5F] font-semibold text-sm sm:text-base px-4">
                 Sorry! Something went wrong while processing your payment.{" "}
                 <br />
                 Please check your card information and try again.
               </p>
               <button
                 onClick={() => setStatus(null)}
-                className="mt-12 px-[60px] py-4 bg-red-600 text-white rounded-lg text-2xl font-semibold"
+                className="mt-10 px-6 sm:px-[60px] py-3 sm:py-4 bg-red-600 text-white rounded-lg text-lg sm:text-2xl font-semibold"
               >
                 Try Again
               </button>

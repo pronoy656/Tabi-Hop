@@ -76,26 +76,27 @@ const SubscriptionPlan = () => {
   return (
     <div className="flex items-center justify-center py-36">
       <div className="rounded-2xl w-[1288px] backdrop-blur-2xl bg-white/40">
-        <div className="flex justify-center">
-          <div className="px-6 pt-6">
+        {/* Title */}
+        <div className="flex justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-20">
+          <div className="pt-6 max-w-5xl w-full">
             <div className="text-center">
-              <p className="text-[44px] font-semibold">
+              <p className="text-2xl sm:text-3xl md:text-[36px] lg:text-[44px] font-semibold leading-snug">
                 Select the subscription plan that matches your preference
               </p>
-              <p className="text-base font-medium mb-5">
+              <p className="text-sm sm:text-base font-medium mb-5 mt-3 px-2 sm:px-6">
                 You suggested the idea of the delivery person collecting parcels
-                along the way{" "}
+                along the way
               </p>
             </div>
           </div>
         </div>
-        {/* Subscription Plan Card */}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 mt-11 mb-6">
+        {/* subscription plan card */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-6 mt-11 mb-6 px-5">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className="bg-[#6E67D5] text-white p-6 rounded-3xl w-[310px] flex flex-col"
+              className="bg-[#6E67D5] text-white p-6 rounded-3xl  max-w-[530px] w-full  mx-auto flex flex-col"
             >
               <h2 className="text-xl font-bold mb-2">{plan.title}</h2>
               <p className="text-sm mb-4">{plan.description}</p>
@@ -103,7 +104,7 @@ const SubscriptionPlan = () => {
               <p className="text-xs mb-7">{plan.subText}</p>
 
               {/* Main content grows */}
-              <ul className="mb-6 space-y-2 flex-grow">
+              <ul className="mb-6 space-y-1 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start space-y-[18px] ">
                     <span className="mr-2">✔</span>
