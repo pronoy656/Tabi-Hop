@@ -50,13 +50,13 @@ const timelineSteps = [
 
 const TimelineSection = () => {
   return (
-    <section className="py-10 px-4 md:px-10">
+    <section className="pt-10 px-4 md:px-10">
       <div className="max-w-6xl mx-auto">
         {timelineSteps.map((step, index) => {
           const isLast = index === timelineSteps.length - 1;
 
           return (
-            <div key={index} className="relative pl-6 pb-16">
+            <div key={index} className="relative pl-6 pb-6">
               <div className="flex items-center gap-3 mb-8 relative z-20">
                 <div className="w-4 h-4 bg-red-600 rounded-full flex-shrink-0 -ml-6 relative z-30" />
 

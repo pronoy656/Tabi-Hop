@@ -133,10 +133,21 @@ body {
   border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   background-color: #f9fafb;
-  color: #9ca3af;
+  color: #9EA2AE;
   outline: none;
 }
 
 .form-input:focus {
   border-color: #e2e2e2;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.noscrollbar {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE and Edge */
+}
+
+.noscrollbar::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Opera */
 }

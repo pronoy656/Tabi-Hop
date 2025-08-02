@@ -1,69 +1,11 @@
-import { Pencil } from "lucide-react";
+import { useState } from "react";
+import AddDestinationModal from "./AddDestinationModal";
 
-const destinations = [
-  {
-    label: "Starting Location",
-    title: "New York Public Library - Stephen A. Schwarzman Building",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    label: "Destination - 01",
-    title: "Head southwest on 5th Ave toward E 41st St",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    label: "Destination - 02",
-    title: "Turn left onto E 36th St",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    label: "Destination - 03",
-    title: "Turn left onto E 36th St",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    label: "Destination - 04",
-    title: "Continue onto Union Square E",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    label: "Destination - 05",
-    title: "Continue straight to stay on Broadway",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    label: "Destination - 06",
-    title: "Turn right onto Thomas St",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-  {
-    label: "Ending Location",
-    title: "Turn right onto Thomas St",
-    address: "476 5th Ave, New York, NY 10018, USA",
-  },
-];
+
 
 const AddDestination = () => {
-  return (
-    <div className=" ">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="font-semibold text-xl text-[#1F4F53]">
-          Step - 02 : Add your location anchor points
-        </h2>
-        <button className="bg-[#EE443F] text-white px-4 py-2 rounded-md text-sm">
-          + Add Destination
-        </button>
-      </div>
-  <div className="bg-white p-6 rounded-xl w-full  ">
-
-
-
-
-
-
-         
-   <div className="relative pl-6">
-  {[
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [destinations ,setDestination]=useState([
     {
       destination: "Starting Location",
       title: "New York Public Library - Stephen A. Schwarzman Building",
@@ -84,11 +26,39 @@ const AddDestination = () => {
       title: "Head southwest on 5th Ave toward E 41st St",
       desc: "476 5th Ave, New York, NY 10018, USA",
     },
-  ].map((step, index, array) => (
+  ])
+
+  return (
+    <div className=" ">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="font-semibold text-xl text-[#1F4F53]">
+          Step - 02 : Add your location anchor points
+        </h2>
+        <button  onClick={() => setIsModalOpen(true)} className="bg-[#EE443F] text-white px-4 py-2 rounded-md text-sm">
+          + Add Destination
+        </button>
+      </div>
+  <div className="bg-white p-6 rounded-xl w-full  ">
+
+
+
+
+
+
+         
+   <div className="relative pl-6">
+  {destinations?.map((step, index, array) => (
     <div key={index} className="relative flex z-10">
       {/* Left: Destination label */}
       <div className="w-40 text-right pr-4 mb-2">
-        <p className="text-lg font-medium text-[#1F4F53]">{step.destination}</p>
+       <p className="text-lg font-medium text-[#1F4F53]">
+  {index === 0
+    ? "Starting Location"
+    : index === array.length - 1
+    ? "Ending Location"
+    : `Destination - ${index.toString().padStart(2, "0")}`}
+</p>
+
       </div>
 
       {/* Center: Timeline connector + dot */}
@@ -122,6 +92,8 @@ const AddDestination = () => {
 
 
           </div>
+          
+      <AddDestinationModal setDestination={setDestination} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </div>
   );

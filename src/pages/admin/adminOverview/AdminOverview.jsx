@@ -1,10 +1,14 @@
-import React from "react";
+
+import AdminCard from "./AdminCard";
 
 const AdminOverview = () => {
   return (
+    <div className="admin-page">
+
+
     <div>
-      AdminOverview
-      <p>ww</p>
+      <AdminCard/>
+    </div>
     </div>
   );
 };
