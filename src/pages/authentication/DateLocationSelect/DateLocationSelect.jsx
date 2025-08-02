@@ -23,19 +23,19 @@ const DateLocationSelect = () => {
     <div>
       <div
         className="min-h-screen bg-cover bg-center"
-        style={{ backgroundImage: "url('/travel-date.jpg')" }}
+        style={{ backgroundImage: "url('/flow-selector.jpg')" }}
       >
         <div className="flex justify-center px-4 py-48 md:px-12 lg:px-20">
           {/* <div className="flex justify-center px-4"> */}
-          <div className="w-full max-w-7xl rounded-2xl flex flex-col justify-center items-center backdrop-blur-2xl bg-white/40 px-4 md:px-10 lg:px-16">
-            <h2 className="text-xl md:text-3xl font-semibold text-center mt-10 mb-1 text-black">
+          <div className="w-full max-w-7xl rounded-2xl flex flex-col justify-center items-center backdrop-blur-2xl bg-white/40 px-4 md:px-10 lg:px-16 py-4 md:py-10 lg:py-16">
+            <h2 className="text-xl md:text-4xl font-semibold text-center mt-10 mb-1 text-black">
               What are your Travel Dates?
             </h2>
             <h2 className="text-sm md:text-base font-medium text-center">
               Just Flights are okay right now. You can always modify later
             </h2>
 
-            <div className="w-full mt-10 mb-56 space-y-8">
+            <div className="w-full mt-10 mb-16 md:mb-14 space-y-8">
               {/* Departure Date & Time */}
               <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
                 <label className="md:w-52 font-semibold text-left">
@@ -111,6 +111,14 @@ const DateLocationSelect = () => {
                     <EnvironmentFilled className="w-[20px] h-[20px] mr-4 text-gray-800" />
                   }
                 />
+              </div>
+              <div className="flex justify-center">
+                <button
+                  // onClick={handleNextClick}
+                  className="mt-2 w-full md:w-[306px] h-14 bg-[#FFAA00] text-black font-semibold rounded-md hover:bg-yellow-500 transition"
+                >
+                  Next
+                </button>
               </div>
             </div>
           </div>

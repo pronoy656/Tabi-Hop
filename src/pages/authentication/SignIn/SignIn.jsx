@@ -17,16 +17,18 @@ const SignIn = () => {
   return (
     <div>
       <div
-        className="h-[130vh] bg-cover bg-center"
-        style={{ backgroundImage: "url('/log-in.jpg')" }}
+        className="bg-cover bg-center"
+        style={{ backgroundImage: "url('/log-in (2).jpg')" }}
       >
-        <div className="flex items-center justify-center  md:p-48 lg:p-48">
-          <div className="border-1 border-white rounded-2xl w-[778px] backdrop-blur-2xl bg-white/40">
-            <div className="flex justify-center mt-20">
-              <div className="w-[540px] mb-[102.5px]  px-6 pt-6">
+        <div className="flex items-center justify-center min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-4xl border border-white rounded-2xl backdrop-blur-2xl bg-white/40 shadow-lg mt-24">
+            <div className="flex justify-center mt-10 sm:mt-16">
+              <div className="w-full max-w-lg px-4 sm:px-6 pt-6 pb-10">
                 <div className="text-center mb-6">
-                  <p className="text-[44px] font-semibold">Welcome Back</p>
-                  <p className="text-base font-medium">
+                  <p className="text-3xl sm:text-4xl font-semibold">
+                    Welcome Back
+                  </p>
+                  <p className="text-sm sm:text-base font-medium mt-1">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting
                   </p>
@@ -55,7 +57,7 @@ const SignIn = () => {
                       )}
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-sm">
+                      <p className="text-red-500 text-sm mt-1">
                         {errors.email.message}
                       </p>
                     )}
@@ -83,76 +85,49 @@ const SignIn = () => {
                       )}
                     />
                     {errors.password && (
-                      <p className="text-red-500 text-sm">
+                      <p className="text-red-500 text-sm mt-1">
                         {errors.password.message}
                       </p>
                     )}
                   </div>
 
-                  {/* Confirm Password */}
-                  {/* <div className="mb-4">
-                    <label className="font-bold block">Confirm Password</label>
+                  {/* Terms Checkbox */}
+                  <div className="flex sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 mb-4">
                     <Controller
-                      name="confirmPassword"
+                      name="terms"
                       control={control}
                       rules={{
-                        required: "Please confirm your password",
                         validate: (value) =>
-                          value === password || "Passwords do not match",
+                          value === true || "You must accept the terms",
                       }}
                       render={({ field }) => (
-                        <Input.Password
-                          {...field}
-                          placeholder="Confirm password"
-                          className="h-12"
-                        />
+                        <Checkbox {...field} checked={field.value}>
+                          <span className="text-base font-medium">
+                            Remember me
+                          </span>
+                        </Checkbox>
                       )}
                     />
-                    {errors.confirmPassword && (
-                      <p className="text-red-500 text-sm">
-                        {errors.confirmPassword.message}
-                      </p>
-                    )}
-                  </div> */}
-
-                  {/* Terms Checkbox */}
-                  <div className="flex justify-between">
-                    <div className="mb-4">
-                      <Controller
-                        name="terms"
-                        control={control}
-                        rules={{
-                          validate: (value) =>
-                            value === true || "You must accept the terms",
-                        }}
-                        render={({ field }) => (
-                          <Checkbox {...field} checked={field.value}>
-                            <span className="text-base font-medium">
-                              Remember me
-                            </span>
-                          </Checkbox>
-                        )}
-                      />
-                      {errors.terms && (
-                        <p className="text-red-500 text-sm">
-                          {errors.terms.message}
-                        </p>
-                      )}
-                    </div>
                     <Link to="/signin/forget-password">
-                      <div>
-                        <p className="font-semibold">Forgot Password?</p>
-                      </div>
+                      <p className="font-semibold text-sm sm:text-base text-black">
+                        Forgot Password?
+                      </p>
                     </Link>
                   </div>
+                  {errors.terms && (
+                    <p className="text-red-500 text-sm mb-2">
+                      {errors.terms.message}
+                    </p>
+                  )}
+
                   {/* Submit Button */}
                   <Button
                     type="primary"
                     htmlType="submit"
                     block
                     style={{
-                      marginTop: "26px",
-                      height: "64px",
+                      marginTop: "16px",
+                      height: "56px",
                       backgroundColor: "#FFAA00",
                       borderColor: "#FFAA00",
                       color: "#000",
@@ -160,34 +135,38 @@ const SignIn = () => {
                       fontWeight: 600,
                     }}
                   >
-                    log in
+                    Log in
                   </Button>
                 </form>
-                <p className="mt-6 text-center">
+
+                <p className="mt-6 text-center text-sm sm:text-base">
                   Don't have an account?{" "}
                   <Link to="/signin">
-                    <span className="font-bold">Create Account </span>
+                    <span className="font-bold text-black">Create Account</span>
                   </Link>
-                  {/* <span className="font-bold">Create Account </span> */}
                 </p>
-                <div className="flex items-center space-x-4 mt-8">
-                  {/* login with google */}
-                  <button className="w-[259px] h-14 bg-white rounded-xl py-4 px-6 flex items-center space-x-1">
+
+                {/* Social Logins */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                  <button className="w-full sm:w-[260px] h-14 bg-white rounded-xl py-4 px-6 flex items-center justify-center gap-2 shadow">
                     <img
                       className="w-6 h-6"
                       src="/public/Social-media-logo-gogle.png"
-                      alt=""
+                      alt="Google"
                     />
-                    <p className="font-medium">Continue with Google</p>
+                    <p className="font-medium text-sm sm:text-base">
+                      Continue with Google
+                    </p>
                   </button>
-                  {/* login with Apple */}
-                  <button className="w-[259px] h-14 bg-white rounded-xl py-4 px-6 flex items-center space-x-2">
+                  <button className="w-full sm:w-[260px] h-14 bg-white rounded-xl py-4 px-6 flex items-center justify-center gap-2 shadow">
                     <img
-                      className="w-5.5 h-6"
+                      className="w-6 h-6"
                       src="/public/Social-media-logo-apple.png"
-                      alt=""
+                      alt="Apple"
                     />
-                    <p className="font-medium">Continue with Apple</p>
+                    <p className="font-medium text-sm sm:text-base">
+                      Continue with Apple
+                    </p>
                   </button>
                 </div>
               </div>
