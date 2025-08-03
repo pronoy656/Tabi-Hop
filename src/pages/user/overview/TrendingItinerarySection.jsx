@@ -51,15 +51,16 @@ const TrendingItinerarySection = () => {
           title="Trending Itinerary"
           subtitle="Explore the most popular itineraries and start planning your next adventure."
         />
+        <button className="hidden sm:flex">
         <PrimaryButton
           text="Add more"
           bgColor="#4796B5"
           textColor="white"
-        />
+        /></button>
       </div>
 
       {/* Small screen layout */}
-      <div className="block md:hidden">
+      <div className="block sm:hidden">
         <div className="grid sm:grid-cols-1 gap-4">
           {displayedItems.map((item, idx) => (
             <ItineraryCard key={idx} {...item} />
@@ -67,19 +68,27 @@ const TrendingItinerarySection = () => {
         </div>
 
         {/* See All / See Less button */}
-        <div className="mt-4 text-center">
+        <div className=" mt-4 text-center sm:hidden  items-center flex justify-center gap-x-4">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 bg-white border border-[#4E61F6] text-[#4E61F6] rounded-lg font-semibold transition-colors hover:bg-[#4E61F6] hover:text-white"
+            className="px-6 py-2 bg-white border border-[#4796B5] text-[#4796B5] rounded-lg font-semibold transition-colors hover:bg-[#4796B6] hover:text-white"
           >
             {showAll ? "See Less" : "See All"}
+          </button>
+           <button className="" onClick={() => setIsModalOpen(true)}>
+            <PrimaryButton
+              round
+              bgColor="#4796B5"
+              text="Add more"
+              textColor="white"
+            />
           </button>
         </div>
       </div>
 
       {/* Large screen layout */}
-      <div className="hidden md:block">
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="hidden sm:block">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {itineraryData.map((item, idx) => (
             <ItineraryCard key={idx} {...item} />
           ))}

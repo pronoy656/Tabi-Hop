@@ -5,7 +5,7 @@ import { ListCard } from "../../../components/shared/ListCard";
 import ListCartModal from "../../../components/shared/ListCartModal";
 
 
-const BucketListSection = () => {
+const AccommodationListSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
@@ -144,11 +144,11 @@ const BucketListSection = () => {
       {/* Header */}
       <div className="md:flex justify-between items-center mb-4">
         <SectionHeader
-          title="Bucket List"
+          title="Accomodation List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
         <button className="hidden sm:flex" onClick={() => setIsModalOpen(true)}>
-          <PrimaryButton bgColor="#6E67D5" text="Add more" textColor="white" />
+          <PrimaryButton bgColor="#FFAA00" text="Add more" textColor="black" />
         </button>
       </div>
 
@@ -156,34 +156,34 @@ const BucketListSection = () => {
       <div className="block sm:hidden">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {displayedGroups.map((group, idx) => (
-            <ListCard
+           <ListCard
               key={idx}
               title={group.title}
               todos={group.todos}
-              border="#6E67D6"
-              border2="#6E67D5"
+              border="#FFAA00"
+              border2="#FFC654"
               bg="#FFFFFF"
-              titleText="#612D60"
+              titleText="#B57900"
               text="#394050"
-              line="#6E67D5"
+              line="#FFE5B0"
             />
           ))}
         </div>
 
         {/* See All / See Less toggle */}
-        <div className="mt-4 text-center flex justify-center gap-x-4">
+        <div className="mt-4 text-center flex items-center justify-center gap-x-4">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 bg-white border border-[#6E67D5] text-[#6E67D5] rounded-lg font-semibold transition-colors hover:bg-[#6E67D6] hover:text-white"
+            className="px-6 py-2 bg-white border border-[#FFC654] text-[#FFC654] rounded-lg font-semibold transition-colors hover:bg-[#FFC654] hover:text-white"
           >
             {showAll ? "See Less" : "See All"}
           </button>
           <button className="sm:hidden " onClick={() => setIsModalOpen(true)}>
             <PrimaryButton
               round
-              bgColor="#6E67D5"
+              bgColor="#FFAA00"
               text="Add more"
-              textColor="white"
+              textColor="black"
             />
           </button>
         </div>
@@ -193,16 +193,16 @@ const BucketListSection = () => {
       <div className="hidden sm:block">
         <div className="grid lg:grid-cols-3 grid-cols-1 sm:grid-cols-2 gap-4">
           {todoGroups.map((group, idx) => (
-            <ListCard
+             <ListCard
               key={idx}
               title={group.title}
               todos={group.todos}
-              border="#6E67D6"
-              border2="#6E67D5"
+              border="#FFAA00"
+              border2="#FFC654"
               bg="#FFFFFF"
-              titleText="#612D60"
+              titleText="#B57900"
               text="#394050"
-              line="#D2D0F2"
+              line="#FFE5B0"
             />
           ))}
         </div>
@@ -218,4 +218,4 @@ const BucketListSection = () => {
   );
 };
 
-export default BucketListSection;
+export default AccommodationListSection;

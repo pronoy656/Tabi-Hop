@@ -132,14 +132,14 @@ const TimelineSection = () => {
                   <div className="flex flex-col items-center">
                     <div className="w-[1px] bg-gray-300 h-full" />
                   </div>
-                  <div className="flex flex-col ">
-                    <div className="flex gap-2">
+                  <div className="flex flex-col  ">
+                    <div className="md:flex gap-2">
                       {step.mediaImages.map((img, i) => (
                         <img
                           key={i}
                           src={img}
                           alt="media"
-                          className="h-66 w-32 object-cover rounded-md"
+                          className="h-66 md:w-32  object-cover rounded-md"
                         />
                       ))}
                     </div>
