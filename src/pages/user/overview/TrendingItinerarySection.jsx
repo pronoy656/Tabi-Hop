@@ -46,7 +46,7 @@ const TrendingItinerarySection = () => {
   return (
     <section>
       {/* Section Header */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="md:flex justify-between items-center mb-4">
         <SectionHeader
           title="Trending Itinerary"
           subtitle="Explore the most popular itineraries and start planning your next adventure."
