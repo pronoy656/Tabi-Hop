@@ -26,7 +26,7 @@ const SignUp = () => {
   return (
     <div
       className=" bg-cover bg-center h-[150vh] md:h-[120vh]"
-      style={{ backgroundImage: "url('public/pronoy/signupbackground.png')" }}
+      style={{ backgroundImage: "url('/pronoy/signupbackground.png')" }}
     >
       <div className="flex items-center justify-center h-full px-4">
         <div className="border border-white rounded-2xl max-w-3xl w-full backdrop-blur-2xl bg-white/40">
