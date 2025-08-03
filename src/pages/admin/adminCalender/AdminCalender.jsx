@@ -4,22 +4,20 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Modal from "./Modal";
+import ExpandEventModal from "./ExpandEventModal";
 
 const localizer = momentLocalizer(moment);
 
 const AdminCalender = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  console.log(modalOpen, "modal");
   const [selectedDate, setSelectedDate] = useState(null);
 
-  const [events, setEvents] = useState([
-    {
-      id: 1,
-      title: "Robert Fox - Task",
-      start: new Date(2025, 3, 1),
-      end: new Date(2025, 3, 1),
-      priority: "low",
-    },
-  ]);
+  const [dayEventsModalOpen, setDayEventsModalOpen] = useState(false);
+  console.log(dayEventsModalOpen, "modal");
+  const [eventsForSelectedDay, setEventsForSelectedDay] = useState([]);
+
+  const [events, setEvents] = useState([{}]);
 
   // button for add event
   const handleAddEvent = (newEventOrEvents) => {
@@ -34,8 +32,22 @@ const AdminCalender = () => {
   };
 
   const handleSlotSelect = (slotInfo) => {
+    console.log({ slotInfo });
+    const selected = moment(slotInfo.start).startOf("day");
+    const matchedEvents = events.filter((event) =>
+      moment(event.start).startOf("day").isSame(selected, "day")
+    );
     setSelectedDate(slotInfo.start);
-    setModalOpen(true);
+
+    if (matchedEvents.length > 0) {
+      // Open view modal if events exist
+
+      setEventsForSelectedDay(matchedEvents);
+      console.log("Opening DayEventsModal with events:", matchedEvents);
+      setDayEventsModalOpen(true);
+    } else {
+      setModalOpen(true); // Open add modal if no event exists
+    }
   };
 
   console.log("hit");
@@ -43,11 +55,32 @@ const AdminCalender = () => {
 
   // Custom event component to display title, time, and note
   const CustomEvent = ({ event }) => {
+    const date = event.start;
+    const sameDayEvents = events.filter((e) =>
+      moment(e.start).isSame(moment(date), "day")
+    );
+    if (sameDayEvents.length > 1) {
+      if (sameDayEvents[0].id !== event.id) {
+        // only display "+n more" for first event of the day
+        return null;
+      }
+
+      return (
+        <div onClick={() => setDayEventsModalOpen(true)}>
+          <h3 className="text-2xl font-bold">{event.title}</h3>
+          <p className="text-lg font-medium">{event.time}</p>
+
+          <div className="text-xs text-blue-600 mt-1 font-medium">
+            +{sameDayEvents.length - 1} more
+          </div>
+        </div>
+      );
+    }
     return (
-      <div className="">
+      <div onClick={() => setDayEventsModalOpen(true)}>
         <h3 className="text-2xl font-bold">{event.title}</h3>
         <h5 className="text-lg font-medium">{event.time}</h5>
-        <p>{event.note}</p>
+        {/* <p>{event.note}</p> */}
       </div>
     );
   };
@@ -78,7 +111,6 @@ const AdminCalender = () => {
               style={{ height: "100%", width: "100%" }}
               selectable
               onSelectSlot={handleSlotSelect}
-              // style={{ height: 700 }}
               views={["month"]}
               components={{
                 event: CustomEvent,
@@ -132,6 +164,16 @@ const AdminCalender = () => {
             date={selectedDate}
             onClose={() => setModalOpen(false)}
             onSave={handleAddEvent}
+          />
+        )}
+
+        {/* Another Modal for expand all event*/}
+        {dayEventsModalOpen && (
+          <ExpandEventModal
+            date={selectedDate}
+            eventsForSelectedDay={eventsForSelectedDay}
+            events={events}
+            onClose={() => setDayEventsModalOpen(false)}
           />
         )}
       </div>

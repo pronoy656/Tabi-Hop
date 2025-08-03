@@ -151,7 +151,7 @@ const SignIn = () => {
                   <button className="w-full sm:w-[260px] h-14 bg-white rounded-xl py-4 px-6 flex items-center justify-center gap-2 shadow">
                     <img
                       className="w-6 h-6"
-                      src="/public/Social-media-logo-gogle.png"
+                      src="/Social-media-logo-gogle.png"
                       alt="Google"
                     />
                     <p className="font-medium text-sm sm:text-base">
@@ -161,7 +161,7 @@ const SignIn = () => {
                   <button className="w-full sm:w-[260px] h-14 bg-white rounded-xl py-4 px-6 flex items-center justify-center gap-2 shadow">
                     <img
                       className="w-6 h-6"
-                      src="/public/Social-media-logo-apple.png"
+                      src="/Social-media-logo-apple.png"
                       alt="Apple"
                     />
                     <p className="font-medium text-sm sm:text-base">
