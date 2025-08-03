@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
-
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Modal from "./Modal";
@@ -10,20 +9,15 @@ const localizer = momentLocalizer(moment);
 
 const AdminCalender = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  console.log(modalOpen, "modal");
   const [selectedDate, setSelectedDate] = useState(null);
-
   const [dayEventsModalOpen, setDayEventsModalOpen] = useState(false);
-  console.log(dayEventsModalOpen, "modal");
   const [eventsForSelectedDay, setEventsForSelectedDay] = useState([]);
+  const [events, setEvents] = useState([]); // Default to empty array instead of [{}]
 
-  const [events, setEvents] = useState([{}]);
-
-  // button for add event
+  // Handle adding new events
   const handleAddEvent = (newEventOrEvents) => {
     setEvents((prev) => [
       ...prev,
-
       ...(Array.isArray(newEventOrEvents)
         ? newEventOrEvents
         : [newEventOrEvents]),
@@ -31,56 +25,46 @@ const AdminCalender = () => {
     setModalOpen(false);
   };
 
+  // Handle slot selection (clicking on a day)
   const handleSlotSelect = (slotInfo) => {
-    console.log({ slotInfo });
     const selected = moment(slotInfo.start).startOf("day");
+    setSelectedDate(selected); // Store selected date
+
+    // Filter events for the selected date
     const matchedEvents = events.filter((event) =>
       moment(event.start).startOf("day").isSame(selected, "day")
     );
-    setSelectedDate(slotInfo.start);
 
+    // If events are found, open the "ExpandEventModal"
     if (matchedEvents.length > 0) {
-      // Open view modal if events exist
-
       setEventsForSelectedDay(matchedEvents);
-      console.log("Opening DayEventsModal with events:", matchedEvents);
       setDayEventsModalOpen(true);
     } else {
-      setModalOpen(true); // Open add modal if no event exists
+      // Open the "Add Event" modal if no events exist for the day
+      setModalOpen(true);
     }
   };
 
-  console.log("hit");
-  console.log("events", events);
-
-  // Custom event component to display title, time, and note
+  // Custom event display component
   const CustomEvent = ({ event }) => {
     const date = event.start;
     const sameDayEvents = events.filter((e) =>
       moment(e.start).isSame(moment(date), "day")
     );
-    if (sameDayEvents.length > 1) {
-      if (sameDayEvents[0].id !== event.id) {
-        // only display "+n more" for first event of the day
-        return null;
-      }
 
-      return (
-        <div onClick={() => setDayEventsModalOpen(true)}>
-          <h3 className="text-2xl font-bold">{event.title}</h3>
-          <p className="text-lg font-medium">{event.time}</p>
-
-          <div className="text-xs text-blue-600 mt-1 font-medium">
-            +{sameDayEvents.length - 1} more
-          </div>
-        </div>
-      );
+    if (sameDayEvents.length > 1 && sameDayEvents[0].id !== event.id) {
+      return null; // Only show +n more for the first event
     }
+
     return (
       <div onClick={() => setDayEventsModalOpen(true)}>
         <h3 className="text-2xl font-bold">{event.title}</h3>
-        <h5 className="text-lg font-medium">{event.time}</h5>
-        {/* <p>{event.note}</p> */}
+        <p className="text-lg font-medium">{event.time}</p>
+        {sameDayEvents.length > 1 && (
+          <div className="text-xs text-blue-600 mt-1 font-medium">
+            +{sameDayEvents.length - 1} more
+          </div>
+        )}
       </div>
     );
   };
@@ -93,14 +77,14 @@ const AdminCalender = () => {
             <p className="text-xl sm:text-2xl font-semibold">User management</p>
             <p className="text-sm sm:text-base text-gray-600">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy
+              industry.
             </p>
           </div>
-
           <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
             + Add New User
           </button>
         </div>
+
         <div className="w-full overflow-x-auto">
           <div className="min-w-[700px] h-[700px] mx-auto">
             <Calendar
@@ -112,14 +96,11 @@ const AdminCalender = () => {
               selectable
               onSelectSlot={handleSlotSelect}
               views={["month"]}
-              components={{
-                event: CustomEvent,
-              }}
+              components={{ event: CustomEvent }}
               dayPropGetter={(date) => {
                 const eventOfDay = events.find((event) =>
                   moment(event.start).isSame(moment(date), "day")
                 );
-
                 if (eventOfDay) {
                   let bg = "";
                   switch (eventOfDay.priority) {
@@ -135,42 +116,36 @@ const AdminCalender = () => {
                     default:
                       bg = "#ffffff";
                   }
-
                   return {
                     className: "custom-bg",
-                    style: {
-                      backgroundColor: bg,
-                    },
+                    style: { backgroundColor: bg },
                   };
                 }
-
-                return {}; // default cell style
+                return {}; // Default cell style
               }}
-              eventPropGetter={() => {
-                return {
-                  style: {
-                    backgroundColor: "transparent", // remove blue
-                    color: "black", // set text color if needed
-                    border: "none",
-                    padding: 0,
-                  },
-                };
-              }}
+              eventPropGetter={() => ({
+                style: {
+                  backgroundColor: "transparent", // Remove default blue background
+                  color: "black", // Set text color
+                  border: "none",
+                  padding: 0,
+                },
+              })}
             />
           </div>
         </div>
+
         {modalOpen && (
           <Modal
-            date={selectedDate}
+            date={selectedDate ? selectedDate.toDate() : null} // Ensure the date passed is a JavaScript Date object
             onClose={() => setModalOpen(false)}
             onSave={handleAddEvent}
           />
         )}
 
-        {/* Another Modal for expand all event*/}
         {dayEventsModalOpen && (
           <ExpandEventModal
-            date={selectedDate}
+            date={selectedDate ? selectedDate.toDate() : null} // Ensure the date passed is a JavaScript Date object
             eventsForSelectedDay={eventsForSelectedDay}
             events={events}
             onClose={() => setDayEventsModalOpen(false)}
