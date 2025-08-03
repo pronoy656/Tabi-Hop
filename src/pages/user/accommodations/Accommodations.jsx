@@ -36,7 +36,7 @@ const Accommodations = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
-      <div className="flex justify-between items-center">
+      <div className="md:flex justify-between items-center">
         <SectionHeader
           title="Accommodations"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
@@ -46,7 +46,7 @@ const Accommodations = () => {
        
           text={"Add more"}
           bgColor={"#FCB0BA"}
-          textColor="white"
+          textColor="black"
         /></button>
       </div>
 

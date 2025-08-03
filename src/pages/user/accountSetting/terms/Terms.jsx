@@ -9,8 +9,8 @@ const Terms = () => {
         </p>
       </div>
 
-      <div className=" bg-white rounded-2xl p-12 text-gray-600 text-lg font-medium space-y-8">
-        <div className="self-stretch text-justify justify-start  leading-7 tracking-tight">
+      <div className=" bg-white rounded-2xl p-6 md:p-12 text-gray-600 md:text-lg  font-medium space-y-8">
+        <div className="self-stretch text-justify justify-start  md:leading-7 tracking-tight">
           Lorem ipsum dolor sit amet consectetur. Fringilla a cras vitae orci.
           Egestas duis id nisl sed ante congue scelerisque. Eleifend facilisis
           aliquet tempus morbi leo sagittis. Pellentesque odio amet turpis
@@ -28,7 +28,7 @@ const Terms = () => {
           tortor suspendisse. Ac duis senectus arcu nullam in suspendisse vitae.
           Tellus interdum enim lorem vel morbi lectus.
         </div>
-        <div className="self-stretch text-justify justify-start   leading-7 tracking-tight">
+        <div className="self-stretch text-justify justify-start   md:leading-7 tracking-tight">
           Lorem ipsum dolor sit amet consectetur. Fringilla a cras vitae orci.
           Egestas duis id nisl sed ante congue scelerisque. Eleifend facilisis
           aliquet tempus morbi leo sagittis. Pellentesque odio amet turpis

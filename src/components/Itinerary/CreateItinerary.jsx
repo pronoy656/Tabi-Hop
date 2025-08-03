@@ -112,39 +112,49 @@ const CreateItinerary = () => {
         </h2>
 
         <div className=" bg-[#FFFFFF] p-8 rounded-xl shadow-lg">
-          <div className="flex justify-between items-center">
+          <div className="md:flex justify-between items-center space-y-2">
             <h1 className="text-xl text-[#1F4F53] font-semibold ">
               How many additional people travelling with you on this day?
             </h1>
 
-            <button className="ml-auto text-xs md:text-lg  font-medium">
+            <button className="ml-auto text-lg  font-medium">
               Skip for now
             </button>
           </div>
 
+          <div>
+            
+          </div>
+
           <div className="space-y-4 my-4">
-            <div className="text-[#1F4F53] flex  gap-x-8 items-center">
-              <label className="block font-semibold ">Kids</label>
-              <input
-                type="number"
-                className="w-40 border bg-[#EDF8F9] border-[#EDF8F9]   rounded-md px-3 py-2 mt-1 ml-3"
-                placeholder=""
-              />
-              <p className="text-xs text-[#6D717F]">
-                Note : Write the whole number, no decimals
-              </p>
-            </div>
-            <div className="text-[#1F4F53] flex  gap-x-8 items-center">
-              <label className="block font-semibold ">Adults</label>
-              <input
-                type="number"
-                className="w-40 border bg-[#EDF8F9] border-[#EDF8F9]   rounded-md px-3 py-2 mt-1"
-                placeholder=""
-              />
-              <p className="text-xs text-[#6D717F]">
-                Note : Write the whole number, no decimals
-              </p>
-            </div>
+            <div className="text-[#1F4F53] flex flex-col sm:flex-row gap-2 sm:gap-x-8 items-start sm:items-center">
+  <label className="block font-semibold">Kids</label>
+  
+  <input
+    type="number"
+    className="w-full sm:w-40 border bg-[#EDF8F9] border-[#EDF8F9] rounded-md px-3 py-2 mt-1 xs:mt-0 xs:ml-3 sm:ml-[14px]"
+    placeholder=""
+  />
+
+  <p className="text-xs text-[#6D717F] xs:ml-3 mt-1 xs:mt-0">
+    Note: Write the whole number, no decimals
+  </p>
+</div>
+
+           <div className="text-[#1F4F53] flex flex-col sm:flex-row gap-2 sm:gap-x-8 items-start sm:items-center">
+  <label className="block font-semibold">Adults</label>
+
+  <input
+    type="number"
+    className="w-full sm:w-40 border bg-[#EDF8F9] border-[#EDF8F9] rounded-md px-3 py-2 mt-1 sm:mt-0"
+    placeholder=""
+  />
+
+  <p className="text-xs text-[#6D717F] sm:ml-3 mt-1 sm:mt-0">
+    Note: Write the whole number, no decimals
+  </p>
+</div>
+
           </div>
         </div>
       </section>
@@ -156,7 +166,7 @@ const CreateItinerary = () => {
 
       {/* Step 03 */}
       <section className="my-8">
-        <div className="flex justify-between items-center mb-4">
+        <div className="sm:flex justify-between items-center space-y-3 mb-4">
           <h2 className="font-semibold text-lg text-[#1F4F53]">
             Step - 03 : Select how you want to spend your day
           </h2>
@@ -205,9 +215,14 @@ const CreateItinerary = () => {
       {/* Step 04 */}
       
       <section className="my-8">
-        <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
+       <div className="sm:flex justify-between items-center mb-4 ">
+         <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
           Step - 04 : Please write your preferred budget allocation
         </h2>
+          <button className="bg-[#4796B5]  text-white px-4 py-2 rounded-md text-sm">
+            + Add more
+          </button>
+       </div>
         <div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md">
           {Array(5)
             .fill(0)

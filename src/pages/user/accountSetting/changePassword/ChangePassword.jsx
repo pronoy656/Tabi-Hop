@@ -11,7 +11,7 @@ const ChangePassword = () => {
   };
   return (
     <div className="page flex justify-center items-center ">
-        <div className="bg-white rounded-2xl p-12 lg:p-26 w-full max-w-3xl shadow-xl">
+        <div className="bg-white rounded-2xl p-6 md:p-12 lg:p-26 w-full max-w-3xl shadow-xl">
 
               {/* header */}
           <ModalHeader title={"Change Password"} subTitle={"  Lorem Ipsum is simply dummy text of the printing and typesetting industry."}/>

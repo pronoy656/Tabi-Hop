@@ -43,9 +43,11 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
         </div>
 
         {/*CENTER SECTION*/}
-        <div className="flex justify-center">
+        <div className="flex  justify-center ">
           {/* Logo  small screens*/}
-          <Link  to={'/'} className="flex items-center gap-1 md:hidden">
+         
+         <div className="absolute top-4 left-19">
+           <Link  to={'/'} className="flex items-center gap-1 md:hidden">
             <img
               src="/logo_image.png"
               alt="Logo"
@@ -57,6 +59,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
               className="h-6 sm:h-7 object-contain"
             />
           </Link>
+          </div>
 
           {/* Search bar (visible on lg and larger) */}
           <div className="hidden lg:flex items-center bg-white border-b-4 border-r-4 border-[#E66CE5] rounded-lg px-2 py-1 w-full max-w-[600px] h-11">

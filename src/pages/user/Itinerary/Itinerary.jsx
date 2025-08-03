@@ -76,12 +76,12 @@ const Itinerary = () => {
     <div className="page ">
        
 
-       <div className="md:flex justify-between items-center">
+       <div className="md:flex justify-between items-center gap-y-4 mb-4 md:mb-0">
         <SectionHeader
           title="Trending Itinerary"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <Link to={'/itinerary/create-itinerary'} >
+        <Link to={'/itinerary/create-itinerary'} className="" >
           <PrimaryButton bgColor={'#4ABBC6'} text={'Create Itinerary'} /></Link>
        </div>
 

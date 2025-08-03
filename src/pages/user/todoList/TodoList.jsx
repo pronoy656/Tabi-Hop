@@ -105,7 +105,7 @@ const TodoList = () => {
    const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
-      <div className="md:flex justify-between items-center">
+      <div className="md:flex justify-between items-center mb-4">
         <SectionHeader
           title="To-Do List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."

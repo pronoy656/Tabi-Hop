@@ -29,15 +29,15 @@ const AddDestination = () => {
 
   return (
     <div className=" ">
-      <div className="flex justify-between items-center mb-6">
+      <div className="sm:flex justify-between items-center mb-6 space-y-4">
         <h2 className="font-semibold text-xl text-[#1F4F53]">
           Step - 02 : Add your location anchor points
         </h2>
-        <button  onClick={() => setIsModalOpen(true)} className="bg-[#EE443F] text-white px-4 py-2 rounded-md text-sm">
+        <button  onClick={() => setIsModalOpen(true)} className="bg-[#EE443F] text-white px-4 py-2 rounded-md text-sm ">
           + Add Destination
         </button>
       </div>
-  <div className="bg-white p-6 rounded-xl w-full  ">
+  <div className="bg-white md:p-6 rounded-xl p-3 w-full mx-auto ">
 
 
 
@@ -45,12 +45,12 @@ const AddDestination = () => {
 
 
          
-   <div className="relative pl-6">
+   <div className="relative md:pl-6">
   {destinations?.map((step, index, array) => (
-    <div key={index} className="relative flex z-10">
+    <div key={index} className="relative flex justify-self-start z-10">
       {/* Left: Destination label */}
-      <div className="w-40 text-right pr-4 mb-2">
-       <p className="text-lg font-medium text-[#1F4F53]">
+      <div className="md:w-40 w-30 md:text-right md:pr-4 mb-2">
+       <p className="md:text-lg font-medium  text-[#1F4F53]">
   {index === 0
     ? "Starting Location"
     : index === array.length - 1
@@ -78,8 +78,8 @@ const AddDestination = () => {
 
       {/* Right: Content */}
       <div className="flex-1 ">
-        <div className="flex items-center gap-2">
-          <p className="text-lg font-semibold text-[#1F4F53]">{step.title}</p>
+        <div className="flex items-center gap-2 gap-y-2">
+          <p className="md:text-lg md:font-semibold font-medium text-[#1F4F53]">{step.title}</p>
           <img src="/edit-3.png"  className="text-[#EE443F] cursor-pointer h-6 w-6" />
         </div>
         <p className="text-sm text-gray-500">{step.desc}</p>

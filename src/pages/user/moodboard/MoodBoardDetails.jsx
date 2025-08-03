@@ -14,7 +14,7 @@ const MoodBoardDetails = () => {
   return (
     <div className="page">
       <div className="flex justify-between">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-xl md:text-2xl font-semibold">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Ipsum has been the industry's standard dummy text ever since
           the 1500s,
@@ -80,14 +80,14 @@ const MoodBoardDetails = () => {
         </section>
       </div>
 
-      <div className="bg-[#4ABBC7] rounded-2xl p-8 lg:p-12 my-8 ">
+      <div className="bg-[#4ABBC7] rounded-2xl p-4 md:p-8 lg:p-12 my-8 ">
         <h1 className="text-3xl font-semibold text-[#FFFFFF]">
           Contact Information
         </h1>
         <p className="text-[#FFFFFF]">Say something to start a live chat!</p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center mx-2 lg:mx-10">
-          <div className="w-full text-white flex flex-col justify-center items-start gap-4 space-y-4 mx-auto p-4 xl:p-0">
+          <div className="w-full text-white flex flex-col justify-center items-start gap-4 space-y-4 mx-auto p-2 md:p-4 xl:p-0">
             <div className="flex items-start gap-4">
               <img src="/phone-call.png" alt="Phone" className="w-7 h-7" />
               <span className="">+1012 3457 789</span>
@@ -111,7 +111,7 @@ const MoodBoardDetails = () => {
             </div>
           </div>
 
-         <div className="w-full text-white flex flex-col items-start space-y-4 gap-4 p-4 xl:p-0">
+         <div className="w-full text-white flex flex-col items-start space-y-4 gap-4 p-2 md:p-4 xl:p-0">
   <div className="flex items-center  gap-4">
     <img src="/twitter.png" alt="Twitter" className="w-7 h-7 mb-[2px]" />
     <span className="">@dad.twitter.com</span>
@@ -129,7 +129,7 @@ const MoodBoardDetails = () => {
 </div>
 
 
-          <div className="w-full col-span-1 lg:col-span-2 xl:col-span-1 p-4 xl:p-0">
+          <div className="w-full col-span-1 lg:col-span-2 xl:col-span-1 p-0 md:p-4 xl:p-0">
             <img src="/circle.png" className=" w-[350px] h-[350px]" alt="" />
           </div>
         </div>

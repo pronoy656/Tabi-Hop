@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Website Name Image */}
         <div className="h-12">
           <img
-            src="/public/pronoy/websiteName.png"
+            src="/pronoy/websiteName.png"
             alt=""
             className="w-[140px] md:w-[203.78px]"
           />

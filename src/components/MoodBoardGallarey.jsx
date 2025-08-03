@@ -47,7 +47,7 @@ const MoodBoardGallery = ({moodBoards}) => {
         {moodBoards?.map((item, index) => (
           <div className="mt-4" key={index}>
             <img
-              src={item.url}
+              src={item.hero}
               alt={`img-${index}`}
               className="w-full h-auto object-cover rounded-xl"
             />

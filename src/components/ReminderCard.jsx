@@ -10,7 +10,7 @@ const reminders = [
 
 const ReminderCard = () => {
   return (
-    <div className="bg-white col-span-4 rounded-lg min-w-[260px] sm:min-w-[390px]   w-full shadow-md p-8 border border-r-4 border-b-4" style={{
+    <div className="bg-white col-span-4 rounded-lg min-w-[260px] sm:min-w-[390px]   w-full shadow-md p-4 md:p-8 border border-r-4 border-b-4" style={{
       
         borderTopColor:" #3DA755",
         borderLeftColor: "#3DA755",

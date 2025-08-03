@@ -34,7 +34,7 @@ const Bookings = () => {
   return (
     <div className="page">
 
-        <div className="flex justify-between items-center mb-2">
+        <div className="md:flex justify-between items-center mb-2">
           <div>
             <SectionHeader
               title="Bookings"
