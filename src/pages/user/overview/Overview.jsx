@@ -2,13 +2,13 @@
 import SectionHeader from "../../../components/shared/SectionHeader";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import BookingGallery from "../../../components/BookingGallary";
-import BookingsTodoCard from "../../../components/BookingsTodoCard";
-import BookingsTodoCardTwo from "../../../components/BookingsTodoCardTwo";
 import { BookingOverviewCard } from "../../../components/BookingOverviewCard";
 import OverviewSection from "./OverviewSection";
 import TodoListSection from "./TodoListSection";
 import BucketListSection from "./BucketListSection";
 import TrendingItinerarySection from "./TrendingItinerarySection";
+import PackingListSection from "./PackingListSection";
+import AccommodationListSection from "./AccommodationListSection";
 
 const todoGroups = [
   {
@@ -185,52 +185,11 @@ const Overview = () => {
       {/* Trending Itinerary Section */}
      
         <TrendingItinerarySection/>
-      {/* BookingsTodo Section*/}
-      <section>
-        <div className="flex justify-between items-center mb-2">
-          <SectionHeader
-            title="Bookings"
-            subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
-          />
-          <PrimaryButton
-            text={"Add more"}
-            textColor="white"
-            bgColor={"#EE443F"}
-          />
-        </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {todoGroups.map((group, idx) => (
-            <BookingsTodoCard
-              key={idx}
-              title={group.title}
-              todos={group.todos}
-            />
-          ))}
-
-      
-        </div>
-      </section>
-
-      {/* BookingsTodo Two Section*/}
-      <section>
-        <div className="flex justify-between items-center mb-2">
-          <SectionHeader
-            title="Bookings"
-            subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
-          />
-          <PrimaryButton text={"Add more"} bgColor={"#FFAA00"} />
-        </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {todoGroups.map((group, idx) => (
-            <BookingsTodoCardTwo
-              key={idx}
-              title={group.title}
-              todos={group.todos}
-            />
-          ))}
-        </div>
-      </section>
-
+      {/* Packing List Section*/}
+  
+<PackingListSection/>
+{/* Accommodation List section  */}
+<AccommodationListSection/>
       {/* Booking Itinerary Section */}
       <section>
         <div className="flex justify-between items-center mb-2">
@@ -280,7 +239,7 @@ const Overview = () => {
             title="Moodboard "
             subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
           />
-          <PrimaryButton text={"Add more"} bgColor={"#FCB0BA"} />
+          <PrimaryButton text={"See more"} bgColor={"#FCB0BA"} />
         </div>
         <BookingGallery />
       </section>

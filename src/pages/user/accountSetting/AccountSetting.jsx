@@ -21,7 +21,7 @@ const AccountSetting = () => {
 
       <div className="bg-[#eaf7f9] p-2 md:p-6 rounded-md   space-y-4">
         {/* Profile Info Row */}
-        <div className="flex items-center justify-between bg-white p-4 rounded-md shadow-sm border border-gray-300">
+        <div className="md:flex space-y-4 items-center justify-between bg-white p-4 rounded-md shadow-sm border border-gray-300">
           <div className="flex items-center gap-4">
             <div className="relative ">
               {" "}
@@ -43,7 +43,7 @@ const AccountSetting = () => {
           </div>
           <Link
             to={"/account-setting/edit-details"}
-            className="bg-[#27C4CE] hover:bg-[#20b6c0] text-white px-4 py-2 text-sm font-medium rounded-md"
+            className="bg-[#27C4CE] hover:bg-[#20b6c0] text-white px-4 py-2 text-sm font-medium rounded-md "
           >
             Edit Details
           </Link>

@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+
 import { ListCard } from "../../../components/shared/ListCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
+import ListCartModal from "../../../components/shared/ListCartModal";
+import { useState } from "react";
 
 const PackingList = () => {
-  const todoGroups = [
+  const [todoGroups,setTodoGroups] = useState([
     {
       title: "Sky Diving",
       todos: [
@@ -99,21 +101,22 @@ const PackingList = () => {
         },
       ],
     },
-  ];
+  ]);
+   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
-      <div className="md:flex justify-between items-center">
+      <div className="md:flex justify-between items-center mb-4">
         <SectionHeader
           title="Packing List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <Link to={""}>
+        <button  onClick={() => setIsModalOpen(true)} >
           <PrimaryButton
             bgColor={"#EE443F"}
             text={"Add more"}
             textColor={"white"}
           />
-        </Link>
+        </button>
       </div>
       <div>
         <div className="grid md:grid-cols-1 gap-4">
@@ -131,6 +134,8 @@ const PackingList = () => {
           ))}
         </div>
       </div>
+
+         <ListCartModal setTodoGroups={setTodoGroups} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

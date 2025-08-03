@@ -6,6 +6,7 @@ export const ListCard = ({
   text,
   bg,
   border2,
+  line
 }) => {
 
 
@@ -48,7 +49,7 @@ export const ListCard = ({
             </div>
 
             {idx !== todos.length - 1 && (
-              <div className="border-b " style={{ borderColor: border2 }} />
+              <div className="border-b " style={{ borderColor: line}} />
             )}
           </li>
         ))}

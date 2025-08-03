@@ -11,7 +11,7 @@ const Faq = () => {
   };
 ;
   return (
-    <div className="page p-12">
+    <div className="page p-6 md:p-12">
   {/* header */}
     <div className=" mb-6">
           <h2 className="text-4xl font-semibold ">Frequently Asked Questions</h2>
@@ -22,7 +22,7 @@ const Faq = () => {
         
 
         
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-white rounded-2xl p-12 ">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-white rounded-2xl p-6 md:p-12 ">
   <div>
     <label className="label-class">
     Subject

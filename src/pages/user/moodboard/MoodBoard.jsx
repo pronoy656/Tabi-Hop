@@ -20,7 +20,7 @@ const MoodBoard = () => {
   return (
     <div className="page">
 
-         <div className="flex justify-between items-center mb-2">
+         <div className="md:flex justify-between items-center mb-4">
           <SectionHeader
             title="Trending Itinerary"
             subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."

@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+
 import { ListCard } from "../../../components/shared/ListCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
+import ListCartModal from "../../../components/shared/ListCartModal";
+import { useState } from "react";
 
 const BucketList = () => {
-  const todoGroups = [
+  const [todoGroups,setTodoGroups] = useState([
     {
       title: "Sky Diving",
       todos: [
@@ -98,17 +100,17 @@ const BucketList = () => {
           priority: "High",
         },
       ],
-    }
-   
-  ];
+    },
+  ]);
+   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
-      <div className="md:flex justify-between items-center mb-4 md:mb-0">
+      <div className="md:flex justify-between items-center mb-4">
         <SectionHeader
           title="Bucket List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <button>
+        <button  onClick={() => setIsModalOpen(true)} >
           <PrimaryButton
             bgColor={"#EE443F"}
             text={"Add more"}
@@ -132,11 +134,10 @@ const BucketList = () => {
           ))}
         </div>
       </div>
+
+         <ListCartModal setTodoGroups={setTodoGroups} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
 
-
-
 export default BucketList;
-

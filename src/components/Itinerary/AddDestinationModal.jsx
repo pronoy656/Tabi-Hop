@@ -22,7 +22,7 @@ const onSubmit = (data) => {
       <h1 className="text-3xl text-[#1F4F53] text-center mb-6">Add your location anchor points</h1>
 
    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 ">
-  <div className="bg-[#F1F0FB] p-4 rounded-lg">
+  <div className="bg-[#F1F0FB] p-2 md:p-4 rounded-lg">
   <label className="label-class">
     Enter Address
   </label>

@@ -46,9 +46,9 @@ const AddMoodboardModal = ({ isOpen, onClose, setMoodBoards }) => {
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6"
+      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-2 md:p-6"
     >
-      <div className="bg-white rounded-2xl p-12 w-[90%] max-w-3xl shadow-xl max-h-[90vh] noscrollbar overflow-y-auto">
+      <div className="bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl max-h-[90vh] noscrollbar overflow-y-auto">
         {/* header */}
         <ModalHeader
           title={"Create Moodboard"}

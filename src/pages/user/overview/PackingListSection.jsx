@@ -4,7 +4,8 @@ import PrimaryButton from "../../../components/shared/PrimaryButton";
 import { ListCard } from "../../../components/shared/ListCard";
 import ListCartModal from "../../../components/shared/ListCartModal";
 
-const TodoListSection = () => {
+
+const PackingListSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
@@ -143,11 +144,11 @@ const TodoListSection = () => {
       {/* Header */}
       <div className="md:flex justify-between items-center mb-4">
         <SectionHeader
-          title="To-Do List"
+          title="Packing List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
         <button className="hidden sm:flex" onClick={() => setIsModalOpen(true)}>
-          <PrimaryButton bgColor="#E66CE5" text="Add more" textColor="black" />
+          <PrimaryButton bgColor="#EE443F" text="Add more" textColor="white" />
         </button>
       </div>
 
@@ -155,34 +156,34 @@ const TodoListSection = () => {
       <div className="block sm:hidden">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {displayedGroups.map((group, idx) => (
-            <ListCard
+           <ListCard
               key={idx}
               title={group.title}
               todos={group.todos}
-              border="#E66CE5"
-              border2="#E66CE5"
+              border="#FF6A35"
+              border2="#EE443F"
               bg="#FFFFFF"
-              titleText="#612D60"
+              titleText="#EE443F"
               text="#394050"
-              line="#F7D1F7"
+              line="#FAC5C3"
             />
           ))}
         </div>
 
         {/* See All / See Less toggle */}
-        <div className="mt-4 text-center flex justify-center gap-x-4">
+        <div className="mt-4 text-center flex items-center justify-center gap-x-4">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 bg-white border border-[#E66CE5] text-[#E66CE5] rounded-lg font-semibold transition-colors hover:bg-[#E66CE5] hover:text-white"
+            className="px-6 py-2 bg-white border border-[#EE443F] text-[#EE443F] rounded-lg font-semibold transition-colors hover:bg-[#f78a86] hover:text-white"
           >
             {showAll ? "See Less" : "See All"}
           </button>
           <button className="sm:hidden " onClick={() => setIsModalOpen(true)}>
             <PrimaryButton
               round
-              bgColor="#E66CE5"
+              bgColor="#EE443F"
               text="Add more"
-              textColor="black"
+              textColor="white"
             />
           </button>
         </div>
@@ -196,12 +197,12 @@ const TodoListSection = () => {
               key={idx}
               title={group.title}
               todos={group.todos}
-              border="#E66CE5"
-              border2="#E66CE5"
+              border="#FF6A35"
+              border2="#EE443F"
               bg="#FFFFFF"
-              titleText="#612D60"
+              titleText="#EE443F"
               text="#394050"
-              line="#F7D1F7"
+              line="#FAC5C3"
             />
           ))}
         </div>
@@ -217,4 +218,4 @@ const TodoListSection = () => {
   );
 };
 
-export default TodoListSection;
+export default PackingListSection;

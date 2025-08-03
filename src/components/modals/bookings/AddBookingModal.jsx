@@ -29,7 +29,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6"
     >
       
-      <div className="bg-white rounded-2xl p-12 w-[90%] max-w-3xl shadow-xl">
+      <div className="bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl">
         {/* Header */}
      
         <ModalHeader title={"Bookings"} subTitle={"  Lorem Ipsum is simply dummy text of the printing and typesetting industry."}/>

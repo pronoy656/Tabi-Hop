@@ -15,7 +15,7 @@ const DetailsDestination = () => {
           {/* LEFT SECTION */}
           <div className="bg-white p-6 rounded-xl w-full border border-gray-300 lg:w-2/3 space-y-4">
             {/* Image Grid */}
-            <div className="grid grid-cols-3 grid-rows-2 gap-2 h-[600px]">
+            <div className="grid md:grid-cols-3 grid-rows-2 gap-2 h-[600px]">
               <div className="col-span-1 row-span-1">
                 {" "}
                 <img
@@ -123,7 +123,7 @@ const DetailsDestination = () => {
 
       <TimelineSection />
 
-      <div className="flex flex-col md:flex-row gap-x-10 justify-center items-center my-6">
+      <div className="flex flex-col gap-y-6 md:flex-row gap-x-10 justify-center items-center my-2" >
 
       <div className="relative">
   <button
