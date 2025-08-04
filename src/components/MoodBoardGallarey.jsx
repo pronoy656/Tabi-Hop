@@ -32,7 +32,7 @@ const MoodBoardGallery = ({moodBoards}) => {
                 alt={`img-${index}`}
                 className="w-full h-full object-cover rounded-xl"
               />
-              <p className="text-center cursor-pointer text-black flex justify-between mt-2 mx-8">
+              <p className="text-center cursor-pointer text-black flex justify-between mt-2 mx-2">
                 <p className="text-lg">{item.title} </p>
                 <Link to={`/moodboard/details/${index}`}>
                   <img src="/dots.png" className="h-6" alt="" />
@@ -45,13 +45,13 @@ const MoodBoardGallery = ({moodBoards}) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:hidden">
         {moodBoards?.map((item, index) => (
-          <div className="mt-4" key={index}>
+          <div className="mt-4 " key={index}>
             <img
               src={item.hero}
               alt={`img-${index}`}
               className="w-full h-auto object-cover rounded-xl"
             />
-            <p className="text-center cursor-pointer text-black flex justify-between mt-2 mx-4">
+            <p className="text-center mx-2 cursor-pointer text-black flex justify-between mt-2 mx-2 ">
               <p className="text-lg">{item.title} </p>
               <Link to={`/moodboard/details/:${index}`}>
                 <img src="/dots.png" className="h-6" alt="" />

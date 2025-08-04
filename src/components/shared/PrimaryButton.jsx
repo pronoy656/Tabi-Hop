@@ -1,3 +1,5 @@
+import PlusSVG from "../../../public/ruhulo-images/PlusSVG";
+
 const PrimaryButton = ({ text, bgColor, textColor = "black",round=false }) => {
   return (
     <button
@@ -7,7 +9,7 @@ const PrimaryButton = ({ text, bgColor, textColor = "black",round=false }) => {
         color: textColor,
       }}
     >
-      + {text}
+     <span className="flex items-center"><PlusSVG strokeColor={textColor}></PlusSVG> {text} </span>
     </button>
   );
 };

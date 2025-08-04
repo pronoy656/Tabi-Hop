@@ -55,6 +55,7 @@ import AdminAccountSettings from "../pages/admin/adminAccountSettings/AdminAccou
 import EditPrivacyPolicy from "../pages/admin/privacyPolicy/EditPrivacyPolicy";
 import EditTermAndCondition from "../pages/admin/termsandConditions/EditTermsAndCondition";
 import AdminNotification from "../pages/admin/adminNotification/AdminNotification";
+import ContactSupport from "../pages/user/accountSetting/contact-support/ContactSupport";
 
 const router = createBrowserRouter([
   {
@@ -142,6 +143,10 @@ const router = createBrowserRouter([
       {
         path: "/account-setting/terms",
         element: <Terms />,
+      },
+      {
+        path: "/account-setting/contact-support",
+        element: <ContactSupport />,
       },
     ],
   },

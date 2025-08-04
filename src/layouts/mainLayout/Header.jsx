@@ -63,7 +63,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
 
           {/* Search bar (visible on lg and larger) */}
           <div className="hidden lg:flex items-center bg-white border-b-4 border-r-4 border-[#E66CE5] rounded-lg px-2 py-1 w-full max-w-[600px] h-11">
-            <SearchOutlined className="text-[#4a4a32]" />
+            <SearchOutlined className="text-[#4a4a32] ml-2" />
             <Input
               placeholder="Search here"
               bordered={false}
@@ -74,18 +74,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
 
         {/*RIGHT SECTION*/}
         <div className="flex justify-end items-center gap-2 sm:gap-3 lg:gap-4 min-w-fit">
-          {/* Gems Link */}
-          <Link
-            to="/gemss"
-            className="bg-white hidden md:flex p-2 h-[40px] w-[40px] sm:h-[44px] sm:w-[44px] rounded-lg border-b-2 border-r-2 border-[#E66CE5]  items-center justify-center"
-          >
-            <img
-              src="/diamond.png"
-              alt="Gems"
-              className="h-5 w-5 sm:h-6 sm:w-6 object-contain"
-            />
-          </Link>
-
+        
           {/* Notifications Link */}
           <Link
             to="/notifications"

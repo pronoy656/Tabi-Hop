@@ -35,7 +35,7 @@ export const BookingOverviewCard = ({ title, location, image, rating = 3, descri
         </div>
 
         {/* Description */}
-        <p className="text-xs text-gray-700 mt-2 leading-5">
+        <p className="text-sm text-[#131927] mt-2 leading-5">
           <span className="font-semibold">Note :</span> {description}
         </p>
 

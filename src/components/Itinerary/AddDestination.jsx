@@ -10,21 +10,7 @@ const AddDestination = () => {
       title: "New York Public Library - Stephen A. Schwarzman Building",
       desc: "476 5th Ave, New York, NY 10018, USA",
     },
-    {
-      destination: "Destination - 01",
-      title: "Head southwest on 5th Ave toward E 41st St",
-      desc: "476 5th Ave, New York, NY 10018, USA",
-    },
-    {
-      destination: "Destination - 01",
-      title: "Head southwest on 5th Ave toward E 41st St",
-      desc: "476 5th Ave, New York, NY 10018, USA",
-    },
-    {
-      destination: "Ending Location",
-      title: "Head southwest on 5th Ave toward E 41st St",
-      desc: "476 5th Ave, New York, NY 10018, USA",
-    },
+  
   ])
 
   return (
