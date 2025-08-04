@@ -312,9 +312,9 @@ const UserManagement = () => {
           </p>
         </div>
 
-        <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
+        {/* <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
           + Add New User
-        </button>
+        </button> */}
       </div>
       <div className="flex items-center gap-[20px] mb-5">
         <Input

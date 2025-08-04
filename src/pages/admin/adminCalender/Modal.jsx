@@ -46,11 +46,8 @@ const Modal = ({ onClose, date, onSave }) => {
             <h3 className="text-xl font-bold">Task on {date.toDateString()}</h3>
             <h3>View anf add your bookings, plans and events in one place</h3>
           </div>
-          <button
-            onClick={onClose}
-            className="px-2 py-2 bg-red-500 text-white rounded mr-2"
-          >
-            <ImCross />
+          <button onClick={onClose}>
+            <ImCross className="text-2xl text-red-500 font-extrabold" />
           </button>
         </div>
         {inputGroups.map((group, index) => (
