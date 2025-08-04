@@ -1,5 +1,8 @@
 
 import sales from '../../../../public/user-dashboard.png';
+import subscriber from '../../../../public/admin-subscriber.png';
+import star from '../../../../public/admin-star.png';
+import moodboard from '../../../../public/admin-moodboard.png';
 const data = [
   {
     icon: <img src={sales} alt="users" />,
@@ -8,19 +11,19 @@ const data = [
     bgColor: "bg-[#EAEFFF]",
   },
   {
-    icon: <img src={sales} alt="subscribers" />,
+    icon: <img src={subscriber} alt="subscribers" />,
     title: "Total Subscriber",
     value: "75%",
     bgColor: "bg-[#FFECEC]",
   },
   {
-    icon: <img src={sales} alt="itinerary" />,
+    icon: <img src={star} alt="itinerary" />,
     title: "Itinerary Created",
     value: "75%",
     bgColor: "bg-[#FFF5E0]",
   },
   {
-    icon: <img src={sales} alt="moodboard" />,
+    icon: <img src={moodboard} alt="moodboard" />,
     title: "Moodboard Available",
     value: "8,765",
     bgColor: "bg-[#E6F4ED]",
@@ -36,7 +39,7 @@ const AdminCard = () => {
           className="rounded-xl border-[1px] border-[#E5E7EA] bg-white p-5 flex justify-between items-center h-[112px]"
         >
           <div className='flex flex-col sapce-y-4'>
-            <h4 className="text-sm  text-gray-600 mb-1">{item.title}</h4>
+            <h4 className="text-sm font-semibold  text-gray-600 mb-1">{item.title}</h4>
             <p className="text-xl font-semibold text-black">{item.value}</p>
           </div>
           <div

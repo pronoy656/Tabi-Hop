@@ -58,15 +58,14 @@ const AdminCalender = () => {
 
     return (
       <div onClick={() => setDayEventsModalOpen(true)}>
-        <h3 className="text-2xl font-bold">{event.title}</h3>
-        <div className="flex items-center space-x-4 mt-1">
-          <p className="text-lg font-medium">{event.time}</p>
-          {sameDayEvents.length > 1 && (
-            <div className="py-0.5 px-4 rounded-2xl text-black font-normal">
-              +{sameDayEvents.length - 1} more
-            </div>
-          )}
-        </div>
+        <h3 className="text-2xl font-bold -mt-1">{event.title}</h3>
+
+        <p className="text-lg font-medium">{event.time}</p>
+        {sameDayEvents.length > 1 && (
+          <div className=" text-blue-500 font-medium">
+            +{sameDayEvents.length - 1} more
+          </div>
+        )}
       </div>
     );
   };

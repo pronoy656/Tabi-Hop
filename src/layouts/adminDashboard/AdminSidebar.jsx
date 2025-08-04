@@ -110,7 +110,7 @@ const AdminSidebar = ({ closeSidebar }) => {
 
 
       <div
-        className="space-y-5 md:mt-5"
+        className=" space-y-0 lg:space-y-5 md:mt-5"
         style={{ backgroundColor: "#131927", color: "#0B3666" }}
       >
         {menuItems.map((item) => {
