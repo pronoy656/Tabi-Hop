@@ -19,7 +19,9 @@ const EditTermAndCondition = () => {
           
           <button to={"/admin-dashboard/admin-privacy-policy/edit-privacy-policy"} className="bg-[#131927] text-white px-7 py-2 text-base font-semibold rounded-md">
            Save & Change
-          </button></div>
+          </button>
+          
+          </div>
         </div>
     
        <JoditEditor
