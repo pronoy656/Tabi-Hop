@@ -7,7 +7,7 @@ const AccountSetting = () => {
     { label: "Terms and Conditions", to: "/account-setting/terms" },
     { label: "Privacy Policy", to: "/account-setting/privacy" },
     { label: "Frequently Asked Questions", to: "/account-setting/faq" },
-    { label: "Contact Support", to: "/account-setting/support" },
+    { label: "Contact Support", to: "/account-setting/contact-support" },
   ];
 
   return (

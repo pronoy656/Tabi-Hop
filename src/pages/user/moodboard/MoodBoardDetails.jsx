@@ -1,9 +1,15 @@
+import { useState } from "react";
 import BookingGallery from "../../../components/BookingGallary";
 import GoogleMapReact from "google-map-react";
+import { Link } from "react-router-dom";
+import SaveMoodboardModal from "../../../components/modals/moodboard/SaveMoodboardModal";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 const MoodBoardDetails = () => {
+    const [showDropdown, setShowDropdown] = useState(false);
+
+   const [isModalOpen, setIsModalOpen] = useState(false);
   const defaultProps = {
     center: {
       lat: 10.99835702,
@@ -13,16 +19,44 @@ const MoodBoardDetails = () => {
   };
   return (
     <div className="page">
-      <div className="flex justify-between">
+      <div className="flex justify-between gap-x-4">
         <h1 className="text-xl md:text-2xl font-semibold">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Ipsum has been the industry's standard dummy text ever since
           the 1500s,
         </h1>{" "}
-        <img src="/dots.png" className="h-8" alt="" />
+      <div className="relative">
+  <img
+    src="/dots.png"
+    className="h-[30px] w-[30px] rotate-180 cursor-pointer"
+    alt="Options"
+    onClick={() => setShowDropdown(!showDropdown)}
+  />
+
+  {showDropdown && (
+    <div className="absolute right-0 mt-2 w-36  bg-white shadow-md rounded-md z-10 p-2 lg:p-4 space-y-2">
+      <button
+        onClick={() => {
+          setIsModalOpen(true);
+          setShowDropdown(false);
+        }}
+        className="text-left text-sm hover:bg-gray-100 px-2 py-1 rounded w-full"
+      >
+        Save
+      </button>
+      <Link
+        to={'/account-setting/contact-support'}
+        className="block text-sm text-left hover:bg-gray-100 px-2 py-1 rounded"
+      >
+        Report
+      </Link>
+    </div>
+  )}
+</div>
+
       </div>
       <div
-        className="h-97 w-full rounded-2xl my-4"
+        className="h-107 w-full rounded-2xl my-4"
         style={{
           backgroundImage: "url('/moodboard-gaalery.png')",
           backgroundSize: "cover",
@@ -134,6 +168,12 @@ const MoodBoardDetails = () => {
           </div>
         </div>
       </div>
+
+     
+        <SaveMoodboardModal  isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}  />
+
+
+
     </div>
   );
 };

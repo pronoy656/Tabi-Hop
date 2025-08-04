@@ -122,8 +122,8 @@ const Sidebar = ({ closeSidebar }) => {
               key={item.path}
               className={
                 isActive
-                  ? "bg-[#4796B5] text-[#EDF8F9] font-medium text-xl rounded-sm transition-transform"
-                  : "text-[#212936] text-xl"
+                  ? "bg-[#4796B5] text-[#EDF8F9] font-semibold text-xl rounded-sm transition-transform"
+                  : "text-[#212936] text-xl font-semibold"
               }
             >
               <Link
