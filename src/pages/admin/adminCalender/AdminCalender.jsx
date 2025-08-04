@@ -58,10 +58,11 @@ const AdminCalender = () => {
 
     return (
       <div onClick={() => setDayEventsModalOpen(true)}>
-        <h3 className="text-2xl font-bold">{event.title}</h3>
+        <h3 className="text-2xl font-bold -mt-1">{event.title}</h3>
+
         <p className="text-lg font-medium">{event.time}</p>
         {sameDayEvents.length > 1 && (
-          <div className="text-xs text-blue-600 mt-1 font-medium">
+          <div className=" text-blue-500 font-medium">
             +{sameDayEvents.length - 1} more
           </div>
         )}
@@ -74,19 +75,21 @@ const AdminCalender = () => {
       <div className="admin-page">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-5 gap-4">
           <div>
-            <p className="text-xl sm:text-2xl font-semibold">User management</p>
+            <p className="text-xl sm:text-2xl font-semibold">
+              Calender management
+            </p>
             <p className="text-sm sm:text-base text-gray-600">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
           </div>
-          <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
+          {/* <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
             + Add New User
-          </button>
+          </button> */}
         </div>
 
         <div className="w-full overflow-x-auto">
-          <div className="min-w-[700px] h-[700px] mx-auto">
+          <div className="min-w-[700px] h-[700px] mx-auto [&_.rbc-toolbar-label]:font-semibold [&_.rbc-toolbar-label]:text-lg">
             <Calendar
               localizer={localizer}
               events={events}

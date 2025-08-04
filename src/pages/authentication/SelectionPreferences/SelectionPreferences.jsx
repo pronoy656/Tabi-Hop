@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 const images = [
   { url: "/stress-selector.jpg", title: "Calm Mood" },
   { url: "/stress-selector.jpg", title: "Focus Booster" },
@@ -14,35 +16,65 @@ const images = [
 ];
 
 const SelectionPreferences = () => {
+  const navigate = useNavigate();
+  const [selectedIndexes, setSelectedIndexes] = useState([]);
+
+  const handleImageClick = (index) => {
+    console.log("Selected Image ID:", index);
+
+    setSelectedIndexes(
+      (prev) =>
+        prev.includes(index)
+          ? prev.filter((i) => i !== index) // deselect if already selected
+          : [...prev, index] // otherwise add to selection
+    );
+  };
+
+  const handleConfirm = () => {
+    if (selectedIndexes.length === 0) {
+      alert("Please select one destination");
+      return;
+    }
+    console.log("Final Selected IDs:", selectedIndexes);
+    navigate("/signin/date-location-selection");
+  };
+
   return (
     <div>
       <div
-        className="min-h-screen bg-cover bg-center "
+        className="min-h-screen bg-cover bg-center"
         style={{ backgroundImage: "url('/preference-selection.jpg')" }}
       >
-        <div className="flex items-center justify-center py-40">
+        <div className="flex items-center justify-center py-24 md:py-44">
           <div className=" max-w-7xl w-full rounded-2xl backdrop-blur-2xl bg-white/40 py-8 px-[60px]">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-[32px] font-semibold">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              {/* Text Section */}
+              <div className="text-center lg:text-left">
+                <p className="text-2xl sm:text-3xl font-semibold leading-snug">
                   Congratulation! Now Select Your Preference
                 </p>
-                <p className="font-medium">
-                  Select all that seem attractive to you. Based on that your the
-                  moodboard will be organized{" "}
+                <p className="font-medium text-sm sm:text-base mt-2">
+                  Select all that seem attractive to you. Based on that your
+                  moodboard will be organized.
                 </p>
               </div>
-              <div className="flex space-x-4">
-                <button className="w-28 py-3 px-10 outline rounded-xl text-lg font-semibold">
+
+              {/* Buttons Section */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <button className="w-full sm:w-28 py-3 px-10 outline rounded-xl text-lg font-semibold">
                   Skip
                 </button>
-                <button className="w-65 h-12 py-3 px-[50px] bg-[#FFAA00] rounded-xl text-lg font-semibold">
+                <button
+                  onClick={handleConfirm}
+                  className="w-full sm:w-auto h-12 py-3 px-[40px] bg-[#FFAA00] rounded-xl text-lg font-semibold"
+                >
                   Confirm Selection
                 </button>
               </div>
             </div>
+
             {/* Desktop Grid Layout */}
-            <div className="hidden lg:grid grid-cols-8 grid-rows-12 gap-4 h-[1200px] gap-y-12 mt-10">
+            <div className="lg:grid lg:grid-cols-8 lg:grid-rows-12 lg:gap-4 lg:gap-y-12 lg:h-[1200px] block columns-1 sm:columns-2 gap-4 px-1 space-y-4 mt-9 mb-6">
               {images.map((item, index) => {
                 const spanMap = [
                   "row-span-5",
@@ -57,19 +89,28 @@ const SelectionPreferences = () => {
                   "row-span-3",
                   "row-span-4",
                 ];
+                const isSelected = selectedIndexes.includes(index);
+
                 return (
-                  <div key={index} className={`col-span-2 ${spanMap[index]}`}>
+                  <div
+                    key={index}
+                    className={`lg:col-span-2 ${
+                      spanMap[index] || ""
+                    } cursor-pointer`}
+                    onClick={() => handleImageClick(index)}
+                  >
                     <img
                       src={item.url}
                       alt={`img-${index}`}
-                      className="w-full h-full object-cover rounded-xl"
+                      className={`w-full h-full object-cover rounded-xl ${
+                        isSelected
+                          ? "border-4 border-yellow-400 rounded-2xl"
+                          : ""
+                      }`}
                     />
-                    <p className="text-center cursor-pointer text-black flex justify-between mt-2 mx-8">
-                      <p className="text-lg">{item.title} </p>
-                      <Link to={`/moodboard/details/${index}`}>
-                        <img src="/dots.png" className="h-6" alt="" />
-                      </Link>
-                    </p>
+                    <div className="text-left text-black mt-2 mx-1 sm:mx-2 md:mx-4">
+                      <p className="text-lg font-semibold">{item.title}</p>
+                    </div>
                   </div>
                 );
               })}
