@@ -30,6 +30,13 @@ span.rbc-btn-group {
 .rbc-off-range-bg {
   background: none !important;
 }
+
+/* for calender title bold */
+.rbc-toolbar-label {
+  font-weight: 700; /* or 700 for bolder */
+  font-size: xx-large; /* optional: make it a bit bigger */
+}
+
 /* End POint */
 
 /* Add to your global CSS or datepicker.css file */
