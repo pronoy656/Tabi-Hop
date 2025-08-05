@@ -169,8 +169,8 @@ const AdminItinerary = () => {
               alt={place.title}
               className="rounded-md h-[180px] w-full object-cover"
             />
-            <h3 className="font-semibold text-sm mt-2">{place.title}</h3>
-            <p className="text-gray-500 text-xs mt-1">{place.description}</p>
+            <h3 className="text-lg font-semibold mt-2">{place.title}</h3>
+            <p className="text-gray-500 text-sm mt-1">{place.description}</p>
 
             <div className="flex items-center gap-1 text-gray-500 text-xs mt-2">
               <FaMapMarkerAlt />
@@ -183,7 +183,7 @@ const AdminItinerary = () => {
               </div>
 
               <div className="flex gap-3 mt-2 text-[16px]">
-                <FaEye className="text-blue-500 cursor-pointer" />
+                <FaEye className=" text-lg text-blue-500 cursor-pointer" />
                 <FaCheckCircle className="text-green-500 cursor-pointer" />
                 <FaTimesCircle className="text-red-500 cursor-pointer" />
               </div>
