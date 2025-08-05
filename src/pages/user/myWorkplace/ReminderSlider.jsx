@@ -63,21 +63,18 @@ const ReminderSlider = () => {
         <h1 className="text-3xl font-bold">Upcoming Reminders</h1>
     <div className="mt-4">
       <Swiper
-        spaceBetween={20}
+        spaceBetween={10}
         pagination={{ clickable: true }}
         modules={[Pagination]}
         grabCursor={true}
         breakpoints={{
           320: { slidesPerView: 1 },
-          640: { slidesPerView: 1.2 },
-          768: { slidesPerView: 3 },
+          640: { slidesPerView: 2 },
           868: { slidesPerView: 3 },
-          968: { slidesPerView: 4 },
           1024: { slidesPerView: 4 },
           1180: { slidesPerView: 5 },
-          1280: { slidesPerView: 5 },
-          1380: { slidesPerView: 6 },
-          1480: { slidesPerView: 6},
+          1280: { slidesPerView: 8 },
+
         }}
       >
         {reminders.map((reminder) => (

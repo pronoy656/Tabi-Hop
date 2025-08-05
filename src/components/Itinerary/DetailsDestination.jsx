@@ -4,51 +4,53 @@ const DetailsDestination = () => {
   return (
     <div className="page">
       <section>
-        <div className="flex justify-between items-center ">
-          <h2 className="font-semibold text-2xl mb-4 text-[#131927]">
+        <div className="md:flex justify-between items-center ">
+          <h2 className="font-semibold pt-3 text-2xl mb-4 text-[#131927]">
             Day 01 : October 5th, 2025
           </h2>{" "}
-          <img src="/heart.png" className="w-10 object-contain" alt="" />
+
+          <button className="bg-white px-4 py-3 text-lg font-medium rounded-lg flex items-center gap-x-1 ">Add Favourite <img src="/heart.png" className="w-6 object-contain" alt="" /></button>
+          
         </div>
 
         <div className="flex flex-col lg:flex-row gap-4 my-4">
           {/* LEFT SECTION */}
           <div className="bg-white p-6 rounded-xl w-full border border-gray-300 lg:w-2/3 space-y-4">
             {/* Image Grid */}
-            <div className="grid md:grid-cols-3 grid-rows-2 gap-2 h-[600px]">
-              <div className="col-span-1 row-span-1">
-                {" "}
-                <img
-                  className="w-full h-full object-cover  "
-                  src="/itirenary.png"
-                  alt=""
-                />{" "}
-              </div>
+           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-rows-2 gap-2 h-auto lg:h-[600px]">
+  <div className="col-span-1">
+    <img
+      className="w-full h-full object-cover"
+      src="/itirenary.png"
+      alt=""
+    />
+  </div>
 
-              <div className="col-span-1 row-span-1">
-                {" "}
-                <img
-                  className="w-full h-full object-cover  "
-                  src="/itirenary2.png"
-                  alt=""
-                />
-              </div>
+  <div className="col-span-1">
+    <img
+      className="w-full h-full object-cover"
+      src="/itirenary2.png"
+      alt=""
+    />
+  </div>
 
-              <div className="col-span-1 row-span-2">
-                <img
-                  className="w-full h-full object-cover  "
-                  src="/iterenary.jpg"
-                  alt=""
-                />
-              </div>
-              <div className=" col-span-2 row-span-1">
-                <img
-                  className="w-full h-full object-cover px-4"
-                  src="/bookingCard.png"
-                  alt=""
-                />
-              </div>
-            </div>
+  <div className="col-span-2 sm:col-span-1 lg:row-span-2">
+    <img
+      className="w-full h-full object-cover"
+      src="/iterenary.jpg"
+      alt=""
+    />
+  </div>
+
+  <div className="col-span-2">
+    <img
+      className="w-full h-full object-cover px-2 sm:px-4"
+      src="/bookingCard.png"
+      alt=""
+    />
+  </div>
+</div>
+
 
             {/* Description */}
             <h2 className="text-xl font-semibold text-[#131927]">

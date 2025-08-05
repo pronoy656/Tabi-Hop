@@ -1,59 +1,115 @@
+// Bookings.jsx
 import { useState } from "react";
 import BookingCard from "../../../components/bookings/BookingCard";
 import AddBookingModal from "../../../components/modals/bookings/AddBookingModal";
-import PrimaryButton from "../../../components/shared/PrimaryButton"
-import SectionHeader from "../../../components/shared/SectionHeader"
-
+import ConfirmDeleteModal from "../../../components/modals/bookings/ConfirmDeleteModal";
+import PrimaryButton from "../../../components/shared/PrimaryButton";
+import SectionHeader from "../../../components/shared/SectionHeader";
+import EditBookingModal from "../../../components/modals/bookings/EditBookingModal";
 
 const Bookings = () => {
-      const [isModalOpen, setIsModalOpen] = useState(false);
-    const bookings = [
-  {
-    id: 1,
-    image: "/accommodation.png",
-    title: "Mercure Tokyo Haneda Airport",
-    location: "Ota Ward, Tokyo",
-    note: `Note : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
-  },
-  {
-    id: 2,
-    image: "/accommodation.png",
-    title: "Mercure Tokyo Haneda Airport",
-    location: "Ota Ward, Tokyo",
-    note: `Note : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
-  },
-  {
-    id: 3,
-    image: "/accommodation.png",
-    title: "Mercure Tokyo Haneda Airport",
-    location: "Ota Ward, Tokyo",
-    note: `Note : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries`,
-  },
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editData, setEditData] = useState(null);
+  const [deleteId, setDeleteId] = useState(null);
+  const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
 
-];
+  const [bookings, setBookings] = useState([
+    {
+      id: 1,
+      image: "/accommodation.png",
+      title: "Mercure Tokyo Haneda Airport",
+      location: "Ota Ward, Tokyo",
+      name: "Akira",
+      scheduledTime: "12:00",
+      eventType: "Business Meeting",
+      note: "Ensure projector setup.",
+    },
+    {
+      id: 2,
+      image: "/accommodation.png",
+      title: "Imperial Palace Conference",
+      location: "Chiyoda, Tokyo",
+      name: "Sakura",
+      scheduledTime: "15:00",
+      eventType: "Wedding",
+      note: "Flower decoration required.",
+    },
+    {
+      id: 3,
+      image: "/accommodation.png",
+      title: "Tokyo Dome Event Hall",
+      location: "Bunkyo, Tokyo",
+      name: "Hiroshi",
+      scheduledTime: "10:30",
+      eventType: "Concert",
+      note: "Sound check 2 hours early.",
+    },
+  ]);
+
+  console.log(editData)
+
+  const handleEdit = (booking) => {
+    setEditData(booking);
+    setIsEditModalOpen(true);
+  };
+
+  const handleDelete = (id) => {
+    setDeleteId(id);
+    setConfirmDeleteOpen(true);
+  };
+
+  const confirmDelete = () => {
+    console.log("Deleted booking ID:", deleteId);
+    setConfirmDeleteOpen(false);
+  };
+
   return (
     <div className="page">
+      <div className="md:flex justify-between items-center mb-2">
+        <SectionHeader
+          title="Bookings"
+          subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+        />
+        <button
+          onClick={() => {
+            setEditData(null);
+            setIsModalOpen(true);
+          }}
+        >
+          <PrimaryButton text={"Add more"} bgColor={"#6E67D5"} textColor="white" />
+        </button>
+      </div>
 
-        <div className="md:flex justify-between items-center mb-2">
-          <div>
-            <SectionHeader
-              title="Bookings"
-              subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
-            />
-          </div>
+      {bookings.map((acc) => (
+        <BookingCard
+          key={acc.id}
+          acc={acc}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+        />
+      ))}
 
-    <button onClick={() => setIsModalOpen(true)}>
-              <PrimaryButton text={"Add more"} bgColor={"#6E67D5"} textColor="white" />
-    </button>
-        </div>
+      <AddBookingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        
+      />
+      <EditBookingModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        defaultValues={editData}
+        setEditData={setEditData}
+      />
 
-           {bookings.map((acc) => {
-        return <BookingCard key={acc.id} acc={acc} />;
-      })}
-
-        <AddBookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ConfirmDeleteModal
+        isOpen={confirmDeleteOpen}
+        onClose={() => setConfirmDeleteOpen(false)}
+        onConfirm={confirmDelete}
+        title={bookings.find((b) => b.id === deleteId)?.title || "this booking"}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Bookings
+export default Bookings;
