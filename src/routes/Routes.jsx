@@ -56,6 +56,7 @@ import EditPrivacyPolicy from "../pages/admin/privacyPolicy/EditPrivacyPolicy";
 import EditTermAndCondition from "../pages/admin/termsandConditions/EditTermsAndCondition";
 import AdminNotification from "../pages/admin/adminNotification/AdminNotification";
 import ContactSupport from "../pages/user/accountSetting/contact-support/ContactSupport";
+import Notification from "../pages/user/accountSetting/notification/Notification";
 
 const router = createBrowserRouter([
   {
@@ -147,6 +148,10 @@ const router = createBrowserRouter([
       {
         path: "/account-setting/contact-support",
         element: <ContactSupport />,
+      },
+      {
+        path: "/notifications",
+        element: <Notification />,
       },
     ],
   },

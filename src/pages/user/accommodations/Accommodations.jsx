@@ -1,10 +1,14 @@
+// Accommodations.jsx (Updated)
 import { useState } from "react";
 import AccommondationCard from "../../../components/accommodation/AccommondationCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
-import AccommodationModal from "../../../components/modals/accommodation/AccommodationModal";
+import EditAccomodationModal from "../../../components/modals/accommodation/EditAccomodationModal";
+import AccomodationDeleteModal from "../../../components/modals/accommodation/accomodationDeleteModal";
+import AccommodationModal  from"../../../components/modals/accommodation/AccommodationModal"
 
-const accommodations = [
+
+const initialAccommodations = [
   {
     id: 1,
     image: "/accommodation.png",
@@ -33,7 +37,35 @@ const accommodations = [
 ];
 
 const Accommodations = () => {
+  const [accommodations, setAccommodations] = useState(initialAccommodations);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editData, setEditData] = useState(null);
+  const [deleteId, setDeleteId] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+  const handleEdit = (acc) => {
+    setEditData(acc);
+    setIsEditModalOpen(true);
+  };
+
+  const handleDelete = (id) => {
+    setDeleteId(id);
+    setIsDeleteModalOpen(true);
+  };
+
+  const confirmDelete = () => {
+    console.log("Deleted accommodation ID:", deleteId);
+    setAccommodations((prev) => prev.filter((acc) => acc.id !== deleteId));
+    setIsDeleteModalOpen(false);
+  };
+
+  const handleUpdate = (updatedData) => {
+    setAccommodations((prev) =>
+      prev.map((item) => (item.id === updatedData.id ? updatedData : item))
+    );
+  };
+
   return (
     <div className="page">
       <div className="md:flex justify-between items-center">
@@ -41,21 +73,35 @@ const Accommodations = () => {
           title="Accommodations"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <button  onClick={() => setIsModalOpen(true)}>
-        <PrimaryButton
-       
-          text={"Add more"}
-          bgColor={"#FCB0BA"}
-          textColor="black"
-        /></button>
+        <button onClick={() => setIsModalOpen(true)}>
+          <PrimaryButton text="Add more" bgColor="#FCB0BA" textColor="black" />
+        </button>
       </div>
 
-      {accommodations.map((acc) => {
-        return <AccommondationCard key={acc.id} acc={acc} />;
-      })}
-
+      {accommodations.map((acc) => (
+        <AccommondationCard
+          key={acc.id}
+          acc={acc}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+        />
+      ))}
 
       <AccommodationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+      <EditAccomodationModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        defaultValues={editData}
+        setEditData={handleUpdate}
+      />
+
+      <AccomodationDeleteModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        onConfirm={confirmDelete}
+        title={accommodations.find((acc) => acc.id === deleteId)?.title || ""}
+      />
     </div>
   );
 };
