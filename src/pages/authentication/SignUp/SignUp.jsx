@@ -1,8 +1,10 @@
 import { Button, Input, Checkbox } from "antd";
 import { useForm, Controller } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const {
     handleSubmit,
     control,
@@ -21,6 +23,7 @@ const SignUp = () => {
       confirmPassword: data.confirmPassword,
       terms: data.terms,
     });
+    navigate("/signin/email-verification");
   };
 
   return (
