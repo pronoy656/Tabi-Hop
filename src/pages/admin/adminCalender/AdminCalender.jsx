@@ -62,9 +62,18 @@ const AdminCalender = () => {
     }
 
     return (
-      <div onClick={() => setDayEventsModalOpen(true)}>
+      <div
+        onClick={() => setDayEventsModalOpen(true)}
+        style={{
+          backgroundColor: event.color || "transparent",
+          color: "black",
+          borderRadius: "2px",
+          border: "none",
+          padding: "4px",
+          cursor: "pointer",
+        }}
+      >
         <h3 className="text-2xl font-bold -mt-1">{event.title}</h3>
-
         <p className="text-lg font-medium">{event.time}</p>
         {sameDayEvents.length > 1 && (
           <div className=" text-blue-500 font-medium">
