@@ -76,7 +76,7 @@ export const TamplateTab = () => {
           />
         
         </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-4  gap-4 md:gap-x-46 ">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4  gap-4 md:gap-x-12 ">
           {itineraryData.map((item, idx) => (
             <ItineraryCard key={idx} {...item} />
           ))}

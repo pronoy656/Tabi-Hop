@@ -71,21 +71,30 @@ const itineraryData = [
 
 const AllIterenaryTab = () => {
   return (
-    <section>
-        <div className="flex justify-between items-center mb-2">
+    <section className="">
+
+  <div>
+         <SectionHeader
+            title="My Workspace"
+            subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+          />
+        </div>
+
+        <div className="flex justify-between  items-center mb-2">
           <SectionHeader
             title="Bunny’s All Iterenary"
             subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
           />
         
         </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-x-46 ">
+      
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-x-12 ">
           {itineraryData.map((item, idx) => (
             <ItineraryCard key={idx} {...item} />
           ))}
         </div>
       </section>
-  )
+  ) 
 }
 
 export default AllIterenaryTab

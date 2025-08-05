@@ -136,7 +136,7 @@ const CreateItinerary = () => {
     placeholder=""
   />
 
-  <p className="text-xs text-[#6D717F] xs:ml-3 mt-1 xs:mt-0">
+  <p className=" text-[#6D717F] xs:ml-3 mt-1 xs:mt-0">
     Note: Write the whole number, no decimals
   </p>
 </div>
@@ -150,7 +150,7 @@ const CreateItinerary = () => {
     placeholder=""
   />
 
-  <p className="text-xs text-[#6D717F] sm:ml-3 mt-1 sm:mt-0">
+  <p className=" text-[#6D717F] sm:ml-3 mt-1 sm:mt-0">
     Note: Write the whole number, no decimals
   </p>
 </div>

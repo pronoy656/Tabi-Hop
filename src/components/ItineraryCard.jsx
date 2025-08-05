@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const ItineraryCard = ({ day, date, title, description, image }) => {
   return (
-    <div className="border-2 border-gray-300 rounded-xl overflow-hidden shadow-sm w-full min-w-xs bg-white border-b-3 border-b-[#76ADCA] border-r-3 border-r-[#76ADCA] flex flex-col">
+    <div className="border-2  rounded-xl overflow-hidden shadow-sm w-full min-w-xs bg-white border-t border-l border-b-3 border-r-3 border-[#76ADCA] flex flex-col">
       <div className="flex items-center gap-2 p-3 text-sm font-bold text-gray-800">
         <img src="/file.png" className="w-4 h-4" />
         <span>{`Day ${day} : ${date}`}</span>
