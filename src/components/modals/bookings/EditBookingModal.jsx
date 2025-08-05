@@ -3,12 +3,28 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import ModalHeader from "../ModalHeader";
 
-const AddBookingModal = ({ isOpen, onClose }) => {
+const EditBookingModal = ({
+  isOpen,
+  onClose,
+  onSubmit,
+  defaultValues,
+  setEditData,
+}) => {
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
 
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, setValue } = useForm({
+    defaultValues,
+  });
+
+  useEffect(() => {
+    if (defaultValues) {
+      Object.entries(defaultValues).forEach(([key, value]) => {
+        setValue(key, value);
+      });
+    }
+  }, [defaultValues, setValue]);
 
   if (!isOpen) return null;
 
@@ -19,7 +35,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
   };
 
   const submitHandler = (data) => {
-    console.log(data);
+    setEditData(data);
     reset();
     onClose();
   };
@@ -31,7 +47,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
     >
       <div className="bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl">
         <ModalHeader
-          title="Bookings"
+          title="Edit Bookings"
           subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         />
 
@@ -90,7 +106,7 @@ const AddBookingModal = ({ isOpen, onClose }) => {
             type="submit"
             className="self-stretch h-14 px-6 py-4 bg-indigo-500 rounded-xl inline-flex justify-center items-center overflow-hidden w-full transition text-lg font-semibold text-white"
           >
-            {"Create Event"}
+            Update Event
           </button>
         </form>
       </div>
@@ -98,4 +114,4 @@ const AddBookingModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default AddBookingModal;
+export default EditBookingModal;
