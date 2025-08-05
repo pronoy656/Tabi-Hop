@@ -76,7 +76,7 @@ const AdminCalender = () => {
         <h3 className="text-2xl font-bold -mt-1">{event.title}</h3>
         <p className="text-lg font-medium">{event.time}</p>
         {sameDayEvents.length > 1 && (
-          <div className=" text-blue-500 font-medium">
+          <div className=" text-white font-medium bg-blue-500 rounded-lg p-1 text-xs mt-0.5 ">
             +{sameDayEvents.length - 1} more
           </div>
         )}
