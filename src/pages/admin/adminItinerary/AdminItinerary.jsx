@@ -7,6 +7,15 @@ import {
   DownOutlined,
 } from "@ant-design/icons";
 
+import {
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaCheckCircle,
+  FaTimesCircle,
+  FaArrowCircleDown,
+  FaEye,
+} from "react-icons/fa";
+
 const AdminItinerary = () => {
   // Clickable Function
   const handleMenuClick = (e) => {
@@ -60,6 +69,46 @@ const AdminItinerary = () => {
     onClick: handleMenuClick,
   };
 
+  // data.js
+  const places = [
+    {
+      id: 1,
+      title: "The Great Osaka Tower - Suzuki Maruti",
+      description:
+        "Explore Paris’ most iconic landmark and enjoy panoramic views of the city.",
+      location: "Tokyo, China",
+      date: "23rd August",
+      image: "https://i.ibb.co.com/Jj79RwyB/itenerary-Image.jpg", // Replace with correct URL
+    },
+    {
+      id: 2,
+      title: "The Great Osaka Tower - Suzuki Maruti",
+      description:
+        "Explore Paris’ most iconic landmark and enjoy panoramic views of the city.",
+      location: "Tokyo, China",
+      date: "23rd August",
+      image: "https://i.ibb.co.com/Jj79RwyB/itenerary-Image.jpg",
+    },
+    {
+      id: 3,
+      title: "The Great Osaka Tower - Suzuki Maruti",
+      description:
+        "Explore Paris’ most iconic landmark and enjoy panoramic views of the city.",
+      location: "Tokyo, China",
+      date: "23rd August",
+      image: "https://i.ibb.co.com/Jj79RwyB/itenerary-Image.jpg",
+    },
+    {
+      id: 4,
+      title: "The Great Osaka Tower - Suzuki Maruti",
+      description:
+        "Explore Paris’ most iconic landmark and enjoy panoramic views of the city.",
+      location: "Tokyo, China",
+      date: "23rd August",
+      image: "https://i.ibb.co.com/Jj79RwyB/itenerary-Image.jpg",
+    },
+  ];
+
   return (
     <div className="admin-page">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-5 gap-4">
@@ -108,6 +157,39 @@ const AdminItinerary = () => {
             </Space>
           </Button>
         </Dropdown>
+      </div>
+      <div className="grid grid-cols-4 gap-x-4">
+        {places.map((place) => (
+          <div
+            key={place.id}
+            className="max-w-[340px] bg-white rounded-xl  p-3 border"
+          >
+            <img
+              src={place.image}
+              alt={place.title}
+              className="rounded-md h-[180px] w-full object-cover"
+            />
+            <h3 className="font-semibold text-sm mt-2">{place.title}</h3>
+            <p className="text-gray-500 text-xs mt-1">{place.description}</p>
+
+            <div className="flex items-center gap-1 text-gray-500 text-xs mt-2">
+              <FaMapMarkerAlt />
+              <span>{place.location}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1 text-gray-500 text-xs mt-1">
+                <FaCalendarAlt />
+                <span>{place.date}</span>
+              </div>
+
+              <div className="flex gap-3 mt-2 text-[16px]">
+                <FaEye className="text-blue-500 cursor-pointer" />
+                <FaCheckCircle className="text-green-500 cursor-pointer" />
+                <FaTimesCircle className="text-red-500 cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
