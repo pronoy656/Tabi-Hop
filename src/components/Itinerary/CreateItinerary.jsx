@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SeconderyButton from "../shared/SeconderyButton";
 import AddDestination from "./AddDestination";
 import FoodSection from "./FoodSection";
+import BudgetSection from "./BudgetSection";
 
 const CreateItinerary = () => {
   const locations = [
@@ -118,46 +119,8 @@ const CreateItinerary = () => {
       {/* Step 04 */}
       
       <section className="my-8">
-       <div className="sm:flex justify-between items-center mb-4 ">
-         <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
-          Step - 04 : Please write your preferred budget allocation
-        </h2>
-          <button className="bg-[#4796B5]  text-white px-4 py-2 rounded-md text-sm">
-            + Add more
-          </button>
-       </div>
-        <div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md">
-          {Array(5)
-            .fill(0)
-            .map((_, i) => (
-              <div
-                key={i}
-                className="flex flex-col md:flex-row md:items-center gap-4 mb-4"
-              >
-                <label className="w-full md:w-40 font-semibold">
-                  Lunch Budget
-                </label>
-
-                <div className="flex items-center gap-2 flex-grow">
-                  <h3 className="text-[#4ABBC6]">0$</h3>
-
-                  {/* This wrapper grows, and the input inside takes 100% */}
-                  <div className="flex-grow">
-                    <input
-                      type="range"
-                      className="w-full accent-[#4ABBC6] custom-range"
-                    />
-                  </div>
-
-                  <h3 className="text-[#4ABBC6]">5000$</h3>
-                </div>
-
-                <span className="w-full md:w-40 p-2 font-semibold rounded-xl text-center text-sm bg-[#C7EAED]">
-                  Estimate: $12 - $32
-                </span>
-              </div>
-            ))}
-        </div>
+    
+       <BudgetSection/>
       </section>
 
       {/* step-05 */}

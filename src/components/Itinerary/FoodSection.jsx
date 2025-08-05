@@ -3,7 +3,6 @@ import AddFoodModal from "../modals/foodSection/AddFoodModal";
 import AddFoodItemModal from "../modals/foodSection/AddFoodItemModal";
 import EditFoodItemModal from "../modals/foodSection/EditFoodItemModal";
 import ConfirmDeleteModal from "../modals/foodSection/ConfirmDeleteModal";
-import FoodSectionCard from "./foodSection/FoodSectionCard";
 
 const FoodSection = () => {
   const [foodList, setFoodList] = useState([
@@ -25,49 +24,47 @@ const FoodSection = () => {
         "Classy Beef Hamburger",
       ],
     },
- 
   ]);
-// Function to add a new food group
+
+  // Function to add a new food group
   const [isModalOpen, setIsModalOpen] = useState(false);
   const addNewFoodGroup = (newGroup) => {
     setFoodList((prev) => [...prev, newGroup]);
   };
 
-//   add new item 
-const [selectedCardIndex, setSelectedCardIndex] = useState(null);
-const [isItemModalOpen, setIsItemModalOpen] = useState(false);
-const handleAddItemsToCard = (items) => {
-  setFoodList((prev) => {
-    const updated = [...prev];
-    updated[selectedCardIndex].items.push(...items);
-    return updated;
-  });
-};
+  //   add new item
+  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+  const [isItemModalOpen, setIsItemModalOpen] = useState(false);
+  const handleAddItemsToCard = (items) => {
+    setFoodList((prev) => {
+      const updated = [...prev];
+      updated[selectedCardIndex].items.push(...items);
+      return updated;
+    });
+  };
 
-// edit items
+  // edit items
 
-const [editIndex, setEditIndex] = useState(null);
-const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-const handleSaveCardEdit = (updatedCard) => {
-  setFoodList((prev) => {
-    const updated = [...prev];
-    updated[editIndex] = updatedCard;
-    return updated;
-  });
-};
+  const [editIndex, setEditIndex] = useState(null);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const handleSaveCardEdit = (updatedCard) => {
+    setFoodList((prev) => {
+      const updated = [...prev];
+      updated[editIndex] = updatedCard;
+      return updated;
+    });
+  };
 
-// delete card
+  // delete card
 
-const [deleteIndex, setDeleteIndex] = useState(null);
-const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [deleteIndex, setDeleteIndex] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
-const handleDeleteCard = () => {
-  console.log("Deleted card index:", deleteIndex);
-  setFoodList((prev) => prev.filter((_, i) => i !== deleteIndex));
-  setIsDeleteModalOpen(false);
-};
-
-
+  const handleDeleteCard = () => {
+    console.log("Deleted card index:", deleteIndex);
+    setFoodList((prev) => prev.filter((_, i) => i !== deleteIndex));
+    setIsDeleteModalOpen(false);
+  };
 
   return (
     <div>
@@ -85,15 +82,69 @@ const handleDeleteCard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {foodList.map((food, i) => (
-      
-    <FoodSectionCard setFoodList={setFoodList}  food={food} key={i} ></FoodSectionCard>
+          <div
+            key={i}
+            className="bg-white border border-gray-300 shadow-xl rounded-md p-4 flex flex-col justify-between h-full"
+          >
+            <div className="flex justify-between">
+              <span className="font-medium text-xl text-[#131927]">
+                {food.title}
+              </span>
+              <span className="text-red-500 cursor-pointer flex items-center gap-2">
+                <img
+                  onClick={() => {
+                    setEditIndex(i);
+                    setIsEditModalOpen(true);
+                  }}
+                  src="/edit-pencil.png"
+                  className="h-5"
+                  alt="Edit"
+                />
+                <img
+                  onClick={() => {
+                    setDeleteIndex(i);
+                    setIsDeleteModalOpen(true);
+                  }}
+                  src="/delete.png"
+                  className="h-5"
+                  alt="Delete"
+                />
+              </span>
+            </div>
+            <ul className="text-sm text-gray-600">
+              {food.items.map((item, idx) => (
+                <li
+                  key={idx}
+                  className={`py-1.5 cursor-pointer hover:text-[#1F4F53] ${
+                    idx !== food.items.length - 1
+                      ? "border-b border-gray-300 mb-2"
+                      : ""
+                  }`}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex justify-end">
+              <button
+                onClick={() => {
+                  setSelectedCardIndex(i);
+                  setIsItemModalOpen(true);
+                }}
+                className="bg-[#F7D1F7] w-full py-1.5  rounded-full font-medium text-sm mt-2"
+              >
+                + Add new item
+              </button>
+            </div>
+          </div>
         ))}
       </div>
       <AddFoodItemModal
-  isOpen={isItemModalOpen}
-  onClose={() => setIsItemModalOpen(false)}
-  onAddItems={handleAddItemsToCard}
-/>
+        isOpen={isItemModalOpen}
+        onClose={() => setIsItemModalOpen(false)}
+        onAddItems={handleAddItemsToCard}
+      />
 
       <AddFoodModal
         isOpen={isModalOpen}
@@ -102,17 +153,17 @@ const handleDeleteCard = () => {
       />
 
       <EditFoodItemModal
-  isOpen={isEditModalOpen}
-  onClose={() => setIsEditModalOpen(false)}
-  initialData={foodList[editIndex]}
-  onSave={handleSaveCardEdit}
-/>
-<ConfirmDeleteModal
-  isOpen={isDeleteModalOpen}
-  onClose={() => setIsDeleteModalOpen(false)}
-  onConfirm={handleDeleteCard}
-  title={foodList[deleteIndex]?.title}
-/>
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        initialData={foodList[editIndex]}
+        onSave={handleSaveCardEdit}
+      />
+      <ConfirmDeleteModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        onConfirm={handleDeleteCard}
+        title={foodList[deleteIndex]?.title}
+      />
     </div>
   );
 };
