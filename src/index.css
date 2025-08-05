@@ -30,14 +30,12 @@ span.rbc-btn-group {
 .rbc-off-range-bg {
   background: none !important;
 }
-
+/* End POint */
 /* for calender title bold */
 .rbc-toolbar-label {
   font-weight: 700; /* or 700 for bolder */
   font-size: xx-large; /* optional: make it a bit bigger */
 }
-
-/* End POint */
 
 /* Add to your global CSS or datepicker.css file */
 
@@ -47,6 +45,12 @@ span.rbc-btn-group {
 }
 
 /* Optional: Control width for responsiveness */
+
+/* CSS For table */
+.ant-table-thead {
+  display: table-header-group !important;
+}
+
 @media (max-width: 500px) {
   .custom-datepicker-dropdown {
     width: 70vw !important;
@@ -82,7 +86,6 @@ span.rbc-btn-group {
 }
 body {
   font-family: "IBM Plex Sans Condensed", sans-serif;
-  
 }
 .booking-gallery {
   display: grid;
@@ -142,11 +145,6 @@ body {
   background-color: #f9fafb;
   color: #9ea2ae;
   outline: none;
-}
-
-/* Custom css for reports page table design  */
-.ant-table-thead {
-  display: none !important;
 }
 
 /* Align table cell content to top-left and add padding */
