@@ -1,12 +1,11 @@
-// AddBookingModal.jsx
+// EditAccomodationModal.jsx (Updated)
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import ModalHeader from "../ModalHeader";
 
-const EditBookingModal = ({
+const EditAccomodationModal = ({
   isOpen,
   onClose,
-  
   defaultValues,
   setEditData,
 }) => {
@@ -43,12 +42,12 @@ const EditBookingModal = ({
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6"
+      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6  "
     >
-      <div className="bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl">
+      <div className="bg-white  max-h-[90vh] noscrollbar overflow-y-auto  rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl">
         <ModalHeader
-          title="Edit Bookings"
-          subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          title="Edit Accommodation"
+          subTitle="Update the accommodation details below."
         />
 
         <form onSubmit={handleSubmit(submitHandler)} className="space-y-4">
@@ -63,7 +62,7 @@ const EditBookingModal = ({
           </div>
 
           <div>
-            <label className="label-class">Locations</label>
+            <label className="label-class">Location</label>
             <input
               {...register("location", { required: true })}
               type="text"
@@ -73,21 +72,31 @@ const EditBookingModal = ({
           </div>
 
           <div>
-            <label className="label-class">Scheduled Time</label>
+            <label className="label-class">Check-In Time</label>
             <input
-              {...register("scheduledTime", { required: true })}
+              {...register("checkIn", { required: true })}
               type="text"
-              placeholder="e.g. 12th January, 2025"
+              placeholder="20th May, 2025 – 10:23 AM"
               className="form-input"
             />
           </div>
 
           <div>
-            <label className="label-class">Event Type</label>
+            <label className="label-class">Check-Out Time</label>
             <input
-              {...register("eventType", { required: true })}
+              {...register("checkOut", { required: true })}
               type="text"
-              placeholder="Write here"
+              placeholder="25th May, 2025 – 10:23 AM"
+              className="form-input"
+            />
+          </div>
+
+          <div>
+            <label className="label-class">Contact</label>
+            <input
+              {...register("contact", { required: true })}
+              type="text"
+              placeholder="e.g. +123 456 7890"
               className="form-input"
             />
           </div>
@@ -106,7 +115,7 @@ const EditBookingModal = ({
             type="submit"
             className="self-stretch h-14 px-6 py-4 bg-indigo-500 rounded-xl inline-flex justify-center items-center overflow-hidden w-full transition text-lg font-semibold text-white"
           >
-            Update Event
+            Update Accommodation
           </button>
         </form>
       </div>
@@ -114,4 +123,4 @@ const EditBookingModal = ({
   );
 };
 
-export default EditBookingModal;
+export default EditAccomodationModal;
