@@ -30,16 +30,16 @@ const AdminProfile = () => {
            {dropdownOpen && (
               <div className="absolute top-full right-4 mt-2 w-48 bg-white border border-[#E66CE5] rounded-md shadow-md z-50">
                 <Link
-                  to="/admin-dashboard"
+                  to="/profile"
                   className="block px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"
                 >
-                  Dashboard
+                  My Profile
                 </Link>
                 <Link
-                  to="/signin"
+                  to="/signin/subscription-plan"
                   className="block px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"
                 >
-                  SignIn
+                  Subscription Plan
                 </Link>
                 <button
                   className="w-full text-left px-4 py-2 text-sm hover:bg-[#EDF8F9] text-black"

@@ -60,12 +60,14 @@ import Notification from "../pages/user/accountSetting/notification/Notification
 import CreateAdminItinerary from "../pages/admin/adminItinerary/CreateAdminItinerary";
 import AdminDetailsDestination from "../pages/admin/adminItinerary/detailsDestination/AdminDetailsDestination";
 import AdminMoodBoardDetails from "../pages/admin/adminMoodboard/AdminMoodBoardDetails";
+import Profile from "../pages/user/profile/Profile";
+import ErrorPage from "../components/shared/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <div>Error page</div>,
+    errorElement: <div><ErrorPage/></div>,
     children: [
       {
         path: "",
@@ -156,6 +158,10 @@ const router = createBrowserRouter([
         path: "/notifications",
         element: <Notification />,
       },
+      {
+        path:"/profile",
+        element:<Profile/>
+      }
     ],
   },
   {
