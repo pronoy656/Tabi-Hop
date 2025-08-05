@@ -1,8 +1,14 @@
 /* eslint-disable no-unused-vars */
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
-const ExpandEventModal = ({ date, events, onClose, eventsForSelectedDay }) => {
+const ExpandEventModal = ({
+  date,
+  events,
+  onClose,
+  eventsForSelectedDay,
+  onAddEvents,
+}) => {
   const fakeEvents = [
     {
       title: "Meeting with Client",
@@ -26,6 +32,34 @@ const ExpandEventModal = ({ date, events, onClose, eventsForSelectedDay }) => {
       end: new Date(date),
     },
   ];
+
+  const [inputGroups, setInputGroups] = useState([]);
+
+  // Add more input group
+  const handleAddMore = () => {
+    setInputGroups([...inputGroups, { title: "", time: "", note: "" }]);
+  };
+
+  // Input field update handler
+  const handleChange = (index, field, value) => {
+    const updated = [...inputGroups];
+    updated[index][field] = value;
+    setInputGroups(updated);
+  };
+
+  // Submit the events to Calendar
+  const handleSubmit = () => {
+    const newEvents = inputGroups.map((event) => ({
+      title: event.title,
+      time: event.time,
+      note: event.note,
+      start: new Date(date),
+      end: new Date(date),
+    }));
+
+    onAddEvents(newEvents); // Pass data to AdminCalendar
+    onClose(); // Close the modal
+  };
 
   return (
     <div>
@@ -55,15 +89,80 @@ const ExpandEventModal = ({ date, events, onClose, eventsForSelectedDay }) => {
               </div>
             ))
           )}
+          {/* Input Fields */}
+          {inputGroups.length > 0 &&
+            inputGroups.map((group, index) => (
+              // <div key={index} className="bg-gray-100 p-4 rounded mb-4">
+              //   <input
+              //     type="text"
+              //     placeholder="Title"
+              //     value={input.title}
+              //     onChange={(e) => handleChange(index, "title", e.target.value)}
+              //     className="block w-full mb-2 p-2 border rounded"
+              //   />
+              //   <input
+              //     type="text"
+              //     placeholder="Time"
+              //     value={input.time}
+              //     onChange={(e) => handleChange(index, "time", e.target.value)}
+              //     className="block w-full mb-2 p-2 border rounded"
+              //   />
+              //   <input
+              //     type="text"
+              //     placeholder="Note"
+              //     value={input.note}
+              //     onChange={(e) => handleChange(index, "note", e.target.value)}
+              //     className="block w-full p-2 border rounded"
+              //   />
+              // </div>
+              <div key={index} className="mb-4 p-3 rounded bg-[#ECF8EF]">
+                <div className="mb-2">
+                  <label className="block font-medium mb-1">Title</label>
+                  <input
+                    type="text"
+                    placeholder="Enter Title"
+                    value={group.title}
+                    onChange={(e) =>
+                      handleChange(index, "title", e.target.value)
+                    }
+                    className="bg-white w-full p-2 rounded"
+                  />
+                </div>
+
+                <div className="mb-2">
+                  <label className="block font-medium mb-1">Time</label>
+                  <input
+                    type="time"
+                    value={group.time}
+                    onChange={(e) =>
+                      handleChange(index, "time", e.target.value)
+                    }
+                    className="bg-white w-full p-2 rounded"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-medium mb-1">Note</label>
+                  <textarea
+                    placeholder="Enter Note"
+                    value={group.note}
+                    onChange={(e) =>
+                      handleChange(index, "note", e.target.value)
+                    }
+                    className="bg-white w-full p-2 rounded"
+                  />
+                </div>
+              </div>
+            ))}
           <div className="flex items-center space-x-5 mt-4">
             <button
-              onClick={onClose}
+              onClick={handleAddMore}
               className="font-semibold bg-[#6E67D5] text-white px-10 py-4 rounded-lg w-full"
             >
               Add More
             </button>
             <button
-              onClick={onClose}
+              onClick={handleSubmit}
               className="font-semibold bg-[#6E67D5] text-white px-10 py-4 rounded-lg w-full"
             >
               Mark as Completed

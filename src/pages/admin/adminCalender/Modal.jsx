@@ -13,7 +13,10 @@ const Modal = ({ onClose, date, onSave }) => {
   };
 
   const handleAddMore = () => {
-    setInputGroups([...inputGroups, { title: "", time: "", note: "" }]);
+    setInputGroups([
+      ...inputGroups,
+      { title: "", time: "", note: "", color: "" },
+    ]);
   };
 
   const handleSubmit = () => {
@@ -25,7 +28,7 @@ const Modal = ({ onClose, date, onSave }) => {
         note: group.note,
         start: date,
         end: date,
-        priority: "low",
+        color: group.color,
       }));
 
     if (newEvents.length === 0) {
@@ -80,6 +83,15 @@ const Modal = ({ onClose, date, onSave }) => {
                 value={group.note}
                 onChange={(e) => handleChange(index, "note", e.target.value)}
                 className="bg-white w-full p-2 rounded"
+              />
+            </div>
+            <div className="mb-2">
+              <label className="block font-medium mb-1">Select Color</label>
+              <input
+                type="color"
+                value={group.color}
+                onChange={(e) => handleChange(index, "color", e.target.value)}
+                className="w-12 h-10 border-none cursor-pointer"
               />
             </div>
           </div>

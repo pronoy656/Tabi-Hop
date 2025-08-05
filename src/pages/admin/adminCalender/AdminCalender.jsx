@@ -25,6 +25,11 @@ const AdminCalender = () => {
     setModalOpen(false);
   };
 
+  // Add from ExpandEventModal
+  const handleAddFromExpandModal = (newEvents) => {
+    setEvents((prev) => [...prev, ...newEvents]);
+  };
+
   // Handle slot selection (clicking on a day)
   const handleSlotSelect = (slotInfo) => {
     const selected = moment(slotInfo.start).startOf("day");
@@ -89,7 +94,7 @@ const AdminCalender = () => {
         </div>
 
         <div className="w-full overflow-x-auto">
-          <div className="min-w-[700px] h-[700px] mx-auto [&_.rbc-toolbar-label]:font-semibold [&_.rbc-toolbar-label]:text-lg">
+          <div className="min-w-[750px] h-[780px] mx-auto [&_.rbc-toolbar-label]:font-semibold [&_.rbc-toolbar-label]:text-lg">
             <Calendar
               localizer={localizer}
               events={events}
@@ -100,38 +105,39 @@ const AdminCalender = () => {
               onSelectSlot={handleSlotSelect}
               views={["month"]}
               components={{ event: CustomEvent }}
-              dayPropGetter={(date) => {
-                const eventOfDay = events.find((event) =>
-                  moment(event.start).isSame(moment(date), "day")
-                );
-                if (eventOfDay) {
-                  let bg = "";
-                  switch (eventOfDay.priority) {
-                    case "high":
-                      bg = "#fee2e2"; // light red
-                      break;
-                    case "medium":
-                      bg = "#fef3c7"; // light yellow
-                      break;
-                    case "low":
-                      bg = "#d1fae5"; // light green
-                      break;
-                    default:
-                      bg = "#ffffff";
-                  }
-                  return {
-                    className: "custom-bg",
-                    style: { backgroundColor: bg },
-                  };
-                }
-                return {}; // Default cell style
-              }}
-              eventPropGetter={() => ({
+              // dayPropGetter={(date) => {
+              //   const eventOfDay = events.find((event) =>
+              //     moment(event.start).isSame(moment(date), "day")
+              //   );
+              //   if (eventOfDay) {
+              //     let bg = "";
+              //     switch (eventOfDay.priority) {
+              //       case "high":
+              //         bg = "#fee2e2"; // light red
+              //         break;
+              //       case "medium":
+              //         bg = "#fef3c7"; // light yellow
+              //         break;
+              //       case "low":
+              //         bg = "#d1fae5"; // light green
+              //         break;
+              //       default:
+              //         bg = "#ffffff";
+              //     }
+              //     return {
+              //       className: "custom-bg",
+              //       style: { backgroundColor: bg },
+              //     };
+              //   }
+              //   return {}; // Default cell style
+              // }}
+              eventPropGetter={(event) => ({
                 style: {
-                  backgroundColor: "transparent", // Remove default blue background
+                  backgroundColor: event.color || "transparent", // Remove default blue background
                   color: "black", // Set text color
+                  borderRadius: "5px",
                   border: "none",
-                  padding: 0,
+                  padding: "4px",
                 },
               })}
             />
@@ -152,6 +158,7 @@ const AdminCalender = () => {
             eventsForSelectedDay={eventsForSelectedDay}
             events={events}
             onClose={() => setDayEventsModalOpen(false)}
+            onAddEvents={handleAddFromExpandModal}
           />
         )}
       </div>
