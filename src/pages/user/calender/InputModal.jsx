@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ImCross } from "react-icons/im";
 
-const Modal = ({ onClose, date, onSave }) => {
+const InputModal = ({ onClose, date, onSave }) => {
   const [inputGroups, setInputGroups] = useState([
     { title: "", time: "", note: "" },
   ]);
@@ -40,7 +40,6 @@ const Modal = ({ onClose, date, onSave }) => {
   };
 
   if (!date) return null;
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6">
       <div className="bg-white p-6 rounded-lg max-w-[773px] w-full max-h-[90vh] overflow-y-auto">
@@ -54,7 +53,7 @@ const Modal = ({ onClose, date, onSave }) => {
           </button>
         </div>
         {inputGroups.map((group, index) => (
-          <div key={index} className="mb-4 p-3 rounded bg-[#ECF8EF]">
+          <div key={index} className="mb-4 p-3 rounded bg-[#F1F0FB]">
             <div className="mb-2">
               <label className="block font-medium mb-1">Title</label>
               <input
@@ -116,4 +115,4 @@ const Modal = ({ onClose, date, onSave }) => {
   );
 };
 
-export default Modal;
+export default InputModal;

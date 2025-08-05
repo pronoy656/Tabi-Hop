@@ -1,12 +1,10 @@
-/* eslint-disable no-unused-vars */
-import moment from "moment";
 import React, { useState } from "react";
 
-const ExpandEventModal = ({
+const EventModal = ({
   date,
-  events,
+
   onClose,
-  eventsForSelectedDay,
+
   onAddEvents,
 }) => {
   const fakeEvents = [
@@ -81,7 +79,7 @@ const ExpandEventModal = ({
             fakeEvents.map((event, index) => (
               <div
                 key={index}
-                className="border border-gray-300 bg-[#D8FFE3] rounded-md p-4 mb-3"
+                className="border border-gray-300 bg-[#F1F0FB] rounded-md p-4 mb-3"
               >
                 <p className="font-bold text-lg">{event.title}</p>
                 <p className="text-sm text-gray-600">{event.time}</p>
@@ -92,7 +90,7 @@ const ExpandEventModal = ({
           {/* Input Fields */}
           {inputGroups.length > 0 &&
             inputGroups.map((group, index) => (
-              <div key={index} className="mb-4 p-3 rounded bg-[#ECF8EF]">
+              <div key={index} className="mb-4 p-3 rounded bg-[#F1F0FB]">
                 <div className="mb-2">
                   <label className="block font-medium mb-1">Title</label>
                   <input
@@ -151,4 +149,4 @@ const ExpandEventModal = ({
   );
 };
 
-export default ExpandEventModal;
+export default EventModal;
