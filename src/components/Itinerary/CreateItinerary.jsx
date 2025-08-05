@@ -4,6 +4,7 @@ import SeconderyButton from "../shared/SeconderyButton";
 import AddDestination from "./AddDestination";
 import FoodSection from "./FoodSection";
 import BudgetSection from "./BudgetSection";
+import MessageSection from "./MessageSection";
 
 const CreateItinerary = () => {
   const locations = [
@@ -126,46 +127,10 @@ const CreateItinerary = () => {
       {/* step-05 */}
 
       <section>
-        <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
-          Step - 05 : Write a prompt sharing how you want to spend you day
-        </h2>
-
-        <div className="bg-white border border-gray-300 shadow-xl rounded-md p-6 space-y-2">
-          <div className="pb-4 flex gap-2">
-            <div className="flex  items-end ">
-              <img src="/profile1.png" className="h-8 " alt="" />
-            </div>
-            <div className="bg-[#F2F3F5] w-full  shadow-xl rounded-md p-4 font-medium">
-              <h3>Hi there 👋</h3>
-              <h3>
-                Please share information about your journey briefly. So we can
-                assist you to create the perfect plan for you!
-              </h3>
-            </div>
-          </div>
-
-          <div className="bg-white   shadow-xl shadow-gray-300 rounded-md p-6 md:flex justify-between items-center gap-2">
-            <h3>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries,Lorem Ipsum is simply dummy text
-              of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type specimen book. It has survived not only five centuries,Lorem
-              Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy{" "}
-            </h3>
-            <button className="bg-black text-white p-2 rounded-2xl md:w-30 h-10 mt-2 md:mt-0">
-              <img src="/up-arrow.png" className="h-4 w-8" alt="" />
-            </button>
-          </div>
-        </div>
+     <MessageSection/>
       </section>
 
-      <Link to={'/itinerary/details-destination'} className="flex justify-center"><SeconderyButton text={'Generate'} shadow={'#2DAD9D'}></SeconderyButton></Link>
+      <Link to={'/itinerary/details-destination'} className="flex justify-center mb-4"><SeconderyButton text={'Generate'} shadow={'#2DAD9D'}></SeconderyButton></Link>
     </div>
   );
 };
