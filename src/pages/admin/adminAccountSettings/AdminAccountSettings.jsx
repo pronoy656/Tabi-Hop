@@ -15,9 +15,7 @@ const AdminAccountSettings = () => {
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
         </div>
-       <button className="bg-[#131927] text-white px-7 py-2 text-base font-semibold rounded-md flex items-start w-fit mt-4 md:mt-0">
-             + Add New User
-       </button>
+  
     
      
       </div>

@@ -57,6 +57,9 @@ import EditTermAndCondition from "../pages/admin/termsandConditions/EditTermsAnd
 import AdminNotification from "../pages/admin/adminNotification/AdminNotification";
 import ContactSupport from "../pages/user/accountSetting/contact-support/ContactSupport";
 import Notification from "../pages/user/accountSetting/notification/Notification";
+import CreateAdminItinerary from "../pages/admin/adminItinerary/CreateAdminItinerary";
+import AdminDetailsDestination from "../pages/admin/adminItinerary/detailsDestination/AdminDetailsDestination";
+import AdminMoodBoardDetails from "../pages/admin/adminMoodboard/AdminMoodBoardDetails";
 
 const router = createBrowserRouter([
   {
@@ -248,8 +251,20 @@ const router = createBrowserRouter([
         element: <AdminItinerary />,
       },
       {
+        path: "/admin-dashboard/admin-itinerary/create-itinerary",
+        element: <CreateAdminItinerary />,
+      },
+      {
+        path: "/admin-dashboard/admin-itinerary/details-destination",
+        element: <AdminDetailsDestination />,
+      },
+      {
         path: "/admin-dashboard/admin-mood-board",
         element: <AdminMoodboard />,
+      },
+      {
+        path: "/admin-dashboard/admin-moodboard/moodboard-deatils/:id",
+        element: <AdminMoodBoardDetails />,
       },
       {
         path: "/admin-dashboard/admin-todo-list",
