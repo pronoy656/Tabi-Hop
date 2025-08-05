@@ -15,6 +15,7 @@ import {
   FaArrowCircleDown,
   FaEye,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AdminItinerary = () => {
   // Clickable Function
@@ -120,9 +121,9 @@ const AdminItinerary = () => {
           </p>
         </div>
 
-        <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
+        <Link to={'/admin-dashboard/admin-itinerary/create-itinerary'} className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
           + Add New Itinerary
-        </button>
+        </Link>
       </div>
       <div className="flex items-center gap-[20px] mb-5">
         <Input
