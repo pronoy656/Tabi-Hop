@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { ItineraryCard } from "../ItineraryCard";
+import PrimaryButton from "../shared/PrimaryButton";
 import SectionHeader from "../shared/SectionHeader";
 
 const itineraryData = [
@@ -68,33 +70,42 @@ const itineraryData = [
   },
 ];
 
-
 const AllIterenaryTab = () => {
   return (
     <section className="">
-
-  <div>
-         <SectionHeader
+      <div>
+        <div className="mb-2">
+          <SectionHeader
             title="My Workspace"
             subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
           />
-        </div>
 
-        <div className="flex justify-between  items-center mb-2">
-          <SectionHeader
-            title="Bunny’s All Iterenary"
-            subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
-          />
-        
+           <div className="h-66 flex flex-col justify-center items-center  p-6">
+      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">
+        Oops! You don’t have any Itinerary yet
+      </h2>
+      <p className="text-gray-500 mb-6 text-center text-sm md:text-base">
+        Start planning your journey by creating your first itinerary.
+      </p>
+      <Link to="/itinerary/create-itinerary">
+        <PrimaryButton bgColor="#4ABBC6" text="Create Itinerary" />
+      </Link>
+    </div>
         </div>
-      
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-x-12 ">
-          {itineraryData.map((item, idx) => (
-            <ItineraryCard key={idx} {...item} />
-          ))}
-        </div>
-      </section>
-  ) 
-}
+      </div>
 
-export default AllIterenaryTab
+      <SectionHeader
+        title="Bunny’s All Iterenary"
+        subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+      />
+
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-x-12 ">
+        {itineraryData.map((item, idx) => (
+          <ItineraryCard key={idx} {...item} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default AllIterenaryTab;

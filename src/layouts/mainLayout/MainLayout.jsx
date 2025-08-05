@@ -7,9 +7,9 @@ const MainLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen overflow-hidden relative">
+    <div className="flex min-h-screen max-w-[2000px]  overflow-hidden relative">
       {/* Header  */}
-      <div className="fixed top-0 left-0 w-full z-50">
+      <div className="fixed top-0 left-0 w-full max-w-[2000px] z-50">
         <Header
           toggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
           isSidebarOpen={isSidebarOpen}

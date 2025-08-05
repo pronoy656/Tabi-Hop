@@ -1,9 +1,11 @@
 import { useState } from "react";
 import AddDestinationModal from "./AddDestinationModal";
+import EditDestinationModal from "./EditDestinationModal";
 
 
 const AddDestination = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [destinations ,setDestination]=useState([
     {
       destination: "Starting Location",
@@ -66,10 +68,11 @@ const AddDestination = () => {
       <div className="flex-1 ">
         <div className="flex items-center gap-2 gap-y-2">
           <p className="md:text-lg md:font-semibold font-medium text-[#1F4F53]">{step.title}</p>
-          <img src="/edit-3.png"  className="text-[#EE443F] cursor-pointer h-6 w-6" />
+          <button  onClick={() => setIsEditModalOpen(true)}><img src="/edit-3.png"  className="text-[#EE443F] cursor-pointer h-6 w-6" /></button> 
         </div>
         <p className="text-sm text-gray-500">{step.desc}</p>
       </div>
+      <EditDestinationModal isOpen={isEditModalOpen}  onClose={() => setIsEditModalOpen(false)} data={step.title}  />
     </div>
   ))}
 </div>
@@ -79,6 +82,7 @@ const AddDestination = () => {
           </div>
           
       <AddDestinationModal setDestination={setDestination} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        
 
     </div>
   );

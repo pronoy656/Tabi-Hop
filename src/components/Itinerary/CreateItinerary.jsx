@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import SeconderyButton from "../shared/SeconderyButton";
 import AddDestination from "./AddDestination";
+import FoodSection from "./FoodSection";
 
 const CreateItinerary = () => {
   const locations = [
@@ -46,62 +47,7 @@ const CreateItinerary = () => {
       address: "476 5th Ave, New York, NY 10018, USA",
     },
   ];
-  const foodList = [
-    {
-      title: "Food items",
-      items: [
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-      ],
-    },
-    {
-      title: "Food items",
-      items: [
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-      ],
-    },
-    {
-      title: "Food items",
-      items: [
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-      ],
-    },
-    {
-      title: "Food items",
-      items: [
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-      ],
-    },
-    {
-      title: "Food items",
-      items: [
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-      ],
-    },
-    {
-      title: "Food items",
-      items: [
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-        "Classy Beef Hamburger",
-      ],
-    },
-  ];
+
 
   return (
     <div className=" mx-auto px-4 py-6 space-y-8 page">
@@ -166,50 +112,7 @@ const CreateItinerary = () => {
 
       {/* Step 03 */}
       <section className="my-8">
-        <div className="sm:flex justify-between items-center space-y-3 mb-4">
-          <h2 className="font-semibold text-lg text-[#1F4F53]">
-            Step - 03 : Select how you want to spend your day
-          </h2>
-          <button className="bg-[#E66CE5] text-white px-4 py-2 rounded-md text-sm">
-            + Add more
-          </button>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {foodList.map((food, i) => (
-            <div
-              key={i}
-              className="bg-white border border-gray-300 shadow-xl rounded-md p-4 space-y-2"
-            >
-              <div className="flex justify-between">
-                <span className="font-medium text-xl text-[#131927]">
-                  {food.title}
-                </span>
-                <span className="text-red-500 cursor-pointer flex items-center gap-2">
-                  <img src="/edit-pencil.png" className="h-5" alt="Edit" />
-                  <img src="/delete.png" className="h-5" alt="Delete" />
-                </span>
-              </div>
-              <ul className="text-sm text-gray-600">
-                {food.items.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className={`py-1 ${
-                      idx !== food.items.length - 1
-                        ? "border-b border-gray-300 mb-2"
-                        : ""
-                    }`}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <button className="bg-[#F7D1F7] w-full py-1 rounded-full font-medium text-sm mt-2">
-                + Add new item
-              </button>
-            </div>
-          ))}
-        </div>
+      <FoodSection/>
       </section>
 
       {/* Step 04 */}
