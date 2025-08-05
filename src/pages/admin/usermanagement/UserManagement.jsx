@@ -1,6 +1,5 @@
-import { Input, message, Table, Dropdown, Button, Space } from "antd";
-import { DownOutlined, UserOutlined } from "@ant-design/icons";
-import { EyeOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Input, message, Table, Dropdown, Button, Space, Menu } from "antd";
+import { DownOutlined, UserOutlined, EllipsisOutlined } from "@ant-design/icons";
 
 const UserManagement = () => {
   // Table data
@@ -163,7 +162,6 @@ const UserManagement = () => {
         );
       },
     },
-
     {
       title: (
         <span style={{ fontSize: "18px", fontWeight: 500 }}>Joined Date</span>
@@ -197,41 +195,26 @@ const UserManagement = () => {
       title: <span style={{ fontSize: "18px", fontWeight: 500 }}>Action</span>,
       dataIndex: "action",
       key: "action",
-      render: (_, record) => (
-        <Space size="small">
-          <Button
-            type="text"
-            icon={
-              <EyeOutlined
-                style={{ fontSize: "18px" }}
-                className="bg-[#F5F5F5] border border-[#DADADA]  rounded-sm p-1"
-              />
-            }
-            onClick={() => handleView(record)}
-          />
-          <Button
-            type="text"
-            icon={
-              <EditOutlined
-                style={{ color: "blue", fontSize: "18px" }}
-                className="bg-[#F5F5F5] border border-[#DADADA]  rounded-sm p-1"
-              />
-            }
-            onClick={() => handleEdit(record)}
-          />
-          <Button
-            type="text"
-            icon={
-              <DeleteOutlined
-                style={{ fontSize: "18px" }}
-                className="bg-[#F5F5F5] border border-[#DADADA]  rounded-sm p-1"
-              />
-            }
-            danger
-            onClick={() => handleDelete(record)}
-          />
-        </Space>
-      ),
+      render: (_, record) => {
+        const menu = (
+          <Menu>
+            <Menu.Item key="view" onClick={() => handleView(record)}>
+              View
+            </Menu.Item>
+            <Menu.Item key="edit" onClick={() => handleEdit(record)}>
+              Edit
+            </Menu.Item>
+            <Menu.Item key="delete" onClick={() => handleDelete(record)} danger>
+              Delete
+            </Menu.Item>
+          </Menu>
+        );
+        return (
+          <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight">
+            <Button type="text" icon={<EllipsisOutlined style={{ fontSize: 22 }} />} />
+          </Dropdown>
+        );
+      },
     },
   ];
 
