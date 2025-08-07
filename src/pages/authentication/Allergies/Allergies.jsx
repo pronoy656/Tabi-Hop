@@ -214,7 +214,7 @@ const Allergies = () => {
                 </div>
               </div>
             </div>
-            {/* Subscription Plan Card */}
+
             <div className="rounded-2xl bg-[#D2D0F2] flex items-center justify-center  py-7 px-7 shadow-lg mt-4">
               <div>
                 <p className="text-xl font-semibold">
