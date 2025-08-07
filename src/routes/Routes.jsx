@@ -62,6 +62,7 @@ import AdminDetailsDestination from "../pages/admin/adminItinerary/detailsDestin
 import AdminMoodBoardDetails from "../pages/admin/adminMoodboard/AdminMoodBoardDetails";
 import Profile from "../pages/user/profile/Profile";
 import ErrorPage from "../components/shared/ErrorPage";
+import AccommodationDetailPage from "../pages/user/accommodations/AccomodationDetails";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +85,11 @@ const router = createBrowserRouter([
       {
         path: "/accommodations",
         element: <Accommodations />,
+      },
+      {
+        path: "/accommodations/details/:id",
+        element: <AccommodationDetailPage />,
+
       },
       {
         path: "/itinerary",

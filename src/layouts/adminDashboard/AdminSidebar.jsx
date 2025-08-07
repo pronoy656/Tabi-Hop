@@ -101,7 +101,7 @@ const AdminSidebar = ({ closeSidebar }) => {
               className="h-12 w-12 object-contain"
             />
             <img
-              src="/logo_name.png"
+              src="/logo_name2  .png"
               alt="Logo Name"
               className="h-6 sm:h-7 object-contain"
             />
