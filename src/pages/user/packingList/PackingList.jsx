@@ -1,4 +1,3 @@
-
 import { ListCard } from "../../../components/shared/ListCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
@@ -6,7 +5,7 @@ import ListCartModal from "../../../components/shared/ListCartModal";
 import { useState } from "react";
 
 const PackingList = () => {
-  const [todoGroups,setTodoGroups] = useState([
+  const [todoGroups, setTodoGroups] = useState([
     {
       title: "Sky Diving",
       todos: [
@@ -102,7 +101,7 @@ const PackingList = () => {
       ],
     },
   ]);
-   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
       <div className="md:flex justify-between items-center mb-4">
@@ -110,7 +109,7 @@ const PackingList = () => {
           title="Packing List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <button  onClick={() => setIsModalOpen(true)} >
+        <button onClick={() => setIsModalOpen(true)}>
           <PrimaryButton
             bgColor={"#EE443F"}
             text={"Add more"}
@@ -135,7 +134,11 @@ const PackingList = () => {
         </div>
       </div>
 
-         <ListCartModal setTodoGroups={setTodoGroups} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ListCartModal
+        setTodoGroups={setTodoGroups}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
