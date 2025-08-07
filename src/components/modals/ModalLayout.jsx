@@ -17,9 +17,9 @@ const ModalLayout = ({ children, isOpen, onClose }) => {
   return (
     <div
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 md:p-6 p-3"
+      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 md:p-6 p-3 "
     >
-      <div className="relative bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl">
+      <div className="relative bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl max-h-[90vh] noscrollbar overflow-y-auto">
       
         <button
           onClick={onClose}
