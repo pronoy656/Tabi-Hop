@@ -2,13 +2,16 @@
 import SectionHeader from "../../../components/shared/SectionHeader";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import BookingGallery from "../../../components/BookingGallary";
-import { BookingOverviewCard } from "../../../components/BookingOverviewCard";
+import BookingOverviewCard from "../../../components/AccommodationOverviewCard";
 import OverviewSection from "./OverviewSection";
 import TodoListSection from "./TodoListSection";
 import BucketListSection from "./BucketListSection";
 import TrendingItinerarySection from "./TrendingItinerarySection";
 import PackingListSection from "./PackingListSection";
-import AccommodationListSection from "./AccommodationListSection";
+import AccommodationListSection from "./BookingListSection";
+import AccomodationOverviewCard from "../../../components/AccommodationOverviewCard";
+import { Link } from "react-router-dom";
+import BookingListSection from "./BookingListSection";
 
 const todoGroups = [
   {
@@ -188,47 +191,31 @@ const Overview = () => {
       {/* Packing List Section*/}
   
 <PackingListSection/>
-{/* Accommodation List section  */}
-<AccommodationListSection/>
-      {/* Booking Itinerary Section */}
+
+
+
+
+{/* Booking List section  */}
+<BookingListSection/>
+
+
+
+
+
+      {/*Accomodation Section */}
       <section>
         <div className="flex justify-between items-center mb-2">
           <SectionHeader
-            title="Bookings"
+            title="Accomodation"
             subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
           />
+          <Link to="/accommodations" className="hidden sm:flex">
           <PrimaryButton text={"Add more"} bgColor={"#FCB0BA"} />
+          </Link>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          <BookingOverviewCard
-            title="Mercure Tokyo Haneda Airport"
-            location="Ota Ward, Tokyo"
-            image="https://i.ibb.co/Pvs6yxF6/Frame.png"
-            rating={3}
-            description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
-          />
-          <BookingOverviewCard
-            title="Mercure Tokyo Haneda Airport"
-            location="Ota Ward, Tokyo"
-            image="https://i.ibb.co/Pvs6yxF6/Frame.png"
-            rating={3}
-            description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
-          />
-          <BookingOverviewCard
-            title="Mercure Tokyo Haneda Airport"
-            location="Ota Ward, Tokyo"
-            image="https://i.ibb.co/Pvs6yxF6/Frame.png"
-            rating={3}
-            description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
-          />
-          <BookingOverviewCard
-            title="Mercure Tokyo Haneda Airport"
-            location="Ota Ward, Tokyo"
-            image="https://i.ibb.co/Pvs6yxF6/Frame.png"
-            rating={3}
-            description="Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here', making it look like readable English."
-          />
-        </div>
+      
+      <AccomodationOverviewCard/>
+   
       </section>
     
 
@@ -239,7 +226,7 @@ const Overview = () => {
             title="Moodboard "
             subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
           />
-          <PrimaryButton text={"See more"} bgColor={"#FCB0BA"} />
+         <Link to={'/moodboard'} ><PrimaryButton text={"See more"} bgColor={"#FCB0BA"} /> </Link>
         </div>
         <BookingGallery />
       </section>

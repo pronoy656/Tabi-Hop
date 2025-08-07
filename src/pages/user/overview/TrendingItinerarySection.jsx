@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ItineraryCard } from "../../../components/ItineraryCard";
 import PrimaryButton from "../../../components/shared/PrimaryButton";
 import SectionHeader from "../../../components/shared/SectionHeader";
+import { Link } from "react-router-dom";
 
 const TrendingItinerarySection = () => {
   const [showAll, setShowAll] = useState(false);
@@ -51,12 +52,12 @@ const TrendingItinerarySection = () => {
           title="Trending Itinerary"
           subtitle="Explore the most popular itineraries and start planning your next adventure."
         />
-        <button className="hidden sm:flex">
+        <Link to={'/itinerary/create-itinerary'} className="hidden sm:flex">
         <PrimaryButton
           text="Add more"
           bgColor="#4796B5"
           textColor="white"
-        /></button>
+        /></Link>
       </div>
 
       {/* Small screen layout */}
@@ -75,14 +76,14 @@ const TrendingItinerarySection = () => {
           >
             {showAll ? "See Less" : "See All"}
           </button>
-           <button className="" onClick={() => setIsModalOpen(true)}>
+           <Link to={'/itinerary/create-itinerary'}  className="" onClick={() => setIsModalOpen(true)}>
             <PrimaryButton
               round
               bgColor="#4796B5"
               text="Add more"
               textColor="white"
             />
-          </button>
+          </Link>
         </div>
       </div>
 
