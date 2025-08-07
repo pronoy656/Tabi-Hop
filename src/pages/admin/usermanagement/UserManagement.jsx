@@ -18,112 +18,116 @@ import React, { useState } from "react";
 
 const UserManagement = () => {
   // Table data
-  const [userdata, setUserdata] = useState([
-    {
-      key: "1",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "2",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "3",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "4",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "5",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "6",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "7",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "8",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "9",
-      name: "John Doe",
-      subscribed: "Basic",
-      email: "mahbubulqareem@gmail.com",
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-    },
-    {
-      key: "10",
-      name: "John Doe",
-      subscribed: "Basic",
+  const [userdata, setUserdata] = useState(
+    [
+      {
+        key: "1",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "2",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "3",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "4",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "5",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "6",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "7",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "8",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "9",
+        name: "John Doe",
+        subscribed: "Basic",
+        email: "mahbubulqareem@gmail.com",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+      },
+      {
+        key: "10",
+        name: "John Doe",
+        subscribed: "Basic",
 
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-      email: "mahbubulqareem@gmail.com",
-    },
-    {
-      key: "11",
-      name: "John Doe",
-      subscribed: "Basic",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+        email: "mahbubulqareem@gmail.com",
+      },
+      {
+        key: "11",
+        name: "John Doe",
+        subscribed: "Basic",
 
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-      email: "mahbubulqareem@gmail.com",
-    },
-    {
-      key: "12",
-      name: "John Doe",
-      subscribed: "Basic",
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+        email: "mahbubulqareem@gmail.com",
+      },
+      {
+        key: "12",
+        name: "John Doe",
+        subscribed: "Basic",
 
-      joinedData: "2023-10-01",
-      HomeAddress: "123 Main St, City, Country",
-      email: "mahbubulqareem@gmail.com",
-    },
-  ]);
+        joinedData: "2023-10-01",
+        HomeAddress: "123 Main St, City, Country",
+        email: "mahbubulqareem@gmail.com",
+      },
+    ].map((u) => ({ ...u, blocked: false }))
+  );
 
   // Modal state
   const [viewModal, setViewModal] = useState({ open: false, user: null });
   const [deleteModal, setDeleteModal] = useState({ open: false, user: null });
   const [blockModal, setBlockModal] = useState({ open: false, user: null });
+  // 2. Add unblock modal state
+  const [unblockModal, setUnblockModal] = useState({ open: false, user: null });
 
   // column label
   const columns = [
@@ -216,6 +220,16 @@ const UserManagement = () => {
       dataIndex: "action",
       key: "action",
       render: (_, record) => {
+        if (record.blocked) {
+          return (
+            <span
+              style={{ color: "#ff4d4f", fontWeight: 600, cursor: "pointer" }}
+              onClick={() => setUnblockModal({ open: true, user: record })}
+            >
+              Blocked
+            </span>
+          );
+        }
         const menu = (
           <Menu>
             <Menu.Item
@@ -262,9 +276,27 @@ const UserManagement = () => {
 
   const handleBlockUser = () => {
     if (blockModal.user) {
+      setUserdata((prev) =>
+        prev.map((u) =>
+          u.key === blockModal.user.key ? { ...u, blocked: true } : u
+        )
+      );
       message.success(`Blocked user: ${blockModal.user.name}`);
     }
     setBlockModal({ open: false, user: null });
+  };
+
+  // Unblock Function
+  const handleUnblockUser = () => {
+    if (unblockModal.user) {
+      setUserdata((prev) =>
+        prev.map((u) =>
+          u.key === unblockModal.user.key ? { ...u, blocked: false } : u
+        )
+      );
+      message.success(`Unblocked user: ${unblockModal.user.name}`);
+    }
+    setUnblockModal({ open: false, user: null });
   };
 
   const handleMenuClick = (e) => {
@@ -374,7 +406,6 @@ const UserManagement = () => {
           scroll={{ x: "max-content" }}
         />
       </div>
-
       {/* View Modal */}
       <Modal
         open={viewModal.open}
@@ -410,7 +441,6 @@ const UserManagement = () => {
           </div>
         )}
       </Modal>
-
       {/* Delete Modal */}
       <Modal
         open={deleteModal.open}
@@ -435,7 +465,6 @@ const UserManagement = () => {
           Are you sure you want delete this user?
         </p>
       </Modal>
-
       {/* Block Modal */}
       <Modal
         open={blockModal.open}
@@ -458,6 +487,30 @@ const UserManagement = () => {
       >
         <p style={{ fontSize: 17, fontWeight: 500, textAlign: "left" }}>
           Are you sure you want block this user?
+        </p>
+      </Modal>
+      // 5. Add Unblock Modal in your JSX
+      <Modal
+        open={unblockModal.open}
+        title={
+          <span style={{ fontWeight: 600, fontSize: 20 }}>Unblock User</span>
+        }
+        onCancel={() => setUnblockModal({ open: false, user: null })}
+        footer={[
+          <Button
+            key="no"
+            onClick={() => setUnblockModal({ open: false, user: null })}
+          >
+            No
+          </Button>,
+          <Button key="yes" type="primary" onClick={handleUnblockUser}>
+            Yes
+          </Button>,
+        ]}
+        centered
+      >
+        <p style={{ fontSize: 17, fontWeight: 500, textAlign: "left" }}>
+          Are you sure you want unblock this user?
         </p>
       </Modal>
     </div>
