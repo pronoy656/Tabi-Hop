@@ -489,7 +489,7 @@ const UserManagement = () => {
           Are you sure you want block this user?
         </p>
       </Modal>
-      // 5. Add Unblock Modal in your JSX
+      {/* // 5. Add Unblock Modal in your JSX */}
       <Modal
         open={unblockModal.open}
         title={
