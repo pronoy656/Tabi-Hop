@@ -92,22 +92,22 @@ const AdminSidebar = ({ closeSidebar }) => {
 
   return (
     <div className="h-full px-3 pt-24 md:pt-10 ">
-
-      
-            <Link  to={'/admin-dashboard'} className=" hidden md:flex  items-center justify-center gap-1 ">
-            <img
-              src="/logo_image.png"
-              alt="Logo"
-              className="h-12 w-12 object-contain"
-            />
-            <img
-              src="/logo_name2  .png"
-              alt="Logo Name"
-              className="h-6 sm:h-7 object-contain"
-            />
-          </Link>
+      <Link
+        to={"/admin-dashboard"}
+        className=" hidden md:flex  items-center justify-center gap-1 "
+      >
+        <img
+          src="/logo_image.png"
+          alt="Logo"
+          className="h-12 w-12 object-contain"
+        />
+        <img
+          src="/logo_name2.png"
+          alt="Logo Name"
+          className="h-6 sm:h-7 object-contain"
+        />
+      </Link>
       {/* Menu Items */}
-
 
       <div
         className=" space-y-0 lg:space-y-5 md:mt-5"

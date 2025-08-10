@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+
 import Modal from "./Modal";
 import ExpandEventModal from "./ExpandEventModal";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 const localizer = momentLocalizer(moment);
 
@@ -13,6 +15,11 @@ const AdminCalender = () => {
   const [dayEventsModalOpen, setDayEventsModalOpen] = useState(false);
   const [eventsForSelectedDay, setEventsForSelectedDay] = useState([]);
   const [events, setEvents] = useState([]); // Default to empty array instead of [{}]
+  const [currentDate, setCurrentDate] = useState(new Date());
+  // Handle calendar navigation
+  const handleNavigate = (date) => {
+    setCurrentDate(date);
+  };
 
   // Handle adding new events
   const handleAddEvent = (newEventOrEvents) => {
@@ -50,7 +57,6 @@ const AdminCalender = () => {
     }
   };
 
-  // Custom event display component
   const CustomEvent = ({ event }) => {
     const date = event.start;
     const sameDayEvents = events.filter((e) =>
@@ -58,12 +64,16 @@ const AdminCalender = () => {
     );
 
     if (sameDayEvents.length > 1 && sameDayEvents[0].id !== event.id) {
-      return null; // Only show +n more for the first event
+      return null;
     }
 
     return (
       <div
-        onClick={() => setDayEventsModalOpen(true)}
+        onClick={() => {
+          setSelectedDate(moment(event.start).startOf("day"));
+          setEventsForSelectedDay(sameDayEvents);
+          setDayEventsModalOpen(true);
+        }}
         style={{
           backgroundColor: event.color || "transparent",
           color: "black",
@@ -84,22 +94,77 @@ const AdminCalender = () => {
     );
   };
 
+  // Custom Toolbar for month navigation (arrows only)
+  const CustomToolbar = (toolbar) => {
+    const [prevHover, setPrevHover] = useState(false);
+    const [nextHover, setNextHover] = useState(false);
+    const buttonStyle = {
+      backgroundColor: "#6E67D5",
+      color: "#fff",
+      borderRadius: "0.375rem",
+      padding: "0.5rem",
+      border: "none",
+      transition: "background 0.2s",
+      cursor: "pointer",
+    };
+    const buttonHoverStyle = {
+      backgroundColor: "#5a54b6",
+    };
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: 16,
+        }}
+      >
+        <button
+          onClick={() => toolbar.onNavigate("PREV")}
+          style={
+            prevHover
+              ? { ...buttonStyle, ...buttonHoverStyle, marginRight: 16 }
+              : { ...buttonStyle, marginRight: 16 }
+          }
+          aria-label="Previous Month"
+          onMouseEnter={() => setPrevHover(true)}
+          onMouseLeave={() => setPrevHover(false)}
+        >
+          <LeftOutlined />
+        </button>
+        <span className="rbc-toolbar-label text-lg font-bold">
+          {toolbar.label}
+        </span>
+        <button
+          onClick={() => toolbar.onNavigate("NEXT")}
+          style={
+            nextHover
+              ? { ...buttonStyle, ...buttonHoverStyle, marginLeft: 16 }
+              : { ...buttonStyle, marginLeft: 16 }
+          }
+          aria-label="Next Month"
+          onMouseEnter={() => setNextHover(true)}
+          onMouseLeave={() => setNextHover(false)}
+        >
+          <RightOutlined />
+        </button>
+      </div>
+    );
+  };
+
   return (
     <div>
       <div className="admin-page">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-5 gap-4">
           <div>
             <p className="text-xl sm:text-2xl font-semibold">
-              Calender management
+              Calendar management
             </p>
             <p className="text-sm sm:text-base text-gray-600">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
           </div>
-          {/* <button className="bg-[#131927] text-white px-6 py-2.5 rounded-md text-sm w-full sm:w-auto">
-            + Add New User
-          </button> */}
         </div>
 
         <div className="w-full overflow-x-auto">
@@ -113,43 +178,43 @@ const AdminCalender = () => {
               selectable
               onSelectSlot={handleSlotSelect}
               views={["month"]}
-              components={{ event: CustomEvent }}
-              // dayPropGetter={(date) => {
-              //   const eventOfDay = events.find((event) =>
-              //     moment(event.start).isSame(moment(date), "day")
-              //   );
-              //   if (eventOfDay) {
-              //     let bg = "";
-              //     switch (eventOfDay.priority) {
-              //       case "high":
-              //         bg = "#fee2e2"; // light red
-              //         break;
-              //       case "medium":
-              //         bg = "#fef3c7"; // light yellow
-              //         break;
-              //       case "low":
-              //         bg = "#d1fae5"; // light green
-              //         break;
-              //       default:
-              //         bg = "#ffffff";
-              //     }
-              //     return {
-              //       className: "custom-bg",
-              //       style: { backgroundColor: bg },
-              //     };
-              //   }
-              //   return {}; // Default cell style
-              // }}
+              components={{ event: CustomEvent, toolbar: CustomToolbar }}
               eventPropGetter={(event) => ({
                 style: {
-                  backgroundColor: event.color || "transparent", // Remove default blue background
-                  color: "black", // Set text color
+                  backgroundColor: event.color || "transparent",
+                  color: "black",
                   borderRadius: "5px",
                   border: "none",
                   padding: "4px",
                 },
               })}
+              date={currentDate}
+              onNavigate={handleNavigate}
             />
+            {/* Highlight today cell in month view */}
+            <style>{`
+              /* Enhanced style for the current date number with a prominent box shadow and glow */
+              :global(.rbc-month-view .rbc-date-cell.rbc-now a) {
+                background: #1565c0 !important;
+                color: #fff !important;
+                border-radius: 50% !important;
+                width: 48px !important;
+                height: 48px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1.5rem !important;
+                font-weight: 500 !important;
+                margin: 0 auto !important;
+                box-shadow: 0 0 0 4px rgba(21,101,192,0.15), 0 8px 24px 0 rgba(21,101,192,0.25), 0 2px 8px rgba(21,101,192,0.18) !important;
+                text-decoration: none !important;
+                transition: box-shadow 0.2s, transform 0.2s !important;
+              }
+              :global(.rbc-month-view .rbc-date-cell.rbc-now a:hover) {
+                box-shadow: 0 0 0 6px rgba(21,101,192,0.22), 0 12px 32px 0 rgba(21,101,192,0.32), 0 4px 16px rgba(21,101,192,0.28) !important;
+                transform: scale(1.08) !important;
+              }
+            `}</style>
           </div>
         </div>
 

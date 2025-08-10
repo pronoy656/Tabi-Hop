@@ -2,6 +2,8 @@
 import moment from "moment";
 import React, { useState } from "react";
 
+import { RxCross2 } from "react-icons/rx";
+
 const ExpandEventModal = ({
   date,
   events,
@@ -65,7 +67,7 @@ const ExpandEventModal = ({
     <div>
       <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6">
         <div className="bg-white p-6 rounded-lg max-w-[773px] w-full max-h-[90vh] overflow-y-auto">
-          <div className="flex justify-center items-center mb-4">
+          <div className="flex justify-between items-center mb-4">
             <div>
               <p className="text-4xl font-semibold">
                 Events for {new Date(date).toLocaleDateString()}
@@ -74,6 +76,9 @@ const ExpandEventModal = ({
                 View and add your bookings, plans, and events in one place
               </p>
             </div>
+            <button onClick={onClose}>
+              <RxCross2 className="border-2 border-[#6E67D5] w-12 h-12 rounded-full text-lg text-[#6E67D5] p-1.5" />
+            </button>
           </div>
           {fakeEvents.length === 0 ? (
             <p className="bg-amber-300">No events for this day</p>
