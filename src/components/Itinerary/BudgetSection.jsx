@@ -40,12 +40,19 @@ const BudgetSection = () => {
         <span className="w-full md:w-40 p-2 font-semibold rounded-xl text-center text-sm bg-[#C7EAED]">
           Estimate: ${budget.from} - ${budget.to}
         </span>
+      {budget.time && (
+  <span className="w-full md:w-32 p-2 font-medium rounded-xl text-center text-sm bg-[#FFE9B1]">
+    {budget.time}
+  </span>
+)}
+
       </div>
     ))}
   </div>
 
-  <button className="  px-5 rounded-md ml-4 bg-[#4bbec9] leading-5">Time <br /> (Optional)</button>
+
 </div>
+
 
 
       <AddBudgetModal
