@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CalenderAdmin from "./CalenderAdmin";
 
 const AdminSubscriptionsPlan = () => {
   //Array for Subscription card
@@ -123,6 +124,7 @@ const AdminSubscriptionsPlan = () => {
           </div>
         ))}
       </div>
+      <p><CalenderAdmin></CalenderAdmin></p>
     </div>
   );
 };

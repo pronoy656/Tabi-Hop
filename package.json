@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.14",
     "@stripe/react-stripe-js": "^3.8.0",
     "@stripe/stripe-js": "^7.6.1",
     "@tailwindcss/vite": "^4.1.11",
@@ -35,6 +36,7 @@
     "react-router-dom": "^7.7.0",
     "react-stars": "^2.2.5",
     "recharts": "^3.1.0",
+    "shadcn-ui": "^0.9.5",
     "sort-by": "^0.0.2",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11"
