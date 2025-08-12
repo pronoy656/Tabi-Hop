@@ -29,20 +29,24 @@ const BudgetSection = () => {
         </button>
       </div>
 
-      <div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md">
-        {budgetList.map((budget, i) => (
-          <div
-            key={i}
-            className="flex flex-col md:flex-row md:items-center gap-4 mb-4"
-          >
-            <label className="w-full md:w-40 font-semibold">{budget.name}</label>
-
-            <span className="w-full md:w-40 p-2 font-semibold rounded-xl text-center text-sm bg-[#C7EAED]">
-              Estimate: ${budget.from} - ${budget.to}
-            </span>
-          </div>
-        ))}
+<div className="bg-[#FFFFFF] p-6 rounded-xl w-full shadow-md flex items-start gap-4">
+  <div>
+    {budgetList.map((budget, i) => (
+      <div
+        key={i}
+        className="flex flex-col md:flex-row md:items-center gap-4 mb-4"
+      >
+        <label className="w-full md:w-40 font-semibold">{budget.name}</label>
+        <span className="w-full md:w-40 p-2 font-semibold rounded-xl text-center text-sm bg-[#C7EAED]">
+          Estimate: ${budget.from} - ${budget.to}
+        </span>
       </div>
+    ))}
+  </div>
+
+  <button className="  px-5 rounded-md ml-4 bg-[#4bbec9] leading-5">Time <br /> (Optional)</button>
+</div>
+
 
       <AddBudgetModal
         isOpen={isModalOpen}

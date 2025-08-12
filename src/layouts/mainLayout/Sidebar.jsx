@@ -40,7 +40,7 @@ const menuItems = [
     ),
   },
   {
-    label: "MoodBoard",
+    label: "Mood Board",
     path: "/moodboard",
     renderIcon: (isActive) => (
       <MoodBoardSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />

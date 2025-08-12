@@ -92,7 +92,7 @@ const MoodBoardDetails = () => {
       </div>
       {/* Google Map */}
       <div>
-        <section className="my-[10px]">
+        <section className="mt-[10px]">
           <h1 className="text-2xl font-semibold">View Location</h1>
           <p className="text-[#7D717F]">
             It is a long established fact that a reader will be distracted by
@@ -113,8 +113,13 @@ const MoodBoardDetails = () => {
           </div>
         </section>
       </div>
+   
+<button className="bg-gradient-to-l from-orange-400 to-red-500 rounded-xl mb-4 px-6 py-2 font-semibold shadow">
+  Report
+</button>
 
-      <div className="bg-[#4ABBC7] rounded-2xl p-4 md:p-8 lg:p-12 my-8 ">
+
+      <div className="bg-[#4ABBC7] rounded-2xl p-4 md:p-8 lg:p-12 mb-8 ">
         <h1 className="text-3xl font-semibold text-[#FFFFFF]">
           Contact Information
         </h1>

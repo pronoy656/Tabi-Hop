@@ -71,7 +71,7 @@ const AccommondationCard = ({ acc, onEdit, onDelete }) => {
         <p className=" font-medium text-[#4D5461] mt-1">{`Note : ${acc.note}`}</p>
 
         <div className="space-y-1 text-sm font-semibold">
-          <p>Check-In : {acc.checkIn}</p>
+          <p>Check-In  : {acc.checkIn}</p>
           <p>Check-Out : {acc.checkOut}</p>
           <p>Contact : {acc.contact}</p>
         </div>
