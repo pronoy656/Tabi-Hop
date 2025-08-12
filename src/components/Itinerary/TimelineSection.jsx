@@ -138,11 +138,14 @@ const TimelineSection = () => {
                 </div>
 
                 {/* Media Section */}
-                <div className="flex gap-4 col-span-1 lg:col-span-2 ">
+                <div className="flex gap-4col-span-1 lg:col-span-2 ">
                   <div className="flex flex-col items-center">
                     <div className="w-[1px] bg-gray-300 h-full" />
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col ml-4 px-10  relative">
+                      <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full shadow-md">
+    ◀
+  </button>
                     <div className="md:flex gap-2">
                       {step.mediaImages.map((img, i) => (
                         <img
@@ -153,6 +156,10 @@ const TimelineSection = () => {
                         />
                       ))}
                     </div>
+                      {/* Right Arrow */}
+  <button className="absolute right-0 top-1/2 -translate-y-1/2 bg-purple-500 text-white p-2 rounded-full shadow-md">
+    ▶
+  </button>
                     <h3 className="font-semibold mt-3 text-xl">Media Section</h3>
                     <p className="text-xs mt-1 text-[#6D717F]">
                       1123 Any Appartment, Any city, State

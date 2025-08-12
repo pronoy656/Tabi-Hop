@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TimelineSection from "./TimelineSection";
 
 const DetailsDestination = () => {
@@ -116,6 +117,7 @@ const DetailsDestination = () => {
                     {step.title}
                   </div>
                   <div className="text-gray-500 text-xs">{step.desc}</div>
+                  <Link>Google Map</Link>
                 </div>
               ))}
             </div>
