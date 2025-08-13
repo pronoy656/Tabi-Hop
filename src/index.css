@@ -180,3 +180,7 @@ body {
 .noscrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+h2#radix-«r4» {
+    font-size: 30px;
+}

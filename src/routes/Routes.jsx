@@ -47,7 +47,6 @@ import AdminItinerary from "../pages/admin/adminItinerary/AdminItinerary";
 import AdminMoodboard from "../pages/admin/adminMoodboard/AdminMoodboard";
 import AdminToDoList from "../pages/admin/adminToDoList/AdminToDoList";
 import AdminCalender from "../pages/admin/adminCalender/AdminCalender";
-import AdminSubscriptionsPlan from "../pages/admin/subscriptionsPlan/AdminSubscriptionsPlan";
 import AdminReports from "../pages/admin/reports/AdminReports";
 import AdminPrivacyPolicy from "../pages/admin/privacyPolicy/AdminPrivacyPolicy";
 import AdminTermsAndConditions from "../pages/admin/termsandConditions/AdminTermsandConditions";
@@ -63,6 +62,7 @@ import AdminMoodBoardDetails from "../pages/admin/adminMoodboard/AdminMoodBoardD
 import Profile from "../pages/user/profile/Profile";
 import ErrorPage from "../components/shared/ErrorPage";
 import AccommodationDetailPage from "../pages/user/accommodations/AccomodationDetails";
+import AdminSubscriptionsPlan from "../pages/admin/subscriptionsPlan/AdminSubscriptionsPlan"
 
 const router = createBrowserRouter([
   {
