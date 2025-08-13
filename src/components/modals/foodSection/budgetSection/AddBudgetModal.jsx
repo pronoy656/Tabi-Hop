@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import ModalLayout from "../../ModalLayout";
 import ModalHeader from "../../ModalHeader";
 
-
 const AddBudgetModal = ({ isOpen, onClose, onSave }) => {
   const { register, handleSubmit, reset } = useForm();
 
@@ -11,6 +10,7 @@ const AddBudgetModal = ({ isOpen, onClose, onSave }) => {
       name: data.name,
       from: parseFloat(data.from),
       to: parseFloat(data.to),
+      time: data.time || null, // optional
     };
 
     onSave(newBudget);
@@ -25,7 +25,10 @@ const AddBudgetModal = ({ isOpen, onClose, onSave }) => {
         subTitle="Define a new budget allocation for your plan"
       />
 
-      <form onSubmit={handleSubmit(onSubmit)} className="bg-[#FDF0FC] p-4 rounded-lg space-y-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-[#FDF0FC] p-4 rounded-lg space-y-4"
+      >
         <div>
           <label className="label-class">Budget Name</label>
           <input
@@ -52,6 +55,16 @@ const AddBudgetModal = ({ isOpen, onClose, onSave }) => {
             {...register("to", { required: true })}
             type="number"
             placeholder="e.g. 50"
+            className="form-input"
+          />
+        </div>
+
+        {/* Optional time */}
+        <div>
+          <label className="label-class">Preferred Time (Optional)</label>
+          <input
+            {...register("time")}
+            type="time"
             className="form-input"
           />
         </div>

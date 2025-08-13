@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import ModalHeader from "../ModalHeader";
-
+import {  X } from "lucide-react";
 const EditBookingModal = ({
   isOpen,
   onClose,
@@ -45,7 +45,14 @@ const EditBookingModal = ({
       onClick={handleBackdropClick}
       className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-lg bg-black/30 p-6"
     >
-      <div className="bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl">
+      
+      <div className="relative bg-white rounded-2xl p-6 md:p-12 w-[90%] max-w-3xl shadow-xl">
+         <button
+          onClick={onClose}
+          className="absolute top-6 right-6 text-gray-500 hover:text-black text-2xl font-bold focus:outline-none"
+        >
+         <X></X>
+        </button>
         <ModalHeader
           title="Edit Bookings"
           subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."

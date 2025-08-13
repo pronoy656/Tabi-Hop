@@ -18,8 +18,8 @@ type specimen book. It has survived not only five centuries, Lorem Lorem Ipsum h
 
   return (
     <div>
-      <h2 className="font-semibold text-lg mb-4 text-[#1F4F53]">
-        Step - 05 : Write a prompt sharing how you want to spend you day
+      <h2 className="font-semibold text-lg mb-4 text-[#1F4F53] flex gap-x-4 lg:gap-x-10">
+        Step - 05 : Write a prompt sharing how you want to spend you day   <span className="text-black text-base font-normal">(Optional)</span>
       </h2>
 
       <div className="bg-white border border-gray-300 shadow-xl rounded-md p-6 space-y-2">
