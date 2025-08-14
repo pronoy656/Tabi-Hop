@@ -126,14 +126,14 @@ body {
 
 /* End */
 
-/* j */
+/* Scroll bar */
 .scroller {
   width: 416px;
   height: 200px;
   overflow-y: scroll;
   scrollbar-color: #d7cddf #6d67d4;
 }
-
+/* End */
 @media (min-width: 640px) {
   .admin-page {
     padding: 2.5rem;
