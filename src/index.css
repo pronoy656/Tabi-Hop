@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 button {
   cursor: pointer;
@@ -15,7 +15,7 @@ section {
 .react-calendar {
   width: 450px;
   border: none !important;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: transparent;
 }
 /* End POint */
@@ -85,7 +85,7 @@ span.rbc-btn-group {
   color: #888;
 }
 body {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 .booking-gallery {
   display: grid;
@@ -108,6 +108,30 @@ body {
   border: 1px solid #d2d5db;
   min-height: 86vh;
   margin-bottom: 30px;
+}
+
+/* // Scroll bar styles */
+.scroll-custom::-webkit-scrollbar {
+  width: 6px; /* scrollbar width */
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+  background-color: #e66ce5; /* scrollbar color */
+  border-radius: 10px;
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+  background: #fce7f3; /* track background */
+}
+
+/* End */
+
+/* j */
+.scroller {
+  width: 416px;
+  height: 200px;
+  overflow-y: scroll;
+  scrollbar-color: #d7cddf #6d67d4;
 }
 
 @media (min-width: 640px) {
@@ -182,5 +206,5 @@ body {
 }
 
 h2#radix-«r4» {
-    font-size: 30px;
+  font-size: 30px;
 }

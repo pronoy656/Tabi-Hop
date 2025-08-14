@@ -25,6 +25,8 @@
     "lucide-react": "^0.534.0",
     "match-sorter": "^8.0.3",
     "moment": "^2.30.1",
+    "phosphor-icons": "^1.4.2",
+    "phosphor-react": "^1.4.1",
     "quill": "^2.0.3",
     "react": "^19.1.0",
     "react-big-calendar": "^1.19.4",
@@ -39,6 +41,7 @@
     "shadcn-ui": "^0.9.5",
     "sort-by": "^0.0.2",
     "swiper": "^11.2.10",
+    "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
