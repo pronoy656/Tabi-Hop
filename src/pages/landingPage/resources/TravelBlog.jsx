@@ -30,12 +30,11 @@ const TravelBlog = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16 px-4">
+    <div className="min-h-screen py-32 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Latest Travel <span className="text-purple-600">Stories</span>{' '}
-            Guides
           </h1>
           <p className="text-gray-800 font-medium text-lg max-w-2xl mx-auto">
             Read inspiring travel stories and get inspired for your next
@@ -75,7 +74,7 @@ const TravelBlog = () => {
                   ))}
                 </div>
 
-                <div className="bg-[#6A4388] w-full h-11 border-1 border-[#6A4388]  rounded-bl-md rounded-br-md rounded-tr-lg relative transition-colors duration-300 ease-in-out hover:bg-[#6A4388]">
+                <div className="bg-[#6A4388] w-full h-11 border-1 border-[#6A4388]  rounded-bl-md rounded-br-md rounded-tr-lg relative transition-colors duration-300 ease-in-out hover:bg-[#d6b8ec]">
                   <button className=" h-11 bg-white border-1 border-[#6A4388] rounded-lg absolute top-[-5px] font-medium w-full -ml-[4px] transition-colors duration-300 ease-in-out hover:bg-[#6A4388] hover:text-white">
                     View Guide
                   </button>
