@@ -20,7 +20,7 @@ const TravelHeroSection = () => {
           <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Travel Resources &amp; Guides
           </h1>
-          <p className="text-2xl md:text-xl lg:text-2xl font-semibold text-white font-light leading-relaxed">
+          <p className="text-2xl md:text-xl lg:text-2xl font-semibold text-white leading-relaxed">
             Discover expert tips, itineraries, and travel stories to plan your
             perfect journey
           </p>
