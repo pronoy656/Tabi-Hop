@@ -53,7 +53,7 @@ const TravelBlog = () => {
                 alt={destination.name}
                 className="w-full h-88 object-cover"
               />
-              <CardContent className="bg-[#FFF8F3]">
+              <CardContent className="bg-[#FFF8F3] p-6">
                 <div className="flex items-center justify-start space-x-1 mb-3.5">
                   <MapPin></MapPin>
                   <h3 className="font-semibold text-gray-900 text-lg">

@@ -33,7 +33,7 @@ function AccordionTrigger({ className, children, ...props }) {
         {...props}
       >
         {children}
-        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-5 shrink-0 translate-y-0.5 transition-transform duration-300" />
+        <ChevronDownIcon className="text-muted-foreground text-[#A363D9] pointer-events-none size-8 shrink-0 translate-y-0.5 transition-transform duration-300" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Card = ({ className = '', children, ...props }) => {
-  const baseClasses = 'border-2 rounded-xl';
+  const baseClasses = 'border-2 rounded-3xl';
   const combinedClasses = `${baseClasses} ${className}`.trim();
   return (
     <div className={combinedClasses} {...props}>
@@ -11,7 +11,7 @@ const Card = ({ className = '', children, ...props }) => {
 };
 
 export function CardContent({ className = '', children, ...props }) {
-  const baseClasses = 'p-6';
+  const baseClasses = '';
   const combinedClasses = `${baseClasses} ${className}`.trim();
 
   return (
