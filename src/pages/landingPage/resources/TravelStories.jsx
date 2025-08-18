@@ -96,49 +96,81 @@ const TravelStories = () => {
               onChange={handleChange}
             />
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <UploadIcon />
-              </div>
+              {files.length === 0 && (
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <UploadIcon />
+                </div>
+              )}
+
               {files.length === 0 ? (
                 <p className="text-gray-600">
                   Drag & Drop files here or click to upload
                 </p>
               ) : (
-                <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                  {files.map((fileObj, index) => {
-                    const { file, preview } = fileObj;
-                    if (file.type.startsWith('image')) {
-                      return (
-                        <img
-                          key={index}
-                          src={preview}
-                          alt={file.name}
-                          className="mx-auto max-h-60 rounded-lg object-contain"
-                        />
-                      );
-                    } else if (file.type.startsWith('video')) {
-                      return (
-                        <video
-                          key={index}
-                          src={preview}
-                          controls
-                          className="w-full h-40 object-cover rounded-lg"
-                        />
-                      );
-                    } else {
-                      return (
-                        <p key={index} className="text-gray-700">
-                          {file.name}
-                        </p>
-                      );
-                    }
-                  })}
-                </div>
+                <>
+                  {/* Full-width preview for the first image */}
+                  {files[0] && files[0].file.type.startsWith('image') && (
+                    <div className="w-full h-[400px] flex items-center justify-center mb-4 relative">
+                      <img
+                        src={files[0].preview}
+                        alt={files[0].file.name}
+                        className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+                        style={{ zIndex: 1 }}
+                      />
+                    </div>
+                  )}
+                  {/* Full-width preview for the first video */}
+                  {files[0] && files[0].file.type.startsWith('video') && (
+                    <div className="w-full h-[400px] flex items-center justify-center mb-4 relative">
+                      <video
+                        src={files[0].preview}
+                        controls
+                        className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+                        style={{ zIndex: 1 }}
+                      />
+                    </div>
+                  )}
+                  {/* Thumbnails for the rest of the files */}
+                  {files.length > 1 && (
+                    <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                      {files.slice(1).map((fileObj, index) => {
+                        const { file, preview } = fileObj;
+                        if (file.type.startsWith('image')) {
+                          return (
+                            <img
+                              key={index}
+                              src={preview}
+                              alt={file.name}
+                              className="mx-auto max-h-40 rounded-lg object-contain"
+                            />
+                          );
+                        } else if (file.type.startsWith('video')) {
+                          return (
+                            <video
+                              key={index}
+                              src={preview}
+                              controls
+                              className="w-full h-32 object-cover rounded-lg"
+                            />
+                          );
+                        } else {
+                          return (
+                            <p key={index} className="text-gray-700">
+                              {file.name}
+                            </p>
+                          );
+                        }
+                      })}
+                    </div>
+                  )}
+                </>
               )}
 
-              <p className="text-gray-600 font-medium text-sm">
-                MP4, MOV up to 500MB
-              </p>
+              {files.length === 0 && (
+                <p className="text-gray-600 font-medium text-sm">
+                  MP4, MOV up to 500MB
+                </p>
+              )}
             </div>
           </div>
 

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.15.0",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-dialog": "^1.1.14",
     "@stripe/react-stripe-js": "^3.8.0",
@@ -22,6 +23,7 @@
     "google-map-react": "^2.2.5",
     "jodit-react": "^5.2.19",
     "localforage": "^1.10.0",
+    "lottie-react": "^2.4.1",
     "lucide": "^0.525.0",
     "lucide-react": "^0.534.0",
     "match-sorter": "^8.0.3",

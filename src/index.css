@@ -201,6 +201,86 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
 }
 
+/* animated bubble */
+@keyframes float-random-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-15px, -50px) scale(0.9);
+  }
+  75% {
+    transform: translate(-25px, 20px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float-random-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    transform: translate(-25px, -20px) scale(1.15);
+  }
+  60% {
+    transform: translate(20px, -40px) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float-random-3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, -30px) scale(1.2);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float-random-4 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(-20px, -20px) scale(1.1);
+  }
+  80% {
+    transform: translate(15px, -35px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.animate-float-random-1 {
+  animation: float-random-1 8s ease-in-out infinite;
+}
+
+.animate-float-random-2 {
+  animation: float-random-2 10s ease-in-out infinite;
+}
+
+.animate-float-random-3 {
+  animation: float-random-3 12s ease-in-out infinite;
+}
+
+.animate-float-random-4 {
+  animation: float-random-4 9s ease-in-out infinite;
+}
+
+/* End of animated bubble */
+/* End */
+
 .noscrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }

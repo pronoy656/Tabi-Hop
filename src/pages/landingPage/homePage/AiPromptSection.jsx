@@ -3,7 +3,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 const AiPromptSection = () => {
   return (
-    <div className="max-w-[1320px] mx-auto border py-[90px] flex items-center space-x-16">
+    <div className="max-w-[1320px] mx-auto py-[90px] flex items-center space-x-16">
       <div className="w-[808px]">
         <p className="text-7xl font-medium leading-24">
           Describe your day with an{' '}

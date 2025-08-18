@@ -9,6 +9,7 @@ import ReviewSection from './ReviewSection';
 import FaqSection from './FaqSection';
 import TeamIntroduce from './TeamIntroduce';
 import ContactSection from './ContactSection';
+import SignInHome from './SignInHome';
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
         <VideoSection></VideoSection>
         <ResearchSection></ResearchSection>
         <PricingList></PricingList>
+        <SignInHome></SignInHome>
         <ReviewSection></ReviewSection>
         <FaqSection></FaqSection>
         <TeamIntroduce></TeamIntroduce>
