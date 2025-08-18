@@ -72,7 +72,7 @@ const HelpCenter = () => {
             <CardContent className="p-0">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1" className="border-0">
-                  <AccordionTrigger className="px-6 py-4 text-left text-2xl font-semibold text-gray-900 hover:no-underline hover:bg-gray-50 transition-colors">
+                  <AccordionTrigger className="px-6 py-4 text-left text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 hover:no-underline hover:bg-gray-50 transition-colors">
                     How to create your first itinerary
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 font-medium text-gray-600 leading-relaxed">
@@ -93,7 +93,7 @@ const HelpCenter = () => {
             <CardContent className="p-0">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-2" className="border-0">
-                  <AccordionTrigger className="px-6 py-4 text-left text-2xl  font-medium text-gray-900 hover:no-underline hover:bg-gray-50 transition-colors">
+                  <AccordionTrigger className="px-6 py-4 text-left text-lg sm:text-xl lg:text-2xl  font-medium text-gray-900 hover:no-underline hover:bg-gray-50 transition-colors">
                     Account/ Billing related questions
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 font-medium text-gray-600 leading-relaxed">
@@ -114,7 +114,7 @@ const HelpCenter = () => {
             <CardContent className="p-0">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-3" className="border-0">
-                  <AccordionTrigger className="px-6 py-4 text-left text-2xl font-medium text-gray-900 hover:no-underline hover:bg-gray-50 transition-colors">
+                  <AccordionTrigger className="px-6 py-4 text-left text-lg sm:text-xl lg:text-2xl font-medium text-gray-900 hover:no-underline hover:bg-gray-50 transition-colors">
                     Create a new user profile with a different travel style
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 font-medium text-gray-600 leading-relaxed">
