@@ -15,7 +15,7 @@ const HomePage = () => {
   return (
     <div>
       <HeroSection></HeroSection>
-      <div className="bg-[#FFF6FA]">
+      <div className="bg-[#F1F0FB]">
         <ToolIntroduce></ToolIntroduce>
         <AiPromptSection></AiPromptSection>
         <VideoSection></VideoSection>

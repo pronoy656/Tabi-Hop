@@ -2,21 +2,23 @@ import React from 'react';
 
 const AboutYoutubePlaylist = () => {
   return (
-    <div className="max-w-[808px] mx-auto py-20">
+    <div className="max-w-[808px] w-full mx-auto py-12 px-4">
       <div className="text-center">
-        <p className="text-5xl font-semibold">
+        <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
           See Your Trip <span className="text-[#E66CE5]">Before You Go</span>
         </p>
-        <p className="text-xl font-medium mt-3">
+        <p className="text-base sm:text-lg md:text-xl font-medium mt-3">
           {' '}
           From flights to adventures, preview your full itinerary in an
           immersive video.
         </p>
       </div>
-      <div className="mt-14 rounded-2xl  overflow-hidden w-[800px] h-[450px]">
+      <div
+        className="mt-14 rounded-2xl overflow-hidden w-full"
+        style={{ aspectRatio: '16/9' }}
+      >
         <iframe
-          width="800"
-          height="450"
+          className="w-full h-full min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[450px]"
           src="https://www.youtube.com/embed/Bof8UqszP54?si=dzwQsW-J_VpB3f5c"
           title="YouTube Playlist"
           frameBorder="0"
