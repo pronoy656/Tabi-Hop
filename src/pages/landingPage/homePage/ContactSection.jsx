@@ -27,39 +27,51 @@ const ContactSection = () => {
       <div className="max-w-6xl w-full rounded-3xl overflow-hidden pb-44 pt-16">
         <div className="flex flex-col lg:flex-row min-h-[600px]">
           {/* Left Panel - Contact Information */}
-          <div className="lg:w-2/5 bg-[#E66CE5] rounded-2xl p-4 lg:p-6 text-white relative overflow-hidden">
+          <div className="w-full md:w-3/5 lg:w-2/5 bg-[#E66CE5] rounded-2xl p-4 sm:p-6 md:p-6 lg:p-6 text-white relative overflow-hidden">
             {/* Decorative circles */}
-            <div className="absolute bottom-0 right-0 w-36 h-36  rounded-full">
-              <img src="/Ellipse 793.png" alt="" />
+            <div className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full">
+              <img
+                src="/Ellipse 793.png"
+                alt="Decorative Circle"
+                className="w-full h-full"
+              />
             </div>
-            <div className="absolute bottom-20 right-16 w-26 h-26 rounded-full">
-              <img src="/Ellipse 794.png" alt="" />
+            <div className="absolute bottom-16 right-8 sm:bottom-20 sm:right-12 w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-26 lg:h-26 rounded-full">
+              <img
+                src="/Ellipse 794.png"
+                alt="Decorative Circle"
+                className="w-full h-full"
+              />
             </div>
 
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">Contact Information</h2>
-              <p className="text-lg mb-24">
+              <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-3 sm:mb-3 md:mb-4 lg:mb-4">
+                Contact Information
+              </h2>
+              <p className="text-base sm:text-base md:text-lg lg:text-lg mb-12 sm:mb-16 md:mb-20 lg:mb-24">
                 Say something to start a live chat!
               </p>
 
-              <div className="space-y-18">
-                <div className="flex items-center space-x-4">
-                  <div className="w-6 h-6 flex items-center justify-center">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-18">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5"
+                      className="w-4 h-4 sm:w-5 sm:h-5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
-                  <span>(123) 456 7890</span>
+                  <span className="text-sm sm:text-base md:text-base lg:text-lg">
+                    (123) 456 7890
+                  </span>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-6 h-6 flex items-center justify-center">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5"
+                      className="w-4 h-4 sm:w-5 sm:h-5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -67,13 +79,15 @@ const ContactSection = () => {
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </div>
-                  <span>hello@tabihop.com</span>
+                  <span className="text-sm sm:text-base md:text-base lg:text-lg">
+                    hello@tabihop.com
+                  </span>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 flex items-center justify-center mt-1">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mt-1">
                     <svg
-                      className="w-5 h-5"
+                      className="w-4 h-4 sm:w-5 sm:h-5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -84,7 +98,7 @@ const ContactSection = () => {
                       />
                     </svg>
                   </div>
-                  <div>
+                  <div className="text-sm sm:text-base md:text-base lg:text-lg">
                     <div>123 Anywhere St., Any City</div>
                     <div>State, Country 12345</div>
                   </div>
@@ -92,8 +106,9 @@ const ContactSection = () => {
               </div>
 
               {/* Social Media Icons */}
-              <div className="flex space-x-4 mt-16">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+              <div className="flex space-x-3 sm:space-x-4 mt-8 sm:mt-12 md:mt-14 lg:mt-16">
+                {/** Example for each icon **/}
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
                   <svg
                     className="w-5 h-5"
                     fill="currentColor"
@@ -102,7 +117,7 @@ const ContactSection = () => {
                     <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                   </svg>
                 </div>
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
                   <svg
                     className="w-5 h-5"
                     fill="currentColor"
@@ -111,7 +126,7 @@ const ContactSection = () => {
                     <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
                   </svg>
                 </div>
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
                   <svg
                     className="w-5 h-5"
                     fill="currentColor"

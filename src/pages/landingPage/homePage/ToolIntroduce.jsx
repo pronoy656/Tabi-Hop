@@ -51,7 +51,7 @@ const ToolIntroduce = () => {
     }
   };
   return (
-    <div className="p-4 py-36 pt-48">
+    <div className="p-4 py-10 md:py-36 pt-48">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Side - Mobile App Interface */}
@@ -86,74 +86,45 @@ const ToolIntroduce = () => {
           </div>
 
           {/* Right Side - Marketing Content */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 w-full px-4 sm:px-6 lg:px-8">
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-20">
+              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-snug">
                 Plan your perfect journey with our{' '}
                 <span className="text-[#6E67D6]">smart tool</span>
               </h1>
-              <p className="text-3xl font-semibold text-gray-800 mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-6 sm:mb-8">
                 The secret to great travel-
               </p>
             </div>
 
-            <div className="space-y-9">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-purple-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+            <div className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-9">
+              {[
+                'Unlimited collaborators at no extra cost',
+                'No complex onboarding - simple user experience',
+                'Designed specifically for the visual planner',
+              ].map((text, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-start sm:items-center space-x-3"
+                >
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                    <svg
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700">
+                    {text}
+                  </span>
                 </div>
-                <span className="text-gray-700 text-2xl">
-                  Unlimited collaborators at no extra cost
-                </span>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-purple-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-2xl">
-                  No complex onboarding - simple user experience
-                </span>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-purple-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-700 text-2xl">
-                  Designed specifically for the visual planner
-                </span>
-              </div>
+              ))}
             </div>
           </div>
         </div>

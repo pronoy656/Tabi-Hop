@@ -15,17 +15,37 @@ const VideoSection = () => {
     //     ></iframe>
     //   </div>
     // </div>
-    <div className="py-28 px-4">
+    <div className=" md:py-28 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          {/* <h2 className="text-5xl  font-bold text-gray-900 mb-4"> */}
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+        <div className="text-center mb-10 sm:mb-12 px-4">
+          <h2
+            className="
+      text-3xl 
+      sm:text-3xl 
+      md:text-4xl 
+      lg:text-5xl 
+      font-bold 
+      text-gray-900 
+      mb-3 sm:mb-4
+      leading-snug sm:leading-tight
+    "
+          >
             No more planning alone{' '}
             <span className="text-[#E66CE5]">Build together.</span>
           </h2>
-          {/* <p className="text-xl font-medium text-gray-700 max-w-2xl mx-auto"> */}
-          <p className="text-lg sm:text-xl font-normal sm:font-medium text-gray-800 max-w-2xl mx-auto px-4">
+
+          <p
+            className="
+      text-base 
+      sm:text-lg 
+      md:text-xl 
+      text-gray-700 
+      max-w-xl sm:max-w-2xl 
+      mx-auto 
+      leading-relaxed
+    "
+          >
             Collaborate with your travel buddies, and ask AI the best optimal
             way to hop to your destinations.
           </p>

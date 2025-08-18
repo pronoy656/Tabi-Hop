@@ -182,7 +182,8 @@ const SignInHome = () => {
       </div>
 
       {/* Right Side - App Preview */}
-      <div className="flex-1 flex items-center justify-center p-8">
+      {/* Right Side - App Preview */}
+      <div className="flex-1 hidden lg:flex items-center justify-center p-8">
         <img
           src="/Laptop Mockup copy 1.png"
           alt="TabiHop App Interface"

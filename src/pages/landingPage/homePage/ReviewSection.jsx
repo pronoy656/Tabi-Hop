@@ -39,15 +39,15 @@ const ReviewSection = () => {
     <div className="py-28 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-semibold text-gray-900 mb-4">
+        <div className="text-center mb-28">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-gray-900 mb-4">
             Happy{' '}
             <span className="text-[#6E67D6]">
               Tabi <span className="text-[#E66CE5]">hop</span>
             </span>{' '}
             Travelers
           </h1>
-          <p className="text-gray-800 text-xl font-medium">
+          <p className="text-gray-800 sm:text-4xl md:text-5xl lg:text-xl font-medium">
             See what our fluffy friends have to say about their adventures!
           </p>
         </div>
