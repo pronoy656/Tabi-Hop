@@ -140,7 +140,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Panel - Contact Form */}
-          <div className="lg:w-3/5 p-8 lg:p-12">
+          <div className="lg:w-3/5 p-1 lg:p-12 mt-2.5">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
