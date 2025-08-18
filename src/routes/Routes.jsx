@@ -63,6 +63,10 @@ import Profile from "../pages/user/profile/Profile";
 import ErrorPage from "../components/shared/ErrorPage";
 import AccommodationDetailPage from "../pages/user/accommodations/AccomodationDetails";
 import AdminSubscriptionsPlan from "../pages/admin/subscriptionsPlan/AdminSubscriptionsPlan"
+import HomeLayout from "../layouts/home/HomeLayout";
+import HomePage from "../pages/landingPage/homePage/HomePage";
+import AboutPage from "../pages/landingPage/aboutPage/AboutPage";
+import Resources from "../pages/landingPage/resources/Resources";
 
 const router = createBrowserRouter([
   {
@@ -320,6 +324,25 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/home",
+    element: <HomeLayout />,
+    errorElement: <div>Error page</div>,
+    children: [
+      {
+        path: "",
+        element: <HomePage />,
+      },
+      {
+        path: "/home/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/home/resources",
+        element: <Resources />,
+      }
+    ]
+  }
 ]);
 
 export default router;
