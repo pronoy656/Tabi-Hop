@@ -4,10 +4,44 @@ const GuideUs = () => {
   const principles = [
     {
       icon: (
-        <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-6">
-          <div className="w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center">
-            <span className="text-white text-sm font-bold">😊</span>
-          </div>
+        <div className="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center mb-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            className="w-12 h-12"
+          >
+            <path
+              d="M32 60L20 28l24 8z"
+              fill="#FFB74D"
+              stroke="#E65100"
+              strokeWidth="2"
+            />
+
+            <circle cx="15" cy="10" r="3" fill="#42A5F5" />
+            <circle cx="50" cy="15" r="4" fill="#66BB6A" />
+            <circle cx="40" cy="5" r="2" fill="#EC407A" />
+            <circle cx="55" cy="35" r="3" fill="#AB47BC" />
+            <circle cx="10" cy="30" r="3" fill="#FF7043" />
+
+            <path
+              d="M25 5c2 3 6 3 8 0"
+              stroke="#FF4081"
+              strokeWidth="2"
+              fill="none"
+            />
+            <path
+              d="M45 25c1.5 2.5 5 2.5 6.5 0"
+              stroke="#29B6F6"
+              strokeWidth="2"
+              fill="none"
+            />
+            <path
+              d="M15 40c2 2 6 2 8 0"
+              stroke="#8BC34A"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
         </div>
       ),
       title: 'Playfulness',
@@ -16,9 +50,9 @@ const GuideUs = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+        <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6">
           <svg
-            className="w-6 h-6 text-purple-600"
+            className="w-10 h-10 text-purple-600"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -36,9 +70,9 @@ const GuideUs = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-6">
+        <div className="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center mb-6">
           <svg
-            className="w-6 h-6 text-teal-600"
+            className="w-10 h-10 text-teal-600"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -56,9 +90,9 @@ const GuideUs = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+        <div className="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
           <svg
-            className="w-6 h-6 text-yellow-600"
+            className="w-10 h-10 text-yellow-600"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -72,31 +106,31 @@ const GuideUs = () => {
     },
   ];
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
+    <section className="py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            The Principles That <span className="text-[#6E67D6]">Guide Us</span>
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            The principles that <span className="text-[#6E67D6]">guide us</span>
           </h2>
-          <p className="text-xl font-medium max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl font-medium max-w-4xl mx-auto">
             At TabiHop, our core values guide everything we do, serving as the
             driving force that keeps us moving forward.
           </p>
         </div>
 
         {/* Principles Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {principles.map((principle, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="bg-white rounded-2xl p-6 sm:p-8 text-center shadow-md lg:shadow-lg lg:hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <div className="flex justify-center">{principle.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                 {principle.title}
               </h3>
-              <p className="text-gray-800 font-medium leading-relaxed">
+              <p className="text-gray-800 font-medium leading-relaxed text-sm sm:text-base">
                 {principle.description}
               </p>
             </div>

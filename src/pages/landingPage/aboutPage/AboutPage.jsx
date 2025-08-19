@@ -10,7 +10,7 @@ const AboutPage = () => {
   return (
     <div className="">
       <AboutHeroSection></AboutHeroSection>
-      <div className="bg-[#FFF6FA] pb-36">
+      <div className="bg-[#F1F0FB] pb-36">
         <VisionSection></VisionSection>
         <AboutYoutubePlaylist></AboutYoutubePlaylist>
         <GuideUs></GuideUs>

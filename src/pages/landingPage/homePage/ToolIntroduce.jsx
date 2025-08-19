@@ -51,7 +51,7 @@ const ToolIntroduce = () => {
     }
   };
   return (
-    <div className="p-4 py-10 md:py-36 pt-48">
+    <div className="p-4 md:py-36 pt-16 md:pt-48">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Side - Mobile App Interface */}

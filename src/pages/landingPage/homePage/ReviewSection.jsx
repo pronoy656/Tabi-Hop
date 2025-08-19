@@ -45,7 +45,7 @@ const ReviewSection = () => {
             <span className="text-[#6E67D6]">
               Tabi <span className="text-[#E66CE5]">hop</span>
             </span>{' '}
-            Travelers
+            travelers
           </h1>
           <p className="text-gray-800 sm:text-4xl md:text-5xl lg:text-xl font-medium">
             See what our fluffy friends have to say about their adventures!

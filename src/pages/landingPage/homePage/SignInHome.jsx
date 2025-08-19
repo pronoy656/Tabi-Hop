@@ -14,10 +14,10 @@ const SignInHome = () => {
     console.log('Success:', { email: data.email, password: data.password });
   };
   return (
-    <div className="min-h-screen md:flex max-w-7xl mx-auto">
+    <div className="min-h-screen md:flex max-w-[1320px] mx-auto">
       {/* Left Side - Login Form */}
-      <div className="flex-1 flex items-center justify-center p-8">
-        <div className="w-full max-w-2xl px-4 sm:px-10 pt-14 pb-14 bg-[#F3EAF7] rounded-4xl space-y-6">
+      <div className="flex-1 flex items-center justify-center p-4">
+        <div className="w-full max-w-2xl px-4 sm:px-8 pt-14 pb-14 bg-[#F3EAF7] rounded-4xl space-y-6">
           {/* Logo */}
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-[140px]  h-[109px]">
@@ -38,7 +38,7 @@ const SignInHome = () => {
 
           {/* Welcome Text */}
           <div className="text-center mb-8">
-            <h2 className="text-[44px] font-semibold text-gray-900 mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-gray-900 mb-6 sm:mb-8 lg:mb-10">
               Welcome to TabiHop
             </h2>
           </div>

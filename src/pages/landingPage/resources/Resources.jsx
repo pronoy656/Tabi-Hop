@@ -9,10 +9,10 @@ const Resources = () => {
   return (
     <div>
       <TravelHeroSection></TravelHeroSection>
-      <div className="bg-[#FFF6FA]">
+      <div className="bg-[#F1F0FB]">
         <TravelBlog></TravelBlog>
         <ItineraryGuides></ItineraryGuides>
-        <TravelStories></TravelStories>
+        {/* <TravelStories></TravelStories> */}
         <HelpCenter></HelpCenter>
       </div>
     </div>

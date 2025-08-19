@@ -38,7 +38,7 @@ const HomeNavbar = () => {
               onClick={() => setActivePage(item.id)}
               className={`px-4 py-2 font-semibold transition-colors duration-200 ${
                 activePage === item.id
-                  ? 'bg-[#f1ddf1] rounded-3xl font-bold text-[#E66CE5]'
+                  ? 'bg-[#2213ee29] rounded-3xl font-bold text-[#6E67D6]'
                   : 'text-gray-600 hover:text-gray-800'
               }`}
             >
@@ -73,16 +73,20 @@ const HomeNavbar = () => {
 
         {/* Auth Buttons */}
         <div className="hidden sm:flex items-center space-x-2 lg:space-x-6">
-          <div className="bg-[#E66CE5] w-[100px] lg:w-[121px] h-9 lg:h-11 border-2 border-[#E66CE5] rounded-bl-md rounded-br-md rounded-tr-lg relative">
-            <button className="h-9 lg:h-11 bg-white border-2 border-[#E66CE5] rounded-lg absolute top-[-5px] text-[16px] lg:text-[20px] font-medium w-[105px] lg:w-[127px] -ml-[8px] lg:-ml-[11px]">
-              log in
-            </button>
-          </div>
-          <div className="bg-[#E66CE5] w-[120px] lg:w-[145px] h-9 lg:h-11 border-2 border-[#E66CE5] rounded-bl-md rounded-br-md rounded-tr-lg relative">
-            <button className="h-9 lg:h-11 bg-white border-2 border-[#E66CE5] px-2 rounded-lg absolute top-[-5px] text-[14px] lg:text-[20px] font-medium w-[125px] lg:w-[150px] -ml-[8px] lg:-ml-[10px]">
-              Sign up for free
-            </button>
-          </div>
+          <Link to={'/signin/log-in'}>
+            <div className="bg-[#6E67D6] hover:bg-[#d5d3f3] w-[100px] lg:w-[121px] h-9 lg:h-11 border-2 border-[#6E67D6] rounded-bl-md rounded-br-md rounded-tr-lg relative">
+              <button className="h-9 lg:h-11 bg-white border-2 border-[#6E67D6] hover:bg-[#6E67D6] hover:text-white rounded-lg absolute top-[-5px] text-[16px] lg:text-[20px] font-medium w-[105px] lg:w-[127px] -ml-[8px] lg:-ml-[11px]">
+                log in
+              </button>
+            </div>
+          </Link>
+          <Link to={'/signin'}>
+            <div className="bg-[#6E67D6] w-[120px] lg:w-[145px] h-9 lg:h-11 border-2 border-[#6E67D6] rounded-bl-md rounded-br-md rounded-tr-lg relative">
+              <button className="h-9 lg:h-11 bg-white border-2 border-[#6E67D6] px-2 rounded-lg absolute top-[-5px] text-[14px] lg:text-[20px] font-medium w-[125px] lg:w-[150px] -ml-[8px] lg:-ml-[10px]">
+                Sign up for free
+              </button>
+            </div>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -115,7 +119,7 @@ const HomeNavbar = () => {
                 }}
                 className={`block px-4 py-3 font-semibold transition-colors duration-200 rounded-lg ${
                   activePage === item.id
-                    ? 'bg-[#f1ddf1] text-[#E66CE5]'
+                    ? 'bg-[#2213ee29] text-[#6E67D6]'
                     : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
                 }`}
               >
@@ -141,13 +145,17 @@ const HomeNavbar = () => {
             </div>
 
             {/* Mobile Auth Buttons */}
-            <div className="px-4 py-3 space-y-3">
-              <button className="w-full py-2 px-4 bg-white border-2 border-[#E66CE5] text-[#E66CE5] rounded-lg font-medium hover:bg-[#f1ddf1] transition-colors">
-                Log in
-              </button>
-              <button className="w-full py-2 px-4 bg-[#E66CE5] text-white rounded-lg font-medium hover:bg-[#d155d1] transition-colors">
-                Sign up for free
-              </button>
+            <div className="px-4 py-3 space-y-6">
+              <Link to={'/signin/log-in'}>
+                <button className="w-full mb-4 py-2 px-4 bg-white border-2 border-[#6E67D6] text-[#6E67D6] rounded-lg font-medium hover:bg-[#6E67D6] hover:text-white transition-colors">
+                  Log in
+                </button>
+              </Link>
+              <Link to={'/signin'}>
+                <button className="w-full py-2 px-4 bg-[#6E67D6] text-white rounded-lg font-medium hover:bg-white hover:text-[#6E67D6] hover:border-2 border-[#6E67D6] transition-colors">
+                  Sign up for free
+                </button>
+              </Link>
             </div>
           </div>
         </div>

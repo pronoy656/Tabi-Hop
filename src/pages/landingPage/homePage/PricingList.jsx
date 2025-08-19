@@ -11,7 +11,8 @@ const PricingList = () => {
       price: null,
       bgColor: 'bg-pink-100',
       borderColor: 'border-pink-300',
-      buttonColor: 'border-pink-300 text-pink-600 hover:bg-pink-50',
+      buttonColor:
+        'border-pink-300 text-pink-600 hover:bg-[#E66CE5] hover:text-white font-semibold',
       features: [
         { name: 'Generate itinerary Modify, Save, Share', included: true },
         { name: 'Up to 3 versions of a one-day itinerary', included: false },
@@ -32,7 +33,8 @@ const PricingList = () => {
       price: null,
       bgColor: 'bg-purple-100',
       borderColor: 'border-purple-300',
-      buttonColor: 'border-purple-300 text-purple-600 hover:bg-purple-50',
+      buttonColor:
+        'border-purple-300 text-purple-600 hover:bg-[#6E67D6] hover:text-white font-semibold',
       features: [
         { name: 'Generate itinerary Modify, Save, Share', included: true },
         { name: 'Up to 3 versions of a one-day itinerary', included: true },
@@ -52,8 +54,10 @@ const PricingList = () => {
       subtitle: '$25/month',
       price: '$25/month',
       bgColor: 'bg-blue-100',
-      borderColor: 'border-blue-300',
-      buttonColor: 'border-blue-300 text-blue-600 hover:bg-blue-100',
+      borderColor: 'border-blue-300 ',
+
+      buttonColor:
+        'border-blue-300 text-blue-600 hover:bg-[#5DADE2] hover:text-white font-semibold',
       features: [
         { name: 'Generate itinerary Modify, Save, Share', included: true },
         { name: 'Up to 3 versions of a one-day itinerary', included: true },
@@ -132,12 +136,14 @@ const PricingList = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <Button
-                    variant="outline"
-                    className={`w-full ${plan.buttonColor} text-blue-300`}
-                  >
-                    Choose Package
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button
+                      variant="outline"
+                      className={`max-w-[244px] mx-auto ${plan.buttonColor} ${plan.buttonColor} !rounded-3xl px-16 py-6 text-blue-300`}
+                    >
+                      Choose Package
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>

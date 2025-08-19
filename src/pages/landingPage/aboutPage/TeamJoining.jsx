@@ -255,14 +255,16 @@ const TeamJoining = () => {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full outline outline-[#6B5DE0] text-black py-3 text-base font-medium rounded-md 
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className=" max-w-xs mx-auto outline outline-[#6B5DE0] text-black py-3 px-4 text-base font-medium rounded-md
              transition-colors duration-300 ease-in-out 
              hover:bg-[#6B5DE0] hover:text-white"
-                >
-                  ▶ Start Your Journey With Us
-                </button>
+                  >
+                    ▶ Start Your Journey With Us
+                  </button>
+                </div>
               </form>
             </div>
           </div>
