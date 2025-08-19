@@ -7,7 +7,7 @@ const AboutHeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 xl:gap-20">
           {/* Content Section */}
           <div className="flex-1 text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold xl:leading-24">
               Planning your future <br />
               <span className="text-[#6E67D6]">with AI</span>
             </h2>

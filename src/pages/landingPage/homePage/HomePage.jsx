@@ -10,6 +10,8 @@ import FaqSection from './FaqSection';
 import TeamIntroduce from './TeamIntroduce';
 import ContactSection from './ContactSection';
 import SignInHome from './SignInHome';
+import TravelStories from '../resources/TravelStories';
+import StoryShareForm from './StoryShareForm';
 
 const HomePage = () => {
   return (
@@ -21,10 +23,12 @@ const HomePage = () => {
         <VideoSection></VideoSection>
         <ResearchSection></ResearchSection>
         <PricingList></PricingList>
+        {/* <TravelStories></TravelStories> */}
+        <StoryShareForm></StoryShareForm>
         <SignInHome></SignInHome>
         <ReviewSection></ReviewSection>
         <FaqSection></FaqSection>
-        <TeamIntroduce></TeamIntroduce>
+        {/* <TeamIntroduce></TeamIntroduce> */}
         <ContactSection></ContactSection>
       </div>
     </div>

@@ -38,7 +38,7 @@ const SignInHome = () => {
 
           {/* Welcome Text */}
           <div className="text-center mb-8">
-            <h2 className="text-[44px] font-semibold text-gray-900 mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-gray-900 mb-6 sm:mb-8 lg:mb-10">
               Welcome to TabiHop
             </h2>
           </div>

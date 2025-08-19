@@ -6,8 +6,8 @@ const TeamIntroduce = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20 lg:mb-28">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-            Meet Our Team
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Meet our <span className="text-[#E66CE5]">team</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl font-medium">
             The creators of the travel algorithm
@@ -55,7 +55,7 @@ const TeamIntroduce = () => {
             <div className="text-center mb-6">
               <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4 rounded-full overflow-hidden">
                 <img
-                  src="/Bunny's-picture.png"
+                  src="/Kaine headshot tabihop.jpg"
                   alt="Kaine Usher"
                   className="w-full h-full object-cover"
                 />
@@ -63,7 +63,7 @@ const TeamIntroduce = () => {
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 mb-1">
                 Kaine Usher
               </h3>
-              <p className="text-blue-600 font-medium text-sm sm:text-base">
+              <p className="text-[#61A1AE] font-medium text-sm sm:text-base">
                 Chief Executive Officer
               </p>
             </div>

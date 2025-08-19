@@ -40,7 +40,7 @@ function CustomToolbar(toolbar) {
       >
         <ChevronLeft className="w-6 h-6" />
       </Button>
-      <span className="text-xl font-semibold px-4">
+      <span className="text-xl font-extrabold px-4 tracking-wide">
         {moment(toolbar.date).format('MMMM YYYY')}
       </span>
       <Button
@@ -261,8 +261,6 @@ const CalenderAdmin = () => {
   // Month navigation state
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  // Handlers for next/prev month
-
   return (
     <div className="h-screen p-4">
       <Calendar
@@ -293,7 +291,7 @@ const CalenderAdmin = () => {
         date={currentDate}
         onNavigate={(date) => setCurrentDate(date)}
       />
-      <Calendar
+      {/* <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
@@ -319,7 +317,7 @@ const CalenderAdmin = () => {
         }}
         date={currentDate}
         onNavigate={(date) => setCurrentDate(date)}
-      />
+      /> */}
 
       <EventPopup
         open={showEventPopup}

@@ -23,27 +23,14 @@ const ContactSection = () => {
     console.log('Form submitted:', formData);
   };
   return (
-    <div className="flex items-center justify-center p-4">
-      <div className="max-w-6xl w-full rounded-3xl overflow-hidden pb-44 pt-16">
-        <div className="flex flex-col lg:flex-row min-h-[600px]">
+    <div className="flex items-center justify-center space-x-3 p-4 ">
+      <div className="max-w-7xl w-full rounded-3xl overflow-hidden pb-44 pt-16">
+        <p className="text-center text-3xl md:text-5xl font-medium md:font-semibold mb-14">
+          Contact us
+        </p>
+        <div className="flex flex-col lg:flex-row space-x-6 min-h-[600px]">
           {/* Left Panel - Contact Information */}
-          <div className="w-full md:w-3/5 lg:w-2/5 bg-[#E66CE5] rounded-2xl p-4 sm:p-6 md:p-6 lg:p-6 text-white relative overflow-hidden">
-            {/* Decorative circles */}
-            <div className="absolute bottom-0 right-0 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full">
-              <img
-                src="/Ellipse 793.png"
-                alt="Decorative Circle"
-                className="w-full h-full"
-              />
-            </div>
-            <div className="absolute bottom-16 right-8 sm:bottom-20 sm:right-12 w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-26 lg:h-26 rounded-full">
-              <img
-                src="/Ellipse 794.png"
-                alt="Decorative Circle"
-                className="w-full h-full"
-              />
-            </div>
-
+          <div className="w-full md:w-3/5 lg:w-2/5 bg-[#6E67D6] rounded-2xl p-6 sm:p-6 md:p-6 lg:p-6 text-white relative overflow-hidden">
             <div className="relative z-10">
               <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-3 sm:mb-3 md:mb-4 lg:mb-4">
                 Contact Information
@@ -140,7 +127,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Panel - Contact Form */}
-          <div className="lg:w-3/5 p-1 lg:p-12 mt-2.5">
+          <div className="lg:w-3/5 p-2 lg:p-12 mt-6 lg:mt-0 bg-white rounded-lg shadow-xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -154,7 +141,7 @@ const ContactSection = () => {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     placeholder="Enter Your First Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E66CE5] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#837ce7] focus:border-transparent outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -167,7 +154,7 @@ const ContactSection = () => {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     placeholder="Enter Your Last Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E66CE5] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#837ce7] focus:border-transparent outline-none transition-all"
                   />
                 </div>
               </div>
@@ -184,7 +171,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Enter Your Email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E66CE5] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#837ce7] focus:border-transparent outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -197,7 +184,7 @@ const ContactSection = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Enter Your Phone Number"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E66CE5] focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#837ce7] focus:border-transparent outline-none transition-all"
                   />
                 </div>
               </div>
@@ -224,7 +211,7 @@ const ContactSection = () => {
                         value={option}
                         checked={formData.subject === option}
                         onChange={handleInputChange}
-                        className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-[#E66CE5]"
+                        className="w-4 h-4 text-purple-600 border-gray-300 focus:ring-[#837ce7]"
                       />
                       <span className="ml-2 text-sm text-gray-700">
                         {option}
@@ -245,14 +232,14 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   placeholder="Write Your Message"
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E66CE5] focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#837ce7] focus:border-transparent outline-none transition-all resize-none"
                 />
               </div>
 
               {/* Submit Button */}
               <div className="flex justify-end">
-                <div className="bg-[#E66CE5] w-[135px] h-11 border-1 border-[#E66CE5]  rounded-bl-md rounded-br-md rounded-tr-lg relative">
-                  <button className=" h-11  bg-white border-1 border-[#E66CE5] rounded-lg absolute top-[-4px] text-[16px] font-medium w-[140px] -ml-[9px]">
+                <div className="bg-[#6E67D6] w-[135px] h-11 border-1 border-[#6E67D6]  rounded-bl-md rounded-br-md rounded-tr-lg relative">
+                  <button className=" h-11  bg-white border-1 border-[#6E67D6] rounded-lg absolute top-[-4px] text-[16px] font-medium w-[140px] -ml-[9px]">
                     Send Message
                   </button>
                 </div>

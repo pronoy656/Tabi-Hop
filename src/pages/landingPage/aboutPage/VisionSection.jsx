@@ -4,13 +4,11 @@ const VisionSection = () => {
   return (
     <div className="max-w-[1193px] mx-auto py-16 px-4">
       <div className="text-center mb-8 md:mb-12 lg:mb-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl px-2 font-semibold leading-tight">
-          How We Turned a Dream Into{' '}
-          <span className="text-[#E66CE5]">Something That Matters</span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl px-2 font-semibold leading-tight">
+          Turn our dream into <span className="text-[#E66CE5]">a reality</span>
         </h2>
         <p className="text-lg sm:text-xl font-medium mt-4 text-gray-700 max-w-4xl mx-auto px-2">
-          We started with a vision to make a difference, and along the way, we
-          found our purpose.
+          We believe dreams do come true, as long as we are clear and detailed.
         </p>
       </div>
       <div className="flex flex-col lg:flex-row items-center lg:space-x-28 space-y-10 lg:space-y-0 mt-8 md:pt-7">

@@ -12,7 +12,7 @@ const Resources = () => {
       <div className="bg-[#F1F0FB]">
         <TravelBlog></TravelBlog>
         <ItineraryGuides></ItineraryGuides>
-        <TravelStories></TravelStories>
+        {/* <TravelStories></TravelStories> */}
         <HelpCenter></HelpCenter>
       </div>
     </div>

@@ -2,10 +2,11 @@ import React from 'react';
 
 const AboutYoutubePlaylist = () => {
   return (
-    <div className="max-w-[808px] w-full mx-auto py-12 px-4">
+    <div className="max-w-[838px] w-full mx-auto py-12 px-4">
       <div className="text-center">
         <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
-          See Your Trip <span className="text-[#E66CE5]">Before You Go</span>
+          We trained the algorithm{' '}
+          <span className="text-[#E66CE5]">to think like us</span>
         </p>
         <p className="text-base sm:text-lg md:text-xl font-medium mt-3">
           {' '}
