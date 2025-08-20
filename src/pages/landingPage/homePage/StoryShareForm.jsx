@@ -43,6 +43,11 @@ const StoryShareForm = () => {
     inputRef.current.click();
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Files submitted:', files);
+  };
+
   const UploadIcon = () => (
     <svg
       className="w-8 h-8 text-[#2D6BFF]"
@@ -73,6 +78,7 @@ const StoryShareForm = () => {
         </div>
 
         {/* Form Section */}
+        {/* <Form></Form> */}
         <div className="bg-white rounded-xl  p-8 sm:p-12">
           {/* File Upload Area */}
           <div
@@ -237,6 +243,7 @@ const StoryShareForm = () => {
           {/* Submit Button */}
           <div className="max-w-xl mx-auto">
             <button
+              onClick={handleSubmit}
               type="submit"
               className="w-full bg-[#6E67D6] outline outline-[#6B5DE0] text-white py-4 font-medium rounded-md 
              transition-colors duration-300 ease-in-out 
