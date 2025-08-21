@@ -22,7 +22,7 @@ const ToolIntroduce = () => {
       case 'Calendar':
         return (
           <div className="p-2">
-            <img className="w-full" src="/IT-frame.png" alt="" />
+            <img className="w-full" src="/calender-image.png" alt="" />
           </div>
         );
 

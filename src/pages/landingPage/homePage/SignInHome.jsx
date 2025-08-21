@@ -17,7 +17,7 @@ const SignInHome = () => {
     <div className="min-h-screen md:flex max-w-[1320px] mx-auto">
       {/* Left Side - Login Form */}
       <div className="flex-1 flex items-center justify-center p-4">
-        <div className="w-full max-w-2xl px-4 sm:px-8 pt-14 pb-14 bg-[#F3EAF7] rounded-4xl space-y-6">
+        <div className="w-full max-w-2xl px-4 sm:px-8 pt-14 pb-14 bg-[#6E67D6] rounded-4xl space-y-6">
           {/* Logo */}
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-[140px]  h-[109px]">
@@ -38,7 +38,7 @@ const SignInHome = () => {
 
           {/* Welcome Text */}
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-gray-900 mb-6 sm:mb-8 lg:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-white mb-6 sm:mb-8 lg:mb-10">
               Welcome to TabiHop
             </h2>
           </div>
@@ -47,7 +47,7 @@ const SignInHome = () => {
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             {/* Email */}
             <div className="mb-4">
-              <label className="font-bold block">Email</label>
+              <label className="font-bold block text-white mb-2">Email</label>
               <Controller
                 name="email"
                 control={control}
@@ -75,7 +75,9 @@ const SignInHome = () => {
 
             {/* Password */}
             <div className="mb-4">
-              <label className="font-bold block">Password</label>
+              <label className="font-bold block text-white mb-2">
+                Password
+              </label>
               <Controller
                 name="password"
                 control={control}
@@ -112,12 +114,14 @@ const SignInHome = () => {
                 }}
                 render={({ field }) => (
                   <Checkbox {...field} checked={field.value}>
-                    <span className="text-base font-medium">Remember me</span>
+                    <span className="text-base font-medium text-white">
+                      Remember me
+                    </span>
                   </Checkbox>
                 )}
               />
               <Link to="/signin/forget-password">
-                <p className="font-semibold text-sm sm:text-base text-black">
+                <p className="font-semibold text-sm sm:text-base text-white">
                   Forgot Password?
                 </p>
               </Link>
@@ -148,10 +152,10 @@ const SignInHome = () => {
           </form>
 
           {/* link text to create account */}
-          <p className="mt-6 text-center text-sm sm:text-base">
+          <p className="mt-6 text-center text-sm sm:text-base text-white">
             Don't have an account?{' '}
             <Link to="/signin">
-              <span className="font-bold text-black">Create Account</span>
+              <span className="font-bold text-white">Create Account</span>
             </Link>
           </p>
 

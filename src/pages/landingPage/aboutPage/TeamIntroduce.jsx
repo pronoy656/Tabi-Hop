@@ -2,10 +2,10 @@ import React from 'react';
 
 const TeamIntroduce = () => {
   return (
-    <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+    <div className="lg:py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-28">
+        <div className="text-center mb-10 sm:mb-16 lg:mb-22">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-4">
             Meet our <span className="text-[#E66CE5]">team</span>
           </h1>
@@ -15,7 +15,7 @@ const TeamIntroduce = () => {
         </div>
 
         {/* Team Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 sm:gap-8 lg:gap-16 max-w-6xl mx-auto">
           {/* Cyber Bunny Card */}
           <div className="bg-white rounded-3xl p-6 sm:p-8 [box-shadow:6px_6px_15px_#BAB7E8]">
             {/* Quote Mark */}

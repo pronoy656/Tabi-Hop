@@ -38,7 +38,7 @@ const AiPromptSection = () => {
               <X className="bg-white text-black rounded-md" size={28} />
             </div>
             {/* Content */}
-            <div className="px-4 mb-6 sm:mb-8 lg:mb-9 rounded-2xl max-h-[150px] sm:max-h-[160px] lg:max-h-[176px] scroller overflow-y-scroll p-4 text-sm sm:text-base lg:text-[16px]">
+            <div className="px-4 mb-6 sm:mb-8 lg:mb-9 rounded-2xl max-h-[180px] sm:max-h-[160px] lg:max-h-[176px] md:scroller overflow-y-scroll p-4 text-sm sm:text-base lg:text-[16px]">
               <p>
                 I want to start my day at a coffee shop near my hotel that has
                 good latte. Then go to a thrift shop. I want to have lunch at a

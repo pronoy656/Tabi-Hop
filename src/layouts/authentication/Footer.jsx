@@ -3,7 +3,7 @@ import {
   InstagramOutlined,
   YoutubeOutlined,
   LinkedinOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons';
 
 const Footer = () => {
   return (
@@ -48,6 +48,7 @@ const Footer = () => {
           <ul className="space-y-2 text-[16px] font-medium">
             <li>About us</li>
             <li>Careers</li>
+            <li>Join team</li>
             <li>Security</li>
             <li>Status</li>
             <li>Terms & Condition</li>

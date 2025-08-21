@@ -43,6 +43,11 @@ const StoryShareForm = () => {
     inputRef.current.click();
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Files submitted:', files);
+  };
+
   const UploadIcon = () => (
     <svg
       className="w-8 h-8 text-[#2D6BFF]"
@@ -70,9 +75,43 @@ const StoryShareForm = () => {
             Want to share your travel stories & earn points? Send it over
             through the contact form
           </p>
+          <div className="flex flex-row flex-wrap items-center justify-center gap-2 lg:gap-12 mb-4 mt-4 ">
+            <div>
+              <img
+                className="w-24 h-20 sm:w-32 sm:h-28 lg:w-[258px] lg:h-[205px] object-contain"
+                src="/review-image.png"
+                alt="Review"
+              />
+            </div>
+            <p className="text-[#6E67D6] text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold">
+              =
+            </p>
+            <div>
+              <img
+                className="w-16 h-16 sm:w-24 sm:h-24 lg:w-[133px] lg:h-[136px] object-contain"
+                src="/coin-image.png"
+                alt="Coin"
+              />
+            </div>
+            <p className="text-[#6E67D6] text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold">
+              =
+            </p>
+            <img
+              className="w-16 h-16 sm:w-24 sm:h-24 lg:w-[133px] lg:h-[136px] object-contain"
+              src="/itinerary-image.png"
+              alt="Itinerary"
+            />
+          </div>
+
+          <div className="flex items-center text-center pl-9 lg:pl-[355px] gap-11 sm:gap-44 text-lg sm:text-xl md:text-2xl lg:text-[32px] text-[#6E67D6] font-bold">
+            <p>1 Review</p>
+            <p>1 Coin</p>
+            <p>1 Itinerary</p>
+          </div>
         </div>
 
         {/* Form Section */}
+
         <div className="bg-white rounded-xl  p-8 sm:p-12">
           {/* File Upload Area */}
           <div
@@ -237,6 +276,7 @@ const StoryShareForm = () => {
           {/* Submit Button */}
           <div className="max-w-xl mx-auto">
             <button
+              onClick={handleSubmit}
               type="submit"
               className="w-full bg-[#6E67D6] outline outline-[#6B5DE0] text-white py-4 font-medium rounded-md 
              transition-colors duration-300 ease-in-out 

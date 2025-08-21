@@ -41,6 +41,7 @@ const VideoSection = () => {
       sm:text-lg 
       md:text-xl 
       text-gray-700 
+      font-medium
       max-w-xl sm:max-w-2xl 
       mx-auto 
       leading-relaxed
@@ -63,6 +64,10 @@ const VideoSection = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            {/* Title under iframe */}
+            <p className="text-center mt-3.5 text-2xl font-semibold text-gray-800">
+              How to create an itinerary
+            </p>
           </div>
           {/* 2nd Frame */}
           <div className="rounded-2xl overflow-hidden ">
@@ -74,6 +79,10 @@ const VideoSection = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            {/* Title under iframe */}
+            <p className="text-center mt-3.5 text-2xl font-semibold text-gray-800">
+              How to create your vision board
+            </p>
           </div>
           {/* 3rd Frame */}
           <div className="rounded-2xl overflow-hidden ">
@@ -85,6 +94,10 @@ const VideoSection = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            {/* Title under iframe */}
+            <p className="text-center mt-3.5 text-2xl font-semibold text-gray-800">
+              How to plan your travel budget
+            </p>
           </div>
           {/* 1 Frame */}
           <div className="rounded-2xl overflow-hidden">
@@ -96,6 +109,10 @@ const VideoSection = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            {/* Title under iframe */}
+            <p className="text-center mt-3.5 text-2xl font-semibold text-gray-800">
+              How to plan your travel budget
+            </p>
           </div>
           {/* 2nd Frame */}
           <div className="rounded-2xl overflow-hidden ">
@@ -107,6 +124,10 @@ const VideoSection = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            {/* Title under iframe */}
+            <p className="text-center mt-3.5 text-2xl font-semibold text-gray-800">
+              How to plan your travel budget
+            </p>
           </div>
           {/* 3rd Frame */}
           <div className="rounded-2xl overflow-hidden ">
@@ -118,43 +139,11 @@ const VideoSection = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            {/* Title under iframe */}
+            <p className="text-center mt-3.5 text-2xl font-semibold text-gray-800">
+              How to plan your travel budget
+            </p>
           </div>
-        </div>
-        {/* Video Grid */}
-        <div className="mt-14 flex-col-1 md:flex items-center justify-center md:gap-9">
-          {/* 1 Frame */}
-          {/* <div className="rounded-2xl overflow-hidden">
-            <iframe
-              className="w-full h-[293px]"
-              src="https://www.youtube.com/embed/Bof8UqszP54?si=dzwQsW-J_VpB3f5c"
-              title="YouTube Playlist"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div> */}
-          {/* 2nd Frame */}
-          {/* <div className="rounded-2xl overflow-hidden ">
-            <iframe
-              className="w-full h-[293px]"
-              src="https://www.youtube.com/embed/Bof8UqszP54?si=dzwQsW-J_VpB3f5c"
-              title="YouTube Playlist"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div> */}
-          {/* 3rd Frame */}
-          {/* <div className="rounded-2xl overflow-hidden ">
-            <iframe
-              className="w-full h-[293px]"
-              src="https://www.youtube.com/embed/Bof8UqszP54?si=dzwQsW-J_VpB3f5c"
-              title="YouTube Playlist"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div> */}
         </div>
       </div>
     </div>

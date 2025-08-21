@@ -348,7 +348,7 @@ const CalenderAdmin = () => {
                     className="absolute top-1 right-1"
                     onClick={() => removeEventForm(index)}
                   >
-                    <X className="h-3 w-3" />
+                    <X className="h-3 w-3 hover:text-red-500" />
                   </Button>
                 )}
 
@@ -366,7 +366,7 @@ const CalenderAdmin = () => {
                       handleFormChange(index, 'title', e.target.value)
                     }
                     placeholder="Event title"
-                    className="mt-2 mb-2 border border-[#6E67D5] focus:border-none focus:outline-none focus:ring-1 focus:ring-[#6E67D5]"
+                    className="mt-2 mb-2 border !h-12 border-[#6E67D5] focus:border-none focus:outline-none focus:ring-1 focus:ring-[#6E67D5]"
                   />
                 </div>
 
@@ -385,7 +385,7 @@ const CalenderAdmin = () => {
                       handleFormChange(index, 'time', e.target.value)
                     }
                     placeholder="e.g., 2:00 PM"
-                    className="mt-2 border border-[#6E67D5] focus:border-none focus:outline-none focus:ring-1 focus:ring-[#6E67D5]"
+                    className="mt-2 border !h-12 border-[#6E67D5] focus:border-none focus:outline-none focus:ring-1 focus:ring-[#6E67D5]"
                   />
                 </div>
 
@@ -403,19 +403,19 @@ const CalenderAdmin = () => {
                       handleFormChange(index, 'note', e.target.value)
                     }
                     placeholder="Event notes"
-                    rows={3}
+                    rows={8}
                     className="mt-2 border-2 border-[#6E67D5] focus:border-none focus:outline-none focus:ring-1 focus:ring-[#6E67D5]"
                   />
                 </div>
 
                 <div>
                   <Label className="font-semibold text-xl mb-1.5">Color</Label>
-                  <div className="flex gap-2 mt-1">
+                  <div className="flex gap-3.5 mt-1">
                     {colorOptions.map((color) => (
                       <button
                         key={color}
                         type="button"
-                        className={`w-6 h-6 rounded-full border-2 ${
+                        className={`w-8 h-8 rounded-full border-2 ${
                           form.color === color
                             ? 'border-gray-800'
                             : 'border-gray-300'
@@ -449,7 +449,10 @@ const CalenderAdmin = () => {
                   </Button>
                 </>
               ) : (
-                <Button onClick={handleSubmit} className="flex-1">
+                <Button
+                  onClick={handleSubmit}
+                  className="flex-1 !bg-[#6E67D5] py-6 !text-white hover:!bg-[#5c56c4] !rounded-xl px-16"
+                >
                   Submit
                 </Button>
               )}
