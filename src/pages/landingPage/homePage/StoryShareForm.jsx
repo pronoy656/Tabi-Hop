@@ -112,7 +112,7 @@ const StoryShareForm = () => {
 
         {/* Form Section */}
 
-        <div className="bg-white rounded-xl  p-8 sm:p-12">
+        <div className="bg-white rounded-xl p-8 sm:p-12">
           {/* File Upload Area */}
           <div
             className={`border-2 border-dashed rounded-xl p-12 mb-8 text-center transition-colors ${
