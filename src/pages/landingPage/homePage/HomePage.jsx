@@ -12,6 +12,7 @@ import ContactSection from './ContactSection';
 import SignInHome from './SignInHome';
 import TravelStories from '../resources/TravelStories';
 import StoryShareForm from './StoryShareForm';
+import AiVideoTutorial from './AiVideoTutorial';
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       <div className="bg-[#F1F0FB]">
         <ToolIntroduce></ToolIntroduce>
         <AiPromptSection></AiPromptSection>
+        <AiVideoTutorial></AiVideoTutorial>
         <VideoSection></VideoSection>
         <ResearchSection></ResearchSection>
         <PricingList></PricingList>

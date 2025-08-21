@@ -41,6 +41,7 @@ const VideoSection = () => {
       sm:text-lg 
       md:text-xl 
       text-gray-700 
+      font-medium
       max-w-xl sm:max-w-2xl 
       mx-auto 
       leading-relaxed

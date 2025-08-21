@@ -75,6 +75,31 @@ const StoryShareForm = () => {
             Want to share your travel stories & earn points? Send it over
             through the contact form
           </p>
+          <div className="flex flex-row flex-wrap items-center justify-center gap-12 mb-4 mt-4">
+            <img
+              className="w-24 h-20 sm:w-32 sm:h-28 lg:w-[258px] lg:h-[205px] object-contain"
+              src="/review-image.png"
+              alt="Review"
+            />
+            <img
+              className="w-16 h-16 sm:w-24 sm:h-24 lg:w-[133px] lg:h-[136px] object-contain"
+              src="/coin-image.png"
+              alt="Coin"
+            />
+            <img
+              className="w-16 h-16 sm:w-24 sm:h-24 lg:w-[133px] lg:h-[136px] object-contain"
+              src="/itinerary-image.png"
+              alt="Itinerary"
+            />
+          </div>
+
+          <div className="flex flex-wrap justify-center items-center text-center gap-3 sm:gap-6 text-lg sm:text-xl md:text-2xl lg:text-[32px] text-[#6E67D6] font-bold">
+            <p>1 Review</p>
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl">=</p>
+            <p>1 Coin</p>
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl">=</p>
+            <p>1 Itinerary</p>
+          </div>
         </div>
 
         {/* Form Section */}
