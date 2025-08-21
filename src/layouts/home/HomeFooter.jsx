@@ -3,11 +3,12 @@ import {
   InstagramOutlined,
   YoutubeOutlined,
   LinkedinOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const HomeFooter = () => {
-    return (
-        <div className="bg-[#6E67D5] text-white px-10 py-12">
+  return (
+    <div className="bg-[#6E67D5] text-white px-10 py-12">
       <div className="grid grid-cols-1 md:grid-cols-6 gap-10 max-w-7xl mx-auto">
         {/* Logo & Socials */}
         <div className="md:col-span-1 flex flex-col items-start">
@@ -48,6 +49,10 @@ const HomeFooter = () => {
           <ul className="space-y-2 text-[16px] font-medium">
             <li>About us</li>
             <li>Careers</li>
+            <Link to={'/home/team-joining-form'}>
+              {' '}
+              <li className="mb-2">Join The Team</li>
+            </Link>
             <li>Security</li>
             <li>Status</li>
             <li>Terms & Condition</li>
@@ -106,7 +111,7 @@ const HomeFooter = () => {
         © 2025 TabiHop, Inc
       </div>
     </div>
-    );
+  );
 };
 
 export default HomeFooter;

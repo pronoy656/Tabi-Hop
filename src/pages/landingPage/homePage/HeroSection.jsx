@@ -11,7 +11,7 @@ const HeroSection = () => {
       {/* ********* */}
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-2 flex flex-col lg:flex-row items-center justify-between lg:min-h-screen py-10 lg:py-0 gap-10 lg:gap-14">
         <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-11 lg:leading-22">
             Create you dream <br className="hidden sm:block" /> itinerary
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-normal mt-4 lg:mt-2 text-gray-900 max-w-lg mx-auto lg:mx-0">
