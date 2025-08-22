@@ -25,7 +25,7 @@ const ContactSection = () => {
   return (
     <div className="flex items-center justify-center space-x-3 p-4 ">
       <div className="max-w-7xl w-full rounded-3xl overflow-hidden pb-44 pt-16">
-        <p className="text-center text-3xl md:text-5xl font-medium md:font-semibold mb-14">
+        <p className="text-center text-3xl md:text-7xl font-medium md:font-bold mb-14">
           Contact us
         </p>
         <div className="flex flex-col lg:flex-row space-x-6 min-h-[600px]">

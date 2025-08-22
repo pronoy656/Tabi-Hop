@@ -23,15 +23,17 @@ const VisionSection = () => {
                   alt=""
                 />
               </div>
-              <div className="px-4 mb-9 rounded-2xl max-h-[176px]">
+              <div className="px-4 mb-4 rounded-2xl max-h-[176px]">
                 <p className="text-lg sm:text-xl md:text-2xl font-semibold text-black mt-3">
                   Our Humble Beginnings
                 </p>
                 <p className="text-sm sm:text-base md:text-lg font-medium text-black mt-4">
-                  Tabihop started in 2025 as a small passion project by three
-                  friends who shared a love for adventure. What began in a tiny
-                  apartment has now grown into a vibrant community of travel
-                  enthusiasts.
+                  TabiHop started in 2025 as a small passion project by two
+                  friends from different parts of the world brought together by
+                  a single tour in Japan. One was a content creator and the
+                  other was in tech. By joining forces, they created the
+                  ultimate digital product that ever traveler could ever dream
+                  of.
                 </p>
               </div>
             </div>

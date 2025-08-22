@@ -64,14 +64,14 @@ const StoryShareForm = () => {
     </svg>
   );
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-20 lg:py-22 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Tell us your travel stories
+          <h1 className="text-4xl sm:text-7xl font-bold text-black mb-4">
+            Tell us your <span className="text-[#6E67D6]">travel stories</span>
           </h1>
-          <p className="text-xl font-medium text-gray-800 max-w-3xl mx-auto">
+          <p className="text-xl font-medium text-black max-w-3xl mx-auto">
             Want to share your travel stories & earn points? Send it over
             through the contact form
           </p>

@@ -24,7 +24,7 @@ const VideoSection = () => {
       text-3xl 
       sm:text-3xl 
       md:text-4xl 
-      lg:text-5xl 
+      lg:text-7xl 
       font-bold 
       text-gray-900 
       mb-3 sm:mb-4
@@ -40,7 +40,7 @@ const VideoSection = () => {
       text-base 
       sm:text-lg 
       md:text-xl 
-      text-gray-700 
+      text-black 
       font-medium
       max-w-xl sm:max-w-2xl 
       mx-auto 

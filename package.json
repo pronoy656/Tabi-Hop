@@ -20,6 +20,7 @@
     "@tiptap/starter-kit": "^3.0.7",
     "antd": "^5.26.6",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.12",
     "google-map-react": "^2.2.5",
     "jodit-react": "^5.2.19",
     "localforage": "^1.10.0",
