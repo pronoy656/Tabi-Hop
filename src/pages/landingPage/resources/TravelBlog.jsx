@@ -33,10 +33,10 @@ const TravelBlog = () => {
     <div className="min-h-screen py-32 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Latest Travel <span className="text-purple-600">Stories</span>{' '}
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-black mb-4">
+            Latest Travel <span className="text-[#E66CE5]">Stories</span>{' '}
           </h1>
-          <p className="text-gray-800 font-medium text-lg max-w-2xl mx-auto">
+          <p className="text-gray-900 font-medium text-xl lg:text-2xl max-w-2xl mx-auto">
             Read inspiring travel stories and get inspired for your next
             adventure{' '}
           </p>
