@@ -9,8 +9,8 @@ const HeroSection = () => {
   return (
     <div className="bg-[#D4D2F3] overflow-hidden">
       {/* ********* */}
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-2 flex flex-col lg:flex-row items-center justify-between lg:min-h-screen py-10 lg:py-0 gap-10 lg:gap-14">
-        <div>
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-2 flex flex-col lg:flex-row items-center justify-between md:py-10 pt-14 lg:pt-2 lg:py-0 gap-10 lg:gap-14">
+        <div className="">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-11 lg:leading-22">
             Create you{' '}
             <span className="text-[#E66CE5]">
@@ -63,12 +63,14 @@ const HeroSection = () => {
             </p>
           </div>
         </div>
-        <div className="flex-1 flex justify-center lg:justify-end w-full max-w-md sm:max-w-lg lg:max-w-none">
-          <div className="relative w-full h-75 sm:h-80 md:h-96 lg:w-[570px] lg:h-[500px] xl:w-[700px] xl:h-[600px]">
+        <div className="flex-1 flex justify-center lg:justify-end w-full max-w-md sm:max-w-lg lg:max-w-none align-bottom">
+          {/* <div className="relative w-full h-[260px] overflow-hidden"> */}
+          <div className="relative w-full h-60 sm:h-80 md:h-96 lg:w-[570px] lg:h-[500px] xl:w-[700px] xl:h-[600px]">
             <Lottie
               animationData={animationData}
               loop={true}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain border-b"
+              // style={{ transform: 'translateY(68px)' }}
             ></Lottie>
           </div>
         </div>

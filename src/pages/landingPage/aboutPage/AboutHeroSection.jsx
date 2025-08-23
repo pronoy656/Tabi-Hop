@@ -4,8 +4,8 @@ import Lottie from 'lottie-react';
 
 const AboutHeroSection = () => {
   return (
-    <div className="bg-[#D4D2F3] py-12 md:py-16 lg:py-24">
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-2">
+    <div className="bg-[#D4D2F3] py-12 md:py-0">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-2 md:-translate-y-3">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 xl:gap-20">
           {/* Content Section */}
           <div className="flex-1 text-center lg:text-left">
@@ -23,15 +23,11 @@ const AboutHeroSection = () => {
 
           {/* Image Section */}
           <div className="flex-1 w-full max-w-lg lg:max-w-none">
-            {/* <img
-              className="w-full h-auto max-h-[300px] sm:max-h-[400px] lg:max-h-[466px] object-contain"
-              src="/about-hero-image.svg"
-              alt="Family planning travel with AI - illustration showing a man, woman, and child with luggage in a colorful travel scene"
-            /> */}
             <Lottie
               animationData={animationData}
               loop={true}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain "
+              style={{ transform: 'translateY(45px)' }}
             ></Lottie>
           </div>
         </div>

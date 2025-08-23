@@ -291,33 +291,6 @@ const CalenderAdmin = () => {
         date={currentDate}
         onNavigate={(date) => setCurrentDate(date)}
       />
-      {/* <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: '100%' }}
-        onSelectSlot={handleSelectSlot}
-        onSelectEvent={handleSelectEvent}
-        selectable
-        eventPropGetter={eventStyleGetter}
-        dayPropGetter={dayPropGetter}
-        views={['month', 'week', 'day']}
-        defaultView="month"
-        components={{
-          day: {
-            eventWrapper: CustomDayWrapper,
-          },
-          event: CustomEvent,
-        }}
-        onShowMore={(events, date) => {
-          setPopupEvents(events);
-          setPopupDate(date);
-          setShowEventPopup(true);
-        }}
-        date={currentDate}
-        onNavigate={(date) => setCurrentDate(date)}
-      /> */}
 
       <EventPopup
         open={showEventPopup}
