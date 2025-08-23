@@ -3,6 +3,7 @@ import {
   InstagramOutlined,
   YoutubeOutlined,
   LinkedinOutlined,
+  TikTokOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
@@ -24,22 +25,42 @@ const HomeFooter = () => {
           />
 
           <div className="mt-6 space-y-3 text-white text-[16px] font-medium">
-            <div className="flex items-center gap-2">
-              <TwitterOutlined />
-              <span>Formal Twitter</span>
-            </div>
-            <div className="flex items-center gap-2">
+            <a
+              href="https://www.instagram.com/tabihop?igsh=am5oZ2dscGswbnNk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
               <InstagramOutlined />
               <span>Instagram</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </a>
+            <a
+              href="https://www.youtube.com/@CyberBunny"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
               <YoutubeOutlined />
               <span>Youtube</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </a>
+            <a
+              href="https://www.tiktok.com/@tabihop?_t=ZT-8z3cnyzXBAN&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <TikTokOutlined />
+              <span>Tiktok</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/tabihop"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
               <LinkedinOutlined />
               <span>LinkedIn</span>
-            </div>
+            </a>
           </div>
         </div>
 

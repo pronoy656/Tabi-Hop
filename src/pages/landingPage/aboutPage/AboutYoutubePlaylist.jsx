@@ -4,11 +4,11 @@ const AboutYoutubePlaylist = () => {
   return (
     <div className="max-w-[838px] w-full mx-auto py-12 px-4">
       <div className="text-center">
-        <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
+        <p className="text-3xl sm:text-4xl md:text-7xl font-semibold lg:font-bold">
           We trained the algorithm{' '}
           <span className="text-[#E66CE5]">to think like us</span>
         </p>
-        <p className="text-base sm:text-lg md:text-xl font-medium mt-3">
+        <p className="text-xl sm:text-lg md:text-xl font-medium mt-3">
           {' '}
           From flights to adventures, preview your full itinerary in an
           immersive video.

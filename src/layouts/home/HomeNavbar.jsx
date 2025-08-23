@@ -19,12 +19,12 @@ const HomeNavbar = () => {
         <div className="flex items-center space-x-0.5">
           <img
             className="w-[60px] h-[50px] sm:w-[70px] sm:h-[60px] lg:w-[85px] lg:h-[72px]"
-            src="/logo_image.png"
+            src="/updated-logo.png"
             alt=""
           />
           <img
             className="hidden sm:block w-[90px] h-[24px] sm:w-[110px] sm:h-[28px] lg:w-[124px] lg:h-[32px]"
-            src="/logo_name2.png"
+            src="/updated-name.png"
             alt=""
           />
         </div>

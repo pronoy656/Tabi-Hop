@@ -17,7 +17,7 @@ const TravelHeroSection = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Travel Resources &amp; Guides
           </h1>
           <p className="text-2xl md:text-xl lg:text-2xl font-semibold text-white leading-relaxed">

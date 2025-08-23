@@ -25,7 +25,7 @@ const ContactSection = () => {
   return (
     <div className="flex items-center justify-center space-x-3 p-4 ">
       <div className="max-w-7xl w-full rounded-3xl overflow-hidden pb-44 pt-16">
-        <p className="text-center text-3xl md:text-5xl font-medium md:font-semibold mb-14">
+        <p className="text-center text-3xl md:text-7xl font-medium md:font-bold mb-14">
           Contact us
         </p>
         <div className="flex flex-col lg:flex-row space-x-6 min-h-[600px]">
@@ -93,35 +93,72 @@ const ContactSection = () => {
               </div>
 
               {/* Social Media Icons */}
-              <div className="flex space-x-3 sm:space-x-4 mt-8 sm:mt-12 md:mt-14 lg:mt-16">
-                {/** Example for each icon **/}
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+              <div className="flex space-x-3 sm:space-x-4 mt-8 sm:mt-12 md:mt-14 lg:mt-16 text-white">
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/tabihop?igsh=am5oZ2dscGswbnNk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer"
+                >
                   <svg
                     className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                    <path d="M7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 2A3.5 3.5 0 004 7.5v9A3.5 3.5 0 007.5 20h9a3.5 3.5 0 003.5-3.5v-9A3.5 3.5 0 0016.5 4h-9zm9.75 1.25a1 1 0 11-.001 2.001 1 1 0 01.001-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z" />
                   </svg>
-                </div>
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+                </a>
+
+                {/* YouTube */}
+                <a
+                  href="https://www.youtube.com/@CyberBunny"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer"
+                >
                   <svg
                     className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z" />
+                    <path d="M23.498 6.186a2.974 2.974 0 00-2.093-2.106C19.691 3.5 12 3.5 12 3.5s-7.691 0-9.405.58A2.974 2.974 0 00.502 6.186 31.537 31.537 0 000 12a31.54 31.54 0 00.502 5.814 2.974 2.974 0 002.093 2.106C4.309 20.5 12 20.5 12 20.5s7.691 0 9.405-.58a2.974 2.974 0 002.093-2.106A31.54 31.54 0 0024 12a31.537 31.537 0 00-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
                   </svg>
-                </div>
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+                </a>
+
+                {/* TikTok */}
+                <a
+                  href="https://www.tiktok.com/@tabihop?_t=ZT-8z3cnyzXBAN&_r=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer"
+                >
                   <svg
                     className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    <path d="M12.001 2.004c1.318 0 2.635.004 3.952-.002.133 1.483.63 2.93 1.502 4.148.893 1.26 2.232 2.16 3.72 2.497v3.547c-1.29-.046-2.59-.363-3.74-.963-.49-.255-.94-.567-1.37-.906-.005 2.18.01 4.362-.008 6.543-.032 1.23-.36 2.47-.994 3.525-.868 1.445-2.363 2.47-3.987 2.69-1.414.2-2.89-.114-4.07-.88-1.58-1.004-2.62-2.847-2.61-4.727-.02-1.78.74-3.56 2.06-4.737 1.227-1.13 2.92-1.757 4.594-1.633.016 1.29-.033 2.58-.027 3.87-.86-.28-1.87.25-2.22 1.07-.38.82-.14 1.9.55 2.48.71.62 1.9.65 2.64.07.39-.29.62-.75.73-1.22.07-.32.04-.65.05-.97.003-3.58-.007-7.16.006-10.74z" />
                   </svg>
-                </div>
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/tabihop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer"
+                >
+                  {' '}
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    {' '}
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />{' '}
+                  </svg>{' '}
+                </a>
               </div>
             </div>
           </div>

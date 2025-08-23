@@ -6,11 +6,11 @@ const AiPromptSection = () => {
     <div className="max-w-[1320px] mx-auto py-10 md:py-[60px] px-4 sm:px-6 flex flex-col lg:flex-row items-center lg:space-x-16 space-y-10 lg:space-y-0">
       {/* Left Section */}
       <div className="w-full lg:w-[808px] text-center lg:text-left">
-        <p className="text-4xl sm:text-5xl lg:text-7xl font-medium leading-tight">
+        <p className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
           Describe your day with an{' '}
           <span className="text-[#E66CE5]">AI prompt</span>
         </p>
-        <p className="text-base sm:text-lg lg:text-2xl font-medium text-[#565F6C] mt-6">
+        <p className="text-base sm:text-lg lg:text-2xl font-medium text-black mt-6">
           An online tool that was built by a former tour guide & content
           creator. Teaching AI to think like a travel planner. Giving you the
           optimal routes to travel smart. Providing alternative routes and

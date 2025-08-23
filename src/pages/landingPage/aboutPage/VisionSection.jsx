@@ -4,10 +4,10 @@ const VisionSection = () => {
   return (
     <div className="max-w-[1193px] mx-auto py-16 px-4">
       <div className="text-center mb-8 md:mb-12 lg:mb-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl px-2 font-semibold leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl px-2 font-semibold leading-tight">
           Turn our dream into <span className="text-[#E66CE5]">a reality</span>
         </h2>
-        <p className="text-lg sm:text-xl font-medium mt-4 text-gray-700 max-w-4xl mx-auto px-2">
+        <p className="text-lg sm:text-2xl font-medium mt-4 text-gray-800 max-w-4xl mx-auto px-2">
           We believe dreams do come true, as long as we are clear and detailed.
         </p>
       </div>
@@ -23,15 +23,17 @@ const VisionSection = () => {
                   alt=""
                 />
               </div>
-              <div className="px-4 mb-9 rounded-2xl max-h-[176px]">
+              <div className="px-4 mb-4 rounded-2xl max-h-[176px]">
                 <p className="text-lg sm:text-xl md:text-2xl font-semibold text-black mt-3">
                   Our Humble Beginnings
                 </p>
                 <p className="text-sm sm:text-base md:text-lg font-medium text-black mt-4">
-                  Tabihop started in 2025 as a small passion project by three
-                  friends who shared a love for adventure. What began in a tiny
-                  apartment has now grown into a vibrant community of travel
-                  enthusiasts.
+                  TabiHop started in 2025 as a small passion project by two
+                  friends from different parts of the world brought together by
+                  a single tour in Japan. One was a content creator and the
+                  other was in tech. By joining forces, they created the
+                  ultimate digital product that ever traveler could ever dream
+                  of.
                 </p>
               </div>
             </div>

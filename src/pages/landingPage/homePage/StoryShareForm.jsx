@@ -23,12 +23,19 @@ const StoryShareForm = () => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-
     const droppedFiles = Array.from(e.dataTransfer.files).map((file) => ({
       file,
       preview: URL.createObjectURL(file),
     }));
-    setFiles(droppedFiles);
+    // Append new files to existing files
+    const allFiles = [...files, ...droppedFiles];
+    let images = allFiles
+      .filter((f) => f.file.type.startsWith('image'))
+      .slice(0, 2);
+    let videos = allFiles
+      .filter((f) => f.file.type.startsWith('video'))
+      .slice(0, 1);
+    setFiles([...images, ...videos]);
   };
 
   const handleChange = (e) => {
@@ -36,7 +43,15 @@ const StoryShareForm = () => {
       file,
       preview: URL.createObjectURL(file),
     }));
-    setFiles(selectedFiles);
+    // Append new files to existing files
+    const allFiles = [...files, ...selectedFiles];
+    let images = allFiles
+      .filter((f) => f.file.type.startsWith('image'))
+      .slice(0, 2);
+    let videos = allFiles
+      .filter((f) => f.file.type.startsWith('video'))
+      .slice(0, 1);
+    setFiles([...images, ...videos]);
   };
 
   const handleClick = () => {
@@ -64,14 +79,14 @@ const StoryShareForm = () => {
     </svg>
   );
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-20 lg:py-22 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Tell us your travel stories
+          <h1 className="text-4xl sm:text-7xl font-bold text-black mb-4">
+            Tell us your <span className="text-[#6E67D6]">travel stories</span>
           </h1>
-          <p className="text-xl font-medium text-gray-800 max-w-3xl mx-auto">
+          <p className="text-xl font-medium text-black max-w-3xl mx-auto">
             Want to share your travel stories & earn points? Send it over
             through the contact form
           </p>
@@ -112,7 +127,7 @@ const StoryShareForm = () => {
 
         {/* Form Section */}
 
-        <div className="bg-white rounded-xl  p-8 sm:p-12">
+        <div className="bg-white rounded-xl p-8 sm:p-12">
           {/* File Upload Area */}
           <div
             className={`border-2 border-dashed rounded-xl p-12 mb-8 text-center transition-colors ${
@@ -158,48 +173,29 @@ const StoryShareForm = () => {
                       />
                     </div>
                   )}
-                  {/* Full-width preview for the first video */}
-                  {files[0] && files[0].file.type.startsWith('video') && (
+                  {/* Full-width preview for the second image, below the first */}
+                  {files[1] && files[1].file.type.startsWith('image') && (
                     <div className="w-full h-[400px] flex items-center justify-center mb-4 relative">
-                      <video
-                        src={files[0].preview}
-                        controls
+                      <img
+                        src={files[1].preview}
+                        alt={files[1].file.name}
                         className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
                         style={{ zIndex: 1 }}
                       />
                     </div>
                   )}
-                  {/* Thumbnails for the rest of the files */}
-                  {files.length > 1 && (
-                    <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                      {files.slice(1).map((fileObj, index) => {
-                        const { file, preview } = fileObj;
-                        if (file.type.startsWith('image')) {
-                          return (
-                            <img
-                              key={index}
-                              src={preview}
-                              alt={file.name}
-                              className="mx-auto max-h-40 rounded-lg object-contain"
-                            />
-                          );
-                        } else if (file.type.startsWith('video')) {
-                          return (
-                            <video
-                              key={index}
-                              src={preview}
-                              controls
-                              className="w-full h-32 object-cover rounded-lg"
-                            />
-                          );
-                        } else {
-                          return (
-                            <p key={index} className="text-gray-700">
-                              {file.name}
-                            </p>
-                          );
+                  {/* Full-width preview for the video, below images */}
+                  {files.find((f) => f.file.type.startsWith('video')) && (
+                    <div className="w-full h-[400px] flex items-center justify-center mb-4 relative">
+                      <video
+                        src={
+                          files.find((f) => f.file.type.startsWith('video'))
+                            .preview
                         }
-                      })}
+                        controls
+                        className="w-full h-full object-contain rounded-lg"
+                        style={{ maxHeight: '400px' }}
+                      />
                     </div>
                   )}
                 </>

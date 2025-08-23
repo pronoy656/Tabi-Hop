@@ -92,7 +92,7 @@ const ToolIntroduce = () => {
                 Plan your perfect journey with our{' '}
                 <span className="text-[#6E67D6]">smart tool</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 mb-6 sm:mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-black mb-6 sm:mb-8">
                 The secret to great travel-
               </p>
             </div>
@@ -120,7 +120,7 @@ const ToolIntroduce = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700">
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-black">
                     {text}
                   </span>
                 </div>

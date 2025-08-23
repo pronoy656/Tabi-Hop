@@ -93,10 +93,10 @@ const TeamJoiningForm = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold text-gray-900 mb-5">
             Want to join <span className="text-[#6B5DE0]">the team?</span>
           </h1>
-          <p className="text-xl font-medium">
+          <p className="text-xl lg:text-2xl font-medium">
             Join us in creating extraordinary travel experiences
           </p>
         </div>

@@ -74,14 +74,14 @@ const PricingList = () => {
     },
   ];
   return (
-    <div className="min-h-screen py-16 px-4">
+    <div className="min-h-screen px-4  lg:pb-11">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 px-4 sm:px-6 lg:px-0">
-          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-4 leading-snug">
-            Pricing for every <span className="text-[#6E67D6]">traveler</span>
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 leading-snug">
+            Pricing for <span className="text-[#E66CE5]">every traveler</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl font-medium text-gray-700 max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl font-medium text-black max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed">
             Free to try! Or pay-as-you-go with coins! We suggest the Premium
             Plan so you can create multiple itineraries with the best results
             without stressing about coin usage. Perfect for those in the travel

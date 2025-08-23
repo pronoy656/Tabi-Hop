@@ -33,11 +33,11 @@ const ItineraryGuides = () => {
     <div className="min-h-screen py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Free One-Day <span className="text-purple-600">Itinerary</span>{' '}
-            Guides
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-4">
+            Free One-Day{' '}
+            <span className="text-[#6B5DE0]">Itinerary Guides</span>{' '}
           </h1>
-          <p className="text-gray-800 font-medium text-lg max-w-2xl mx-auto">
+          <p className="text-gray-800 font-medium text-xl lg:text-2xl max-w-2xl mx-auto">
             Start planning your trip with our carefully curated itineraries
           </p>
         </div>
