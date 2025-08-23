@@ -14,22 +14,89 @@ import SettingSVG from '../../../public/ruhulo-images/SettingSVG';
 
 const menuItems = [
   {
-    label: 'Overview',
-    path: '/',
+    label: "Overview tab",
+    path: "/",
     renderIcon: (isActive) => (
       <OverviewSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
     ),
   },
-  {
-    label: 'Workplace',
-    path: '/my-workplace',
+    {
+    label: "To-Do List",
+    path: "/todolist",
     renderIcon: (isActive) => (
-      <WorkplaceSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
+      <TodoListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+   {
+    label: " My Itinerary",
+    path: "/itinerary",
+    activePaths:[
+      "/my-workplace/details/:id",
+      "/itinerary/create-itinerary",
+      "/itinerary/details-destination"
+    ],
+    renderIcon: (isActive) => (
+      <IterenearySVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+    {
+    label: "Accommodations",
+    path: "/accommodations",
+    renderIcon: (isActive) => (
+      <AccommodationSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+    {
+    label: "Bookings",
+    path: "/bookings",
+    renderIcon: (isActive) => (
+      <BookingSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
     ),
   },
   {
-    label: 'Itinerary',
-    path: '/itinerary',
+    label: "Bucket List",
+    path: "/bucket-list",
+    renderIcon: (isActive) => (
+      <BucketListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Calender",
+    path: "/calender",
+    renderIcon: (isActive) => (
+      <CalenderSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+    {
+    label: "Packing List",
+    path: "/packing-list",
+    renderIcon: (isActive) => (
+      <PackingListSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+   {
+    label: "Mood Board",
+    path: "/moodboard",
+    renderIcon: (isActive) => (
+      <MoodBoardSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  {
+    label: "Workplace",
+    path: "/my-workplace",
+    renderIcon: (isActive) => (
+      <WorkplaceSVG strokeColor={isActive ? "#EDF8F9" : "#212936"} />
+    ),
+  },
+  
+ 
+ 
+
+
+
+  {
+    label: "Account Setting",
+    path: "/account-setting",
     activePaths: [
       '/my-workplace/details/:id',
       '/itinerary/create-itinerary',
@@ -39,71 +106,7 @@ const menuItems = [
       <IterenearySVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
     ),
   },
-  {
-    label: 'Mood Board',
-    path: '/moodboard',
-    renderIcon: (isActive) => (
-      <MoodBoardSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
-  {
-    label: 'To-Do List',
-    path: '/todolist',
-    renderIcon: (isActive) => (
-      <TodoListSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
-  {
-    label: 'Packing List',
-    path: '/packing-list',
-    renderIcon: (isActive) => (
-      <PackingListSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
-  {
-    label: 'Accommodations',
-    path: '/accommodations',
-    renderIcon: (isActive) => (
-      <AccommodationSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
-  {
-    label: 'Bookings',
-    path: '/bookings',
-    renderIcon: (isActive) => (
-      <BookingSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
-  {
-    label: 'Bucket List',
-    path: '/bucket-list',
-    renderIcon: (isActive) => (
-      <BucketListSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
-  {
-    label: 'Calender',
-    path: '/calender',
-    renderIcon: (isActive) => (
-      <CalenderSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
-  {
-    label: 'Account Setting',
-    path: '/account-setting',
-    activePaths: [
-      '/account-setting',
-      '/account-setting/edit-details',
-      '/account-setting/change-password',
-      '/account-setting/terms',
-      '/account-setting/privacy',
-      '/account-setting/faq',
-      '/account-setting/support',
-    ],
-    renderIcon: (isActive) => (
-      <SettingSVG strokeColor={isActive ? '#EDF8F9' : '#212936'} />
-    ),
-  },
+
 ];
 
 const Sidebar = ({ closeSidebar }) => {
