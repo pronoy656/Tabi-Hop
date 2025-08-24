@@ -53,7 +53,7 @@ const ResearchSection = () => {
       </div>
 
       <div className="flex justify-center">
-        <div className="relative w-full max-w-4xl h-48 sm:h-80 md:h-70 rounded-lg overflow-hidden">
+        <div className="relative w-full max-w-4xl h-55 sm:h-80 md:h-70 rounded-lg overflow-hidden">
           <motion.img
             src="/TabiHop logo no map.png"
             alt="bunny"
