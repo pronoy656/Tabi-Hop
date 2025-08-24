@@ -88,11 +88,11 @@ const ToolIntroduce = () => {
           {/* Right Side - Marketing Content */}
           <div className="lg:w-1/2 w-full px-4 sm:px-6 lg:px-8">
             <div>
-              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-snug">
+              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 leading-snug">
                 Plan your perfect journey with our{' '}
                 <span className="text-[#6E67D6]">smart tool</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-black mb-6 sm:mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-black mb-6 sm:mb-8">
                 The secret to great travel-
               </p>
             </div>
@@ -120,7 +120,7 @@ const ToolIntroduce = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-black">
+                  <span className="text-base sm:text-lg md:text-2xl lg:text-2xl font-normal text-black">
                     {text}
                   </span>
                 </div>

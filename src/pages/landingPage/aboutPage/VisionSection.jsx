@@ -7,7 +7,7 @@ const VisionSection = () => {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl px-2 font-semibold leading-tight">
           Turn our dream into <span className="text-[#E66CE5]">a reality</span>
         </h2>
-        <p className="text-lg sm:text-2xl font-medium mt-4 text-gray-800 max-w-4xl mx-auto px-2">
+        <p className="text-lg sm:text-2xl font-normal mt-4 text-gray-800 max-w-4xl mx-auto px-2">
           We believe dreams do come true, as long as we are clear and detailed.
         </p>
       </div>
@@ -23,7 +23,7 @@ const VisionSection = () => {
                   alt=""
                 />
               </div>
-              <div className="px-4 mb-4 rounded-2xl max-h-[176px]">
+              <div className="px-4 mb-5.5 rounded-2xl max-h-[176px]">
                 <p className="text-lg sm:text-xl md:text-2xl font-semibold text-black mt-3">
                   Our Humble Beginnings
                 </p>
@@ -48,7 +48,7 @@ const VisionSection = () => {
                 Inspired by Playfulness
               </p>
             </div>
-            <p className="font-medium mt-3 text-sm sm:text-base md:text-lg">
+            <p className="font-normal mt-3 text-sm sm:text-base md:text-lg">
               We believe travel should be as fun and carefree as a bunny hopping
               through a meadow. That's why we infused our brand with playful
               elements that bring joy to every journey.
@@ -61,7 +61,7 @@ const VisionSection = () => {
                 Guided by Purpose
               </p>
             </div>
-            <p className="font-medium mt-3 text-sm sm:text-base md:text-lg">
+            <p className="font-normal  mt-3 text-sm sm:text-base md:text-lg">
               Our mission has always been to create travel experiences that are
               not just memorable but transformative. We're committed to
               responsible tourism that respects local cultures and environments
@@ -74,7 +74,7 @@ const VisionSection = () => {
                 Growing Community
               </p>
             </div>
-            <p className="font-medium mt-3 text-sm sm:text-base md:text-lg">
+            <p className="font-normal  mt-3 text-sm sm:text-base md:text-lg">
               Today, we're proud to have helped over 50,000 travelers discover
               new destinations with our signature bunny-style approach to
               adventure and exploration.

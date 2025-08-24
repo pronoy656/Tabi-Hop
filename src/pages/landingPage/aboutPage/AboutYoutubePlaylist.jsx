@@ -8,7 +8,7 @@ const AboutYoutubePlaylist = () => {
           We trained the algorithm{' '}
           <span className="text-[#E66CE5]">to think like us</span>
         </p>
-        <p className="text-xl sm:text-lg md:text-xl font-medium mt-3">
+        <p className="text-xl sm:text-lg md:text-xl font-normal mt-3">
           {' '}
           From flights to adventures, preview your full itinerary in an
           immersive video.

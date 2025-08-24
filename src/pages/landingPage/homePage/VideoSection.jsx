@@ -25,7 +25,7 @@ const VideoSection = () => {
       sm:text-3xl 
       md:text-4xl 
       lg:text-7xl 
-      font-bold 
+      font-semibold 
       text-gray-900 
       mb-3 sm:mb-4
       leading-snug sm:leading-tight
@@ -39,9 +39,9 @@ const VideoSection = () => {
             className="
       text-base 
       sm:text-lg 
-      md:text-xl 
+      md:text-2xl font-normal
       text-black 
-      font-medium
+      
       max-w-xl sm:max-w-2xl 
       mx-auto 
       leading-relaxed
