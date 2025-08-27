@@ -120,7 +120,7 @@ const ToolIntroduce = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-base sm:text-lg md:text-2xl lg:text-2xl font-normal text-black">
+                  <span className="text-base sm:text-lg md:text-2xl lg:text-2xl font-normal text-gray-800">
                     {text}
                   </span>
                 </div>

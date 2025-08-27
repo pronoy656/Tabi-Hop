@@ -14,7 +14,7 @@ const HelpCenter = () => {
     <div className="min-h-screen py-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <h1 className="text-5xl lg:text-7xl font-semibold text-center text-gray-900 lg:mb-10">
+        <h1 className="text-5xl lg:text-5xl font-semibold text-center text-gray-900 lg:mb-10">
           Help <span className="text-[#6B5DE0]">Center</span>
         </h1>
 

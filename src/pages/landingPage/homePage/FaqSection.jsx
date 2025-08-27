@@ -10,7 +10,7 @@ const FaqSection = () => {
   return (
     <div className="max-w-5xl md:py-16 sm:py-20 lg:py-24 mx-auto px-4 sm:px-6 lg:px-0">
       {/* Header */}
-      <h1 className="text-3xl sm:text-4xl md:text-7xl font-semibold text-center text-gray-900 mb-4 sm:mb-6 md:mb-8 leading-snug">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-gray-900 mb-4 sm:mb-6 md:mb-8 leading-8">
         Frequently asked questions
       </h1>
       <h2 className="text-md sm:text-xl md:text-2xl font-normal text-center text-gray-900 mb-8 sm:mb-10 leading-relaxed">

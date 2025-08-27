@@ -6,7 +6,7 @@ const TeamIntroduce = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-16 lg:mb-22">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-gray-800 mb-4">
             Meet our <span className="text-[#E66CE5]">team</span>
           </h1>
           <p className="text-base sm:text-lg md:text-2xl font-normal">

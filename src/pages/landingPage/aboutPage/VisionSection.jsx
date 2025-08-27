@@ -4,7 +4,7 @@ const VisionSection = () => {
   return (
     <div className="max-w-[1193px] mx-auto py-16 px-4">
       <div className="text-center mb-8 md:mb-12 lg:mb-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl px-2 font-semibold leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-semibold px-2 leading-tight">
           Turn our dream into <span className="text-[#E66CE5]">a reality</span>
         </h2>
         <p className="text-lg sm:text-2xl font-normal mt-4 text-gray-800 max-w-4xl mx-auto px-2">
