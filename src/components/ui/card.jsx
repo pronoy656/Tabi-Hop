@@ -33,6 +33,17 @@ export function CardHeader({ className = '', children, ...props }) {
   );
 }
 
+export function CardTitle({ className = '', children, ...props }) {
+  const baseClasses = 'text-lg font-semibold leading-none tracking-tight';
+  const combinedClasses = `${baseClasses} ${className}`.trim();
+
+  return (
+    <h3 className={combinedClasses} {...props}>
+      {children}
+    </h3>
+  );
+}
+
 // Optional: CardFooter component
 export function CardFooter({ className = '', children, ...props }) {
   const baseClasses = 'px-6 py-4 border-t border-gray-200';
