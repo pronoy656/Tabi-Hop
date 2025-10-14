@@ -77,7 +77,9 @@ const HomeFooter = () => {
             <li>Security</li>
             <li>Status</li>
             <li>Terms & Condition</li>
-            <li>Privacy Policy</li>
+            <Link to={'/home/privacy'}>
+              <li>Privacy Policy</li>
+            </Link>
           </ul>
         </div>
 

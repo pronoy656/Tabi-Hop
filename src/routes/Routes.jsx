@@ -68,6 +68,7 @@ import HomePage from '../pages/landingPage/homePage/HomePage';
 import AboutPage from '../pages/landingPage/aboutPage/AboutPage';
 import Resources from '../pages/landingPage/resources/Resources';
 import TeamJoiningForm from '../pages/landingPage/TeamJoiningForm/TeamJoiningForm';
+import NormalPrivacyPolicy from '../pages/landingPage/privacyPolicy/NormalPrivacyPolicy';
 
 const router = createBrowserRouter([
   {
@@ -348,6 +349,10 @@ const router = createBrowserRouter([
       {
         path: '/home/team-joining-form',
         element: <TeamJoiningForm></TeamJoiningForm>,
+      },
+      {
+        path: '/home/privacy',
+        element: <NormalPrivacyPolicy />,
       },
     ],
   },

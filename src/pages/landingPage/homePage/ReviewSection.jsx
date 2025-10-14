@@ -40,14 +40,14 @@ const ReviewSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-28">
-          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-black mb-5">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-black mb-5">
             Happy{' '}
             <span className="text-[#6E67D6]">
               Tabi <span className="text-[#E66CE5]">hop</span>
             </span>{' '}
             travelers
           </h1>
-          <p className="text-black sm:text-4xl md:text-5xl lg:text-2xl font-medium">
+          <p className="text-black sm:text-4xl md:text-5xl lg:text-2xl font-normal">
             See what our fluffy friends have to say about their adventures!
           </p>
         </div>

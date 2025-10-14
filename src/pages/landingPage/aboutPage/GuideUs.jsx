@@ -110,10 +110,10 @@ const GuideUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-7xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-6">
             The principles that <span className="text-[#6E67D6]">guide us</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl font-medium max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg md:text-2xl font-normal max-w-4xl mx-auto">
             At TabiHop, our core values guide everything we do, serving as the
             driving force that keeps us moving forward.
           </p>
