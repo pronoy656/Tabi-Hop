@@ -1,0 +1,154 @@
+import { ListCard } from '../../../components/shared/ListCard';
+import PrimaryButton from '../../../components/shared/PrimaryButton';
+import SectionHeader from '../../../components/shared/SectionHeader';
+import ListCartModal from '../../../components/shared/ListCartModal';
+import { useState } from 'react';
+
+const PackingList = () => {
+  const [todoGroups, setTodoGroups] = useState([
+    {
+      title: 'Sky Diving',
+      todos: [
+        {
+          id: 1,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: false,
+          priority: 'High',
+        },
+        {
+          id: 2,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: true,
+          priority: 'Medium',
+        },
+        {
+          id: 1,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: false,
+          priority: 'High',
+        },
+        {
+          id: 2,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: true,
+          priority: 'Medium',
+        },
+        {
+          id: 1,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: false,
+          priority: 'High',
+        },
+        {
+          id: 2,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: true,
+          priority: 'Medium',
+        },
+      ],
+    },
+    {
+      title: 'Bug Hunt',
+      todos: [
+        {
+          id: 3,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: false,
+          priority: 'Low',
+        },
+        {
+          id: 4,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: true,
+          priority: 'High',
+        },
+        {
+          id: 3,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: false,
+          priority: 'Low',
+        },
+        {
+          id: 4,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: true,
+          priority: 'High',
+        },
+        {
+          id: 3,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: false,
+          priority: 'Low',
+        },
+        {
+          id: 4,
+          title:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+          completed: true,
+          priority: 'High',
+        },
+      ],
+    },
+  ]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingGroup, setEditingGroup] = useState(null);
+
+  const handleEdit = (title, todos) => {
+    setEditingGroup({ title, todos });
+    setIsModalOpen(true);
+  };
+
+  return (
+    <div className="page">
+      <div className="md:flex justify-between items-center mb-4">
+        <SectionHeader
+          title="Packing List"
+          subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
+        />
+        <button onClick={() => setIsModalOpen(true)}>
+          <PrimaryButton
+            bgColor={'#EE443F'}
+            text={'Add more'}
+            textColor={'white'}
+          />
+        </button>
+      </div>
+      <div>
+        <div className="grid md:grid-cols-1 gap-4">
+          {todoGroups.map((group, idx) => (
+            <ListCard
+              key={idx}
+              title={group.title}
+              todos={group.todos}
+              border="#FF6A35"
+              border2="#FAC5C3"
+              bg="#FFFFFF"
+              titleText="#EE443F"
+              text="#4D5461"
+              onEdit={handleEdit}
+            />
+          ))}
+        </div>
+      </div>
+
+      <ListCartModal
+        setTodoGroups={setTodoGroups}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </div>
+  );
+};
+
+export default PackingList;

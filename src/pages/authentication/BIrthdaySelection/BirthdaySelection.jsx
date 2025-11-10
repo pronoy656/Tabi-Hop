@@ -1,0 +1,167 @@
+import { Button } from "antd";
+import { DatePicker } from "antd";
+import { Form, useNavigate } from "react-router-dom";
+import { Controller, useForm } from "react-hook-form";
+
+const onChange = (date, dateString) => {
+  console.log(date, dateString);
+};
+
+const BirthdaySelection = () => {
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+
+  //navigate to next step after form submission
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    console.log("Success:", {
+      month: data.month?.format("MMMM YYYY"),
+      date: data.date?.format("YYYY-MM-DD"),
+      year: data.year?.format("YYYY"),
+    });
+
+    // Navigate to the next step after successful submission
+    navigate("/signin/travel-selector");
+  };
+
+  return (
+    <div>
+      <div
+        className="min-h-screen bg-cover bg-center "
+        style={{ backgroundImage: "url('/birthday-selection (2).jpg')" }}
+      >
+        <div className="flex items-center justify-center py-40 sm:py-60 px-4">
+          <div className="border border-white rounded-2xl w-full max-w-3xl backdrop-blur-2xl bg-white/40">
+            <div className="flex justify-center mt-10 md:mt-20">
+              <div className="w-full max-w-lg px-4 sm:px-6 md:px-10 mb-12">
+                <div className="text-center mb-6">
+                  <p className="text-3xl md:text-[44px] font-semibold">
+                    Add your Birthday
+                  </p>
+                  <p className="text-sm md:text-base font-medium mt-2">
+                    Providing your birthday improves the features and ads you
+                    see while keeping the TabiHop community safe. You can find
+                    your birthday in your personal information account settings.
+                  </p>
+
+                  <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+                    {/* Date Picker Fields */}
+                    <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-6">
+                      {/* Month picker */}
+                      <div className="flex-1">
+                        <label className="text-left font-bold block mb-1">
+                          Month
+                        </label>
+                        <div className="h-12">
+                          <Controller
+                            name="month"
+                            control={control}
+                            rules={{ required: "Month is required" }}
+                            render={({ field }) => (
+                              <DatePicker
+                                picker="month"
+                                value={field.value}
+                                onChange={(date, dateString) => {
+                                  field.onChange(date);
+                                  onChange(date, dateString);
+                                }}
+                                className="h-full w-full custom-datepicker"
+                              />
+                            )}
+                          />
+                          {errors.month && (
+                            <p className="text-red-500 text-sm">
+                              {errors.month.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Date picker */}
+                      <div className="flex-1">
+                        <label className="text-left font-bold block mb-1">
+                          Date
+                        </label>
+                        <div className="h-12">
+                          <Controller
+                            name="date"
+                            control={control}
+                            rules={{ required: "Date is required" }}
+                            render={({ field }) => (
+                              <DatePicker
+                                onChange={field.onChange}
+                                picker="date"
+                                value={field.value}
+                                className="h-full w-full custom-datepicker"
+                              />
+                            )}
+                          />
+                          {errors.date && (
+                            <p className="text-red-500 text-sm">
+                              {errors.date.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Year picker */}
+                      <div className="flex-1">
+                        <label className="text-left font-bold block mb-1">
+                          Year
+                        </label>
+                        <div className="h-12">
+                          <Controller
+                            name="year"
+                            control={control}
+                            rules={{ required: "Year is required" }}
+                            render={({ field }) => (
+                              <DatePicker
+                                onChange={field.onChange}
+                                picker="year"
+                                value={field.value}
+                                className="h-full w-full custom-datepicker"
+                              />
+                            )}
+                          />
+                          {errors.year && (
+                            <p className="text-red-500 text-sm">
+                              {errors.year.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      block
+                      style={{
+                        marginTop: "37px",
+                        height: "56px", // Your defined height
+                        backgroundColor: "#FFAA00",
+                        borderColor: "#FFAA00",
+                        color: "#000",
+                        fontSize: "18px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Continue
+                    </Button>
+                  </Form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BirthdaySelection;
