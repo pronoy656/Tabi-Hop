@@ -1,45 +1,28 @@
 // BookingCard.jsx
-import { useState } from "react";
+import React from 'react';
 
 const BookingCard = ({ acc, onEdit, onDelete }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   return (
     <div className="relative xl:flex w-full border-2 border-r-4 border-b-4 border-[#6E67D5] rounded-xl overflow-hidden shadow-md p-4 gap-4 bg-white mt-4">
       <div className="flex flex-col space-y-2 xl:space-y-6 flex-1 mt-4 xl:mt-0">
         <div className="flex justify-between items-start">
           <h2 className="text-2xl font-semibold">{acc.title}</h2>
 
-          <div className="relative">
+          <div className="flex gap-2">
             <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="focus:outline-none"
+              onClick={() => onEdit(acc)}
+              className="focus:outline-none hover:opacity-80"
+              title="Edit"
             >
-              <img src="/three-dots.png" className="h-6" alt="Options" />
+              <img src="/edit-pencil.png" className="h-5" alt="Edit" />
             </button>
-
-            {isDropdownOpen && (
-              <div className="absolute right-0 z-10 mt-2 w-32 bg-white rounded-md shadow-lg border text-sm">
-                <button
-                  onClick={() => {
-                    setIsDropdownOpen(false);
-                    onEdit(acc);
-                  }}
-                  className="block w-full px-4 py-2 text-left hover:bg-gray-100"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => {
-                    setIsDropdownOpen(false);
-                    onDelete(acc.id);
-                  }}
-                  className="block w-full px-4 py-2 text-left text-red-500 hover:bg-gray-100"
-                >
-                  Delete
-                </button>
-              </div>
-            )}
+            <button
+              onClick={() => onDelete(acc.id)}
+              className="focus:outline-none hover:opacity-80"
+              title="Delete"
+            >
+              <img src="/delete.png" className="h-5" alt="Delete" />
+            </button>
           </div>
         </div>
 
@@ -53,7 +36,11 @@ const BookingCard = ({ acc, onEdit, onDelete }) => {
             {acc.scheduledTime}
           </p>
           <p className="flex justify-center items-center text-[16px] font-medium gap-x-1">
-            <img src="/location-outline.png" alt="Location" className="w-4 h-4" />
+            <img
+              src="/location-outline.png"
+              alt="Location"
+              className="w-4 h-4"
+            />
             {acc.location}
           </p>
         </div>

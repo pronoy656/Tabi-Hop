@@ -1,14 +1,13 @@
-import { useForm } from "react-hook-form";
-import ModalLayout from "../modals/ModalLayout";
-import ModalHeader from "../modals/ModalHeader";
-import { useState } from "react";
+import { useForm } from 'react-hook-form';
+import ModalLayout from '../modals/ModalLayout';
+import ModalHeader from '../modals/ModalHeader';
+import { useState } from 'react';
 
 const ListCartModal = ({ isOpen, onClose, setTodoGroups }) => {
   const { register, handleSubmit, reset } = useForm();
-  const [notes, setNotes] = useState([{ note: "" }]);
+  const [notes, setNotes] = useState([{ note: '' }]);
 
   const onSubmit = (data) => {
-   
     const newTodoGroup = {
       title: data.title,
       todos: notes.map((note, index) => ({
@@ -17,18 +16,18 @@ const ListCartModal = ({ isOpen, onClose, setTodoGroups }) => {
         completed: false,
       })),
     };
-   console.log(newTodoGroup)
+    console.log(newTodoGroup);
     // Update the parent component's state with the new todo group
     setTodoGroups((prevGroups) => [...prevGroups, newTodoGroup]);
 
     // Reset the form and notes after submission
     reset();
-    setNotes([{ note: "" }]);
+    setNotes([{ note: '' }]);
     onClose();
   };
 
   const addNoteField = () => {
-    setNotes([...notes, { note: "" }]);
+    setNotes([...notes, { note: '' }]);
   };
 
   const handleNoteChange = (index, value) => {
@@ -37,8 +36,13 @@ const ListCartModal = ({ isOpen, onClose, setTodoGroups }) => {
     setNotes(updatedNotes);
   };
 
+  const handleEdit = () => {
+    // You can implement edit functionality here
+    console.log('Edit clicked');
+  };
+
   return (
-    <ModalLayout isOpen={isOpen} onClose={onClose}>
+    <ModalLayout isOpen={isOpen} onClose={onClose} onEdit={handleEdit}>
       <ModalHeader
         title="Creating List"
         subTitle="View and add your bookings, plans, and events in one place"
@@ -49,7 +53,7 @@ const ListCartModal = ({ isOpen, onClose, setTodoGroups }) => {
           <div>
             <label className="label-class">Title</label>
             <input
-              {...register("title")}
+              {...register('title')}
               type="text"
               required
               placeholder="Write here"

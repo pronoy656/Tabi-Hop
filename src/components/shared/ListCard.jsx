@@ -6,12 +6,14 @@ export const ListCard = ({
   text,
   bg,
   border2,
-  line
+  line,
+  onEdit,
 }) => {
-
-
-
-  
+  const handleEdit = () => {
+    if (onEdit) {
+      onEdit(title, todos);
+    }
+  };
 
   return (
     <div
@@ -22,15 +24,24 @@ export const ListCard = ({
         borderLeftColor: border2,
         borderBottomColor: border,
         borderRightColor: border,
-        borderStyle: "solid",
+        borderStyle: 'solid',
       }}
     >
-      <h4
-        className={`font-semibold text-[20px] mb-4`}
-        style={{ color: titleText }}
-      >
-        {title}
-      </h4>
+      <div className="flex justify-between items-center mb-4">
+        <h4
+          className={`font-semibold text-[20px]`}
+          style={{ color: titleText }}
+        >
+          {title}
+        </h4>
+        <button
+          onClick={handleEdit}
+          className="focus:outline-none hover:opacity-80"
+          title="Edit"
+        >
+          <img src="/edit-pencil.png" className="h-5" alt="Edit" />
+        </button>
+      </div>
 
       <ul className="space-y-4 text-sm">
         {todos?.map((task, idx) => (
@@ -49,7 +60,7 @@ export const ListCard = ({
             </div>
 
             {idx !== todos.length - 1 && (
-              <div className="border-b " style={{ borderColor: line}} />
+              <div className="border-b " style={{ borderColor: line }} />
             )}
           </li>
         ))}
