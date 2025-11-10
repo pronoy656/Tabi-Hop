@@ -1,32 +1,36 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const reminders = [
-  { date: "2025-08-08T08:00", task: "Drink 8 glasses of water", bg: "bg-blue-100" },
-  { date: "2025-08-08T09:00", task: "Get a notebook", bg: "bg-pink-100" },
-  { date: "2025-08-09T10:00", task: "Work", bg: "bg-green-100" },
-  { date: "2025-08-15T16:00", task: "Work", bg: "bg-red-100" },
-  { date: "2025-09-02T20:00", task: "Work", bg: "bg-red-100" },
-  { date: "2025-09-10T20:00", task: "Work", bg: "bg-red-100" },
+  {
+    date: '2025-08-08T08:00',
+    task: 'Drink 8 glasses of water',
+    bg: 'bg-blue-100',
+  },
+  { date: '2025-08-08T09:00', task: 'Get a notebook', bg: 'bg-pink-100' },
+  { date: '2025-08-09T10:00', task: 'Work', bg: 'bg-green-100' },
+  { date: '2025-08-15T16:00', task: 'Work', bg: 'bg-red-100' },
+  { date: '2025-09-02T20:00', task: 'Work', bg: 'bg-red-100' },
+  { date: '2025-09-10T20:00', task: 'Work', bg: 'bg-red-100' },
 ];
 
 const ReminderCard = () => {
-  const [viewType, setViewType] = useState("Day");
-  const [filterValue, setFilterValue] = useState("");
+  const [viewType, setViewType] = useState('Day');
+  const [filterValue, setFilterValue] = useState('');
 
   // ফিল্টার লজিক
   const filteredReminders = reminders.filter((reminder) => {
     const reminderDate = new Date(reminder.date);
 
-    if (viewType === "Day" && filterValue) {
-      return reminderDate.toISOString().split("T")[0] === filterValue;
+    if (viewType === 'Day' && filterValue) {
+      return reminderDate.toISOString().split('T')[0] === filterValue;
     }
-    if (viewType === "Month" && filterValue) {
+    if (viewType === 'Month' && filterValue) {
       return (
-        reminderDate.getFullYear() === parseInt(filterValue.split("-")[0]) &&
-        reminderDate.getMonth() + 1 === parseInt(filterValue.split("-")[1])
+        reminderDate.getFullYear() === parseInt(filterValue.split('-')[0]) &&
+        reminderDate.getMonth() + 1 === parseInt(filterValue.split('-')[1])
       );
     }
-    if (viewType === "Week" && filterValue) {
+    if (viewType === 'Week' && filterValue) {
       const selectedDate = new Date(filterValue);
       const startOfWeek = new Date(selectedDate);
       startOfWeek.setDate(selectedDate.getDate() - selectedDate.getDay());
@@ -42,23 +46,23 @@ const ReminderCard = () => {
     <div
       className="bg-white col-span-4 rounded-lg min-w-[260px] sm:min-w-[390px] w-full shadow-md p-4 md:p-8 border border-r-4 border-b-4"
       style={{
-        borderTopColor: "#3DA755",
-        borderLeftColor: "#3DA755",
-        borderBottomColor: "#3DA755",
-        borderRightColor: "#3DA755",
-        borderStyle: "solid",
+        borderTopColor: '#3DA755',
+        borderLeftColor: '#3DA755',
+        borderBottomColor: '#3DA755',
+        borderRightColor: '#3DA755',
+        borderStyle: 'solid',
       }}
     >
       {/* Top Section */}
       <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-        <h3 className="text-xl font-semibold">Upcoming Reminders</h3>
+        <h3 className="text-xl">Upcoming Reminders</h3>
 
         <div className="flex gap-2">
           <select
             value={viewType}
             onChange={(e) => {
               setViewType(e.target.value);
-              setFilterValue("");
+              setFilterValue('');
             }}
             className="border rounded px-2 py-1 text-sm"
           >
@@ -67,7 +71,7 @@ const ReminderCard = () => {
             <option value="Month">Month</option>
           </select>
 
-          {viewType === "Day" && (
+          {viewType === 'Day' && (
             <input
               type="date"
               value={filterValue}
@@ -76,7 +80,7 @@ const ReminderCard = () => {
             />
           )}
 
-          {viewType === "Week" && (
+          {viewType === 'Week' && (
             <input
               type="date"
               value={filterValue}
@@ -85,7 +89,7 @@ const ReminderCard = () => {
             />
           )}
 
-          {viewType === "Month" && (
+          {viewType === 'Month' && (
             <input
               type="month"
               value={filterValue}
@@ -101,13 +105,13 @@ const ReminderCard = () => {
         {filteredReminders.length > 0 ? (
           filteredReminders.map((reminder, idx) => {
             const dateObj = new Date(reminder.date);
-            const dateStr = dateObj.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
+            const dateStr = dateObj.toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
             });
-            const timeStr = dateObj.toLocaleTimeString("en-US", {
-              hour: "2-digit",
-              minute: "2-digit",
+            const timeStr = dateObj.toLocaleTimeString('en-US', {
+              hour: '2-digit',
+              minute: '2-digit',
               hour12: false,
             });
 

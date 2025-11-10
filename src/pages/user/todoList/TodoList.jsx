@@ -1,108 +1,107 @@
-
-import { ListCard } from "../../../components/shared/ListCard";
-import PrimaryButton from "../../../components/shared/PrimaryButton";
-import SectionHeader from "../../../components/shared/SectionHeader";
-import ListCartModal from "../../../components/shared/ListCartModal";
-import { useState } from "react";
+import { ListCard } from '../../../components/shared/ListCard';
+import PrimaryButton from '../../../components/shared/PrimaryButton';
+import SectionHeader from '../../../components/shared/SectionHeader';
+import ListCartModal from '../../../components/shared/ListCartModal';
+import { useState } from 'react';
 
 const TodoList = () => {
-  const [todoGroups,setTodoGroups] = useState([
+  const [todoGroups, setTodoGroups] = useState([
     {
-      title: "Sky Diving",
+      title: 'Sky Diving',
       todos: [
         {
           id: 1,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: false,
-          priority: "High",
+          priority: 'High',
         },
         {
           id: 2,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: true,
-          priority: "Medium",
+          priority: 'Medium',
         },
         {
           id: 1,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: false,
-          priority: "High",
+          priority: 'High',
         },
         {
           id: 2,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: true,
-          priority: "Medium",
+          priority: 'Medium',
         },
         {
           id: 1,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: false,
-          priority: "High",
+          priority: 'High',
         },
         {
           id: 2,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: true,
-          priority: "Medium",
+          priority: 'Medium',
         },
       ],
     },
     {
-      title: "Bug Hunt",
+      title: 'Bug Hunt',
       todos: [
         {
           id: 3,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: false,
-          priority: "Low",
+          priority: 'Low',
         },
         {
           id: 4,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: true,
-          priority: "High",
+          priority: 'High',
         },
         {
           id: 3,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: false,
-          priority: "Low",
+          priority: 'Low',
         },
         {
           id: 4,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: true,
-          priority: "High",
+          priority: 'High',
         },
         {
           id: 3,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: false,
-          priority: "Low",
+          priority: 'Low',
         },
         {
           id: 4,
           title:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
           completed: true,
-          priority: "High",
+          priority: 'High',
         },
       ],
     },
   ]);
-   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="page">
       <div className="md:flex justify-between items-center mb-4">
@@ -110,11 +109,11 @@ const TodoList = () => {
           title="To-Do List"
           subtitle="It is a long established fact that a reader will be distracted by the readable content of a page."
         />
-        <button  onClick={() => setIsModalOpen(true)} >
+        <button onClick={() => setIsModalOpen(true)}>
           <PrimaryButton
-            bgColor={"#EE443F"}
-            text={"Add more"}
-            textColor={"white"}
+            bgColor={'#EE443F'}
+            text={'Add more'}
+            textColor={'white'}
           />
         </button>
       </div>
@@ -135,7 +134,11 @@ const TodoList = () => {
         </div>
       </div>
 
-         <ListCartModal setTodoGroups={setTodoGroups} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ListCartModal
+        setTodoGroups={setTodoGroups}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

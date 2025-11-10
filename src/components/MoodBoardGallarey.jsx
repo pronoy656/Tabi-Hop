@@ -1,29 +1,23 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
-
-
-
-const MoodBoardGallery = ({moodBoards}) => {
- 
-  
+const MoodBoardGallery = ({ moodBoards }) => {
   return (
     <div className="">
       {/* Desktop Grid Layout */}
       <div className="hidden lg:grid grid-cols-8 grid-rows-12 gap-4 h-[1200px] gap-y-12">
         {moodBoards?.map((item, index) => {
           const spanMap = [
-            "row-span-5",
-            "row-span-3",
-            "row-span-4",
-            "row-span-4",
-            "row-span-5",
-            "row-span-3",
-            "row-span-5",
-            "row-span-3",
-            "row-span-3",
-            "row-span-3",
+            'row-span-5',
+            'row-span-3',
+            'row-span-4',
+            'row-span-4',
+            'row-span-5',
+            'row-span-3',
+            'row-span-5',
+            'row-span-3',
+            'row-span-3',
+            'row-span-3',
           ];
           return (
             <div key={index} className={`col-span-2 ${spanMap[index]}`}>
@@ -34,8 +28,11 @@ const MoodBoardGallery = ({moodBoards}) => {
               />
               <p className="text-center cursor-pointer text-black flex justify-between mt-2 mx-2">
                 <p className="text-lg">{item.title} </p>
-                <Link to={`/moodboard/details/${index}`}>
-                  <img src="/dots.png" className="h-6" alt="" />
+                <Link
+                  to={`/moodboard/details/${index}`}
+                  className="text-[#6E67D5] hover:text-[#5751c7] font-medium"
+                >
+                  More info
                 </Link>
               </p>
             </div>
@@ -51,17 +48,18 @@ const MoodBoardGallery = ({moodBoards}) => {
               alt={`img-${index}`}
               className="w-full h-auto object-cover rounded-xl"
             />
-            <p className="text-center mx-2 cursor-pointer text-black flex justify-between mt-2 mx-2 ">
+            <p className="text-center cursor-pointer text-black flex justify-between mt-2 mx-2">
               <p className="text-lg">{item.title} </p>
-              <Link to={`/moodboard/details/:${index}`}>
-                <img src="/dots.png" className="h-6" alt="" />
+              <Link
+                to={`/moodboard/details/:${index}`}
+                className="text-[#6E67D5] hover:text-[#5751c7] font-medium"
+              >
+                More info
               </Link>
             </p>
           </div>
         ))}
       </div>
-            
-
     </div>
   );
 };

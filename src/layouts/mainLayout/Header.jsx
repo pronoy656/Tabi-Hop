@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { MdClose } from "react-icons/md";
-import { Input } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
-import AdminProfile from "./AdminProfile";
+import { Link } from 'react-router-dom';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { MdClose } from 'react-icons/md';
+import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import AdminProfile from './AdminProfile';
 
 const { Search } = Input;
 
 const Header = ({ toggleSidebar, isSidebarOpen }) => {
   return (
-    <header className="w-full relative bg-[#EDF8F9] px-4 lg:px-8 py-4 shadow-sm ">
-      <div className="absolute bottom-0 left-0 h-px bg-[#ACE0E5] w-full md:left-[300px] md:w-[calc(100%-300px)]" />
+    <header className="w-full relative px-4 lg:px-8 py-4 ">
+      <div className="absolute bottom-0 left-0 h-px w-full md:left-[300px] md:w-[calc(100%-300px)]" />
 
       <div className="grid grid-cols-3 items-center">
         {/*LEFT SECTION*/}
@@ -45,20 +45,20 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
         {/*CENTER SECTION*/}
         <div className="flex  justify-center ">
           {/* Logo  small screens*/}
-         
-         <div className="absolute top-4 left-19">
-           <Link  to={'/'} className="flex items-center gap-1 md:hidden">
-            <img
-              src="/logo_image.png"
-              alt="Logo"
-              className="h-12 w-12 object-contain"
-            />
-            <img
-              src="/logo_name2.png"
-              alt="Logo Name"
-              className="h-6 sm:h-7 object-contain"
-            />
-          </Link>
+
+          <div className="absolute top-4 left-19">
+            <Link to={'/'} className="flex items-center gap-1 md:hidden">
+              <img
+                src="/logo_image.png"
+                alt="Logo"
+                className="h-12 w-12 object-contain"
+              />
+              <img
+                src="/logo_name2.png"
+                alt="Logo Name"
+                className="h-6 sm:h-7 object-contain"
+              />
+            </Link>
           </div>
 
           {/* Search bar (visible on lg and larger) */}
@@ -74,7 +74,6 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
 
         {/*RIGHT SECTION*/}
         <div className="flex justify-end items-center gap-2 sm:gap-3 lg:gap-4 min-w-fit">
-        
           {/* Notifications Link */}
           <Link
             to="/notifications"
